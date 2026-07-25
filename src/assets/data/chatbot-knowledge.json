@@ -1,0 +1,63 @@
+{
+  "entries": [
+    {
+      "id": "cosa-e-radici",
+      "intent": "project_info",
+      "keywords": ["radici", "progetto", "app", "guida", "what is", "project", "guide"],
+      "answer": {
+        "it": "Radici San Giovanni Lipioni e una guida digitale dimostrativa con mappa, itinerari, racconti e contenuti controllati sul borgo. I dati sono mock e devono essere verificati prima dell'uso ufficiale.",
+        "en": "Radici San Giovanni Lipioni is a demo digital guide with a map, itineraries, stories and controlled content about the village. Data is mock and must be verified before official use."
+      },
+      "source": "chatbot-knowledge.json"
+    },
+    {
+      "id": "mappa",
+      "intent": "map_help",
+      "keywords": ["mappa", "marker", "luoghi", "esplora", "map", "places", "markers", "explore"],
+      "answer": {
+        "it": "Puoi aprire la pagina Esplora per vedere i luoghi mock sulla mappa, filtrare per categoria e leggere le schede. Le coordinate sono modificabili nei file JSON.",
+        "en": "Open the Explore page to see mock places on the map, filter by category and read the entries. Coordinates are editable in the JSON files."
+      },
+      "relatedPlaceId": "centro-storico",
+      "source": "chatbot-knowledge.json"
+    },
+    {
+      "id": "itinerari",
+      "intent": "itinerary_help",
+      "keywords": ["itinerari", "percorsi", "camminata", "route", "itineraries", "walk"],
+      "answer": {
+        "it": "Sono disponibili tre itinerari mock: Il cuore del borgo, Memorie e panorami, Tradizioni e comunita. Sono esempi da verificare sul posto.",
+        "en": "Three mock itineraries are available: The heart of the village, Memories and viewpoints, Traditions and community. They are examples to check on site."
+      },
+      "source": "chatbot-knowledge.json"
+    },
+    {
+      "id": "racconti",
+      "intent": "stories_help",
+      "keywords": [
+        "racconti",
+        "memoria",
+        "nonni",
+        "testimonianze",
+        "stories",
+        "memory",
+        "grandparents"
+      ],
+      "answer": {
+        "it": "La sezione Racconti contiene testi dimostrativi su memoria e radici. Le testimonianze reali dovranno essere raccolte con consenso esplicito.",
+        "en": "The Stories section contains demo texts about memory and roots. Real testimonies must be collected with explicit consent."
+      },
+      "source": "chatbot-knowledge.json"
+    },
+    {
+      "id": "privacy",
+      "intent": "privacy_help",
+      "keywords": ["privacy", "cookie", "consenso", "gdpr", "consent"],
+      "answer": {
+        "it": "Il progetto usa localStorage per lingua e preferenze cookie. Analytics e marketing restano disattivati finche non viene dato consenso esplicito.",
+        "en": "The project uses localStorage for language and cookie preferences. Analytics and marketing stay disabled until explicit consent is given."
+      },
+      "source": "chatbot-knowledge.json"
+    }
+  ]
+}

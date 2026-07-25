@@ -1,0 +1,77 @@
+[
+  {
+    "id": "cuore-del-borgo",
+    "title": {
+      "it": "Il cuore del borgo",
+      "en": "The heart of the village"
+    },
+    "duration": {
+      "it": "30-45 minuti",
+      "en": "30-45 minutes"
+    },
+    "difficulty": {
+      "it": "Facile",
+      "en": "Easy"
+    },
+    "shortDescription": {
+      "it": "Un primo giro tra centro storico, piazza e fontana.",
+      "en": "A first walk through the historic centre, square and fountain."
+    },
+    "description": {
+      "it": "Itinerario mock pensato per una visita breve e lenta. Le tappe sono dimostrative e vanno controllate sul posto prima dell'uso pubblico definitivo.",
+      "en": "A mock route designed for a short, slow visit. Stops are demonstrative and should be checked on site before final public use."
+    },
+    "placeIds": ["centro-storico", "piazza", "fontana"],
+    "tags": ["borgo", "piazza", "fontana", "village", "square"]
+  },
+  {
+    "id": "memorie-panorami",
+    "title": {
+      "it": "Memorie e panorami",
+      "en": "Memories and viewpoints"
+    },
+    "duration": {
+      "it": "45-60 minuti",
+      "en": "45-60 minutes"
+    },
+    "difficulty": {
+      "it": "Media",
+      "en": "Medium"
+    },
+    "shortDescription": {
+      "it": "Un percorso tra vicoli, scalinate e uno sguardo verso il paesaggio.",
+      "en": "A route through lanes, steps and a look towards the landscape."
+    },
+    "description": {
+      "it": "Percorso dimostrativo per collegare memoria quotidiana e rapporto con il paesaggio. Non include tempi o distanze ufficiali.",
+      "en": "A demo route linking everyday memory and the surrounding landscape. It does not include official times or distances."
+    },
+    "placeIds": ["scalinate", "belvedere", "centro-storico"],
+    "tags": ["panorama", "scalinate", "memoria", "viewpoint", "steps"]
+  },
+  {
+    "id": "tradizioni-comunita",
+    "title": {
+      "it": "Tradizioni e comunita",
+      "en": "Traditions and community"
+    },
+    "duration": {
+      "it": "30 minuti",
+      "en": "30 minutes"
+    },
+    "difficulty": {
+      "it": "Facile",
+      "en": "Easy"
+    },
+    "shortDescription": {
+      "it": "Un itinerario narrativo da completare con contenuti locali verificati.",
+      "en": "A narrative route to complete with verified local content."
+    },
+    "description": {
+      "it": "Itinerario mock che prepara uno spazio per raccontare vita comunitaria e ritorni estivi senza inserire testimonianze non autorizzate.",
+      "en": "A mock route that prepares space for community life and summer returns without adding unauthorised testimonies."
+    },
+    "placeIds": ["piazza", "tradizioni-comunita", "centro-storico"],
+    "tags": ["tradizioni", "comunita", "ritorni", "traditions", "community"]
+  }
+]

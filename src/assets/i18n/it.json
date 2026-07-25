@@ -1,0 +1,159 @@
+{
+  "app": {
+    "name": "Radici San Giovanni Lipioni",
+    "tagline": "Guida digitale interattiva del borgo",
+    "demoNotice": "Progetto dimostrativo: contenuti, coordinate e riferimenti da verificare con fonti locali.",
+    "openMenu": "Apri menu",
+    "closeMenu": "Chiudi menu"
+  },
+  "nav": {
+    "home": "Home",
+    "explore": "Esplora",
+    "itineraries": "Itinerari",
+    "stories": "Racconti",
+    "privacy": "Privacy e Cookie",
+    "chatbot": "Chatbot"
+  },
+  "actions": {
+    "exploreMap": "Esplora la mappa",
+    "askChatbot": "Chiedi al chatbot",
+    "openOnMap": "Apri sulla mappa",
+    "openExternalMap": "Indicazioni esterne",
+    "discoverLinkedPlaces": "Scopri i luoghi collegati",
+    "manageCookies": "Gestisci preferenze cookie",
+    "backHome": "Torna alla Home",
+    "clearFilters": "Pulisci filtri",
+    "send": "Invia",
+    "close": "Chiudi",
+    "acceptAll": "Accetta tutto",
+    "rejectAll": "Rifiuta opzionali",
+    "savePreferences": "Salva preferenze"
+  },
+  "home": {
+    "kicker": "Borgo, memoria, radici",
+    "title": "Radici San Giovanni Lipioni",
+    "intro": "Una guida digitale per esplorare il borgo con mappa interattiva, itinerari lenti, racconti dimostrativi e un chatbot basato solo su contenuti controllati.",
+    "whyTitle": "Perche San Giovanni Lipioni",
+    "whyText": "Il progetto nasce per valorizzare un legame familiare e culturale con il paese, mettendo ordine tra luoghi, memorie e informazioni ampliabili senza inventare storia locale.",
+    "cardsTitle": "Tre modi per iniziare",
+    "placesTitle": "Luoghi",
+    "placesText": "Schede mock e marker per orientarsi nel centro abitato.",
+    "itinerariesTitle": "Itinerari",
+    "itinerariesText": "Percorsi brevi, pensati per turismo lento e visite rispettose.",
+    "storiesTitle": "Racconti",
+    "storiesText": "Memorie dimostrative da sostituire con testimonianze reali autorizzate.",
+    "featuredTitle": "Luoghi in evidenza",
+    "rootsTitle": "Radici, memoria e lentezza",
+    "rootsText": "L'app evita contenuti non verificati e prepara una struttura pronta per foto reali, fonti locali, backend e chatbot evoluto.",
+    "finalCtaTitle": "Inizia dalla mappa",
+    "finalCtaText": "Esplora i punti mock e apri il chatbot quando vuoi chiedere informazioni sui contenuti disponibili."
+  },
+  "explore": {
+    "title": "Esplora la mappa di San Giovanni Lipioni",
+    "intro": "Filtra luoghi, cerca per parole chiave e seleziona un marker per leggere la scheda. La lista resta disponibile anche se la mappa non e comoda da usare.",
+    "searchLabel": "Cerca luoghi o tag",
+    "searchPlaceholder": "Esempio: piazza, panorama, memoria",
+    "categoryLabel": "Categoria",
+    "allCategories": "Tutte",
+    "mapTab": "Mappa",
+    "listTab": "Lista",
+    "results": "Risultati",
+    "noResults": "Nessun luogo trovato con questi filtri.",
+    "selectedPlace": "Luogo selezionato",
+    "verified": "Verificato",
+    "notVerified": "Da verificare",
+    "sourceNotes": "Note fonti",
+    "askAboutPlace": "Chiedi informazioni su questo luogo"
+  },
+  "itineraries": {
+    "title": "Itinerari per scoprire San Giovanni Lipioni",
+    "intro": "Tre percorsi mock per raccontare il borgo in modo semplice. Durate, tappe e coordinate devono essere confermate prima della pubblicazione definitiva.",
+    "duration": "Durata",
+    "difficulty": "Difficolta",
+    "places": "Tappe",
+    "openMap": "Apri itinerario sulla mappa",
+    "ask": "Chiedi al chatbot"
+  },
+  "stories": {
+    "title": "Racconti, memoria e radici",
+    "intro": "Una raccolta dimostrativa dedicata a ritorni, luoghi quotidiani e legami familiari. I testi non sono testimonianze reali.",
+    "themeLabel": "Tema",
+    "allThemes": "Tutti i temi",
+    "mockNotice": "Racconto dimostrativo",
+    "consentNotice": "Nota consenso",
+    "linkedPlaces": "Luoghi collegati"
+  },
+  "privacy": {
+    "title": "Privacy e Cookie",
+    "intro": "Questa pagina descrive in modo semplice come funziona la demo. Il testo e un modello dimostrativo e deve essere validato da un consulente legale prima della pubblicazione definitiva.",
+    "sections": [
+      "Titolare del trattamento: TODO. Email privacy: TODO. Indirizzo o sede: TODO.",
+      "La demo non prevede account, form pubblici, pagamenti o upload di contenuti da parte degli utenti.",
+      "Il localStorage viene usato per lingua selezionata, preferenze cookie e stato UI non sensibile.",
+      "AnalyticsService e mock: nessuno script analytics reale viene caricato prima del consenso esplicito.",
+      "Cookie necessari sempre attivi; analytics, marketing e preferenze sono disattivati di default e modificabili dall'utente.",
+      "I contenuti su luoghi e racconti sono mock: prima della pubblicazione reale servono fonti, liberatorie e verifica legale."
+    ]
+  },
+  "notFound": {
+    "title": "Pagina non trovata",
+    "text": "Il percorso richiesto non esiste o non e ancora previsto nella demo."
+  },
+  "chatbot": {
+    "title": "Assistente Radici",
+    "intro": "Risponde solo usando i contenuti JSON mock.",
+    "placeholder": "Scrivi una domanda sul borgo...",
+    "welcome": "Ciao, posso aiutarti con mappa, luoghi, itinerari, racconti e privacy della demo. Non invento informazioni: se non ho dati, lo dico.",
+    "fallback": "Non ho informazioni sufficienti nei dati mock per rispondere in modo affidabile. Puoi provare con mappa, itinerari, racconti, privacy o con il nome di un luogo presente nella demo.",
+    "openRelatedPlace": "Apri luogo collegato sulla mappa"
+  },
+  "cookie": {
+    "title": "Preferenze cookie",
+    "intro": "Usiamo solo funzioni tecniche nella demo. Le categorie opzionali restano disattivate finche non scegli diversamente.",
+    "necessary": "Necessari",
+    "necessaryText": "Sempre attivi per sicurezza, lingua e preferenze base.",
+    "analytics": "Analytics",
+    "analyticsText": "Mock nella prima versione: nessun servizio reale viene caricato prima del consenso.",
+    "marketing": "Marketing",
+    "marketingText": "Non usato nella demo, disattivato di default.",
+    "preferences": "Preferenze",
+    "preferencesText": "Memorizza scelte non sensibili come lingua e impostazioni UI."
+  },
+  "footer": {
+    "description": "Demo Angular dedicata a San Giovanni Lipioni, pensata per mappa, memoria locale, dati JSON e futura evoluzione con backend.",
+    "repository": "Repository: TODO",
+    "disclaimer": "Contenuti dimostrativi, non fonte ufficiale."
+  },
+  "seo": {
+    "home": {
+      "title": "Radici San Giovanni Lipioni | Guida digitale del borgo",
+      "description": "Scopri San Giovanni Lipioni attraverso una guida digitale con mappa interattiva, luoghi, itinerari, racconti e chatbot informativo.",
+      "canonical": "/"
+    },
+    "explore": {
+      "title": "Esplora San Giovanni Lipioni | Mappa interattiva del borgo",
+      "description": "Esplora San Giovanni Lipioni con una mappa interattiva dei luoghi principali, punti panoramici, tradizioni e percorsi nel borgo.",
+      "canonical": "/esplora"
+    },
+    "itineraries": {
+      "title": "Itinerari a San Giovanni Lipioni | Percorsi nel borgo",
+      "description": "Scopri itinerari semplici per visitare San Giovanni Lipioni tra borgo, panorami, memoria e tradizioni locali.",
+      "canonical": "/itinerari"
+    },
+    "stories": {
+      "title": "Racconti e memoria di San Giovanni Lipioni",
+      "description": "Una raccolta dimostrativa di racconti, memorie e suggestioni legate a San Giovanni Lipioni, alle sue tradizioni e ai suoi luoghi.",
+      "canonical": "/racconti"
+    },
+    "privacy": {
+      "title": "Privacy e Cookie | Radici San Giovanni Lipioni",
+      "description": "Informazioni su privacy, cookie e gestione del consenso per la guida digitale Radici San Giovanni Lipioni.",
+      "canonical": "/privacy-cookie"
+    },
+    "notFound": {
+      "title": "Pagina non trovata | Radici San Giovanni Lipioni",
+      "description": "Pagina non trovata.",
+      "canonical": "/404"
+    }
+  }
+}

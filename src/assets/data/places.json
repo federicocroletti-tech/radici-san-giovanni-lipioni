@@ -1,0 +1,164 @@
+[
+  {
+    "id": "centro-storico",
+    "name": {
+      "it": "Centro storico",
+      "en": "Historic centre"
+    },
+    "category": "heritage",
+    "shortDescription": {
+      "it": "Un punto di partenza prudente per leggere vicoli, pietra e ritmo del borgo.",
+      "en": "A careful starting point for reading lanes, stone and the rhythm of the village."
+    },
+    "description": {
+      "it": "Scheda dimostrativa dedicata al tessuto del borgo. I dettagli storici puntuali devono essere verificati con fonti locali prima della pubblicazione definitiva.",
+      "en": "Demo entry dedicated to the village fabric. Precise historical details must be checked with local sources before final publication."
+    },
+    "latitude": 41.8459,
+    "longitude": 14.5626,
+    "image": "assets/images/borgo-stone.svg",
+    "alt": {
+      "it": "Illustrazione sobria di case in pietra e colline",
+      "en": "Simple illustration of stone houses and hills"
+    },
+    "tags": ["borgo", "vicoli", "pietra", "historic centre", "lanes"],
+    "relatedPlaceIds": ["piazza", "scalinate"],
+    "sourceNotes": ["Contenuto mock da sostituire con fonti locali verificate."],
+    "isVerifiedContent": false
+  },
+  {
+    "id": "piazza",
+    "name": {
+      "it": "Piazza e punto d'incontro",
+      "en": "Square and meeting point"
+    },
+    "category": "community",
+    "shortDescription": {
+      "it": "Una scheda narrativa sul valore della piazza come luogo di incontro.",
+      "en": "A narrative entry about the square as a meeting place."
+    },
+    "description": {
+      "it": "La piazza viene descritta qui come luogo simbolico di socialita e ritorni. Il testo e intenzionalmente generico finche non saranno raccolte testimonianze reali autorizzate.",
+      "en": "The square is described here as a symbolic place for social life and return visits. The text is intentionally general until authorised real testimonies are collected."
+    },
+    "latitude": 41.84615,
+    "longitude": 14.56235,
+    "image": "assets/images/piazza-memory.svg",
+    "alt": {
+      "it": "Illustrazione di una piccola piazza di borgo",
+      "en": "Illustration of a small village square"
+    },
+    "tags": ["piazza", "comunita", "ritorni", "square", "community"],
+    "relatedPlaceIds": ["centro-storico", "fontana"],
+    "sourceNotes": ["Descrizione dimostrativa non storica."],
+    "isVerifiedContent": false
+  },
+  {
+    "id": "fontana",
+    "name": {
+      "it": "Fontana del borgo",
+      "en": "Village fountain"
+    },
+    "category": "memory",
+    "shortDescription": {
+      "it": "Un luogo narrativo da completare con informazioni locali verificate.",
+      "en": "A narrative place to complete with verified local information."
+    },
+    "description": {
+      "it": "Questa scheda usa la fontana come riferimento di memoria quotidiana. Non attribuisce date, nomi o vicende storiche non controllate.",
+      "en": "This entry uses the fountain as a reference for everyday memory. It does not assign unverified dates, names or historical events."
+    },
+    "latitude": 41.84565,
+    "longitude": 14.56295,
+    "image": "assets/images/fontana.svg",
+    "alt": {
+      "it": "Illustrazione di una fontana semplice",
+      "en": "Illustration of a simple fountain"
+    },
+    "tags": ["fontana", "memoria", "acqua", "fountain", "memory"],
+    "relatedPlaceIds": ["piazza", "scalinate"],
+    "sourceNotes": ["Coordinate e contenuti mock modificabili."],
+    "isVerifiedContent": false
+  },
+  {
+    "id": "scalinate",
+    "name": {
+      "it": "Scalinate e vicoli",
+      "en": "Steps and lanes"
+    },
+    "category": "heritage",
+    "shortDescription": {
+      "it": "Percorsi brevi tra case, scorci e passaggi del centro abitato.",
+      "en": "Short paths among houses, glimpses and passages in the village."
+    },
+    "description": {
+      "it": "Scheda pensata per invitare a muoversi lentamente nel borgo. Ogni riferimento puntuale andra verificato prima di trasformare il contenuto in guida definitiva.",
+      "en": "An entry designed to encourage slow movement through the village. Any precise reference should be checked before turning this into a final guide."
+    },
+    "latitude": 41.84535,
+    "longitude": 14.5622,
+    "image": "assets/images/scalinate.svg",
+    "alt": {
+      "it": "Illustrazione di scalinate tra case di borgo",
+      "en": "Illustration of steps among village houses"
+    },
+    "tags": ["scalinate", "vicoli", "cammino", "steps", "lanes"],
+    "relatedPlaceIds": ["centro-storico", "belvedere"],
+    "sourceNotes": ["Percorso mock da verificare sul posto."],
+    "isVerifiedContent": false
+  },
+  {
+    "id": "belvedere",
+    "name": {
+      "it": "Punto panoramico",
+      "en": "Viewpoint"
+    },
+    "category": "viewpoint",
+    "shortDescription": {
+      "it": "Un riferimento panoramico dimostrativo per raccontare colline e paesaggio.",
+      "en": "A demo viewpoint reference for describing hills and landscape."
+    },
+    "description": {
+      "it": "Il punto e indicativo e deve essere verificato con sopralluogo. La scheda valorizza il rapporto tra borgo e paesaggio senza aggiungere dati geografici non controllati.",
+      "en": "The point is indicative and should be checked on site. The entry highlights the relationship between village and landscape without adding unchecked geographical claims."
+    },
+    "latitude": 41.84635,
+    "longitude": 14.5632,
+    "image": "assets/images/panorama.svg",
+    "alt": {
+      "it": "Illustrazione di colline viste da un borgo",
+      "en": "Illustration of hills seen from a village"
+    },
+    "tags": ["panorama", "colline", "paesaggio", "viewpoint", "hills"],
+    "relatedPlaceIds": ["scalinate", "centro-storico"],
+    "sourceNotes": ["Coordinate mock e descrizione ampliabile."],
+    "isVerifiedContent": false
+  },
+  {
+    "id": "tradizioni-comunita",
+    "name": {
+      "it": "Tradizioni e comunita",
+      "en": "Traditions and community"
+    },
+    "category": "community",
+    "shortDescription": {
+      "it": "Uno spazio dimostrativo per contenuti futuri su feste, ritorni e vita comunitaria.",
+      "en": "A demo space for future content about feasts, return visits and community life."
+    },
+    "description": {
+      "it": "Questa scheda non descrive eventi specifici: prepara il progetto a ospitare informazioni verificate e autorizzate da persone o associazioni locali.",
+      "en": "This entry does not describe specific events: it prepares the project to host verified information authorised by local people or associations."
+    },
+    "latitude": 41.84595,
+    "longitude": 14.56185,
+    "image": "assets/images/tradizioni.svg",
+    "alt": {
+      "it": "Illustrazione di persone riunite in un borgo",
+      "en": "Illustration of people gathered in a village"
+    },
+    "tags": ["tradizioni", "comunita", "feste", "traditions", "community"],
+    "relatedPlaceIds": ["piazza"],
+    "sourceNotes": ["Contenuto dimostrativo, nessuna testimonianza reale inclusa."],
+    "isVerifiedContent": false
+  }
+]

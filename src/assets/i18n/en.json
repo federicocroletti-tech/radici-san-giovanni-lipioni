@@ -1,0 +1,159 @@
+{
+  "app": {
+    "name": "Radici San Giovanni Lipioni",
+    "tagline": "Interactive digital guide to the village",
+    "demoNotice": "Demo project: content, coordinates and references must be checked with local sources.",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu"
+  },
+  "nav": {
+    "home": "Home",
+    "explore": "Explore",
+    "itineraries": "Itineraries",
+    "stories": "Stories",
+    "privacy": "Privacy and Cookies",
+    "chatbot": "Chatbot"
+  },
+  "actions": {
+    "exploreMap": "Explore the map",
+    "askChatbot": "Ask the chatbot",
+    "openOnMap": "Open on map",
+    "openExternalMap": "External directions",
+    "discoverLinkedPlaces": "Discover linked places",
+    "manageCookies": "Manage cookie preferences",
+    "backHome": "Back to Home",
+    "clearFilters": "Clear filters",
+    "send": "Send",
+    "close": "Close",
+    "acceptAll": "Accept all",
+    "rejectAll": "Reject optional",
+    "savePreferences": "Save preferences"
+  },
+  "home": {
+    "kicker": "Village, memory, roots",
+    "title": "Radici San Giovanni Lipioni",
+    "intro": "A digital guide to explore the village with an interactive map, slow itineraries, demo stories and a chatbot based only on controlled content.",
+    "whyTitle": "Why San Giovanni Lipioni",
+    "whyText": "The project starts from a family and cultural bond with the village, arranging places, memories and expandable information without inventing local history.",
+    "cardsTitle": "Three ways to begin",
+    "placesTitle": "Places",
+    "placesText": "Mock entries and markers to get oriented in the settlement.",
+    "itinerariesTitle": "Itineraries",
+    "itinerariesText": "Short routes for slow tourism and respectful visits.",
+    "storiesTitle": "Stories",
+    "storiesText": "Demo memories to replace with authorised real testimonies.",
+    "featuredTitle": "Featured places",
+    "rootsTitle": "Roots, memory and slowness",
+    "rootsText": "The app avoids unverified content and prepares a structure ready for real photos, local sources, backend and an evolved chatbot.",
+    "finalCtaTitle": "Start from the map",
+    "finalCtaText": "Explore the mock points and open the chatbot whenever you want to ask about available content."
+  },
+  "explore": {
+    "title": "Explore the San Giovanni Lipioni map",
+    "intro": "Filter places, search by keyword and select a marker to read the entry. The list stays available when the map is not convenient to use.",
+    "searchLabel": "Search places or tags",
+    "searchPlaceholder": "Example: square, viewpoint, memory",
+    "categoryLabel": "Category",
+    "allCategories": "All",
+    "mapTab": "Map",
+    "listTab": "List",
+    "results": "Results",
+    "noResults": "No places found with these filters.",
+    "selectedPlace": "Selected place",
+    "verified": "Verified",
+    "notVerified": "To verify",
+    "sourceNotes": "Source notes",
+    "askAboutPlace": "Ask about this place"
+  },
+  "itineraries": {
+    "title": "Itineraries to discover San Giovanni Lipioni",
+    "intro": "Three mock routes to describe the village simply. Durations, stops and coordinates must be confirmed before final publication.",
+    "duration": "Duration",
+    "difficulty": "Difficulty",
+    "places": "Stops",
+    "openMap": "Open itinerary on map",
+    "ask": "Ask the chatbot"
+  },
+  "stories": {
+    "title": "Stories, memory and roots",
+    "intro": "A demo collection about return visits, everyday places and family ties. The texts are not real testimonies.",
+    "themeLabel": "Theme",
+    "allThemes": "All themes",
+    "mockNotice": "Demo story",
+    "consentNotice": "Consent note",
+    "linkedPlaces": "Linked places"
+  },
+  "privacy": {
+    "title": "Privacy and Cookies",
+    "intro": "This page explains simply how the demo works. This text is a demonstration model and must be validated by a legal consultant before final publication.",
+    "sections": [
+      "Data controller: TODO. Privacy email: TODO. Address or registered office: TODO.",
+      "The demo does not include accounts, public forms, payments or user uploads.",
+      "localStorage is used for selected language, cookie preferences and non-sensitive UI state.",
+      "AnalyticsService is mock: no real analytics script is loaded before explicit consent.",
+      "Necessary cookies are always active; analytics, marketing and preferences are disabled by default and editable by the user.",
+      "Place and story content is mock: before real publication, sources, releases and legal checks are required."
+    ]
+  },
+  "notFound": {
+    "title": "Page not found",
+    "text": "The requested route does not exist or is not planned in this demo yet."
+  },
+  "chatbot": {
+    "title": "Radici assistant",
+    "intro": "Answers only using mock JSON content.",
+    "placeholder": "Write a question about the village...",
+    "welcome": "Hello, I can help with the map, places, itineraries, stories and demo privacy. I do not invent information: if I do not have data, I say so.",
+    "fallback": "I do not have enough information in the mock data to answer reliably. Try map, itineraries, stories, privacy or the name of a place included in the demo.",
+    "openRelatedPlace": "Open linked place on the map"
+  },
+  "cookie": {
+    "title": "Cookie preferences",
+    "intro": "The demo only uses technical functions. Optional categories remain disabled until you choose otherwise.",
+    "necessary": "Necessary",
+    "necessaryText": "Always active for security, language and basic preferences.",
+    "analytics": "Analytics",
+    "analyticsText": "Mock in the first version: no real service is loaded before consent.",
+    "marketing": "Marketing",
+    "marketingText": "Not used in the demo, disabled by default.",
+    "preferences": "Preferences",
+    "preferencesText": "Stores non-sensitive choices such as language and UI settings."
+  },
+  "footer": {
+    "description": "Angular demo dedicated to San Giovanni Lipioni, designed for map, local memory, JSON data and future backend evolution.",
+    "repository": "Repository: TODO",
+    "disclaimer": "Demo content, not an official source."
+  },
+  "seo": {
+    "home": {
+      "title": "Radici San Giovanni Lipioni | Digital village guide",
+      "description": "Discover San Giovanni Lipioni through a digital guide with interactive map, places, itineraries, stories and an informational chatbot.",
+      "canonical": "/"
+    },
+    "explore": {
+      "title": "Explore San Giovanni Lipioni | Interactive village map",
+      "description": "Explore San Giovanni Lipioni with an interactive map of main places, viewpoints, traditions and village routes.",
+      "canonical": "/esplora"
+    },
+    "itineraries": {
+      "title": "Itineraries in San Giovanni Lipioni | Village routes",
+      "description": "Discover simple itineraries to visit San Giovanni Lipioni among the village, viewpoints, memory and local traditions.",
+      "canonical": "/itinerari"
+    },
+    "stories": {
+      "title": "Stories and memory of San Giovanni Lipioni",
+      "description": "A demo collection of stories, memories and reflections connected to San Giovanni Lipioni, its traditions and its places.",
+      "canonical": "/racconti"
+    },
+    "privacy": {
+      "title": "Privacy and Cookies | Radici San Giovanni Lipioni",
+      "description": "Information about privacy, cookies and consent management for the Radici San Giovanni Lipioni digital guide.",
+      "canonical": "/privacy-cookie"
+    },
+    "notFound": {
+      "title": "Page not found | Radici San Giovanni Lipioni",
+      "description": "Page not found.",
+      "canonical": "/404"
+    }
+  }
+}

@@ -1,0 +1,68 @@
+[
+  {
+    "id": "la-piazza-dei-ritorni",
+    "title": {
+      "it": "La piazza dei ritorni",
+      "en": "The square of return visits"
+    },
+    "theme": "ritorni",
+    "excerpt": {
+      "it": "Racconto dimostrativo sul momento in cui chi torna al paese riconosce volti, suoni e abitudini.",
+      "en": "Demo story about the moment when those returning to the village recognise faces, sounds and habits."
+    },
+    "content": {
+      "it": "Questo racconto e un esempio editoriale. Deve essere sostituito da testimonianze reali raccolte con consenso esplicito.",
+      "en": "This story is an editorial example. It should be replaced by real testimonies collected with explicit consent."
+    },
+    "relatedPlaceIds": ["piazza", "centro-storico"],
+    "isMock": true,
+    "consentRequiredNotice": {
+      "it": "Per pubblicare ricordi reali servono consenso scritto e liberatoria dedicata.",
+      "en": "Publishing real memories requires written consent and a dedicated release."
+    }
+  },
+  {
+    "id": "la-fontana-e-le-voci",
+    "title": {
+      "it": "La fontana e le voci",
+      "en": "The fountain and the voices"
+    },
+    "theme": "fontana",
+    "excerpt": {
+      "it": "Una suggestione mock sulla memoria quotidiana legata a un luogo semplice.",
+      "en": "A mock reflection on everyday memory connected to a simple place."
+    },
+    "content": {
+      "it": "Il testo non documenta un fatto storico: mostra come potra essere raccontato un luogo quando saranno disponibili fonti e testimonianze.",
+      "en": "The text does not document a historical fact: it shows how a place could be narrated once sources and testimonies are available."
+    },
+    "relatedPlaceIds": ["fontana"],
+    "isMock": true,
+    "consentRequiredNotice": {
+      "it": "Le testimonianze reali non devono includere dati personali non autorizzati.",
+      "en": "Real testimonies must not include unauthorised personal data."
+    }
+  },
+  {
+    "id": "scalinate-lente",
+    "title": {
+      "it": "Scalinate lente",
+      "en": "Slow steps"
+    },
+    "theme": "scalinate",
+    "excerpt": {
+      "it": "Un breve testo dimostrativo sul camminare piano tra passaggi e scorci.",
+      "en": "A short demo text about walking slowly through passages and glimpses."
+    },
+    "content": {
+      "it": "Questo contenuto serve solo a mostrare il formato della pagina Racconti e andra ampliato con materiale verificato.",
+      "en": "This content only shows the Stories page format and should be expanded with verified material."
+    },
+    "relatedPlaceIds": ["scalinate", "belvedere"],
+    "isMock": true,
+    "consentRequiredNotice": {
+      "it": "Eventuali foto di persone richiedono consenso specifico alla pubblicazione.",
+      "en": "Any photos of people require specific publication consent."
+    }
+  }
+]

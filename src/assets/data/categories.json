@@ -1,0 +1,34 @@
+[
+  {
+    "id": "heritage",
+    "label": {
+      "it": "Luoghi del borgo",
+      "en": "Village places"
+    },
+    "icon": "stone"
+  },
+  {
+    "id": "viewpoint",
+    "label": {
+      "it": "Panorami",
+      "en": "Viewpoints"
+    },
+    "icon": "landscape"
+  },
+  {
+    "id": "community",
+    "label": {
+      "it": "Comunità",
+      "en": "Community"
+    },
+    "icon": "people"
+  },
+  {
+    "id": "memory",
+    "label": {
+      "it": "Memoria",
+      "en": "Memory"
+    },
+    "icon": "memory"
+  }
+]
