@@ -10,9 +10,9 @@ export interface Place {
   longitude: number;
   image: string;
   alt: LocalizedText;
+  detailsPath?: string;
   tags: string[];
   relatedPlaceIds: string[];
-  sourceNotes: string[];
   isVerifiedContent: boolean;
 }
 

@@ -11,7 +11,12 @@ import { LanguageService } from '../../../core/services/language.service';
       <div>
         <strong>{{ i18n.t('app.name') }}</strong>
         <p>{{ i18n.t('footer.description') }}</p>
-        <p class="muted">{{ i18n.t('footer.disclaimer') }}</p>
+        <p class="muted">
+          {{ i18n.t('footer.rights') }}
+          <a href="https://federico-croletti-site.onrender.com" target="_blank" rel="noopener">
+            Federico Croletti
+          </a>
+        </p>
       </div>
       <nav aria-label="Footer navigation">
         <a routerLink="/">{{ i18n.t('nav.home') }}</a>

@@ -7,7 +7,6 @@ import { PlacesService } from '../../core/services/places.service';
 import { SeoService } from '../../core/services/seo.service';
 import { CategoryFilterComponent } from '../../shared/components/category-filter/category-filter.component';
 import { MapComponent } from '../../shared/components/map/map.component';
-import { PlaceCardComponent } from '../../shared/components/place-card/place-card.component';
 import { PlaceDetailDrawerComponent } from '../../shared/components/place-detail-drawer/place-detail-drawer.component';
 import { SearchInputComponent } from '../../shared/components/search-input/search-input.component';
 
@@ -16,7 +15,6 @@ import { SearchInputComponent } from '../../shared/components/search-input/searc
   imports: [
     CategoryFilterComponent,
     MapComponent,
-    PlaceCardComponent,
     PlaceDetailDrawerComponent,
     SearchInputComponent,
   ],
@@ -27,8 +25,8 @@ import { SearchInputComponent } from '../../shared/components/search-input/searc
       <p>{{ i18n.t('explore.intro') }}</p>
     </section>
 
-    <section class="explore-layout">
-      <aside class="filters-panel">
+    <section class="explore-layout" [attr.aria-label]="i18n.t('explore.mapAreaLabel')">
+      <aside class="filters-panel" [attr.aria-label]="i18n.t('explore.filtersLabel')">
         <app-search-input
           [label]="i18n.t('explore.searchLabel')"
           [placeholder]="i18n.t('explore.searchPlaceholder')"
@@ -47,26 +45,7 @@ import { SearchInputComponent } from '../../shared/components/search-input/searc
         </button>
       </aside>
 
-      <div class="mobile-tabs">
-        <button
-          type="button"
-          class="chip"
-          [class.active]="activeTab() === 'map'"
-          (click)="activeTab.set('map')"
-        >
-          {{ i18n.t('explore.mapTab') }}
-        </button>
-        <button
-          type="button"
-          class="chip"
-          [class.active]="activeTab() === 'list'"
-          (click)="activeTab.set('list')"
-        >
-          {{ i18n.t('explore.listTab') }}
-        </button>
-      </div>
-
-      <div class="map-panel" [class.mobile-hidden]="activeTab() !== 'map'">
+      <div class="map-panel">
         <app-map
           [places]="filteredPlaces()"
           [selectedPlaceId]="selectedPlaceId()"
@@ -74,22 +53,8 @@ import { SearchInputComponent } from '../../shared/components/search-input/searc
         />
       </div>
 
-      <aside class="places-panel" [class.mobile-hidden]="activeTab() !== 'list'">
+      <aside class="places-panel">
         <app-place-detail-drawer [place]="selectedPlace()" (closed)="selectedPlaceId.set(null)" />
-        <div class="places-list">
-          <h2>{{ i18n.t('explore.results') }} ({{ filteredPlaces().length }})</h2>
-          @if (filteredPlaces().length) {
-            @for (place of filteredPlaces(); track place.id) {
-              <app-place-card
-                [place]="place"
-                [selected]="selectedPlaceId() === place.id"
-                (selectedPlace)="selectPlace($event)"
-              />
-            }
-          } @else {
-            <p>{{ i18n.t('explore.noResults') }}</p>
-          }
-        </div>
       </aside>
     </section>
   `,
@@ -102,7 +67,6 @@ export class ExplorePage {
   readonly selectedCategory = signal('all');
   readonly selectedPlaceId = signal<string | null>(null);
   readonly routePlaceIds = signal<string[]>([]);
-  readonly activeTab = signal<'map' | 'list'>('map');
   private readonly router = inject(Router);
   private readonly route = inject(ActivatedRoute);
   private readonly destroyRef = inject(DestroyRef);
@@ -151,7 +115,6 @@ export class ExplorePage {
 
   selectPlace(place: Place): void {
     this.selectedPlaceId.set(place.id);
-    this.activeTab.set('list');
   }
 
   clearFilters(): void {

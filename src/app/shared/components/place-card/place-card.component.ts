@@ -15,9 +15,6 @@ import { LanguageService } from '../../../core/services/language.service';
       <span class="eyebrow">{{ categoryLabel }}</span>
       <strong>{{ i18n.localize(place.name) }}</strong>
       <span>{{ i18n.localize(place.shortDescription) }}</span>
-      <small>{{
-        place.isVerifiedContent ? i18n.t('explore.verified') : i18n.t('explore.notVerified')
-      }}</small>
     </button>
   `,
 })

@@ -4,29 +4,26 @@
     "name": { "it": "Centro storico", "en": "Historic centre", "fr": "Centre historique" },
     "category": "heritage",
     "shortDescription": {
-      "it": "Nucleo storico mappato come quartiere Lu Pajose su OpenStreetMap.",
-      "en": "Historic core mapped as the Lu Pajose neighbourhood on OpenStreetMap.",
-      "fr": "Noyau historique cartographié comme quartier Lu Pajose sur OpenStreetMap."
+      "it": "Borgo di crinale con vicoli, passaggi arcuati e affacci sulla valle del Trigno.",
+      "en": "Ridge village with lanes, arched passages and views over the Trigno valley.",
+      "fr": "Village de crete avec ruelles, passages voutes et vues sur la vallee du Trigno."
     },
     "description": {
-      "it": "Punto reale da OSM per orientare la visita nel centro storico. La scheda non aggiunge dettagli storici non verificati: serve come ingresso alla lettura del borgo e dei suoi percorsi interni.",
-      "en": "A real OSM point used to orient the visit in the historic centre. This entry does not add unverified historical details: it is a starting point for reading the village and its inner routes.",
-      "fr": "Point réel issu d’OSM pour orienter la visite dans le centre historique. La fiche n’ajoute pas de détails historiques non vérifiés : elle sert d’entrée pour lire le village et ses parcours internes."
+      "it": "Il centro storico di San Giovanni Lipioni occupa un poggio dell'Alto Vastese e conserva l'impianto compatto di un borgo cresciuto lungo un asse principale. Le case seguono il crinale, alternando vicoli, gradinate e scorci verso la campagna. La visita funziona bene a passo lento: dalla parte alta si leggono la chiesa, i volumi in pietra e il rapporto continuo tra abitato e paesaggio.",
+      "en": "The historic centre of San Giovanni Lipioni sits on a hill in the Alto Vastese and preserves the compact layout of a village grown along a main ridge. Houses follow the crest, alternating lanes, steps and views toward the countryside. It is best explored slowly, reading the church, stone volumes and the constant relation between settlement and landscape.",
+      "fr": "Le centre historique de San Giovanni Lipioni occupe une hauteur de l'Alto Vastese et conserve la forme compacte d'un village developpe le long d'un axe principal. Les maisons suivent la crete, entre ruelles, escaliers et vues vers la campagne. La visite se prete a un rythme lent, entre l'eglise, les volumes en pierre et le dialogue avec le paysage."
     },
     "latitude": 41.8429366,
     "longitude": 14.5621116,
-    "image": "assets/images/borgo-stone.svg",
+    "image": "assets/images/san-giovanni-lipioni-borgo.jpg",
     "alt": {
-      "it": "Illustrazione sobria di case in pietra e colline",
-      "en": "Simple illustration of stone houses and hills",
-      "fr": "Illustration sobre de maisons en pierre et de collines"
+      "it": "Veduta del borgo di San Giovanni Lipioni tra colline e case in pietra",
+      "en": "View of San Giovanni Lipioni village among hills and stone houses",
+      "fr": "Vue du village de San Giovanni Lipioni entre collines et maisons en pierre"
     },
+    "detailsPath": "assets/content/places/centro-storico.md",
     "tags": ["centro storico", "lu pajose", "borgo", "vicoli", "historic centre", "village"],
     "relatedPlaceIds": ["piazza-largo-popolo", "salita-della-chiesa"],
-    "sourceNotes": [
-      "OpenStreetMap node 8333792111: Centro storico, place=neighbourhood.",
-      "Descrizione editoriale prudente da completare con fonti locali."
-    ],
     "isVerifiedContent": true
   },
   {
@@ -38,26 +35,26 @@
     },
     "category": "community",
     "shortDescription": {
-      "it": "Piazza reale mappata nel borgo, utile come riferimento di arrivo e incontro.",
-      "en": "A real mapped square in the village, useful as an arrival and meeting reference.",
-      "fr": "Place réelle cartographiée dans le village, utile comme point d’arrivée et de rencontre."
+      "it": "Spazio centrale del borgo, adatto come punto di arrivo e di incontro.",
+      "en": "Central village space, useful as an arrival and meeting point.",
+      "fr": "Espace central du village, pratique comme point d'arrivee et de rencontre."
     },
     "description": {
-      "it": "La piazza e indicata in OSM come square. Il testo mantiene un tono descrittivo e non attribuisce eventi o tradizioni specifiche senza fonti verificabili.",
-      "en": "The square is tagged in OSM as a square. The text remains descriptive and does not assign specific events or traditions without verifiable sources.",
-      "fr": "La place est indiquée dans OSM comme square. Le texte reste descriptif et n’attribue pas d’événements ou de traditions spécifiques sans sources vérifiables."
+      "it": "Piazza Largo del Popolo e uno degli spazi piu leggibili del centro abitato: un punto semplice da usare come riferimento prima di entrare nei vicoli o raggiungere la chiesa. La sua scala raccolta racconta il carattere quotidiano del paese, fatto di soste brevi, attraversamenti e incontri. Da qui la mappa collega facilmente la mostra valdese, il centro storico e le tappe principali della visita.",
+      "en": "Piazza Largo del Popolo is one of the clearest spaces in the village centre: an easy reference before entering the lanes or walking toward the church. Its modest scale reflects the everyday character of the village, made of short stops, crossings and meetings. From here the map connects the Waldensian exhibition, the historic centre and the main stops of the visit.",
+      "fr": "Piazza Largo del Popolo est l'un des espaces les plus lisibles du centre : un repere simple avant d'entrer dans les ruelles ou de rejoindre l'eglise. Son echelle discrete evoque la vie quotidienne du village, faite de pauses, de passages et de rencontres. Depuis cette place, la carte relie facilement l'exposition vaudoise, le centre historique et les etapes principales."
     },
     "latitude": 41.8440329,
     "longitude": 14.5617977,
-    "image": "assets/images/piazza-memory.svg",
+    "image": "assets/images/san-giovanni-lipioni-borgo.jpg",
     "alt": {
-      "it": "Illustrazione di una piccola piazza di borgo",
-      "en": "Illustration of a small village square",
-      "fr": "Illustration d’une petite place de village"
+      "it": "Case e chiesa del borgo viste dal paesaggio circostante",
+      "en": "Village houses and church seen from the surrounding landscape",
+      "fr": "Maisons et eglise du village vues depuis le paysage environnant"
     },
+    "detailsPath": "assets/content/places/piazza-largo-popolo.md",
     "tags": ["piazza", "largo del popolo", "incontro", "square", "community"],
     "relatedPlaceIds": ["mostra-valdese", "chiesa-santa-maria"],
-    "sourceNotes": ["OpenStreetMap way 298156117: Piazza Largo del Popolo, place=square."],
     "isVerifiedContent": true
   },
   {
@@ -69,30 +66,26 @@
     },
     "category": "memory",
     "shortDescription": {
-      "it": "Museo storico mappato in Piazza Largo del Popolo, con apertura su appuntamento secondo OSM.",
-      "en": "History museum mapped in Piazza Largo del Popolo, listed by OSM as open by appointment.",
-      "fr": "Musée historique cartographié sur la Piazza Largo del Popolo, indiqué par OSM comme ouvert sur rendez-vous."
+      "it": "Presidio culturale dedicato alla memoria valdese nel cuore del paese.",
+      "en": "Cultural memory point dedicated to the Waldensian experience in the village centre.",
+      "fr": "Lieu culturel consacre a la memoire vaudoise au coeur du village."
     },
     "description": {
-      "it": "La fonte OSM colloca la Mostra Permanente Esperienza Valdese in Piazza Largo del Popolo, nei locali del Centro Culturale Comunale ex Chiesa Valdese, e indica apertura su appuntamento. La scheda valorizza il luogo come presidio di memoria culturale, senza aggiungere dettagli non verificati.",
-      "en": "The OSM source places the Permanent Exhibition about the Waldensian experience in Piazza Largo del Popolo, inside the municipal cultural centre, former Waldensian church, and lists opening by appointment. This entry treats it as a cultural memory point without adding unverified details.",
-      "fr": "La source OSM situe l’Exposition permanente sur l’expérience vaudoise à Piazza Largo del Popolo, dans le centre culturel communal, ancienne église vaudoise, et indique une ouverture sur rendez-vous. La fiche présente le lieu comme point de mémoire culturelle sans ajouter de détails non vérifiés."
+      "it": "La Mostra Permanente Esperienza Valdese valorizza una traccia culturale importante per San Giovanni Lipioni e per la memoria religiosa dell'area. Collocata nel cuore del borgo, invita a leggere il paese anche attraverso migrazioni, appartenenze e minoranze. Nella visita digitale diventa una tappa di approfondimento: non solo un punto sulla mappa, ma un invito a collegare luoghi, storie familiari e identita collettive.",
+      "en": "The Permanent Exhibition on the Waldensian Experience highlights an important cultural trace for San Giovanni Lipioni and for the religious memory of the area. Set in the village centre, it invites visitors to read the place through migration, belonging and minorities. In the digital visit it becomes a deeper stop: not just a point on the map, but an invitation to connect places, family stories and collective identities.",
+      "fr": "L'Exposition permanente sur l'experience vaudoise met en valeur une trace culturelle importante pour San Giovanni Lipioni et pour la memoire religieuse du territoire. Situee au coeur du village, elle invite a lire le lieu a travers migrations, appartenances et minorites. Dans la visite numerique, elle devient une etape d'approfondissement qui relie lieux, histoires familiales et identites collectives."
     },
     "latitude": 41.8440321,
     "longitude": 14.5615785,
-    "image": "assets/images/tradizioni.svg",
+    "image": "assets/images/san-giovanni-lipioni-panorama.jpg",
     "alt": {
-      "it": "Illustrazione di persone riunite in un borgo",
-      "en": "Illustration of people gathered in a village",
-      "fr": "Illustration de personnes réunies dans un village"
+      "it": "Panorama di San Giovanni Lipioni con il profilo della chiesa e delle case",
+      "en": "Panorama of San Giovanni Lipioni with the church and houses skyline",
+      "fr": "Panorama de San Giovanni Lipioni avec le profil de l'eglise et des maisons"
     },
+    "detailsPath": "assets/content/places/mostra-valdese.md",
     "tags": ["mostra", "valdese", "museo", "memoria", "museum", "waldensian"],
     "relatedPlaceIds": ["piazza-largo-popolo", "centro-storico"],
-    "sourceNotes": [
-      "OpenStreetMap node 8001434549: tourism=museum, museum=history, opening_hours=by appointment.",
-      "OSM description: mostra inaugurata nei locali del Centro Culturale Comunale ex Chiesa Valdese il 13 Agosto 2017.",
-      "Website indicato da OSM: https://valdesi-sgl.business.site"
-    ],
     "isVerifiedContent": true
   },
   {
@@ -104,29 +97,26 @@
     },
     "category": "heritage",
     "shortDescription": {
-      "it": "Chiesa cattolica mappata nel centro abitato.",
-      "en": "Catholic church mapped in the village centre.",
-      "fr": "Église catholique cartographiée dans le centre habité."
+      "it": "Chiesa parrocchiale in posizione dominante, riconoscibile nel profilo del borgo.",
+      "en": "Parish church in a dominant position, clearly visible in the village skyline.",
+      "fr": "Eglise paroissiale en position dominante, visible dans le profil du village."
     },
     "description": {
-      "it": "La scheda Chiese Italiane della CEI descrive Santa Maria delle Grazie come chiesa parrocchiale che domina l'abitato con la sua mole in pietra. La configurazione planimetrica attuale viene ricondotta circa alla meta del Seicento; la facciata a capanna, con registri separati da cornice marcapiano e decorazioni in pietra, mostra interventi maturati nei secoli. La sintesi qui e originale e va comunque verificata con la diocesi per uso ufficiale.",
-      "en": "The Italian Churches database by CEI describes Santa Maria delle Grazie as the parish church overlooking the settlement with its stone mass. Its current plan is dated around the mid-seventeenth century; the gabled facade, divided by a strong stringcourse and stone architectural decorations, reflects changes over time. This is an original summary and should still be checked with the diocese before official use.",
-      "fr": "La base Chiese Italiane de la CEI décrit Santa Maria delle Grazie comme l’église paroissiale dominant le village par sa masse en pierre. Le plan actuel est rattaché environ au milieu du XVIIe siècle ; la façade à pignon, divisée par une forte corniche et des décors architecturaux en pierre, reflète des transformations au fil du temps. Cette synthèse est originale et doit être vérifiée auprès du diocèse avant tout usage officiel."
+      "it": "Santa Maria delle Grazie domina San Giovanni Lipioni con una presenza architettonica netta. Le descrizioni storiche la collegano a fasi costruttive tra Cinquecento e Seicento, con una facciata a capanna scandita da elementi in pietra e decorazioni recuperate nel tempo. Per chi visita il borgo e il punto che organizza lo sguardo: dalla chiesa si comprendono la forma del paese, il crinale e il rapporto con le colline circostanti.",
+      "en": "Santa Maria delle Grazie dominates San Giovanni Lipioni with a clear architectural presence. Historical descriptions connect it to building phases between the sixteenth and seventeenth centuries, with a gabled facade marked by stone elements and reused decorative fragments. For visitors it is the point that organises the view: from the church one understands the village form, the ridge and the surrounding hills.",
+      "fr": "Santa Maria delle Grazie domine San Giovanni Lipioni par une presence architecturale marquee. Les descriptions historiques la relient a des phases de construction entre le XVIe et le XVIIe siecle, avec une facade a pignon scandee par des elements en pierre. Pour la visite, c'est le point qui organise le regard sur la forme du village, la crete et les collines environnantes."
     },
     "latitude": 41.8430544,
     "longitude": 14.5619544,
-    "image": "assets/images/borgo-stone.svg",
+    "image": "assets/images/san-giovanni-lipioni-panorama.jpg",
     "alt": {
-      "it": "Illustrazione sobria di case in pietra e colline",
-      "en": "Simple illustration of stone houses and hills",
-      "fr": "Illustration sobre de maisons en pierre et de collines"
+      "it": "Chiesa e abitato di San Giovanni Lipioni visti dal lato panoramico",
+      "en": "Church and settlement of San Giovanni Lipioni seen from the panoramic side",
+      "fr": "Eglise et habitat de San Giovanni Lipioni vus depuis le cote panoramique"
     },
+    "detailsPath": "assets/content/places/chiesa-santa-maria.md",
     "tags": ["chiesa", "santa maria", "grazie", "church", "heritage"],
     "relatedPlaceIds": ["salita-della-chiesa", "piazza-largo-popolo"],
-    "sourceNotes": [
-      "OpenStreetMap way 663983163: amenity=place_of_worship, building=church, denomination=roman_catholic.",
-      "Chiese Italiane CEI, scheda 26939: Chiesa di Santa Maria delle Grazie <San Giovanni Lipioni>, ultima modifica 22/02/2016."
-    ],
     "isVerifiedContent": true
   },
   {
@@ -138,26 +128,26 @@
     },
     "category": "heritage",
     "shortDescription": {
-      "it": "Tratto a gradini mappato vicino alla chiesa, utile per raccontare la mobilita lenta nel borgo.",
-      "en": "Mapped stepped lane near the church, useful for describing slow movement through the village.",
-      "fr": "Passage en escalier cartographié près de l’église, utile pour raconter la mobilité lente dans le village."
+      "it": "Tratto a gradini che racconta la mobilita lenta del borgo.",
+      "en": "Stepped lane that tells the story of slow movement through the village.",
+      "fr": "Passage en escalier qui raconte la mobilite lente du village."
     },
     "description": {
-      "it": "OSM identifica questo tratto come steps con superficie in pietra/pavimentazione. La scheda lo usa come riferimento fisico reale per itinerari brevi nel centro.",
-      "en": "OSM identifies this segment as steps with paved-stone surface. This entry uses it as a real physical reference for short routes in the centre.",
-      "fr": "OSM identifie ce tronçon comme escalier avec surface pavée. La fiche l’utilise comme repère physique réel pour de courts itinéraires dans le centre."
+      "it": "Via Salita della Chiesa e una piccola infrastruttura quotidiana: collega quote diverse del centro e rende fisica la forma del borgo. Percorrerla significa sentire il rapporto tra case, pietra, pendenza e spazi religiosi. Nella mappa e utile come tappa breve, soprattutto per chi vuole capire il paese camminando e non soltanto osservandolo da un punto panoramico.",
+      "en": "Via Salita della Chiesa is a small everyday infrastructure: it links different levels of the centre and makes the village form tangible. Walking it means feeling the relation between houses, stone, slope and religious spaces. On the map it is a useful short stop for visitors who want to understand the village by walking through it.",
+      "fr": "Via Salita della Chiesa est une petite infrastructure quotidienne : elle relie differents niveaux du centre et rend tangible la forme du village. La parcourir permet de sentir le rapport entre maisons, pierre, pente et espaces religieux. Sur la carte, elle devient une etape courte pour comprendre le village en marchant."
     },
     "latitude": 41.8434745,
     "longitude": 14.5617107,
-    "image": "assets/images/scalinate.svg",
+    "image": "assets/images/san-giovanni-lipioni-borgo.jpg",
     "alt": {
-      "it": "Illustrazione di scalinate tra case di borgo",
-      "en": "Illustration of steps among village houses",
-      "fr": "Illustration d’escaliers entre des maisons de village"
+      "it": "Veduta del borgo arroccato sulle colline",
+      "en": "View of the village perched on the hills",
+      "fr": "Vue du village perche sur les collines"
     },
+    "detailsPath": "assets/content/places/salita-della-chiesa.md",
     "tags": ["scalini", "salita", "chiesa", "steps", "walking"],
     "relatedPlaceIds": ["chiesa-santa-maria", "centro-storico"],
-    "sourceNotes": ["OpenStreetMap way 298156116: highway=steps, name=Via Salita della Chiesa."],
     "isVerifiedContent": true
   },
   {
@@ -165,29 +155,26 @@
     "name": { "it": "Fontana Vecchia", "en": "Fontana Vecchia", "fr": "Fontana Vecchia" },
     "category": "memory",
     "shortDescription": {
-      "it": "Fontana storica in pietra mappata da OSM come monumento.",
-      "en": "Historic stone fountain mapped by OSM as a monument.",
-      "fr": "Fontaine historique en pierre cartographiée par OSM comme monument."
+      "it": "Fontana storica in pietra, legata agli usi quotidiani dell'acqua.",
+      "en": "Historic stone fountain connected with everyday water use.",
+      "fr": "Fontaine historique en pierre liee aux usages quotidiens de l'eau."
     },
     "description": {
-      "it": "Fontana Vecchia e mappata da OSM come monumento in pietra. La fonte riporta anche il nome alternativo Fontana Comunale e un'iscrizione datata 1844, collegata al restauro dell'opera. La descrizione resta sintetica per non trasformare la nota epigrafica in racconto storico non verificato.",
-      "en": "Fontana Vecchia is mapped by OSM as a stone monument. The source also reports the alternate name Fontana Comunale and an inscription dated 1844, connected to the restoration of the work. The description stays concise to avoid turning the epigraphic note into an unverified historical narrative.",
-      "fr": "Fontana Vecchia est cartographiée par OSM comme monument en pierre. La source indique aussi le nom alternatif Fontana Comunale et une inscription datée de 1844, liée à la restauration de l’ouvrage. La description reste concise afin de ne pas transformer la note épigraphique en récit historique non vérifié."
+      "it": "Fontana Vecchia e uno dei luoghi che trasformano la memoria materiale in esperienza concreta. Le notizie disponibili ricordano restauri ottocenteschi e un'iscrizione collegata alla sistemazione del 1844. Oggi la fontana puo essere letta come punto di relazione tra acqua, lavoro quotidiano e percorsi fuori dal nucleo piu compatto del borgo.",
+      "en": "Fontana Vecchia is one of the places where material memory becomes concrete. Available historical notes mention nineteenth-century restorations and an inscription connected with works in 1844. Today the fountain can be read as a point linking water, everyday labour and routes beyond the most compact part of the village.",
+      "fr": "Fontana Vecchia est l'un des lieux ou la memoire materielle devient concrete. Les informations disponibles evoquent des restaurations du XIXe siecle et une inscription liee aux travaux de 1844. Aujourd'hui, la fontaine relie eau, travail quotidien et parcours hors du noyau le plus compact du village."
     },
     "latitude": 41.8477431,
     "longitude": 14.5626981,
-    "image": "assets/images/fontana.svg",
+    "image": "assets/images/san-giovanni-lipioni-borgo.jpg",
     "alt": {
-      "it": "Illustrazione di una fontana semplice",
-      "en": "Illustration of a simple fountain",
-      "fr": "Illustration d’une fontaine simple"
+      "it": "San Giovanni Lipioni visto dal verde della campagna circostante",
+      "en": "San Giovanni Lipioni seen from the surrounding green countryside",
+      "fr": "San Giovanni Lipioni vu depuis la campagne environnante"
     },
+    "detailsPath": "assets/content/places/fontana-vecchia.md",
     "tags": ["fontana", "fontana vecchia", "monumento", "fountain", "monument"],
     "relatedPlaceIds": ["cappella-santa-liberata", "quercia-lozzi"],
-    "sourceNotes": [
-      "OpenStreetMap way 664042167: historic=monument, material=stone, name=Fontana Vecchia.",
-      "Fonte OSM indicata: Luciano Picciani, San Giovanni Lipioni - Sulle Orme dei Padri, 1995, page 154; local knowledge."
-    ],
     "isVerifiedContent": true
   },
   {
@@ -199,26 +186,26 @@
     },
     "category": "heritage",
     "shortDescription": {
-      "it": "Cappella mappata nell'area di Santa Liberata.",
-      "en": "Mapped chapel in the Santa Liberata area.",
-      "fr": "Chapelle cartographiée dans le secteur de Santa Liberata."
+      "it": "Cappella rurale fuori dal centro abitato, nel paesaggio di Santa Liberata.",
+      "en": "Rural chapel outside the village centre, in the Santa Liberata landscape.",
+      "fr": "Chapelle rurale hors du centre, dans le paysage de Santa Liberata."
     },
     "description": {
-      "it": "La posizione deriva da OSM. La descrizione resta minimale per evitare dettagli devozionali o storici non verificati nel progetto.",
-      "en": "The position comes from OSM. The description stays minimal to avoid devotional or historical details not verified in the project.",
-      "fr": "La position provient d’OSM. La description reste minimale afin d’éviter des détails dévotionnels ou historiques non vérifiés dans le projet."
+      "it": "La Cappella di Santa Liberata porta la visita fuori dal nucleo principale e apre il racconto verso il paesaggio. La tradizione descrive un edificio in pietra con caratteri semplici e una forte riconoscibilita devozionale. Nella guida digitale e una tappa di respiro: collega il centro abitato ai percorsi rurali, alla Fontana Vecchia e agli alberi monumentali della zona.",
+      "en": "The Chapel of Santa Liberata leads the visit outside the main centre and opens the story toward the landscape. Tradition describes a stone building with simple features and a strong devotional identity. In the digital guide it is a breathing point: it links the village to rural routes, Fontana Vecchia and the notable trees of the area.",
+      "fr": "La chapelle de Santa Liberata mene la visite hors du noyau principal et ouvre le recit vers le paysage. La tradition decrit un edifice en pierre aux formes simples et a la forte identite devotionnelle. Dans le guide numerique, elle relie le village aux parcours ruraux, a Fontana Vecchia et aux arbres remarquables du secteur."
     },
     "latitude": 41.8471971,
     "longitude": 14.560414,
-    "image": "assets/images/borgo-stone.svg",
+    "image": "assets/images/san-giovanni-lipioni-panorama.jpg",
     "alt": {
-      "it": "Illustrazione sobria di case in pietra e colline",
-      "en": "Simple illustration of stone houses and hills",
-      "fr": "Illustration sobre de maisons en pierre et de collines"
+      "it": "Profilo panoramico del borgo e delle colline attorno a San Giovanni Lipioni",
+      "en": "Panoramic profile of the village and hills around San Giovanni Lipioni",
+      "fr": "Profil panoramique du village et des collines autour de San Giovanni Lipioni"
     },
+    "detailsPath": "assets/content/places/cappella-santa-liberata.md",
     "tags": ["cappella", "santa liberata", "chapel", "heritage"],
     "relatedPlaceIds": ["fontana-vecchia", "quercia-lozzi"],
-    "sourceNotes": ["OpenStreetMap way 664042168: building=chapel, denomination=roman_catholic."],
     "isVerifiedContent": true
   },
   {
@@ -226,29 +213,26 @@
     "name": { "it": "Quercia di Lozzi", "en": "Lozzi's Oak", "fr": "Chêne de Lozzi" },
     "category": "viewpoint",
     "shortDescription": {
-      "it": "Gruppo di querce monumentali mappato nell'area di Santa Liberata.",
-      "en": "Mapped group of notable oak trees in the Santa Liberata area.",
-      "fr": "Groupe de chênes remarquables cartographié dans le secteur de Santa Liberata."
+      "it": "Punto naturalistico nell'area di Santa Liberata, tra alberi e paesaggio aperto.",
+      "en": "Natural point in the Santa Liberata area, among trees and open landscape.",
+      "fr": "Point naturel dans le secteur de Santa Liberata, entre arbres et paysage ouvert."
     },
     "description": {
-      "it": "La Quercia di Lozzi e indicata da OSM come gruppo di querce di roverella nell'area di Santa Liberata, con riferimenti a Molise Alberi, Comune di San Giovanni Lipioni e conoscenza locale. La scheda la presenta come punto paesaggistico e naturalistico da controllare sul posto per accesso, stato e percorso.",
-      "en": "Lozzi's Oak is listed by OSM as a group of downy oaks in the Santa Liberata area, with references to Molise Alberi, the Municipality of San Giovanni Lipioni and local knowledge. This entry presents it as a landscape and natural point to check on site for access, condition and route.",
-      "fr": "Le Chêne de Lozzi est indiqué par OSM comme un groupe de chênes pubescents dans le secteur de Santa Liberata, avec références à Molise Alberi, à la commune de San Giovanni Lipioni et à la connaissance locale. La fiche le présente comme point paysager et naturel à vérifier sur place pour l’accès, l’état et le parcours."
+      "it": "La Quercia di Lozzi rappresenta il lato naturalistico della visita. Il luogo e associato a un gruppo di roverelle nell'area di Santa Liberata e funziona come tappa lenta, da raggiungere con attenzione al percorso e alla stagione. Inserirla nella mappa serve a non chiudere il racconto nel solo centro storico: San Giovanni Lipioni e anche margini agricoli, alberi, vento e visuali ampie.",
+      "en": "Lozzi's Oak represents the natural side of the visit. The place is associated with a group of downy oaks in the Santa Liberata area and works as a slow stop, to be reached with attention to route and season. Including it on the map keeps the story from ending in the historic centre alone: San Giovanni Lipioni is also agricultural edges, trees, wind and wide views.",
+      "fr": "Le Chene de Lozzi represente le cote naturel de la visite. Le lieu est associe a un groupe de chenes pubescents dans le secteur de Santa Liberata et se prete a une etape lente, en tenant compte du parcours et de la saison. L'ajouter a la carte rappelle que San Giovanni Lipioni est aussi marges agricoles, arbres, vent et vues ouvertes."
     },
     "latitude": 41.8492813,
     "longitude": 14.5585058,
-    "image": "assets/images/panorama.svg",
+    "image": "assets/images/san-giovanni-lipioni-panorama.jpg",
     "alt": {
-      "it": "Illustrazione di colline viste da un borgo",
-      "en": "Illustration of hills seen from a village",
-      "fr": "Illustration de collines vues depuis un village"
+      "it": "Panorama luminoso del borgo e delle montagne sullo sfondo",
+      "en": "Bright panorama of the village and mountains in the background",
+      "fr": "Panorama lumineux du village et des montagnes en arriere-plan"
     },
+    "detailsPath": "assets/content/places/quercia-lozzi.md",
     "tags": ["quercia", "lozzi", "alberi", "santa liberata", "oak", "trees"],
     "relatedPlaceIds": ["cappella-santa-liberata", "fontana-vecchia"],
-    "sourceNotes": [
-      "OpenStreetMap way 664042171: name=Quercia di Lozzi, natural=tree_group, species=Quercus pubescens.",
-      "Fonte OSM indicata: Molise Alberi; Comune di San Giovanni Lipioni; local knowledge."
-    ],
     "isVerifiedContent": true
   }
 ]

@@ -1,4 +1,4 @@
-@import 'leaflet/dist/leaflet.css';
+﻿@import 'leaflet/dist/leaflet.css';
 
 :root {
   --color-primary: #8a5a32;
@@ -371,7 +371,6 @@ p {
 .content-card,
 .place-card,
 .filters-panel,
-.places-panel,
 .detail-drawer,
 .cookie-banner,
 .chat-panel {
@@ -432,33 +431,33 @@ p {
 
 .explore-layout {
   display: grid;
-  grid-template-columns: minmax(220px, 270px) minmax(440px, 1fr) minmax(360px, 420px);
-  gap: 0.9rem;
+  grid-template-columns: minmax(0, 1fr) minmax(330px, 410px);
+  grid-template-areas:
+    'filters filters'
+    'map detail';
+  gap: 1rem;
   align-items: start;
   padding-bottom: 1.5rem;
 }
 
-.filters-panel,
-.places-panel {
+.filters-panel {
+  grid-area: filters;
   display: grid;
-  gap: 0.9rem;
-  padding: 0.9rem;
+  grid-template-columns: minmax(280px, 1fr) minmax(220px, 0.55fr) auto;
+  gap: 0.85rem;
+  align-items: end;
+  padding: 0.85rem;
 }
 
 .places-panel {
-  align-self: stretch;
-  max-height: clamp(660px, calc(100vh - var(--header-height) - 1rem), 880px);
-  overflow: auto;
+  position: sticky;
+  top: calc(var(--header-height) + 1rem);
+  grid-area: detail;
+  min-width: 0;
 }
 
-.places-list {
-  display: grid;
-  gap: 0.75rem;
-}
-
-.places-list h2 {
-  margin-bottom: 0;
-  font-size: 1.05rem;
+.map-panel {
+  grid-area: map;
 }
 
 .field {
@@ -484,7 +483,7 @@ p {
 }
 
 .map-panel {
-  min-height: clamp(700px, calc(100vh - var(--header-height) - 0.5rem), 920px);
+  min-height: clamp(760px, calc(100vh - var(--header-height) - 8rem), 960px);
   overflow: hidden;
   border-radius: var(--radius);
   border: 1px solid var(--color-border);
@@ -494,7 +493,7 @@ p {
 
 .map-canvas {
   width: 100%;
-  height: clamp(700px, calc(100vh - var(--header-height) - 0.5rem), 920px);
+  height: clamp(760px, calc(100vh - var(--header-height) - 8rem), 960px);
 }
 
 .leaflet-container,
@@ -521,7 +520,7 @@ p {
 .detail-drawer {
   position: relative;
   width: 100%;
-  max-height: none;
+  max-height: clamp(760px, calc(100vh - var(--header-height) - 8rem), 960px);
   overflow: auto;
   padding: 0.9rem;
 }
@@ -560,32 +559,9 @@ p {
 }
 
 .detail-content,
-.source-panel {
+.detail-drawer .actions-row {
   display: grid;
   gap: 0.55rem;
-}
-
-.source-panel {
-  margin-block: 1rem;
-  border-top: 1px solid var(--color-border);
-  border-bottom: 1px solid var(--color-border);
-  padding-block: 0.85rem;
-}
-
-.places-panel .place-card {
-  grid-template-columns: 78px minmax(0, 1fr);
-  align-items: start;
-}
-
-.places-panel .place-card img {
-  grid-row: span 4;
-  height: 78px;
-  aspect-ratio: 1;
-}
-
-.places-panel .place-card span:not(.eyebrow),
-.places-panel .place-card small {
-  font-size: 0.92rem;
 }
 
 .card-list {
@@ -776,23 +752,15 @@ dd {
   }
 
   .explore-layout {
+    grid-template-areas:
+      'filters'
+      'map'
+      'detail';
     gap: 0.85rem;
   }
 
   .filters-panel {
-    order: 3;
-  }
-
-  .mobile-tabs {
-    order: 1;
-  }
-
-  .map-panel {
-    order: 2;
-  }
-
-  .places-panel {
-    order: 4;
+    grid-template-columns: minmax(220px, 1fr) minmax(220px, 0.75fr) auto;
   }
 
   .compact-heading {
@@ -822,11 +790,10 @@ dd {
   }
 
   .places-panel {
-    max-height: none;
-    overflow: visible;
+    position: static;
   }
 
-  .places-list {
+  .detail-drawer {
     max-height: none;
   }
 
@@ -861,6 +828,15 @@ dd {
     line-height: 1.42;
   }
 
+  .filters-panel {
+    grid-template-columns: 1fr;
+  }
+
+  .filters-panel .text-button {
+    justify-self: start;
+    min-height: 44px;
+  }
+
   .menu-toggle {
     display: grid;
   }
@@ -881,14 +857,6 @@ dd {
 
   .brand small {
     display: none;
-  }
-
-  .places-panel .place-card {
-    grid-template-columns: 64px minmax(0, 1fr);
-  }
-
-  .places-panel .place-card img {
-    height: 64px;
   }
 
   .main-nav.open {

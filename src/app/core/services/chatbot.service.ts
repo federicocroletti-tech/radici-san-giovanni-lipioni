@@ -47,7 +47,7 @@ export class ChatbotService {
       contextualPlace &&
       (this.isContextualQuestion(normalizedQuestion) || normalizedQuestion.length < 4)
     ) {
-      return this.buildPlaceResponse(contextualPlace, places);
+      return await this.buildPlaceResponse(contextualPlace, places);
     }
 
     const placeMatch = this.bestMatch(
@@ -62,7 +62,7 @@ export class ChatbotService {
     );
 
     if (placeMatch?.score && placeMatch.score >= 4) {
-      return this.buildPlaceResponse(placeMatch.item, places);
+      return await this.buildPlaceResponse(placeMatch.item, places);
     }
 
     const itineraryMatch = this.bestMatch(
@@ -107,10 +107,10 @@ export class ChatbotService {
     return { text: this.language.t('chatbot.fallback') };
   }
 
-  private buildPlaceResponse(place: Place, places: Place[]): ChatbotResponse {
+  private async buildPlaceResponse(place: Place, places: Place[]): Promise<ChatbotResponse> {
     const name = this.language.localize(place.name);
-    const description = this.language.localize(place.description);
-    const sources = place.sourceNotes.slice(0, 2).join(' ');
+    const description =
+      (await this.getPlaceSheetDescription(place)) || this.language.localize(place.description);
     const relatedNames = place.relatedPlaceIds
       .map((placeId) => places.find((candidate) => candidate.id === placeId))
       .filter((candidate): candidate is Place => Boolean(candidate))
@@ -119,7 +119,6 @@ export class ChatbotService {
     const text = this.isItalian()
       ? [
           `Ti porto su ${name}. ${description}`,
-          sources ? `Fonti principali: ${sources}` : '',
           relatedNames.length
             ? `Per una visita piu completa lo collegherei a ${relatedNames.slice(0, 2).join(' e ')}.`
             : '',
@@ -130,7 +129,6 @@ export class ChatbotService {
       : this.isFrench()
         ? [
             `Je te propose ${name}. ${description}`,
-            sources ? `Sources principales : ${sources}` : '',
             relatedNames.length
               ? `Pour une visite plus complète, je le relierais à ${relatedNames.slice(0, 2).join(' et ')}.`
               : '',
@@ -140,7 +138,6 @@ export class ChatbotService {
             .join(' ')
         : [
             `Let's look at ${name}. ${description}`,
-            sources ? `Main sources: ${sources}` : '',
             relatedNames.length
               ? `For a fuller visit I would connect it with ${relatedNames.slice(0, 2).join(' and ')}.`
               : '',
@@ -150,6 +147,27 @@ export class ChatbotService {
             .join(' ');
 
     return { text, relatedPlaceId: place.id };
+  }
+
+  private async getPlaceSheetDescription(place: Place): Promise<string> {
+    if (!this.isItalian() || !place.detailsPath) {
+      return '';
+    }
+
+    try {
+      const markdown = await firstValueFrom(
+        this.http.get(place.detailsPath, { responseType: 'text' }),
+      );
+      return this.extractMarkdownSection(markdown, 'Descrizione');
+    } catch {
+      return '';
+    }
+  }
+
+  private extractMarkdownSection(markdown: string, heading: string): string {
+    const pattern = new RegExp(`^## ${heading}\\s*\\n([\\s\\S]*?)(?=\\n## |$)`, 'm');
+    const match = markdown.match(pattern);
+    return match?.[1]?.replace(/\s+/g, ' ').trim() ?? '';
   }
 
   private buildItineraryResponse(itinerary: Itinerary, places: Place[]): ChatbotResponse {

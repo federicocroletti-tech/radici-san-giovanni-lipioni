@@ -2,7 +2,7 @@
   "app": {
     "name": "Radici San Giovanni Lipioni",
     "tagline": "Guida digitale interattiva del borgo",
-    "demoNotice": "Guida dimostrativa: marker da fonti pubbliche, testi editoriali da verificare localmente.",
+    "demoNotice": "Mappa interattiva e schede dei luoghi di San Giovanni Lipioni.",
     "openMenu": "Apri menu",
     "closeMenu": "Chiudi menu"
   },
@@ -35,25 +35,25 @@
   "home": {
     "kicker": "Borgo, memoria, radici",
     "title": "Radici San Giovanni Lipioni",
-    "intro": "Una guida digitale per esplorare il borgo con mappa interattiva, punti reali da OpenStreetMap, itinerari lenti, racconti dimostrativi e un chatbot basato solo su contenuti controllati.",
+    "intro": "Una guida digitale per esplorare il borgo con mappa interattiva, itinerari lenti, racconti locali e un chatbot basato sulle schede dei luoghi.",
     "whyTitle": "Perche San Giovanni Lipioni",
     "whyText": "Il progetto nasce per valorizzare un legame familiare e culturale con il paese, mettendo ordine tra luoghi, memorie e informazioni ampliabili senza inventare storia locale.",
     "cardsTitle": "Tre modi per iniziare",
     "placesTitle": "Luoghi",
-    "placesText": "Marker riallineati a punti pubblici OpenStreetMap, con note fonte leggibili.",
+    "placesText": "Luoghi selezionati con schede descrittive, immagini reali e collegamenti sulla mappa.",
     "itinerariesTitle": "Itinerari",
     "itinerariesText": "Percorsi brevi, pensati per turismo lento e visite rispettose.",
     "storiesTitle": "Racconti",
-    "storiesText": "Memorie dimostrative da sostituire con testimonianze reali autorizzate.",
+    "storiesText": "Racconti e memorie organizzati per collegare luoghi, famiglie e paesaggio.",
     "featuredTitle": "Luoghi in evidenza",
     "rootsTitle": "Radici, memoria e lentezza",
-    "rootsText": "L'app distingue dati geografici pubblici, testi editoriali e contenuti ancora da validare, preparando una struttura pronta per foto reali, fonti locali, backend e chatbot evoluto.",
+    "rootsText": "L'app organizza luoghi, testi, immagini e percorsi in una struttura pronta per crescere con nuove schede, foto e funzioni del chatbot.",
     "finalCtaTitle": "Inizia dalla mappa",
     "finalCtaText": "Esplora i punti mappati e apri il chatbot quando vuoi chiedere informazioni sui contenuti disponibili."
   },
   "explore": {
     "title": "Esplora la mappa di San Giovanni Lipioni",
-    "intro": "Filtra luoghi, cerca per parole chiave e seleziona un marker. La scheda si apre nello spazio laterale, senza coprire la mappa, e resta accessibile da mobile nella lista.",
+    "intro": "Filtra luoghi, cerca per parole chiave e seleziona un marker. La scheda tecnica si apre a destra, lasciando la mappa ampia e sempre visibile.",
     "searchLabel": "Cerca luoghi o tag",
     "searchPlaceholder": "Esempio: piazza, panorama, memoria",
     "categoryLabel": "Categoria",
@@ -68,7 +68,9 @@
     "sourceNotes": "Note fonti",
     "askAboutPlace": "Chiedi informazioni su questo luogo",
     "selectPromptTitle": "Seleziona un luogo",
-    "selectPromptText": "Clicca un marker o una card per aprire una scheda con descrizione, fonti e azioni rapide."
+    "selectPromptText": "Clicca un marker sulla mappa per aprire descrizione, dettagli e azioni rapide.",
+    "mapAreaLabel": "Mappa e scheda tecnica dei luoghi",
+    "filtersLabel": "Filtri della mappa"
   },
   "itineraries": {
     "title": "Itinerari per scoprire San Giovanni Lipioni",
@@ -108,14 +110,14 @@
     "title": "Assistente Radici",
     "intro": "Usa solo contenuti controllati e ti propone passi successivi.",
     "placeholder": "Scrivi una domanda sul borgo...",
-    "welcome": "Ciao, sono l'assistente Radici. Posso aiutarti a scegliere un itinerario, leggere le fonti di un luogo o capire quali contenuti sono ancora dimostrativi. Se non ho dati verificabili, te lo dico e ti propongo cosa controllare.",
+    "welcome": "Ciao, sono l'assistente Radici. Posso aiutarti a scegliere un itinerario, raccontarti un luogo o aprire sulla mappa la scheda piu adatta alla tua domanda.",
     "fallback": "Non ho abbastanza dati controllati per rispondere bene. Puoi chiedermi, per esempio: cosa vedere in centro, parlami della chiesa, dov'e Fontana Vecchia, oppure quale itinerario consigli.",
     "openRelatedPlace": "Apri luogo collegato sulla mappa",
     "quickPrompts": [
       "Cosa vedere in centro?",
       "Parlami della chiesa",
       "Che itinerario consigli?",
-      "Quali contenuti sono verificati?"
+      "Cosa vedere vicino alla piazza?"
     ],
     "thinking": "Sto controllando i dati disponibili..."
   },
@@ -132,9 +134,9 @@
     "preferencesText": "Memorizza scelte non sensibili come lingua e impostazioni UI."
   },
   "footer": {
-    "description": "Demo Angular dedicata a San Giovanni Lipioni, pensata per mappa, memoria locale, dati JSON e futura evoluzione con backend.",
+    "description": "Guida digitale dedicata a San Giovanni Lipioni, con mappa interattiva, schede dei luoghi e memoria locale.",
     "repository": "Repository GitHub",
-    "disclaimer": "Contenuti dimostrativi, non fonte ufficiale."
+    "rights": "Tutti i diritti riservati by"
   },
   "seo": {
     "home": {

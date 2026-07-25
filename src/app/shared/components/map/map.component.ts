@@ -16,6 +16,7 @@ import { Place } from '../../../core/models/place.model';
 import { LanguageService } from '../../../core/services/language.service';
 
 type LeafletModule = typeof import('leaflet');
+type LeafletImport = LeafletModule & { default?: LeafletModule };
 
 @Component({
   selector: 'app-map',
@@ -34,7 +35,7 @@ export class MapComponent implements AfterViewInit, OnChanges, OnDestroy {
   @Output() placeSelected = new EventEmitter<Place>();
 
   async ngAfterViewInit(): Promise<void> {
-    this.leaflet = await import('leaflet');
+    this.leaflet = this.resolveLeafletModule(await import('leaflet'));
     this.map = this.leaflet
       .map(this.mapContainer.nativeElement, { scrollWheelZoom: false })
       .setView(
@@ -46,6 +47,7 @@ export class MapComponent implements AfterViewInit, OnChanges, OnDestroy {
       .addTo(this.map);
     this.markerLayer = this.leaflet.layerGroup().addTo(this.map);
     this.renderMarkers();
+    queueMicrotask(() => this.map?.invalidateSize());
   }
 
   ngOnChanges(_changes: SimpleChanges): void {
@@ -107,5 +109,9 @@ export class MapComponent implements AfterViewInit, OnChanges, OnDestroy {
       };
       return entities[character];
     });
+  }
+
+  private resolveLeafletModule(leafletImport: LeafletImport): LeafletModule {
+    return typeof leafletImport.map === 'function' ? leafletImport : leafletImport.default!;
   }
 }

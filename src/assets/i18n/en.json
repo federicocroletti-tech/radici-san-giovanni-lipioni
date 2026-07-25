@@ -2,7 +2,7 @@
   "app": {
     "name": "Radici San Giovanni Lipioni",
     "tagline": "Interactive digital guide to the village",
-    "demoNotice": "Demo guide: markers from public sources, editorial text to verify locally.",
+    "demoNotice": "Interactive map and place sheets for San Giovanni Lipioni.",
     "openMenu": "Open menu",
     "closeMenu": "Close menu"
   },
@@ -35,25 +35,25 @@
   "home": {
     "kicker": "Village, memory, roots",
     "title": "Radici San Giovanni Lipioni",
-    "intro": "A digital guide to explore the village with an interactive map, real OpenStreetMap points, slow itineraries, demo stories and a chatbot based only on controlled content.",
+    "intro": "A digital guide to explore the village with an interactive map, slow itineraries, local stories and a chatbot based on place sheets.",
     "whyTitle": "Why San Giovanni Lipioni",
     "whyText": "The project starts from a family and cultural bond with the village, arranging places, memories and expandable information without inventing local history.",
     "cardsTitle": "Three ways to begin",
     "placesTitle": "Places",
-    "placesText": "Markers aligned with public OpenStreetMap points, with readable source notes.",
+    "placesText": "Selected places with descriptive sheets, real images and map links.",
     "itinerariesTitle": "Itineraries",
     "itinerariesText": "Short routes for slow tourism and respectful visits.",
     "storiesTitle": "Stories",
-    "storiesText": "Demo memories to replace with authorised real testimonies.",
+    "storiesText": "Stories and memories arranged to connect places, families and landscape.",
     "featuredTitle": "Featured places",
     "rootsTitle": "Roots, memory and slowness",
-    "rootsText": "The app separates public geographic data, editorial text and content still awaiting local validation, preparing a structure for real photos, local sources, backend and an evolved chatbot.",
+    "rootsText": "The app organises places, text, images and routes in a structure ready to grow with new sheets, photos and chatbot features.",
     "finalCtaTitle": "Start from the map",
     "finalCtaText": "Explore the mapped points and open the chatbot whenever you want to ask about available content."
   },
   "explore": {
     "title": "Explore the San Giovanni Lipioni map",
-    "intro": "Filter places, search by keyword and select a marker. The entry opens in the side space without covering the map and remains accessible from the mobile list.",
+    "intro": "Filter places, search by keyword and select a marker. The technical sheet opens on the right, keeping the map wide and visible.",
     "searchLabel": "Search places or tags",
     "searchPlaceholder": "Example: square, viewpoint, memory",
     "categoryLabel": "Category",
@@ -68,7 +68,9 @@
     "sourceNotes": "Source notes",
     "askAboutPlace": "Ask about this place",
     "selectPromptTitle": "Select a place",
-    "selectPromptText": "Click a marker or card to open an entry with description, sources and quick actions."
+    "selectPromptText": "Click a marker on the map to open description, details and quick actions.",
+    "mapAreaLabel": "Map and technical sheet for places",
+    "filtersLabel": "Map filters"
   },
   "itineraries": {
     "title": "Itineraries to discover San Giovanni Lipioni",
@@ -108,14 +110,14 @@
     "title": "Radici assistant",
     "intro": "Uses controlled content and suggests next steps.",
     "placeholder": "Write a question about the village...",
-    "welcome": "Hello, I am the Radici assistant. I can help you choose an itinerary, read a place's sources or understand which content is still demonstrative. If I do not have verifiable data, I will say so and suggest what to check.",
+    "welcome": "Hello, I am the Radici assistant. I can help you choose an itinerary, tell you about a place or open the most relevant map sheet.",
     "fallback": "I do not have enough controlled data to answer well. Try asking: what should I see in the centre, tell me about the church, where is Fontana Vecchia, or which itinerary do you recommend.",
     "openRelatedPlace": "Open linked place on the map",
     "quickPrompts": [
       "What should I see in the centre?",
       "Tell me about the church",
       "Which itinerary do you recommend?",
-      "Which content is verified?"
+      "What is near the square?"
     ],
     "thinking": "Checking the available data..."
   },
@@ -132,9 +134,9 @@
     "preferencesText": "Stores non-sensitive choices such as language and UI settings."
   },
   "footer": {
-    "description": "Angular demo dedicated to San Giovanni Lipioni, designed for map, local memory, JSON data and future backend evolution.",
+    "description": "Digital guide dedicated to San Giovanni Lipioni, with interactive map, place sheets and local memory.",
     "repository": "GitHub repository",
-    "disclaimer": "Demo content, not an official source."
+    "rights": "All rights reserved by"
   },
   "seo": {
     "home": {

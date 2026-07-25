@@ -21,21 +21,7 @@ import { LanguageService } from '../../../core/services/language.service';
           <p class="eyebrow">{{ i18n.t('explore.selectedPlace') }}</p>
           <h2>{{ i18n.localize(place.name) }}</h2>
           <p>{{ i18n.localize(place.description) }}</p>
-          <p class="status">
-            {{
-              place.isVerifiedContent ? i18n.t('explore.verified') : i18n.t('explore.notVerified')
-            }}
-          </p>
         </div>
-
-        <section class="source-panel" aria-label="Source notes">
-          <h3>{{ i18n.t('explore.sourceNotes') }}</h3>
-          <ul>
-            @for (note of place.sourceNotes; track note) {
-              <li>{{ note }}</li>
-            }
-          </ul>
-        </section>
 
         <div class="actions-row">
           <a class="button" [href]="mapsUrl(place)" target="_blank" rel="noopener">{{
