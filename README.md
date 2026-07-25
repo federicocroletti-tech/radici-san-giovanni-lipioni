@@ -2,7 +2,7 @@
 
 Guida digitale interattiva dedicata a San Giovanni Lipioni, costruita come demo Angular moderna per valorizzare borgo, radici familiari, memoria locale e turismo lento.
 
-Il progetto usa solo dati mock da file JSON e testi UI da file i18n. Non e una fonte ufficiale: coordinate, racconti, descrizioni e contenuti storici devono essere verificati con fonti locali prima della pubblicazione reale.
+Il progetto usa file JSON locali e testi UI da file i18n. I marker principali sono stati riallineati a elementi pubblici OpenStreetMap; racconti, descrizioni editoriali e contenuti storici devono comunque essere verificati con fonti locali prima della pubblicazione reale.
 
 ## Stack
 
@@ -26,13 +26,13 @@ Il progetto usa solo dati mock da file JSON e testi UI da file i18n. Non e una f
 
 ## Funzionalita
 
-- Mappa centrata su San Giovanni Lipioni con marker da `places.json`
+- Mappa centrata su San Giovanni Lipioni con marker da `places.json`, basati su punti nominati OpenStreetMap quando disponibili
 - Lista luoghi accessibile anche senza usare la mappa
 - Filtri per categoria e ricerca testuale
-- Schede luogo con note su verifica dei contenuti
+- Schede luogo con note fonte OSM/ODbL e indicazione di cosa resta editoriale
 - Itinerari collegati alla mappa via query param
 - Racconti mock collegati ai luoghi
-- Chatbot integrato basato su `chatbot-knowledge.json` e dati mock
+- Chatbot integrato basato su `chatbot-knowledge.json`, luoghi JSON e racconti mock
 - Caso fallback quando il chatbot non ha informazioni sufficienti
 - Lingua IT/EN con preferenza salvata
 - SEO base per pagina, canonical e JSON-LD minimale
@@ -54,6 +54,10 @@ src/assets/i18n/
 ```
 
 Le immagini in `src/assets/images` sono asset dimostrativi sostituibili con foto reali autorizzate.
+
+## Fonti geografiche
+
+I luoghi principali in `places.json` usano nomi e coordinate ricavati da OpenStreetMap tramite Overpass, con note fonte nei singoli record. I dati OSM sono disponibili sotto Open Database License (ODbL). Prima di pubblicare una guida ufficiale, verificare sul posto coordinate, accessibilita, apertura e contenuti descrittivi.
 
 ## Avvio locale
 

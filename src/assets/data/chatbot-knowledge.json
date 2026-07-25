@@ -5,8 +5,8 @@
       "intent": "project_info",
       "keywords": ["radici", "progetto", "app", "guida", "what is", "project", "guide"],
       "answer": {
-        "it": "Radici San Giovanni Lipioni e una guida digitale dimostrativa con mappa, itinerari, racconti e contenuti controllati sul borgo. I dati sono mock e devono essere verificati prima dell'uso ufficiale.",
-        "en": "Radici San Giovanni Lipioni is a demo digital guide with a map, itineraries, stories and controlled content about the village. Data is mock and must be verified before official use."
+        "it": "Radici San Giovanni Lipioni e una guida digitale dimostrativa con mappa, itinerari, racconti e contenuti controllati sul borgo. I marker principali usano dati OpenStreetMap; racconti e testi editoriali restano da verificare prima dell'uso ufficiale.",
+        "en": "Radici San Giovanni Lipioni is a demo digital guide with a map, itineraries, stories and controlled content about the village. Main markers use OpenStreetMap data; stories and editorial text still need verification before official use."
       },
       "source": "chatbot-knowledge.json"
     },
@@ -15,8 +15,8 @@
       "intent": "map_help",
       "keywords": ["mappa", "marker", "luoghi", "esplora", "map", "places", "markers", "explore"],
       "answer": {
-        "it": "Puoi aprire la pagina Esplora per vedere i luoghi mock sulla mappa, filtrare per categoria e leggere le schede. Le coordinate sono modificabili nei file JSON.",
-        "en": "Open the Explore page to see mock places on the map, filter by category and read the entries. Coordinates are editable in the JSON files."
+        "it": "Puoi aprire la pagina Esplora per vedere luoghi mappati da OpenStreetMap, filtrare per categoria e leggere le schede. Le note fonte indicano quali dati arrivano da OSM e cosa resta editoriale.",
+        "en": "Open the Explore page to see places mapped from OpenStreetMap, filter by category and read the entries. Source notes show which data comes from OSM and what remains editorial."
       },
       "relatedPlaceId": "centro-storico",
       "source": "chatbot-knowledge.json"
@@ -26,8 +26,8 @@
       "intent": "itinerary_help",
       "keywords": ["itinerari", "percorsi", "camminata", "route", "itineraries", "walk"],
       "answer": {
-        "it": "Sono disponibili tre itinerari mock: Il cuore del borgo, Memorie e panorami, Tradizioni e comunita. Sono esempi da verificare sul posto.",
-        "en": "Three mock itineraries are available: The heart of the village, Memories and viewpoints, Traditions and community. They are examples to check on site."
+        "it": "Sono disponibili tre itinerari basati sui luoghi mappati: Centro, piazza e memoria valdese; Scalinate e vie del centro; Fontana Vecchia e Santa Liberata. Tempi e percorribilita vanno verificati sul posto.",
+        "en": "Three itineraries based on mapped places are available: Centre, square and Waldensian memory; Steps and central lanes; Fontana Vecchia and Santa Liberata. Times and walkability must be checked on site."
       },
       "source": "chatbot-knowledge.json"
     },

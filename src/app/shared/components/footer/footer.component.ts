@@ -23,7 +23,14 @@ import { LanguageService } from '../../../core/services/language.service';
           {{ i18n.t('actions.manageCookies') }}
         </button>
       </nav>
-      <p class="muted">{{ i18n.t('footer.repository') }}</p>
+      <a
+        class="repository-link"
+        href="https://github.com/federicocroletti-tech/radici-san-giovanni-lipioni"
+        target="_blank"
+        rel="noopener"
+      >
+        {{ i18n.t('footer.repository') }}
+      </a>
     </footer>
   `,
 })

@@ -63,6 +63,8 @@ export class MapComponent implements AfterViewInit, OnChanges, OnDestroy {
 
     this.markerLayer.clearLayers();
 
+    const selectedPlace = this.places.find((place) => place.id === this.selectedPlaceId);
+
     for (const place of this.places) {
       const marker = this.leaflet.marker([place.latitude, place.longitude], {
         icon: this.leaflet.divIcon({
@@ -73,11 +75,24 @@ export class MapComponent implements AfterViewInit, OnChanges, OnDestroy {
         }),
       });
 
-      marker.bindPopup(
-        `<strong>${this.escape(this.i18n.localize(place.name))}</strong><br>${this.escape(this.i18n.localize(place.shortDescription))}`,
-      );
+      marker.bindTooltip(this.escape(this.i18n.localize(place.name)), {
+        direction: 'top',
+        offset: [0, -28],
+      });
       marker.on('click', () => this.placeSelected.emit(place));
       marker.addTo(this.markerLayer);
+    }
+
+    if (selectedPlace) {
+      this.map?.panTo([selectedPlace.latitude, selectedPlace.longitude]);
+      return;
+    }
+
+    if (this.places.length > 1) {
+      const bounds = this.leaflet.latLngBounds(
+        this.places.map((place) => [place.latitude, place.longitude] as [number, number]),
+      );
+      this.map?.fitBounds(bounds.pad(0.18), { maxZoom: 16 });
     }
   }
 

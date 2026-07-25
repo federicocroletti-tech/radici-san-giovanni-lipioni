@@ -2,7 +2,7 @@
   "app": {
     "name": "Radici San Giovanni Lipioni",
     "tagline": "Interactive digital guide to the village",
-    "demoNotice": "Demo project: content, coordinates and references must be checked with local sources.",
+    "demoNotice": "Demo guide: markers from public sources, editorial text to verify locally.",
     "openMenu": "Open menu",
     "closeMenu": "Close menu"
   },
@@ -32,25 +32,25 @@
   "home": {
     "kicker": "Village, memory, roots",
     "title": "Radici San Giovanni Lipioni",
-    "intro": "A digital guide to explore the village with an interactive map, slow itineraries, demo stories and a chatbot based only on controlled content.",
+    "intro": "A digital guide to explore the village with an interactive map, real OpenStreetMap points, slow itineraries, demo stories and a chatbot based only on controlled content.",
     "whyTitle": "Why San Giovanni Lipioni",
     "whyText": "The project starts from a family and cultural bond with the village, arranging places, memories and expandable information without inventing local history.",
     "cardsTitle": "Three ways to begin",
     "placesTitle": "Places",
-    "placesText": "Mock entries and markers to get oriented in the settlement.",
+    "placesText": "Markers aligned with public OpenStreetMap points, with readable source notes.",
     "itinerariesTitle": "Itineraries",
     "itinerariesText": "Short routes for slow tourism and respectful visits.",
     "storiesTitle": "Stories",
     "storiesText": "Demo memories to replace with authorised real testimonies.",
     "featuredTitle": "Featured places",
     "rootsTitle": "Roots, memory and slowness",
-    "rootsText": "The app avoids unverified content and prepares a structure ready for real photos, local sources, backend and an evolved chatbot.",
+    "rootsText": "The app separates public geographic data, editorial text and content still awaiting local validation, preparing a structure for real photos, local sources, backend and an evolved chatbot.",
     "finalCtaTitle": "Start from the map",
-    "finalCtaText": "Explore the mock points and open the chatbot whenever you want to ask about available content."
+    "finalCtaText": "Explore the mapped points and open the chatbot whenever you want to ask about available content."
   },
   "explore": {
     "title": "Explore the San Giovanni Lipioni map",
-    "intro": "Filter places, search by keyword and select a marker to read the entry. The list stays available when the map is not convenient to use.",
+    "intro": "Filter places, search by keyword and select a marker. The entry opens in the side space without covering the map and remains accessible from the mobile list.",
     "searchLabel": "Search places or tags",
     "searchPlaceholder": "Example: square, viewpoint, memory",
     "categoryLabel": "Category",
@@ -63,11 +63,13 @@
     "verified": "Verified",
     "notVerified": "To verify",
     "sourceNotes": "Source notes",
-    "askAboutPlace": "Ask about this place"
+    "askAboutPlace": "Ask about this place",
+    "selectPromptTitle": "Select a place",
+    "selectPromptText": "Click a marker or card to open an entry with description, sources and quick actions."
   },
   "itineraries": {
     "title": "Itineraries to discover San Giovanni Lipioni",
-    "intro": "Three mock routes to describe the village simply. Durations, stops and coordinates must be confirmed before final publication.",
+    "intro": "Three routes built on mapped places. Durations, stops and accessibility must be checked on site before final publication.",
     "duration": "Duration",
     "difficulty": "Difficulty",
     "places": "Stops",
@@ -92,7 +94,7 @@
       "localStorage is used for selected language, cookie preferences and non-sensitive UI state.",
       "AnalyticsService is mock: no real analytics script is loaded before explicit consent.",
       "Necessary cookies are always active; analytics, marketing and preferences are disabled by default and editable by the user.",
-      "Place and story content is mock: before real publication, sources, releases and legal checks are required."
+      "Main geographic markers come from public OpenStreetMap sources; stories, editorial text and accessibility must be verified before real publication."
     ]
   },
   "notFound": {
@@ -101,11 +103,18 @@
   },
   "chatbot": {
     "title": "Radici assistant",
-    "intro": "Answers only using mock JSON content.",
+    "intro": "Uses controlled content and suggests next steps.",
     "placeholder": "Write a question about the village...",
-    "welcome": "Hello, I can help with the map, places, itineraries, stories and demo privacy. I do not invent information: if I do not have data, I say so.",
-    "fallback": "I do not have enough information in the mock data to answer reliably. Try map, itineraries, stories, privacy or the name of a place included in the demo.",
-    "openRelatedPlace": "Open linked place on the map"
+    "welcome": "Hello, I am the Radici assistant. I can help you choose an itinerary, read a place's sources or understand which content is still demonstrative. If I do not have verifiable data, I will say so and suggest what to check.",
+    "fallback": "I do not have enough controlled data to answer well. Try asking: what should I see in the centre, tell me about the church, where is Fontana Vecchia, or which itinerary do you recommend.",
+    "openRelatedPlace": "Open linked place on the map",
+    "quickPrompts": [
+      "What should I see in the centre?",
+      "Tell me about the church",
+      "Which itinerary do you recommend?",
+      "Which content is verified?"
+    ],
+    "thinking": "Checking the available data..."
   },
   "cookie": {
     "title": "Cookie preferences",
@@ -121,7 +130,7 @@
   },
   "footer": {
     "description": "Angular demo dedicated to San Giovanni Lipioni, designed for map, local memory, JSON data and future backend evolution.",
-    "repository": "Repository: TODO",
+    "repository": "GitHub repository",
     "disclaimer": "Demo content, not an official source."
   },
   "seo": {

@@ -75,22 +75,23 @@ import { SearchInputComponent } from '../../shared/components/search-input/searc
       </div>
 
       <aside class="places-panel" [class.mobile-hidden]="activeTab() !== 'list'">
-        <h2>{{ i18n.t('explore.results') }} ({{ filteredPlaces().length }})</h2>
-        @if (filteredPlaces().length) {
-          @for (place of filteredPlaces(); track place.id) {
-            <app-place-card
-              [place]="place"
-              [selected]="selectedPlaceId() === place.id"
-              (selectedPlace)="selectPlace($event)"
-            />
+        <app-place-detail-drawer [place]="selectedPlace()" (closed)="selectedPlaceId.set(null)" />
+        <div class="places-list">
+          <h2>{{ i18n.t('explore.results') }} ({{ filteredPlaces().length }})</h2>
+          @if (filteredPlaces().length) {
+            @for (place of filteredPlaces(); track place.id) {
+              <app-place-card
+                [place]="place"
+                [selected]="selectedPlaceId() === place.id"
+                (selectedPlace)="selectPlace($event)"
+              />
+            }
+          } @else {
+            <p>{{ i18n.t('explore.noResults') }}</p>
           }
-        } @else {
-          <p>{{ i18n.t('explore.noResults') }}</p>
-        }
+        </div>
       </aside>
     </section>
-
-    <app-place-detail-drawer [place]="selectedPlace()" (closed)="selectedPlaceId.set(null)" />
   `,
 })
 export class ExplorePage {
@@ -150,7 +151,7 @@ export class ExplorePage {
 
   selectPlace(place: Place): void {
     this.selectedPlaceId.set(place.id);
-    this.activeTab.set('map');
+    this.activeTab.set('list');
   }
 
   clearFilters(): void {

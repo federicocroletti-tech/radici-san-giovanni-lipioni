@@ -1,7 +1,7 @@
 export const SAN_GIOVANNI_LIPIONI_CENTER = {
-  latitude: 41.8459,
-  longitude: 14.5626,
-  zoom: 16,
+  latitude: 41.8449,
+  longitude: 14.5621,
+  zoom: 15,
 } as const;
 
 export const MAP_TILE_LAYER = {

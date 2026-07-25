@@ -12,7 +12,7 @@ import { LanguageService } from '../../../core/services/language.service';
       (click)="selectedPlace.emit(place)"
     >
       <img [src]="place.image" [alt]="i18n.localize(place.alt)" loading="lazy" />
-      <span class="eyebrow">{{ place.category }}</span>
+      <span class="eyebrow">{{ categoryLabel }}</span>
       <strong>{{ i18n.localize(place.name) }}</strong>
       <span>{{ i18n.localize(place.shortDescription) }}</span>
       <small>{{
@@ -26,4 +26,15 @@ export class PlaceCardComponent {
   @Input({ required: true }) place!: Place;
   @Input() selected = false;
   @Output() selectedPlace = new EventEmitter<Place>();
+
+  get categoryLabel(): string {
+    const labels: Record<string, Record<'it' | 'en', string>> = {
+      heritage: { it: 'Patrimonio', en: 'Heritage' },
+      community: { it: 'Comunita', en: 'Community' },
+      memory: { it: 'Memoria', en: 'Memory' },
+      viewpoint: { it: 'Paesaggio', en: 'Landscape' },
+    };
+
+    return labels[this.place.category]?.[this.i18n.currentLanguage()] ?? this.place.category;
+  }
 }

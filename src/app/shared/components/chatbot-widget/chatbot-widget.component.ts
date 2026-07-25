@@ -37,6 +37,14 @@ import { ChatbotMessageComponent } from '../chatbot-message/chatbot-message.comp
           </button>
         </header>
 
+        <div class="quick-prompts" aria-label="Chatbot suggestions">
+          @for (prompt of i18n.list('chatbot.quickPrompts'); track prompt) {
+            <button type="button" class="chip" (click)="send(prompt)" [disabled]="isBusy()">
+              {{ prompt }}
+            </button>
+          }
+        </div>
+
         <div class="chat-log">
           @for (message of messages(); track message.id) {
             <app-chatbot-message [message]="message" />
@@ -50,6 +58,11 @@ import { ChatbotMessageComponent } from '../chatbot-message/chatbot-message.comp
               </button>
             }
           }
+          @if (isBusy()) {
+            <article class="chat-message pending">
+              <p>{{ i18n.t('chatbot.thinking') }}</p>
+            </article>
+          }
         </div>
 
         <form class="chat-form" (ngSubmit)="send()">
@@ -57,8 +70,11 @@ import { ChatbotMessageComponent } from '../chatbot-message/chatbot-message.comp
             name="question"
             [(ngModel)]="question"
             [placeholder]="i18n.t('chatbot.placeholder')"
+            [disabled]="isBusy()"
           />
-          <button type="submit" class="button small">{{ i18n.t('actions.send') }}</button>
+          <button type="submit" class="button small" [disabled]="isBusy()">
+            {{ i18n.t('actions.send') }}
+          </button>
         </form>
       </section>
     }
@@ -69,6 +85,7 @@ export class ChatbotWidgetComponent {
   readonly ui = inject(ChatbotUiService);
   private readonly chatbot = inject(ChatbotService);
   private readonly router = inject(Router);
+  readonly isBusy = signal(false);
   readonly messages = signal<ChatbotMessage[]>([
     {
       id: crypto.randomUUID(),
@@ -86,19 +103,29 @@ export class ChatbotWidgetComponent {
     });
   }
 
-  async send(): Promise<void> {
-    const text = this.question.trim();
-    if (!text) {
+  async send(prompt?: string): Promise<void> {
+    const text = (prompt ?? this.question).trim();
+    if (!text || this.isBusy()) {
       return;
     }
 
     this.question = '';
+    this.isBusy.set(true);
     this.messages.update((messages) => [...messages, this.createMessage('user', text)]);
-    const response = await this.chatbot.ask(text, this.ui.contextPlaceId());
-    this.messages.update((messages) => [
-      ...messages,
-      this.createMessage('assistant', response.text, response.relatedPlaceId),
-    ]);
+    try {
+      const response = await this.chatbot.ask(text, this.ui.contextPlaceId());
+      this.messages.update((messages) => [
+        ...messages,
+        this.createMessage('assistant', response.text, response.relatedPlaceId),
+      ]);
+    } catch {
+      this.messages.update((messages) => [
+        ...messages,
+        this.createMessage('assistant', this.i18n.t('chatbot.fallback')),
+      ]);
+    } finally {
+      this.isBusy.set(false);
+    }
   }
 
   openRelatedPlace(placeId: string | undefined): void {

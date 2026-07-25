@@ -17,7 +17,7 @@ Applicazione frontend Angular dedicata a San Giovanni Lipioni, pensata per visit
 - Dati mock statici in `src/assets/data`.
 - Testi UI in `src/assets/i18n/it.json` e `src/assets/i18n/en.json`.
 - Lingua default: italiano; lingua selezionata salvata in localStorage.
-- Coordinate e contenuti specifici dei luoghi sono mock e modificabili.
+- Coordinate dei luoghi principali possono usare OpenStreetMap come base pubblica; testi storici, racconti e accessibilita restano da verificare con fonti locali.
 - Non inventare date, tradizioni, eventi, personaggi storici o dati amministrativi.
 - Chatbot mock basato solo sui JSON del progetto.
 - Se il chatbot non trova una risposta, deve dichiarare che non ha informazioni sufficienti.

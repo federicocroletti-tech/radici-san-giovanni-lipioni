@@ -2,7 +2,7 @@
   "app": {
     "name": "Radici San Giovanni Lipioni",
     "tagline": "Guida digitale interattiva del borgo",
-    "demoNotice": "Progetto dimostrativo: contenuti, coordinate e riferimenti da verificare con fonti locali.",
+    "demoNotice": "Guida dimostrativa: marker da fonti pubbliche, testi editoriali da verificare localmente.",
     "openMenu": "Apri menu",
     "closeMenu": "Chiudi menu"
   },
@@ -32,25 +32,25 @@
   "home": {
     "kicker": "Borgo, memoria, radici",
     "title": "Radici San Giovanni Lipioni",
-    "intro": "Una guida digitale per esplorare il borgo con mappa interattiva, itinerari lenti, racconti dimostrativi e un chatbot basato solo su contenuti controllati.",
+    "intro": "Una guida digitale per esplorare il borgo con mappa interattiva, punti reali da OpenStreetMap, itinerari lenti, racconti dimostrativi e un chatbot basato solo su contenuti controllati.",
     "whyTitle": "Perche San Giovanni Lipioni",
     "whyText": "Il progetto nasce per valorizzare un legame familiare e culturale con il paese, mettendo ordine tra luoghi, memorie e informazioni ampliabili senza inventare storia locale.",
     "cardsTitle": "Tre modi per iniziare",
     "placesTitle": "Luoghi",
-    "placesText": "Schede mock e marker per orientarsi nel centro abitato.",
+    "placesText": "Marker riallineati a punti pubblici OpenStreetMap, con note fonte leggibili.",
     "itinerariesTitle": "Itinerari",
     "itinerariesText": "Percorsi brevi, pensati per turismo lento e visite rispettose.",
     "storiesTitle": "Racconti",
     "storiesText": "Memorie dimostrative da sostituire con testimonianze reali autorizzate.",
     "featuredTitle": "Luoghi in evidenza",
     "rootsTitle": "Radici, memoria e lentezza",
-    "rootsText": "L'app evita contenuti non verificati e prepara una struttura pronta per foto reali, fonti locali, backend e chatbot evoluto.",
+    "rootsText": "L'app distingue dati geografici pubblici, testi editoriali e contenuti ancora da validare, preparando una struttura pronta per foto reali, fonti locali, backend e chatbot evoluto.",
     "finalCtaTitle": "Inizia dalla mappa",
-    "finalCtaText": "Esplora i punti mock e apri il chatbot quando vuoi chiedere informazioni sui contenuti disponibili."
+    "finalCtaText": "Esplora i punti mappati e apri il chatbot quando vuoi chiedere informazioni sui contenuti disponibili."
   },
   "explore": {
     "title": "Esplora la mappa di San Giovanni Lipioni",
-    "intro": "Filtra luoghi, cerca per parole chiave e seleziona un marker per leggere la scheda. La lista resta disponibile anche se la mappa non e comoda da usare.",
+    "intro": "Filtra luoghi, cerca per parole chiave e seleziona un marker. La scheda si apre nello spazio laterale, senza coprire la mappa, e resta accessibile da mobile nella lista.",
     "searchLabel": "Cerca luoghi o tag",
     "searchPlaceholder": "Esempio: piazza, panorama, memoria",
     "categoryLabel": "Categoria",
@@ -63,11 +63,13 @@
     "verified": "Verificato",
     "notVerified": "Da verificare",
     "sourceNotes": "Note fonti",
-    "askAboutPlace": "Chiedi informazioni su questo luogo"
+    "askAboutPlace": "Chiedi informazioni su questo luogo",
+    "selectPromptTitle": "Seleziona un luogo",
+    "selectPromptText": "Clicca un marker o una card per aprire una scheda con descrizione, fonti e azioni rapide."
   },
   "itineraries": {
     "title": "Itinerari per scoprire San Giovanni Lipioni",
-    "intro": "Tre percorsi mock per raccontare il borgo in modo semplice. Durate, tappe e coordinate devono essere confermate prima della pubblicazione definitiva.",
+    "intro": "Tre percorsi costruiti sui luoghi mappati. Durate, tappe e accessibilita devono essere confermate sul posto prima della pubblicazione definitiva.",
     "duration": "Durata",
     "difficulty": "Difficolta",
     "places": "Tappe",
@@ -92,7 +94,7 @@
       "Il localStorage viene usato per lingua selezionata, preferenze cookie e stato UI non sensibile.",
       "AnalyticsService e mock: nessuno script analytics reale viene caricato prima del consenso esplicito.",
       "Cookie necessari sempre attivi; analytics, marketing e preferenze sono disattivati di default e modificabili dall'utente.",
-      "I contenuti su luoghi e racconti sono mock: prima della pubblicazione reale servono fonti, liberatorie e verifica legale."
+      "I marker geografici principali derivano da fonti pubbliche OpenStreetMap; racconti, testi editoriali e accessibilita devono essere verificati prima della pubblicazione reale."
     ]
   },
   "notFound": {
@@ -101,11 +103,18 @@
   },
   "chatbot": {
     "title": "Assistente Radici",
-    "intro": "Risponde solo usando i contenuti JSON mock.",
+    "intro": "Usa solo contenuti controllati e ti propone passi successivi.",
     "placeholder": "Scrivi una domanda sul borgo...",
-    "welcome": "Ciao, posso aiutarti con mappa, luoghi, itinerari, racconti e privacy della demo. Non invento informazioni: se non ho dati, lo dico.",
-    "fallback": "Non ho informazioni sufficienti nei dati mock per rispondere in modo affidabile. Puoi provare con mappa, itinerari, racconti, privacy o con il nome di un luogo presente nella demo.",
-    "openRelatedPlace": "Apri luogo collegato sulla mappa"
+    "welcome": "Ciao, sono l'assistente Radici. Posso aiutarti a scegliere un itinerario, leggere le fonti di un luogo o capire quali contenuti sono ancora dimostrativi. Se non ho dati verificabili, te lo dico e ti propongo cosa controllare.",
+    "fallback": "Non ho abbastanza dati controllati per rispondere bene. Puoi chiedermi, per esempio: cosa vedere in centro, parlami della chiesa, dov'e Fontana Vecchia, oppure quale itinerario consigli.",
+    "openRelatedPlace": "Apri luogo collegato sulla mappa",
+    "quickPrompts": [
+      "Cosa vedere in centro?",
+      "Parlami della chiesa",
+      "Che itinerario consigli?",
+      "Quali contenuti sono verificati?"
+    ],
+    "thinking": "Sto controllando i dati disponibili..."
   },
   "cookie": {
     "title": "Preferenze cookie",
@@ -121,7 +130,7 @@
   },
   "footer": {
     "description": "Demo Angular dedicata a San Giovanni Lipioni, pensata per mappa, memoria locale, dati JSON e futura evoluzione con backend.",
-    "repository": "Repository: TODO",
+    "repository": "Repository GitHub",
     "disclaimer": "Contenuti dimostrativi, non fonte ufficiale."
   },
   "seo": {

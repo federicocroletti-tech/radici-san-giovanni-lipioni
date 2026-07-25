@@ -1,20 +1,20 @@
 [
   {
-    "id": "la-piazza-dei-ritorni",
+    "id": "piazza-largo-popolo-ritorni",
     "title": {
-      "it": "La piazza dei ritorni",
-      "en": "The square of return visits"
+      "it": "Piazza Largo del Popolo e i ritorni",
+      "en": "Piazza Largo del Popolo and return visits"
     },
     "theme": "ritorni",
     "excerpt": {
-      "it": "Racconto dimostrativo sul momento in cui chi torna al paese riconosce volti, suoni e abitudini.",
-      "en": "Demo story about the moment when those returning to the village recognise faces, sounds and habits."
+      "it": "Racconto dimostrativo legato a una piazza reale mappata, da sostituire con testimonianze autorizzate.",
+      "en": "Demo story linked to a real mapped square, to be replaced with authorised testimonies."
     },
     "content": {
-      "it": "Questo racconto e un esempio editoriale. Deve essere sostituito da testimonianze reali raccolte con consenso esplicito.",
-      "en": "This story is an editorial example. It should be replaced by real testimonies collected with explicit consent."
+      "it": "Questo racconto e un esempio editoriale. Non documenta un ricordo reale e deve essere sostituito da testimonianze raccolte con consenso esplicito.",
+      "en": "This story is an editorial example. It does not document a real memory and should be replaced by testimonies collected with explicit consent."
     },
-    "relatedPlaceIds": ["piazza", "centro-storico"],
+    "relatedPlaceIds": ["piazza-largo-popolo", "mostra-valdese"],
     "isMock": true,
     "consentRequiredNotice": {
       "it": "Per pubblicare ricordi reali servono consenso scritto e liberatoria dedicata.",
@@ -22,21 +22,21 @@
     }
   },
   {
-    "id": "la-fontana-e-le-voci",
+    "id": "fontana-vecchia-memoria",
     "title": {
-      "it": "La fontana e le voci",
-      "en": "The fountain and the voices"
+      "it": "Fontana Vecchia, acqua e memoria",
+      "en": "Fontana Vecchia, water and memory"
     },
     "theme": "fontana",
     "excerpt": {
-      "it": "Una suggestione mock sulla memoria quotidiana legata a un luogo semplice.",
-      "en": "A mock reflection on everyday memory connected to a simple place."
+      "it": "Una suggestione mock collegata a Fontana Vecchia, punto reale mappato come monumento.",
+      "en": "A mock reflection linked to Fontana Vecchia, a real point mapped as a monument."
     },
     "content": {
-      "it": "Il testo non documenta un fatto storico: mostra come potra essere raccontato un luogo quando saranno disponibili fonti e testimonianze.",
-      "en": "The text does not document a historical fact: it shows how a place could be narrated once sources and testimonies are available."
+      "it": "Il testo non interpreta iscrizioni o vicende storiche: mostra solo come potra essere raccontato un luogo quando saranno disponibili fonti e testimonianze curate.",
+      "en": "The text does not interpret inscriptions or historical events: it only shows how a place could be narrated once curated sources and testimonies are available."
     },
-    "relatedPlaceIds": ["fontana"],
+    "relatedPlaceIds": ["fontana-vecchia"],
     "isMock": true,
     "consentRequiredNotice": {
       "it": "Le testimonianze reali non devono includere dati personali non autorizzati.",
@@ -44,21 +44,18 @@
     }
   },
   {
-    "id": "scalinate-lente",
-    "title": {
-      "it": "Scalinate lente",
-      "en": "Slow steps"
-    },
+    "id": "salita-chiesa-passi",
+    "title": { "it": "Passi lenti verso la chiesa", "en": "Slow steps towards the church" },
     "theme": "scalinate",
     "excerpt": {
-      "it": "Un breve testo dimostrativo sul camminare piano tra passaggi e scorci.",
-      "en": "A short demo text about walking slowly through passages and glimpses."
+      "it": "Un breve testo dimostrativo collegato a Via Salita della Chiesa e al centro storico.",
+      "en": "A short demo text connected to Via Salita della Chiesa and the historic centre."
     },
     "content": {
-      "it": "Questo contenuto serve solo a mostrare il formato della pagina Racconti e andra ampliato con materiale verificato.",
-      "en": "This content only shows the Stories page format and should be expanded with verified material."
+      "it": "Questo contenuto serve a mostrare il formato della pagina Racconti e andra ampliato con materiale verificato e autorizzato.",
+      "en": "This content shows the Stories page format and should be expanded with verified, authorised material."
     },
-    "relatedPlaceIds": ["scalinate", "belvedere"],
+    "relatedPlaceIds": ["salita-della-chiesa", "chiesa-santa-maria"],
     "isMock": true,
     "consentRequiredNotice": {
       "it": "Eventuali foto di persone richiedono consenso specifico alla pubblicazione.",
