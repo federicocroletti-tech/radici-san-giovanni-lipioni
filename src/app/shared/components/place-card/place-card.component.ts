@@ -28,11 +28,11 @@ export class PlaceCardComponent {
   @Output() selectedPlace = new EventEmitter<Place>();
 
   get categoryLabel(): string {
-    const labels: Record<string, Record<'it' | 'en', string>> = {
-      heritage: { it: 'Patrimonio', en: 'Heritage' },
-      community: { it: 'Comunita', en: 'Community' },
-      memory: { it: 'Memoria', en: 'Memory' },
-      viewpoint: { it: 'Paesaggio', en: 'Landscape' },
+    const labels: Record<string, Record<'it' | 'en' | 'fr', string>> = {
+      heritage: { it: 'Patrimonio', en: 'Heritage', fr: 'Patrimoine' },
+      community: { it: 'Comunita', en: 'Community', fr: 'Communauté' },
+      memory: { it: 'Memoria', en: 'Memory', fr: 'Mémoire' },
+      viewpoint: { it: 'Paesaggio', en: 'Landscape', fr: 'Paysage' },
     };
 
     return labels[this.place.category]?.[this.i18n.currentLanguage()] ?? this.place.category;

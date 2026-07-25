@@ -1,0 +1,171 @@
+{
+  "app": {
+    "name": "Radici San Giovanni Lipioni",
+    "tagline": "Guide numérique interactif du village",
+    "demoNotice": "Guide de démonstration : marqueurs issus de sources publiques, textes éditoriaux à vérifier localement.",
+    "openMenu": "Ouvrir le menu",
+    "closeMenu": "Fermer le menu"
+  },
+  "language": {
+    "label": "Langue"
+  },
+  "nav": {
+    "home": "Accueil",
+    "explore": "Explorer",
+    "itineraries": "Itinéraires",
+    "stories": "Récits",
+    "privacy": "Confidentialité et cookies",
+    "chatbot": "Chatbot"
+  },
+  "actions": {
+    "exploreMap": "Explorer la carte",
+    "askChatbot": "Demander au chatbot",
+    "openOnMap": "Ouvrir sur la carte",
+    "openExternalMap": "Itinéraire externe",
+    "discoverLinkedPlaces": "Découvrir les lieux associés",
+    "manageCookies": "Gérer les préférences cookies",
+    "backHome": "Retour à l’accueil",
+    "clearFilters": "Effacer les filtres",
+    "send": "Envoyer",
+    "close": "Fermer",
+    "acceptAll": "Tout accepter",
+    "rejectAll": "Refuser les options",
+    "savePreferences": "Enregistrer les préférences"
+  },
+  "home": {
+    "kicker": "Village, mémoire, racines",
+    "title": "Radici San Giovanni Lipioni",
+    "intro": "Un guide numérique pour explorer le village avec une carte interactive, des points réels issus d’OpenStreetMap, des itinéraires lents, des récits de démonstration et un chatbot fondé uniquement sur des contenus contrôlés.",
+    "whyTitle": "Pourquoi San Giovanni Lipioni",
+    "whyText": "Le projet naît d’un lien familial et culturel avec le village, en organisant lieux, mémoires et informations évolutives sans inventer l’histoire locale.",
+    "cardsTitle": "Trois façons de commencer",
+    "placesTitle": "Lieux",
+    "placesText": "Marqueurs alignés avec des points publics OpenStreetMap, accompagnés de notes de source lisibles.",
+    "itinerariesTitle": "Itinéraires",
+    "itinerariesText": "Parcours courts pensés pour un tourisme lent et des visites respectueuses.",
+    "storiesTitle": "Récits",
+    "storiesText": "Souvenirs de démonstration à remplacer par des témoignages réels autorisés.",
+    "featuredTitle": "Lieux en évidence",
+    "rootsTitle": "Racines, mémoire et lenteur",
+    "rootsText": "L’application distingue les données géographiques publiques, les textes éditoriaux et les contenus encore à valider, en préparant une structure prête pour des photos réelles, des sources locales, un backend et un chatbot évolué.",
+    "finalCtaTitle": "Commencer par la carte",
+    "finalCtaText": "Explore les points cartographiés et ouvre le chatbot quand tu veux demander des informations sur les contenus disponibles."
+  },
+  "explore": {
+    "title": "Explorer la carte de San Giovanni Lipioni",
+    "intro": "Filtre les lieux, cherche par mot-clé et sélectionne un marqueur. La fiche s’ouvre dans l’espace latéral sans couvrir la carte et reste accessible depuis la liste sur mobile.",
+    "searchLabel": "Rechercher des lieux ou des tags",
+    "searchPlaceholder": "Exemple : place, panorama, mémoire",
+    "categoryLabel": "Catégorie",
+    "allCategories": "Toutes",
+    "mapTab": "Carte",
+    "listTab": "Liste",
+    "results": "Résultats",
+    "noResults": "Aucun lieu trouvé avec ces filtres.",
+    "selectedPlace": "Lieu sélectionné",
+    "verified": "Vérifié",
+    "notVerified": "À vérifier",
+    "sourceNotes": "Notes de source",
+    "askAboutPlace": "Demander des informations sur ce lieu",
+    "selectPromptTitle": "Sélectionne un lieu",
+    "selectPromptText": "Clique sur un marqueur ou une carte pour ouvrir une fiche avec description, sources et actions rapides."
+  },
+  "itineraries": {
+    "title": "Itinéraires pour découvrir San Giovanni Lipioni",
+    "intro": "Trois parcours construits à partir des lieux cartographiés. Durées, étapes et accessibilité doivent être confirmées sur place avant publication définitive.",
+    "duration": "Durée",
+    "difficulty": "Difficulté",
+    "places": "Étapes",
+    "openMap": "Ouvrir l’itinéraire sur la carte",
+    "ask": "Demander au chatbot"
+  },
+  "stories": {
+    "title": "Récits, mémoire et racines",
+    "intro": "Une collection de démonstration consacrée aux retours, aux lieux du quotidien et aux liens familiaux. Les textes ne sont pas des témoignages réels.",
+    "themeLabel": "Thème",
+    "allThemes": "Tous les thèmes",
+    "mockNotice": "Récit de démonstration",
+    "consentNotice": "Note de consentement",
+    "linkedPlaces": "Lieux associés"
+  },
+  "privacy": {
+    "title": "Confidentialité et cookies",
+    "intro": "Cette page explique simplement le fonctionnement de la démo. Ce texte est un modèle de démonstration et doit être validé par un conseiller juridique avant publication définitive.",
+    "sections": [
+      "Responsable du traitement : TODO. Email confidentialité : TODO. Adresse ou siège : TODO.",
+      "La démo ne prévoit pas de comptes, formulaires publics, paiements ni téléversements de contenus par les utilisateurs.",
+      "Le localStorage est utilisé pour la langue sélectionnée, les préférences cookies et l’état d’interface non sensible.",
+      "AnalyticsService est fictif : aucun script d’analyse réel n’est chargé avant consentement explicite.",
+      "Les cookies nécessaires sont toujours actifs ; analytics, marketing et préférences sont désactivés par défaut et modifiables par l’utilisateur.",
+      "Les principaux marqueurs géographiques proviennent de sources publiques OpenStreetMap ; les récits, textes éditoriaux et informations d’accessibilité doivent être vérifiés avant publication réelle."
+    ]
+  },
+  "notFound": {
+    "title": "Page introuvable",
+    "text": "Le parcours demandé n’existe pas ou n’est pas encore prévu dans cette démo."
+  },
+  "chatbot": {
+    "title": "Assistant Radici",
+    "intro": "Utilise uniquement des contenus contrôlés et propose des étapes suivantes.",
+    "placeholder": "Écris une question sur le village...",
+    "welcome": "Bonjour, je suis l’assistant Radici. Je peux t’aider à choisir un itinéraire, lire les sources d’un lieu ou comprendre quels contenus sont encore démonstratifs. Si je n’ai pas de données vérifiables, je te le dis et je propose quoi contrôler.",
+    "fallback": "Je n’ai pas assez de données contrôlées pour répondre correctement. Tu peux demander par exemple : que voir dans le centre, parle-moi de l’église, où se trouve Fontana Vecchia, ou quel itinéraire tu conseilles.",
+    "openRelatedPlace": "Ouvrir le lieu associé sur la carte",
+    "quickPrompts": [
+      "Que voir dans le centre ?",
+      "Parle-moi de l’église",
+      "Quel itinéraire conseilles-tu ?",
+      "Quels contenus sont vérifiés ?"
+    ],
+    "thinking": "Je vérifie les données disponibles..."
+  },
+  "cookie": {
+    "title": "Préférences cookies",
+    "intro": "La démo utilise uniquement des fonctions techniques. Les catégories optionnelles restent désactivées tant que tu ne choisis pas autrement.",
+    "necessary": "Nécessaires",
+    "necessaryText": "Toujours actifs pour la sécurité, la langue et les préférences de base.",
+    "analytics": "Analytics",
+    "analyticsText": "Fictif dans la première version : aucun service réel n’est chargé avant consentement.",
+    "marketing": "Marketing",
+    "marketingText": "Non utilisé dans la démo, désactivé par défaut.",
+    "preferences": "Préférences",
+    "preferencesText": "Mémorise des choix non sensibles comme la langue et les paramètres d’interface."
+  },
+  "footer": {
+    "description": "Démo Angular dédiée à San Giovanni Lipioni, pensée pour la carte, la mémoire locale, les données JSON et une future évolution backend.",
+    "repository": "Dépôt GitHub",
+    "disclaimer": "Contenus de démonstration, pas une source officielle."
+  },
+  "seo": {
+    "home": {
+      "title": "Radici San Giovanni Lipioni | Guide numérique du village",
+      "description": "Découvre San Giovanni Lipioni à travers un guide numérique avec carte interactive, lieux, itinéraires, récits et chatbot informatif.",
+      "canonical": "/"
+    },
+    "explore": {
+      "title": "Explorer San Giovanni Lipioni | Carte interactive du village",
+      "description": "Explore San Giovanni Lipioni avec une carte interactive des lieux principaux, points de vue, traditions et parcours dans le village.",
+      "canonical": "/esplora"
+    },
+    "itineraries": {
+      "title": "Itinéraires à San Giovanni Lipioni | Parcours dans le village",
+      "description": "Découvre des itinéraires simples pour visiter San Giovanni Lipioni entre village, panoramas, mémoire et traditions locales.",
+      "canonical": "/itinerari"
+    },
+    "stories": {
+      "title": "Récits et mémoire de San Giovanni Lipioni",
+      "description": "Une collection de démonstration de récits, mémoires et suggestions liées à San Giovanni Lipioni, à ses traditions et à ses lieux.",
+      "canonical": "/racconti"
+    },
+    "privacy": {
+      "title": "Confidentialité et cookies | Radici San Giovanni Lipioni",
+      "description": "Informations sur la confidentialité, les cookies et la gestion du consentement pour le guide numérique Radici San Giovanni Lipioni.",
+      "canonical": "/privacy-cookie"
+    },
+    "notFound": {
+      "title": "Page introuvable | Radici San Giovanni Lipioni",
+      "description": "Page introuvable.",
+      "canonical": "/404"
+    }
+  }
+}

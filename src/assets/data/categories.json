@@ -3,7 +3,8 @@
     "id": "heritage",
     "label": {
       "it": "Luoghi del borgo",
-      "en": "Village places"
+      "en": "Village places",
+      "fr": "Lieux du village"
     },
     "icon": "stone"
   },
@@ -11,7 +12,8 @@
     "id": "viewpoint",
     "label": {
       "it": "Panorami",
-      "en": "Viewpoints"
+      "en": "Viewpoints",
+      "fr": "Panoramas"
     },
     "icon": "landscape"
   },
@@ -19,7 +21,8 @@
     "id": "community",
     "label": {
       "it": "Comunità",
-      "en": "Community"
+      "en": "Community",
+      "fr": "Communauté"
     },
     "icon": "people"
   },
@@ -27,7 +30,8 @@
     "id": "memory",
     "label": {
       "it": "Memoria",
-      "en": "Memory"
+      "en": "Memory",
+      "fr": "Mémoire"
     },
     "icon": "memory"
   }

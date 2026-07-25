@@ -1,22 +1,25 @@
 [
   {
     "id": "centro-storico",
-    "name": { "it": "Centro storico", "en": "Historic centre" },
+    "name": { "it": "Centro storico", "en": "Historic centre", "fr": "Centre historique" },
     "category": "heritage",
     "shortDescription": {
       "it": "Nucleo storico mappato come quartiere Lu Pajose su OpenStreetMap.",
-      "en": "Historic core mapped as the Lu Pajose neighbourhood on OpenStreetMap."
+      "en": "Historic core mapped as the Lu Pajose neighbourhood on OpenStreetMap.",
+      "fr": "Noyau historique cartographié comme quartier Lu Pajose sur OpenStreetMap."
     },
     "description": {
       "it": "Punto reale da OSM per orientare la visita nel centro storico. La scheda non aggiunge dettagli storici non verificati: serve come ingresso alla lettura del borgo e dei suoi percorsi interni.",
-      "en": "A real OSM point used to orient the visit in the historic centre. This entry does not add unverified historical details: it is a starting point for reading the village and its inner routes."
+      "en": "A real OSM point used to orient the visit in the historic centre. This entry does not add unverified historical details: it is a starting point for reading the village and its inner routes.",
+      "fr": "Point réel issu d’OSM pour orienter la visite dans le centre historique. La fiche n’ajoute pas de détails historiques non vérifiés : elle sert d’entrée pour lire le village et ses parcours internes."
     },
     "latitude": 41.8429366,
     "longitude": 14.5621116,
     "image": "assets/images/borgo-stone.svg",
     "alt": {
       "it": "Illustrazione sobria di case in pietra e colline",
-      "en": "Simple illustration of stone houses and hills"
+      "en": "Simple illustration of stone houses and hills",
+      "fr": "Illustration sobre de maisons en pierre et de collines"
     },
     "tags": ["centro storico", "lu pajose", "borgo", "vicoli", "historic centre", "village"],
     "relatedPlaceIds": ["piazza-largo-popolo", "salita-della-chiesa"],
@@ -28,22 +31,29 @@
   },
   {
     "id": "piazza-largo-popolo",
-    "name": { "it": "Piazza Largo del Popolo", "en": "Piazza Largo del Popolo" },
+    "name": {
+      "it": "Piazza Largo del Popolo",
+      "en": "Piazza Largo del Popolo",
+      "fr": "Piazza Largo del Popolo"
+    },
     "category": "community",
     "shortDescription": {
       "it": "Piazza reale mappata nel borgo, utile come riferimento di arrivo e incontro.",
-      "en": "A real mapped square in the village, useful as an arrival and meeting reference."
+      "en": "A real mapped square in the village, useful as an arrival and meeting reference.",
+      "fr": "Place réelle cartographiée dans le village, utile comme point d’arrivée et de rencontre."
     },
     "description": {
       "it": "La piazza e indicata in OSM come square. Il testo mantiene un tono descrittivo e non attribuisce eventi o tradizioni specifiche senza fonti verificabili.",
-      "en": "The square is tagged in OSM as a square. The text remains descriptive and does not assign specific events or traditions without verifiable sources."
+      "en": "The square is tagged in OSM as a square. The text remains descriptive and does not assign specific events or traditions without verifiable sources.",
+      "fr": "La place est indiquée dans OSM comme square. Le texte reste descriptif et n’attribue pas d’événements ou de traditions spécifiques sans sources vérifiables."
     },
     "latitude": 41.8440329,
     "longitude": 14.5617977,
     "image": "assets/images/piazza-memory.svg",
     "alt": {
       "it": "Illustrazione di una piccola piazza di borgo",
-      "en": "Illustration of a small village square"
+      "en": "Illustration of a small village square",
+      "fr": "Illustration d’une petite place de village"
     },
     "tags": ["piazza", "largo del popolo", "incontro", "square", "community"],
     "relatedPlaceIds": ["mostra-valdese", "chiesa-santa-maria"],
@@ -54,23 +64,27 @@
     "id": "mostra-valdese",
     "name": {
       "it": "Mostra Permanente Esperienza Valdese",
-      "en": "Permanent Exhibition: Waldensian Experience"
+      "en": "Permanent Exhibition: Waldensian Experience",
+      "fr": "Exposition permanente Expérience vaudoise"
     },
     "category": "memory",
     "shortDescription": {
       "it": "Museo storico mappato in Piazza Largo del Popolo, con apertura su appuntamento secondo OSM.",
-      "en": "History museum mapped in Piazza Largo del Popolo, listed by OSM as open by appointment."
+      "en": "History museum mapped in Piazza Largo del Popolo, listed by OSM as open by appointment.",
+      "fr": "Musée historique cartographié sur la Piazza Largo del Popolo, indiqué par OSM comme ouvert sur rendez-vous."
     },
     "description": {
       "it": "La fonte OSM colloca la Mostra Permanente Esperienza Valdese in Piazza Largo del Popolo, nei locali del Centro Culturale Comunale ex Chiesa Valdese, e indica apertura su appuntamento. La scheda valorizza il luogo come presidio di memoria culturale, senza aggiungere dettagli non verificati.",
-      "en": "The OSM source places the Permanent Exhibition about the Waldensian experience in Piazza Largo del Popolo, inside the municipal cultural centre, former Waldensian church, and lists opening by appointment. This entry treats it as a cultural memory point without adding unverified details."
+      "en": "The OSM source places the Permanent Exhibition about the Waldensian experience in Piazza Largo del Popolo, inside the municipal cultural centre, former Waldensian church, and lists opening by appointment. This entry treats it as a cultural memory point without adding unverified details.",
+      "fr": "La source OSM situe l’Exposition permanente sur l’expérience vaudoise à Piazza Largo del Popolo, dans le centre culturel communal, ancienne église vaudoise, et indique une ouverture sur rendez-vous. La fiche présente le lieu comme point de mémoire culturelle sans ajouter de détails non vérifiés."
     },
     "latitude": 41.8440321,
     "longitude": 14.5615785,
     "image": "assets/images/tradizioni.svg",
     "alt": {
       "it": "Illustrazione di persone riunite in un borgo",
-      "en": "Illustration of people gathered in a village"
+      "en": "Illustration of people gathered in a village",
+      "fr": "Illustration de personnes réunies dans un village"
     },
     "tags": ["mostra", "valdese", "museo", "memoria", "museum", "waldensian"],
     "relatedPlaceIds": ["piazza-largo-popolo", "centro-storico"],
@@ -85,23 +99,27 @@
     "id": "chiesa-santa-maria",
     "name": {
       "it": "Chiesa di Santa Maria delle Grazie",
-      "en": "Church of Santa Maria delle Grazie"
+      "en": "Church of Santa Maria delle Grazie",
+      "fr": "Église Santa Maria delle Grazie"
     },
     "category": "heritage",
     "shortDescription": {
       "it": "Chiesa cattolica mappata nel centro abitato.",
-      "en": "Catholic church mapped in the village centre."
+      "en": "Catholic church mapped in the village centre.",
+      "fr": "Église catholique cartographiée dans le centre habité."
     },
     "description": {
       "it": "La scheda Chiese Italiane della CEI descrive Santa Maria delle Grazie come chiesa parrocchiale che domina l'abitato con la sua mole in pietra. La configurazione planimetrica attuale viene ricondotta circa alla meta del Seicento; la facciata a capanna, con registri separati da cornice marcapiano e decorazioni in pietra, mostra interventi maturati nei secoli. La sintesi qui e originale e va comunque verificata con la diocesi per uso ufficiale.",
-      "en": "The Italian Churches database by CEI describes Santa Maria delle Grazie as the parish church overlooking the settlement with its stone mass. Its current plan is dated around the mid-seventeenth century; the gabled facade, divided by a strong stringcourse and stone architectural decorations, reflects changes over time. This is an original summary and should still be checked with the diocese before official use."
+      "en": "The Italian Churches database by CEI describes Santa Maria delle Grazie as the parish church overlooking the settlement with its stone mass. Its current plan is dated around the mid-seventeenth century; the gabled facade, divided by a strong stringcourse and stone architectural decorations, reflects changes over time. This is an original summary and should still be checked with the diocese before official use.",
+      "fr": "La base Chiese Italiane de la CEI décrit Santa Maria delle Grazie comme l’église paroissiale dominant le village par sa masse en pierre. Le plan actuel est rattaché environ au milieu du XVIIe siècle ; la façade à pignon, divisée par une forte corniche et des décors architecturaux en pierre, reflète des transformations au fil du temps. Cette synthèse est originale et doit être vérifiée auprès du diocèse avant tout usage officiel."
     },
     "latitude": 41.8430544,
     "longitude": 14.5619544,
     "image": "assets/images/borgo-stone.svg",
     "alt": {
       "it": "Illustrazione sobria di case in pietra e colline",
-      "en": "Simple illustration of stone houses and hills"
+      "en": "Simple illustration of stone houses and hills",
+      "fr": "Illustration sobre de maisons en pierre et de collines"
     },
     "tags": ["chiesa", "santa maria", "grazie", "church", "heritage"],
     "relatedPlaceIds": ["salita-della-chiesa", "piazza-largo-popolo"],
@@ -113,22 +131,29 @@
   },
   {
     "id": "salita-della-chiesa",
-    "name": { "it": "Via Salita della Chiesa", "en": "Via Salita della Chiesa" },
+    "name": {
+      "it": "Via Salita della Chiesa",
+      "en": "Via Salita della Chiesa",
+      "fr": "Via Salita della Chiesa"
+    },
     "category": "heritage",
     "shortDescription": {
       "it": "Tratto a gradini mappato vicino alla chiesa, utile per raccontare la mobilita lenta nel borgo.",
-      "en": "Mapped stepped lane near the church, useful for describing slow movement through the village."
+      "en": "Mapped stepped lane near the church, useful for describing slow movement through the village.",
+      "fr": "Passage en escalier cartographié près de l’église, utile pour raconter la mobilité lente dans le village."
     },
     "description": {
       "it": "OSM identifica questo tratto come steps con superficie in pietra/pavimentazione. La scheda lo usa come riferimento fisico reale per itinerari brevi nel centro.",
-      "en": "OSM identifies this segment as steps with paved-stone surface. This entry uses it as a real physical reference for short routes in the centre."
+      "en": "OSM identifies this segment as steps with paved-stone surface. This entry uses it as a real physical reference for short routes in the centre.",
+      "fr": "OSM identifie ce tronçon comme escalier avec surface pavée. La fiche l’utilise comme repère physique réel pour de courts itinéraires dans le centre."
     },
     "latitude": 41.8434745,
     "longitude": 14.5617107,
     "image": "assets/images/scalinate.svg",
     "alt": {
       "it": "Illustrazione di scalinate tra case di borgo",
-      "en": "Illustration of steps among village houses"
+      "en": "Illustration of steps among village houses",
+      "fr": "Illustration d’escaliers entre des maisons de village"
     },
     "tags": ["scalini", "salita", "chiesa", "steps", "walking"],
     "relatedPlaceIds": ["chiesa-santa-maria", "centro-storico"],
@@ -137,22 +162,25 @@
   },
   {
     "id": "fontana-vecchia",
-    "name": { "it": "Fontana Vecchia", "en": "Fontana Vecchia" },
+    "name": { "it": "Fontana Vecchia", "en": "Fontana Vecchia", "fr": "Fontana Vecchia" },
     "category": "memory",
     "shortDescription": {
       "it": "Fontana storica in pietra mappata da OSM come monumento.",
-      "en": "Historic stone fountain mapped by OSM as a monument."
+      "en": "Historic stone fountain mapped by OSM as a monument.",
+      "fr": "Fontaine historique en pierre cartographiée par OSM comme monument."
     },
     "description": {
       "it": "Fontana Vecchia e mappata da OSM come monumento in pietra. La fonte riporta anche il nome alternativo Fontana Comunale e un'iscrizione datata 1844, collegata al restauro dell'opera. La descrizione resta sintetica per non trasformare la nota epigrafica in racconto storico non verificato.",
-      "en": "Fontana Vecchia is mapped by OSM as a stone monument. The source also reports the alternate name Fontana Comunale and an inscription dated 1844, connected to the restoration of the work. The description stays concise to avoid turning the epigraphic note into an unverified historical narrative."
+      "en": "Fontana Vecchia is mapped by OSM as a stone monument. The source also reports the alternate name Fontana Comunale and an inscription dated 1844, connected to the restoration of the work. The description stays concise to avoid turning the epigraphic note into an unverified historical narrative.",
+      "fr": "Fontana Vecchia est cartographiée par OSM comme monument en pierre. La source indique aussi le nom alternatif Fontana Comunale et une inscription datée de 1844, liée à la restauration de l’ouvrage. La description reste concise afin de ne pas transformer la note épigraphique en récit historique non vérifié."
     },
     "latitude": 41.8477431,
     "longitude": 14.5626981,
     "image": "assets/images/fontana.svg",
     "alt": {
       "it": "Illustrazione di una fontana semplice",
-      "en": "Illustration of a simple fountain"
+      "en": "Illustration of a simple fountain",
+      "fr": "Illustration d’une fontaine simple"
     },
     "tags": ["fontana", "fontana vecchia", "monumento", "fountain", "monument"],
     "relatedPlaceIds": ["cappella-santa-liberata", "quercia-lozzi"],
@@ -166,23 +194,27 @@
     "id": "cappella-santa-liberata",
     "name": {
       "it": "Cappella di Santa Liberata Vergine e Martire",
-      "en": "Chapel of Santa Liberata Virgin and Martyr"
+      "en": "Chapel of Santa Liberata Virgin and Martyr",
+      "fr": "Chapelle de Santa Liberata Vierge et Martyre"
     },
     "category": "heritage",
     "shortDescription": {
       "it": "Cappella mappata nell'area di Santa Liberata.",
-      "en": "Mapped chapel in the Santa Liberata area."
+      "en": "Mapped chapel in the Santa Liberata area.",
+      "fr": "Chapelle cartographiée dans le secteur de Santa Liberata."
     },
     "description": {
       "it": "La posizione deriva da OSM. La descrizione resta minimale per evitare dettagli devozionali o storici non verificati nel progetto.",
-      "en": "The position comes from OSM. The description stays minimal to avoid devotional or historical details not verified in the project."
+      "en": "The position comes from OSM. The description stays minimal to avoid devotional or historical details not verified in the project.",
+      "fr": "La position provient d’OSM. La description reste minimale afin d’éviter des détails dévotionnels ou historiques non vérifiés dans le projet."
     },
     "latitude": 41.8471971,
     "longitude": 14.560414,
     "image": "assets/images/borgo-stone.svg",
     "alt": {
       "it": "Illustrazione sobria di case in pietra e colline",
-      "en": "Simple illustration of stone houses and hills"
+      "en": "Simple illustration of stone houses and hills",
+      "fr": "Illustration sobre de maisons en pierre et de collines"
     },
     "tags": ["cappella", "santa liberata", "chapel", "heritage"],
     "relatedPlaceIds": ["fontana-vecchia", "quercia-lozzi"],
@@ -191,22 +223,25 @@
   },
   {
     "id": "quercia-lozzi",
-    "name": { "it": "Quercia di Lozzi", "en": "Lozzi's Oak" },
+    "name": { "it": "Quercia di Lozzi", "en": "Lozzi's Oak", "fr": "Chêne de Lozzi" },
     "category": "viewpoint",
     "shortDescription": {
       "it": "Gruppo di querce monumentali mappato nell'area di Santa Liberata.",
-      "en": "Mapped group of notable oak trees in the Santa Liberata area."
+      "en": "Mapped group of notable oak trees in the Santa Liberata area.",
+      "fr": "Groupe de chênes remarquables cartographié dans le secteur de Santa Liberata."
     },
     "description": {
       "it": "La Quercia di Lozzi e indicata da OSM come gruppo di querce di roverella nell'area di Santa Liberata, con riferimenti a Molise Alberi, Comune di San Giovanni Lipioni e conoscenza locale. La scheda la presenta come punto paesaggistico e naturalistico da controllare sul posto per accesso, stato e percorso.",
-      "en": "Lozzi's Oak is listed by OSM as a group of downy oaks in the Santa Liberata area, with references to Molise Alberi, the Municipality of San Giovanni Lipioni and local knowledge. This entry presents it as a landscape and natural point to check on site for access, condition and route."
+      "en": "Lozzi's Oak is listed by OSM as a group of downy oaks in the Santa Liberata area, with references to Molise Alberi, the Municipality of San Giovanni Lipioni and local knowledge. This entry presents it as a landscape and natural point to check on site for access, condition and route.",
+      "fr": "Le Chêne de Lozzi est indiqué par OSM comme un groupe de chênes pubescents dans le secteur de Santa Liberata, avec références à Molise Alberi, à la commune de San Giovanni Lipioni et à la connaissance locale. La fiche le présente comme point paysager et naturel à vérifier sur place pour l’accès, l’état et le parcours."
     },
     "latitude": 41.8492813,
     "longitude": 14.5585058,
     "image": "assets/images/panorama.svg",
     "alt": {
       "it": "Illustrazione di colline viste da un borgo",
-      "en": "Illustration of hills seen from a village"
+      "en": "Illustration of hills seen from a village",
+      "fr": "Illustration de collines vues depuis un village"
     },
     "tags": ["quercia", "lozzi", "alberi", "santa liberata", "oak", "trees"],
     "relatedPlaceIds": ["cappella-santa-liberata", "fontana-vecchia"],

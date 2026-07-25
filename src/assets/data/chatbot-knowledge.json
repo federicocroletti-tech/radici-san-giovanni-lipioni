@@ -6,7 +6,8 @@
       "keywords": ["radici", "progetto", "app", "guida", "what is", "project", "guide"],
       "answer": {
         "it": "Radici San Giovanni Lipioni e una guida digitale dimostrativa con mappa, itinerari, racconti e contenuti controllati sul borgo. I marker principali usano dati OpenStreetMap; racconti e testi editoriali restano da verificare prima dell'uso ufficiale.",
-        "en": "Radici San Giovanni Lipioni is a demo digital guide with a map, itineraries, stories and controlled content about the village. Main markers use OpenStreetMap data; stories and editorial text still need verification before official use."
+        "en": "Radici San Giovanni Lipioni is a demo digital guide with a map, itineraries, stories and controlled content about the village. Main markers use OpenStreetMap data; stories and editorial text still need verification before official use.",
+        "fr": "Radici San Giovanni Lipioni est un guide numérique de démonstration avec carte, itinéraires, récits et contenus contrôlés sur le village. Les principaux marqueurs utilisent des données OpenStreetMap ; les récits et textes éditoriaux doivent encore être vérifiés avant un usage officiel."
       },
       "source": "chatbot-knowledge.json"
     },
@@ -16,7 +17,8 @@
       "keywords": ["mappa", "marker", "luoghi", "esplora", "map", "places", "markers", "explore"],
       "answer": {
         "it": "Puoi aprire la pagina Esplora per vedere luoghi mappati da OpenStreetMap, filtrare per categoria e leggere le schede. Le note fonte indicano quali dati arrivano da OSM e cosa resta editoriale.",
-        "en": "Open the Explore page to see places mapped from OpenStreetMap, filter by category and read the entries. Source notes show which data comes from OSM and what remains editorial."
+        "en": "Open the Explore page to see places mapped from OpenStreetMap, filter by category and read the entries. Source notes show which data comes from OSM and what remains editorial.",
+        "fr": "Ouvre la page Explorer pour voir les lieux cartographiés depuis OpenStreetMap, filtrer par catégorie et lire les fiches. Les notes de source indiquent quelles données viennent d’OSM et ce qui reste éditorial."
       },
       "relatedPlaceId": "centro-storico",
       "source": "chatbot-knowledge.json"
@@ -27,7 +29,8 @@
       "keywords": ["itinerari", "percorsi", "camminata", "route", "itineraries", "walk"],
       "answer": {
         "it": "Sono disponibili tre itinerari basati sui luoghi mappati: Centro, piazza e memoria valdese; Scalinate e vie del centro; Fontana Vecchia e Santa Liberata. Tempi e percorribilita vanno verificati sul posto.",
-        "en": "Three itineraries based on mapped places are available: Centre, square and Waldensian memory; Steps and central lanes; Fontana Vecchia and Santa Liberata. Times and walkability must be checked on site."
+        "en": "Three itineraries based on mapped places are available: Centre, square and Waldensian memory; Steps and central lanes; Fontana Vecchia and Santa Liberata. Times and walkability must be checked on site.",
+        "fr": "Trois itinéraires fondés sur les lieux cartographiés sont disponibles : centre, place et mémoire vaudoise ; escaliers et rues du centre ; Fontana Vecchia et Santa Liberata. Les temps et la praticabilité doivent être vérifiés sur place."
       },
       "source": "chatbot-knowledge.json"
     },
@@ -45,7 +48,8 @@
       ],
       "answer": {
         "it": "La sezione Racconti contiene testi dimostrativi su memoria e radici. Le testimonianze reali dovranno essere raccolte con consenso esplicito.",
-        "en": "The Stories section contains demo texts about memory and roots. Real testimonies must be collected with explicit consent."
+        "en": "The Stories section contains demo texts about memory and roots. Real testimonies must be collected with explicit consent.",
+        "fr": "La section Récits contient des textes de démonstration sur la mémoire et les racines. Les témoignages réels devront être recueillis avec un consentement explicite."
       },
       "source": "chatbot-knowledge.json"
     },
@@ -55,7 +59,8 @@
       "keywords": ["privacy", "cookie", "consenso", "gdpr", "consent"],
       "answer": {
         "it": "Il progetto usa localStorage per lingua e preferenze cookie. Analytics e marketing restano disattivati finche non viene dato consenso esplicito.",
-        "en": "The project uses localStorage for language and cookie preferences. Analytics and marketing stay disabled until explicit consent is given."
+        "en": "The project uses localStorage for language and cookie preferences. Analytics and marketing stay disabled until explicit consent is given.",
+        "fr": "Le projet utilise localStorage pour la langue et les préférences cookies. Analytics et marketing restent désactivés tant qu’un consentement explicite n’est pas donné."
       },
       "source": "chatbot-knowledge.json"
     }

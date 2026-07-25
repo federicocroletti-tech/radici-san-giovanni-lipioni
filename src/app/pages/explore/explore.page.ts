@@ -21,7 +21,7 @@ import { SearchInputComponent } from '../../shared/components/search-input/searc
     SearchInputComponent,
   ],
   template: `
-    <section class="page-heading">
+    <section class="page-heading compact-heading">
       <p class="eyebrow">{{ i18n.t('app.demoNotice') }}</p>
       <h1>{{ i18n.t('explore.title') }}</h1>
       <p>{{ i18n.t('explore.intro') }}</p>

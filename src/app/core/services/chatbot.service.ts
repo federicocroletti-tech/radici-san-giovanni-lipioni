@@ -127,16 +127,27 @@ export class ChatbotService {
         ]
           .filter(Boolean)
           .join(' ')
-      : [
-          `Let's look at ${name}. ${description}`,
-          sources ? `Main sources: ${sources}` : '',
-          relatedNames.length
-            ? `For a fuller visit I would connect it with ${relatedNames.slice(0, 2).join(' and ')}.`
-            : '',
-          'I can open it on the map or help you place it inside an itinerary.',
-        ]
-          .filter(Boolean)
-          .join(' ');
+      : this.isFrench()
+        ? [
+            `Je te propose ${name}. ${description}`,
+            sources ? `Sources principales : ${sources}` : '',
+            relatedNames.length
+              ? `Pour une visite plus complète, je le relierais à ${relatedNames.slice(0, 2).join(' et ')}.`
+              : '',
+            'Je peux l’ouvrir sur la carte ou t’aider à l’intégrer dans un itinéraire.',
+          ]
+            .filter(Boolean)
+            .join(' ')
+        : [
+            `Let's look at ${name}. ${description}`,
+            sources ? `Main sources: ${sources}` : '',
+            relatedNames.length
+              ? `For a fuller visit I would connect it with ${relatedNames.slice(0, 2).join(' and ')}.`
+              : '',
+            'I can open it on the map or help you place it inside an itinerary.',
+          ]
+            .filter(Boolean)
+            .join(' ');
 
     return { text, relatedPlaceId: place.id };
   }
@@ -151,7 +162,9 @@ export class ChatbotService {
 
     const text = this.isItalian()
       ? `${title}: ${description} Le tappe sono ${stops.join(', ')}. Ti suggerisco di usarlo come traccia, poi verificare tempi e accessibilita sul posto.`
-      : `${title}: ${description} The stops are ${stops.join(', ')}. I suggest using it as a guide, then checking timing and accessibility on site.`;
+      : this.isFrench()
+        ? `${title}: ${description} Les étapes sont ${stops.join(', ')}. Je te conseille de l’utiliser comme trame, puis de vérifier les temps et l’accessibilité sur place.`
+        : `${title}: ${description} The stops are ${stops.join(', ')}. I suggest using it as a guide, then checking timing and accessibility on site.`;
 
     return { text, relatedPlaceId: itinerary.placeIds[0] };
   }
@@ -163,7 +176,9 @@ export class ChatbotService {
     const notice = this.language.localize(story.consentRequiredNotice);
     const text = this.isItalian()
       ? `${title}: ${excerpt} Nota importante: ${notice} Posso mostrarti il luogo collegato sulla mappa.`
-      : `${title}: ${excerpt} Important note: ${notice} I can show you the linked place on the map.`;
+      : this.isFrench()
+        ? `${title}: ${excerpt} Note importante : ${notice} Je peux te montrer le lieu associé sur la carte.`
+        : `${title}: ${excerpt} Important note: ${notice} I can show you the linked place on the map.`;
 
     return { text, relatedPlaceId: relatedPlace?.id };
   }
@@ -172,7 +187,9 @@ export class ChatbotService {
     const answer = this.language.localize(entry.answer);
     const text = this.isItalian()
       ? `${answer} Se vuoi, posso anche indicarti un luogo sulla mappa o suggerirti un itinerario breve.`
-      : `${answer} If you want, I can also point you to a place on the map or suggest a short itinerary.`;
+      : this.isFrench()
+        ? `${answer} Si tu veux, je peux aussi t’indiquer un lieu sur la carte ou te proposer un court itinéraire.`
+        : `${answer} If you want, I can also point you to a place on the map or suggest a short itinerary.`;
 
     return { text, relatedPlaceId: entry.relatedPlaceId };
   }
@@ -238,6 +255,20 @@ export class ChatbotService {
       'how',
       'and',
       'with',
+      'quoi',
+      'quel',
+      'quelle',
+      'quels',
+      'quelles',
+      'comment',
+      'dans',
+      'des',
+      'les',
+      'une',
+      'sur',
+      'avec',
+      'parle',
+      'moi',
     ]);
 
     return value.split(/\s+/).filter((token) => token.length > 2 && !stopwords.has(token));
@@ -258,6 +289,10 @@ export class ChatbotService {
 
   private isItalian(): boolean {
     return this.language.currentLanguage() === 'it';
+  }
+
+  private isFrench(): boolean {
+    return this.language.currentLanguage() === 'fr';
   }
 
   private normalize(value: string): string {

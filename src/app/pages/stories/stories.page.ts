@@ -25,7 +25,7 @@ import { StoryCardComponent } from '../../shared/components/story-card/story-car
         <select [value]="selectedTheme()" (change)="selectedTheme.set($any($event.target).value)">
           <option value="all">{{ i18n.t('stories.allThemes') }}</option>
           @for (theme of themes(); track theme) {
-            <option [value]="theme">{{ theme }}</option>
+            <option [value]="theme">{{ themeLabel(theme) }}</option>
           }
         </select>
       </label>
@@ -68,5 +68,15 @@ export class StoriesPage {
 
   openPlace(placeId: string): void {
     void this.router.navigate(['/esplora'], { queryParams: { place: placeId } });
+  }
+
+  themeLabel(theme: string): string {
+    const labels: Record<string, Record<'it' | 'en' | 'fr', string>> = {
+      ritorni: { it: 'Ritorni', en: 'Returns', fr: 'Retours' },
+      fontana: { it: 'Fontana', en: 'Fountain', fr: 'Fontaine' },
+      scalinate: { it: 'Scalinate', en: 'Steps', fr: 'Escaliers' },
+    };
+
+    return labels[theme]?.[this.i18n.currentLanguage()] ?? theme;
   }
 }

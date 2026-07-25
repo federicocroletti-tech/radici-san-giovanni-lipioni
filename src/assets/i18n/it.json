@@ -6,6 +6,9 @@
     "openMenu": "Apri menu",
     "closeMenu": "Chiudi menu"
   },
+  "language": {
+    "label": "Lingua"
+  },
   "nav": {
     "home": "Home",
     "explore": "Esplora",

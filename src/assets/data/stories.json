@@ -3,63 +3,78 @@
     "id": "piazza-largo-popolo-ritorni",
     "title": {
       "it": "Piazza Largo del Popolo e i ritorni",
-      "en": "Piazza Largo del Popolo and return visits"
+      "en": "Piazza Largo del Popolo and return visits",
+      "fr": "Piazza Largo del Popolo et les retours"
     },
     "theme": "ritorni",
     "excerpt": {
       "it": "Racconto dimostrativo legato a una piazza reale mappata, da sostituire con testimonianze autorizzate.",
-      "en": "Demo story linked to a real mapped square, to be replaced with authorised testimonies."
+      "en": "Demo story linked to a real mapped square, to be replaced with authorised testimonies.",
+      "fr": "Récit de démonstration lié à une place réelle cartographiée, à remplacer par des témoignages autorisés."
     },
     "content": {
       "it": "Questo racconto e un esempio editoriale. Non documenta un ricordo reale e deve essere sostituito da testimonianze raccolte con consenso esplicito.",
-      "en": "This story is an editorial example. It does not document a real memory and should be replaced by testimonies collected with explicit consent."
+      "en": "This story is an editorial example. It does not document a real memory and should be replaced by testimonies collected with explicit consent.",
+      "fr": "Ce récit est un exemple éditorial. Il ne documente pas un souvenir réel et doit être remplacé par des témoignages recueillis avec consentement explicite."
     },
     "relatedPlaceIds": ["piazza-largo-popolo", "mostra-valdese"],
     "isMock": true,
     "consentRequiredNotice": {
       "it": "Per pubblicare ricordi reali servono consenso scritto e liberatoria dedicata.",
-      "en": "Publishing real memories requires written consent and a dedicated release."
+      "en": "Publishing real memories requires written consent and a dedicated release.",
+      "fr": "La publication de souvenirs réels exige un consentement écrit et une autorisation dédiée."
     }
   },
   {
     "id": "fontana-vecchia-memoria",
     "title": {
       "it": "Fontana Vecchia, acqua e memoria",
-      "en": "Fontana Vecchia, water and memory"
+      "en": "Fontana Vecchia, water and memory",
+      "fr": "Fontana Vecchia, eau et mémoire"
     },
     "theme": "fontana",
     "excerpt": {
       "it": "Una suggestione mock collegata a Fontana Vecchia, punto reale mappato come monumento.",
-      "en": "A mock reflection linked to Fontana Vecchia, a real point mapped as a monument."
+      "en": "A mock reflection linked to Fontana Vecchia, a real point mapped as a monument.",
+      "fr": "Une évocation de démonstration liée à Fontana Vecchia, point réel cartographié comme monument."
     },
     "content": {
       "it": "Il testo non interpreta iscrizioni o vicende storiche: mostra solo come potra essere raccontato un luogo quando saranno disponibili fonti e testimonianze curate.",
-      "en": "The text does not interpret inscriptions or historical events: it only shows how a place could be narrated once curated sources and testimonies are available."
+      "en": "The text does not interpret inscriptions or historical events: it only shows how a place could be narrated once curated sources and testimonies are available.",
+      "fr": "Le texte n’interprète pas les inscriptions ni les événements historiques : il montre seulement comment un lieu pourra être raconté lorsque des sources et témoignages vérifiés seront disponibles."
     },
     "relatedPlaceIds": ["fontana-vecchia"],
     "isMock": true,
     "consentRequiredNotice": {
       "it": "Le testimonianze reali non devono includere dati personali non autorizzati.",
-      "en": "Real testimonies must not include unauthorised personal data."
+      "en": "Real testimonies must not include unauthorised personal data.",
+      "fr": "Les témoignages réels ne doivent pas inclure de données personnelles non autorisées."
     }
   },
   {
     "id": "salita-chiesa-passi",
-    "title": { "it": "Passi lenti verso la chiesa", "en": "Slow steps towards the church" },
+    "title": {
+      "it": "Passi lenti verso la chiesa",
+      "en": "Slow steps towards the church",
+      "fr": "Pas lents vers l’église"
+    },
     "theme": "scalinate",
     "excerpt": {
       "it": "Un breve testo dimostrativo collegato a Via Salita della Chiesa e al centro storico.",
-      "en": "A short demo text connected to Via Salita della Chiesa and the historic centre."
+      "en": "A short demo text connected to Via Salita della Chiesa and the historic centre.",
+      "fr": "Un court texte de démonstration lié à Via Salita della Chiesa et au centre historique."
     },
     "content": {
       "it": "Questo contenuto serve a mostrare il formato della pagina Racconti e andra ampliato con materiale verificato e autorizzato.",
-      "en": "This content shows the Stories page format and should be expanded with verified, authorised material."
+      "en": "This content shows the Stories page format and should be expanded with verified, authorised material.",
+      "fr": "Ce contenu sert à montrer le format de la page Récits et devra être enrichi avec du matériel vérifié et autorisé."
     },
     "relatedPlaceIds": ["salita-della-chiesa", "chiesa-santa-maria"],
     "isMock": true,
     "consentRequiredNotice": {
       "it": "Eventuali foto di persone richiedono consenso specifico alla pubblicazione.",
-      "en": "Any photos of people require specific publication consent."
+      "en": "Any photos of people require specific publication consent.",
+      "fr": "Toute photo de personnes nécessite un consentement spécifique à la publication."
     }
   }
 ]

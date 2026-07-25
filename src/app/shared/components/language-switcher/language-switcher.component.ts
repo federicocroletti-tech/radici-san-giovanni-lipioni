@@ -5,19 +5,19 @@ import { LanguageService } from '../../../core/services/language.service';
 @Component({
   selector: 'app-language-switcher',
   template: `
-    <div class="language-switcher" aria-label="Language selector">
-      @for (language of i18n.availableLanguages; track language) {
-        <button
-          type="button"
-          class="language-button"
-          [class.active]="i18n.currentLanguage() === language"
-          [attr.aria-pressed]="i18n.currentLanguage() === language"
-          (click)="setLanguage(language)"
-        >
-          {{ language.toUpperCase() }}
-        </button>
-      }
-    </div>
+    <label class="language-switcher">
+      <span class="sr-only">{{ i18n.t('language.label', 'Lingua') }}</span>
+      <select
+        class="language-select"
+        [attr.aria-label]="i18n.t('language.label', 'Lingua')"
+        [value]="i18n.currentLanguage()"
+        (change)="setLanguage($any($event.target).value)"
+      >
+        @for (language of i18n.availableLanguages; track language) {
+          <option [value]="language">{{ languageLabel(language) }}</option>
+        }
+      </select>
+    </label>
   `,
 })
 export class LanguageSwitcherComponent {
@@ -25,5 +25,15 @@ export class LanguageSwitcherComponent {
 
   setLanguage(language: LanguageCode): void {
     void this.i18n.setLanguage(language);
+  }
+
+  languageLabel(language: LanguageCode): string {
+    const labels: Record<LanguageCode, string> = {
+      it: 'Italiano',
+      en: 'English',
+      fr: 'Français',
+    };
+
+    return labels[language];
   }
 }

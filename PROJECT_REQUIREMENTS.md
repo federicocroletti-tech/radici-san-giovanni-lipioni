@@ -15,7 +15,7 @@ Applicazione frontend Angular dedicata a San Giovanni Lipioni, pensata per visit
 - Leaflet per la mappa interattiva.
 - Nessun backend reale nella prima versione.
 - Dati mock statici in `src/assets/data`.
-- Testi UI in `src/assets/i18n/it.json` e `src/assets/i18n/en.json`.
+- Testi UI in `src/assets/i18n/it.json`, `src/assets/i18n/en.json` e `src/assets/i18n/fr.json`.
 - Lingua default: italiano; lingua selezionata salvata in localStorage.
 - Coordinate dei luoghi principali possono usare OpenStreetMap come base pubblica; testi storici, racconti e accessibilita restano da verificare con fonti locali.
 - Non inventare date, tradizioni, eventi, personaggi storici o dati amministrativi.

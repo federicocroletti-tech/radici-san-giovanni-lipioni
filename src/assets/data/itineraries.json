@@ -3,33 +3,42 @@
     "id": "cuore-del-borgo",
     "title": {
       "it": "Centro, piazza e memoria valdese",
-      "en": "Centre, square and Waldensian memory"
+      "en": "Centre, square and Waldensian memory",
+      "fr": "Centre, place et mémoire vaudoise"
     },
-    "duration": { "it": "30-45 minuti", "en": "30-45 minutes" },
-    "difficulty": { "it": "Facile", "en": "Easy" },
+    "duration": { "it": "30-45 minuti", "en": "30-45 minutes", "fr": "30-45 minutes" },
+    "difficulty": { "it": "Facile", "en": "Easy", "fr": "Facile" },
     "shortDescription": {
       "it": "Un percorso breve tra centro storico, Piazza Largo del Popolo, mostra e chiesa.",
-      "en": "A short route through the historic centre, Piazza Largo del Popolo, exhibition and church."
+      "en": "A short route through the historic centre, Piazza Largo del Popolo, exhibition and church.",
+      "fr": "Un parcours court entre le centre historique, Piazza Largo del Popolo, l’exposition et l’église."
     },
     "description": {
       "it": "Itinerario basato su punti mappati da OpenStreetMap. Tempi e accessibilita vanno verificati sul posto prima dell'uso pubblico definitivo.",
-      "en": "Route based on points mapped by OpenStreetMap. Times and accessibility should be checked on site before final public use."
+      "en": "Route based on points mapped by OpenStreetMap. Times and accessibility should be checked on site before final public use.",
+      "fr": "Itinéraire fondé sur des points cartographiés par OpenStreetMap. Les temps et l’accessibilité doivent être vérifiés sur place avant tout usage public définitif."
     },
     "placeIds": ["centro-storico", "piazza-largo-popolo", "mostra-valdese", "chiesa-santa-maria"],
     "tags": ["centro", "piazza", "valdese", "chiesa", "centre", "square", "church"]
   },
   {
     "id": "scalinate-centro",
-    "title": { "it": "Scalinate e vie del centro", "en": "Steps and central lanes" },
-    "duration": { "it": "30 minuti", "en": "30 minutes" },
-    "difficulty": { "it": "Media", "en": "Medium" },
+    "title": {
+      "it": "Scalinate e vie del centro",
+      "en": "Steps and central lanes",
+      "fr": "Escaliers et rues du centre"
+    },
+    "duration": { "it": "30 minuti", "en": "30 minutes", "fr": "30 minutes" },
+    "difficulty": { "it": "Media", "en": "Medium", "fr": "Moyenne" },
     "shortDescription": {
       "it": "Un percorso compatto tra centro storico, Via Salita della Chiesa e Piazza Largo del Popolo.",
-      "en": "A compact route through the historic centre, Via Salita della Chiesa and Piazza Largo del Popolo."
+      "en": "A compact route through the historic centre, Via Salita della Chiesa and Piazza Largo del Popolo.",
+      "fr": "Un parcours compact entre le centre historique, Via Salita della Chiesa et Piazza Largo del Popolo."
     },
     "description": {
       "it": "Percorso pensato per valorizzare la morfologia del borgo. La difficolta dipende da scalini e pendenze, da verificare in base alle condizioni reali.",
-      "en": "A route intended to highlight the village morphology. Difficulty depends on steps and slopes, to be checked against real conditions."
+      "en": "A route intended to highlight the village morphology. Difficulty depends on steps and slopes, to be checked against real conditions.",
+      "fr": "Parcours pensé pour valoriser la morphologie du village. La difficulté dépend des escaliers et des pentes, à vérifier selon les conditions réelles."
     },
     "placeIds": [
       "centro-storico",
@@ -43,17 +52,24 @@
     "id": "santa-liberata-fontana",
     "title": {
       "it": "Fontana Vecchia e Santa Liberata",
-      "en": "Fontana Vecchia and Santa Liberata"
+      "en": "Fontana Vecchia and Santa Liberata",
+      "fr": "Fontana Vecchia et Santa Liberata"
     },
-    "duration": { "it": "45-60 minuti", "en": "45-60 minutes" },
-    "difficulty": { "it": "Da verificare sul posto", "en": "To check on site" },
+    "duration": { "it": "45-60 minuti", "en": "45-60 minutes", "fr": "45-60 minutes" },
+    "difficulty": {
+      "it": "Da verificare sul posto",
+      "en": "To check on site",
+      "fr": "À vérifier sur place"
+    },
     "shortDescription": {
       "it": "Un itinerario esterno al nucleo centrale tra fontana, cappella e Quercia di Lozzi.",
-      "en": "A route outside the central core linking the fountain, chapel and Lozzi's Oak."
+      "en": "A route outside the central core linking the fountain, chapel and Lozzi's Oak.",
+      "fr": "Un itinéraire hors du noyau central reliant la fontaine, la chapelle et le Chêne de Lozzi."
     },
     "description": {
       "it": "Le tappe sono reali secondo OSM, ma percorribilita, tempi e condizioni devono essere controllati prima di proporre l'itinerario come guida ufficiale.",
-      "en": "The stops are real according to OSM, but walkability, times and conditions must be checked before proposing the route as an official guide."
+      "en": "The stops are real according to OSM, but walkability, times and conditions must be checked before proposing the route as an official guide.",
+      "fr": "Les étapes sont réelles selon OSM, mais la praticabilité, les temps et les conditions doivent être vérifiés avant de proposer l’itinéraire comme guide officiel."
     },
     "placeIds": ["fontana-vecchia", "cappella-santa-liberata", "quercia-lozzi"],
     "tags": ["fontana", "santa liberata", "quercia", "fountain", "oak"]

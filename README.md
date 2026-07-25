@@ -11,7 +11,7 @@ Il progetto usa file JSON locali e testi UI da file i18n. I marker principali so
 - SCSS
 - Leaflet per la mappa
 - JSON statici in `src/assets/data`
-- i18n custom con `src/assets/i18n/it.json` e `src/assets/i18n/en.json`
+- i18n custom con `src/assets/i18n/it.json`, `src/assets/i18n/en.json` e `src/assets/i18n/fr.json`
 - localStorage per lingua e preferenze cookie
 - Render Static Site ready
 
@@ -34,7 +34,7 @@ Il progetto usa file JSON locali e testi UI da file i18n. I marker principali so
 - Racconti mock collegati ai luoghi
 - Chatbot integrato basato su `chatbot-knowledge.json`, luoghi JSON e racconti mock
 - Caso fallback quando il chatbot non ha informazioni sufficienti
-- Lingua IT/EN con preferenza salvata
+- Lingua IT/EN/FR con selettore dropdown e preferenza salvata
 - SEO base per pagina, canonical e JSON-LD minimale
 - Cookie banner granulare con analytics/marketing disattivati di default
 - `AnalyticsService` mock senza script terzi caricati

@@ -11,10 +11,11 @@ export class LanguageService {
   private readonly storageKey = 'radici-language';
   private readonly dictionary = signal<TranslationDictionary>({});
 
-  readonly availableLanguages: LanguageCode[] = ['it', 'en'];
+  readonly availableLanguages: LanguageCode[] = ['it', 'en', 'fr'];
   readonly currentLanguage = signal<LanguageCode>(this.readStoredLanguage());
 
   constructor() {
+    document.documentElement.lang = this.currentLanguage();
     void this.loadLanguage(this.currentLanguage());
   }
 
@@ -47,7 +48,11 @@ export class LanguageService {
     }
 
     const language = this.currentLanguage();
-    return value[language] || value.it || value.en || '';
+    if (value[language]) {
+      return value[language];
+    }
+
+    return language === 'it' ? value.it || value.en || '' : value.en || value.it || '';
   }
 
   private async loadLanguage(language: LanguageCode): Promise<void> {
@@ -59,7 +64,7 @@ export class LanguageService {
 
   private readStoredLanguage(): LanguageCode {
     const value = localStorage.getItem(this.storageKey);
-    return value === 'en' ? 'en' : 'it';
+    return value === 'en' || value === 'fr' ? value : 'it';
   }
 
   private readPath(source: TranslationDictionary, path: string): unknown {
