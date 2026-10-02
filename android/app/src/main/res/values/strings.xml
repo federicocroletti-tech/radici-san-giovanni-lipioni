@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Radici San Giovanni Lipioni</string>
+    <string name="title_activity_main">Radici San Giovanni Lipioni</string>
+    <string name="package_name">com.radici.sangiovannilipioni</string>
+    <string name="custom_url_scheme">com.radici.sangiovannilipioni</string>
+</resources>

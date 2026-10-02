@@ -10,6 +10,7 @@ Il progetto usa file JSON locali e testi UI da file i18n. I marker principali so
 - TypeScript
 - SCSS
 - Leaflet per la mappa
+- Capacitor per packaging mobile Android/iOS dalla stessa app Angular
 - JSON statici in `src/assets/data`
 - i18n custom con `src/assets/i18n/it.json`, `src/assets/i18n/en.json` e `src/assets/i18n/fr.json`
 - localStorage per lingua e preferenze cookie
@@ -75,6 +76,43 @@ npm run build
 ```
 
 Output: `dist/radici-san-giovanni-lipioni/browser`.
+
+## App mobile
+
+Il progetto usa Capacitor per mantenere un'unica codebase: ogni modifica a componenti, servizi, stili o contenuti Angular viene inclusa sia nel sito sia nell'app mobile dopo build e sync.
+
+Prima configurazione Android:
+
+```bash
+npm run mobile:add:android
+```
+
+Aggiornamento app mobile dopo modifiche al sito:
+
+```bash
+npm run mobile:build
+```
+
+Build APK debug Android:
+
+```bash
+npm run mobile:android:debug
+```
+
+La build Android richiede Android Studio o Android SDK installato. Se Gradle segnala che non trova l'SDK, impostare `ANDROID_HOME` oppure creare `android/local.properties` con `sdk.dir=...` puntato alla cartella SDK locale.
+
+Avvio su Android da Capacitor:
+
+```bash
+npm run mobile:android
+```
+
+Per iOS e necessario usare macOS con Xcode:
+
+```bash
+npm run mobile:add:ios
+npm run mobile:ios
+```
 
 ## Deploy Render
 
