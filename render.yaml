@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: radici-san-giovanni-lipioni
+    runtime: static
+    plan: free
+    buildCommand: npm ci && npm run build
+    staticPublishPath: ./dist/radici-san-giovanni-lipioni/browser
+    routes:
+      - type: rewrite
+        source: /*
+        destination: /index.html
