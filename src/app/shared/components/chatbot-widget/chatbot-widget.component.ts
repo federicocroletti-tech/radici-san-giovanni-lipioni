@@ -21,6 +21,12 @@ import { ChatbotMessageComponent } from '../chatbot-message/chatbot-message.comp
     </button>
 
     @if (ui.isOpen()) {
+      <button
+        type="button"
+        class="chat-backdrop"
+        (click)="ui.close()"
+        [attr.aria-label]="i18n.t('actions.close')"
+      ></button>
       <section class="chat-panel" aria-live="polite">
         <header>
           <div>

@@ -39,6 +39,15 @@ testem.log
 /typings
 __screenshots__/
 
+# Local signing and publishing secrets
+android/local.properties
+*.jks
+*.keystore
+*.p12
+*.pfx
+.secrets/
+*.local.md
+
 # System files
 .DS_Store
 Thumbs.db

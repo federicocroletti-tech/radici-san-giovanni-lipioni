@@ -645,7 +645,7 @@ dd {
   position: fixed;
   right: 1rem;
   bottom: calc(1rem + env(safe-area-inset-bottom));
-  z-index: 1700;
+  z-index: 1720;
   width: 58px;
   height: 58px;
   border-radius: 50%;
@@ -656,15 +656,27 @@ dd {
   box-shadow: var(--shadow-soft);
 }
 
+.chat-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 1700;
+  border: 0;
+  background: rgba(31, 41, 51, 0.28);
+  cursor: pointer;
+  backdrop-filter: blur(2px);
+}
+
 .chat-panel {
   position: fixed;
   right: 1rem;
   bottom: calc(5rem + env(safe-area-inset-bottom));
-  z-index: 1700;
+  z-index: 1730;
   display: grid;
   grid-template-rows: auto auto minmax(0, 1fr) auto;
   width: min(390px, calc(100% - 2rem));
   max-height: min(680px, calc(100svh - 7rem));
+  background: var(--color-surface);
+  box-shadow: 0 28px 80px rgba(31, 41, 51, 0.28);
   overflow: hidden;
 }
 
@@ -723,8 +735,10 @@ dd {
 .quick-prompts .chip {
   min-height: 34px;
   max-width: 100%;
+  min-width: 0;
   padding: 0.4rem 0.65rem;
   font-size: 0.9rem;
+  text-align: left;
   overflow-wrap: anywhere;
 }
 
@@ -899,6 +913,10 @@ dd {
     height: 54px;
   }
 
+  .chat-backdrop {
+    background: rgba(31, 41, 51, 0.34);
+  }
+
   .chat-panel {
     right: 0.75rem;
     bottom: calc(4.6rem + env(safe-area-inset-bottom));
@@ -921,16 +939,16 @@ dd {
   }
 
   .quick-prompts {
-    flex-wrap: nowrap;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     max-height: none;
-    overflow-x: auto;
-    overflow-y: hidden;
+    overflow: visible;
     padding: 0.7rem 0.85rem;
   }
 
   .quick-prompts .chip {
-    flex: 0 0 auto;
-    max-width: min(78vw, 18rem);
+    width: 100%;
+    max-width: none;
     white-space: normal;
   }
 
@@ -943,7 +961,12 @@ dd {
   }
 
   .chat-form .button {
+    width: 100%;
     padding-inline: 0.75rem;
+  }
+
+  .chat-form {
+    grid-template-columns: 1fr;
   }
 
   .detail-drawer {

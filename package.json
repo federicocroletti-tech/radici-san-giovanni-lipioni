@@ -13,6 +13,8 @@
     "mobile:add:ios": "npm run build && npx cap add ios",
     "mobile:android": "npm run build && npx cap run android",
     "mobile:android:debug": "npm run mobile:build && cd android && gradlew.bat assembleDebug",
+    "mobile:android:apk": "powershell -ExecutionPolicy Bypass -File scripts/build-android-apk.ps1",
+    "mobile:android:release": "powershell -ExecutionPolicy Bypass -File scripts/build-android-release.ps1",
     "mobile:ios": "npm run build && npx cap run ios"
   },
   "private": true,
