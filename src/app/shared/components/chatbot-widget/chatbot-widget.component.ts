@@ -34,6 +34,7 @@ import { ChatbotMessageComponent } from '../chatbot-message/chatbot-message.comp
         class="chat-panel"
         role="dialog"
         aria-labelledby="radici-chat-title"
+        (keydown.escape)="ui.close()"
       >
         <header>
           <div>
