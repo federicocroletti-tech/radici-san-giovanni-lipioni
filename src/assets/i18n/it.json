@@ -9,6 +9,11 @@
   "language": {
     "label": "Lingua"
   },
+  "sourceStatus": {
+    "verified": "Fonti verificate",
+    "to-verify": "Informazione da verificare",
+    "research": "Contenuto in fase di ricerca"
+  },
   "nav": {
     "home": "Home",
     "explore": "Esplora",
@@ -70,7 +75,15 @@
     "selectPromptTitle": "Seleziona un luogo",
     "selectPromptText": "Clicca un marker sulla mappa per aprire descrizione, dettagli e azioni rapide.",
     "mapAreaLabel": "Mappa e scheda tecnica dei luoghi",
-    "filtersLabel": "Filtri della mappa"
+    "filtersLabel": "Filtri della mappa",
+    "coordinates": "Coordinate geografiche",
+    "sourceStatus": "Stato delle fonti",
+    "historicalInterest": "Interesse storico",
+    "architecturalInterest": "Interesse architettonico",
+    "landscapeInterest": "Interesse paesaggistico",
+    "curiosity": "Curiosità",
+    "relatedPlaces": "Luoghi correlati",
+    "informationToVerify": "Informazione da verificare"
   },
   "itineraries": {
     "title": "Itinerari per scoprire San Giovanni Lipioni",
@@ -92,15 +105,34 @@
   },
   "privacy": {
     "title": "Privacy e Cookie",
-    "intro": "Questa pagina descrive in modo semplice come funziona la demo. Il testo e un modello dimostrativo e deve essere validato da un consulente legale prima della pubblicazione definitiva.",
+    "intro": "Questa pagina descrive in modo semplice come funziona il progetto. Il testo deve essere validato da un consulente legale prima della pubblicazione definitiva.",
     "sections": [
-      "Titolare del trattamento: TODO. Email privacy: TODO. Indirizzo o sede: TODO.",
+      "Titolare del trattamento: progetto culturale indipendente Radici di San Giovanni Lipioni. Contatto privacy e sede: Informazione da verificare.",
+      "Radici di San Giovanni Lipioni è un progetto culturale indipendente e non rappresenta il Comune di San Giovanni Lipioni.",
       "La demo non prevede account, form pubblici, pagamenti o upload di contenuti da parte degli utenti.",
       "Il localStorage viene usato per lingua selezionata, preferenze cookie e stato UI non sensibile.",
+      "Le preferenze cookie sono conservate in localStorage e possono essere reimpostate dall'utente dalla pagina privacy o dal footer.",
       "AnalyticsService e mock: nessuno script analytics reale viene caricato prima del consenso esplicito.",
       "Cookie necessari sempre attivi; analytics, marketing e preferenze sono disattivati di default e modificabili dall'utente.",
-      "I marker geografici principali derivano da fonti pubbliche OpenStreetMap; racconti, testi editoriali e accessibilita devono essere verificati prima della pubblicazione reale."
+      "La mappa usa tile OpenStreetMap caricati da server esterni. Il pulsante Google Maps apre una nuova scheda solo su azione esplicita dell'utente.",
+      "Instagram non viene incorporato nel sito: eventuali contenuti social restano materiali editoriali separati.",
+      "I marker geografici principali derivano da fonti pubbliche OpenStreetMap; racconti, testi editoriali, immagini e accessibilita devono essere verificati prima della pubblicazione reale."
     ]
+  },
+  "location": {
+    "kicker": "Mappa del paese",
+    "title": "Dove si trova San Giovanni Lipioni",
+    "intro": "San Giovanni Lipioni si trova nell'Alto Vastese, in provincia di Chieti, Abruzzo. Le coordinate identificano il centro del paese e vanno usate come riferimento generale per la visita.",
+    "provinceLabel": "Provincia",
+    "province": "Chieti",
+    "regionLabel": "Regione",
+    "region": "Abruzzo",
+    "coordinatesLabel": "Coordinate",
+    "openGoogleMaps": "Apri su Google Maps",
+    "loading": "Caricamento mappa...",
+    "mapLabel": "Mappa OpenStreetMap con marker su San Giovanni Lipioni, provincia di Chieti, Abruzzo",
+    "markerLabel": "San Giovanni Lipioni",
+    "touristType": "Archivio digitale, turismo lento, patrimonio locale"
   },
   "notFound": {
     "title": "Pagina non trovata",
@@ -108,16 +140,21 @@
   },
   "chatbot": {
     "title": "Assistente Radici",
-    "intro": "Usa solo contenuti controllati e ti propone passi successivi.",
+    "intro": "Risponde usando luoghi, itinerari e contenuti della guida.",
     "placeholder": "Scrivi una domanda sul borgo...",
-    "welcome": "Ciao, sono l'assistente Radici. Posso aiutarti a scegliere un itinerario, raccontarti un luogo o aprire sulla mappa la scheda piu adatta alla tua domanda.",
-    "fallback": "Non ho abbastanza dati controllati per rispondere bene. Puoi chiedermi, per esempio: cosa vedere in centro, parlami della chiesa, dov'e Fontana Vecchia, oppure quale itinerario consigli.",
+    "inputLabel": "Scrivi la tua domanda",
+    "welcome": "Ciao, sono l'assistente Radici. Posso aiutarti a scoprire i luoghi di San Giovanni Lipioni, scegliere un percorso e aprire le tappe sulla mappa. Prova una delle domande qui sotto oppure scrivimi liberamente.",
+    "fallback": "Non trovo questa informazione nei contenuti della guida. Puoi chiedermi cosa vedere in centro, informazioni su un luogo o un itinerario. Per orari, servizi e condizioni aggiornate, verifica sempre con le fonti locali.",
     "openRelatedPlace": "Apri luogo collegato sulla mappa",
+    "openPlace": "Apri sulla mappa",
+    "newConversation": "Nuova chat",
+    "suggestions": "Domande suggerite",
     "quickPrompts": [
       "Cosa vedere in centro?",
-      "Parlami della chiesa",
-      "Che itinerario consigli?",
-      "Cosa vedere vicino alla piazza?"
+      "Dove si trova Fontana Vecchia?",
+      "Quale itinerario mi consigli?",
+      "Cosa vedere vicino alla piazza?",
+      "Ci sono parcheggi o orari?"
     ],
     "thinking": "Sto controllando i dati disponibili..."
   },
@@ -136,6 +173,8 @@
   "footer": {
     "description": "Guida digitale dedicata a San Giovanni Lipioni, con mappa interattiva, schede dei luoghi e memoria locale.",
     "repository": "Repository GitHub",
+    "siteLink": "Sito Radici",
+    "independentNotice": "Radici di San Giovanni Lipioni è un progetto culturale indipendente e non rappresenta il Comune di San Giovanni Lipioni.",
     "rights": "Tutti i diritti riservati by"
   },
   "seo": {

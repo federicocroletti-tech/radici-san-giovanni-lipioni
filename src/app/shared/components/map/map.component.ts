@@ -20,10 +20,16 @@ type LeafletImport = LeafletModule & { default?: LeafletModule };
 
 @Component({
   selector: 'app-map',
-  template: `<div class="map-canvas" #mapContainer aria-label="Interactive map"></div>`,
+  template: `<div
+    class="map-canvas"
+    #mapContainer
+    role="region"
+    tabindex="0"
+    [attr.aria-label]="i18n.t('explore.mapAreaLabel')"
+  ></div>`,
 })
 export class MapComponent implements AfterViewInit, OnChanges, OnDestroy {
-  private readonly i18n = inject(LanguageService);
+  readonly i18n = inject(LanguageService);
   private leaflet?: LeafletModule;
   private map?: import('leaflet').Map;
   private markerLayer?: import('leaflet').LayerGroup;

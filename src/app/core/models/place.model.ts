@@ -1,11 +1,19 @@
 import { LocalizedText } from './localized-text.model';
 
+export type PlaceSourceStatus = 'verified' | 'to-verify' | 'research';
+
 export interface Place {
   id: string;
   name: LocalizedText;
   category: string;
+  sourceStatus?: PlaceSourceStatus;
   shortDescription: LocalizedText;
   description: LocalizedText;
+  historicalInterest?: LocalizedText;
+  architecturalInterest?: LocalizedText;
+  landscapeInterest?: LocalizedText;
+  curiosity?: LocalizedText;
+  sourceNotes?: LocalizedText;
   latitude: number;
   longitude: number;
   image: string;

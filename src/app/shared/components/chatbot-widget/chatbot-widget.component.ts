@@ -1,4 +1,4 @@
-import { Component, effect, inject, signal } from '@angular/core';
+import { Component, ElementRef, effect, inject, signal, ViewChild } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ChatbotMessage } from '../../../core/models/chatbot.model';
@@ -16,6 +16,8 @@ import { ChatbotMessageComponent } from '../chatbot-message/chatbot-message.comp
       class="chat-fab"
       (click)="ui.toggle()"
       [attr.aria-label]="i18n.t('nav.chatbot')"
+      [attr.aria-controls]="ui.isOpen() ? 'radici-chat-panel' : null"
+      [attr.aria-expanded]="ui.isOpen()"
     >
       <span aria-hidden="true">?</span>
     </button>
@@ -27,23 +29,38 @@ import { ChatbotMessageComponent } from '../chatbot-message/chatbot-message.comp
         (click)="ui.close()"
         [attr.aria-label]="i18n.t('actions.close')"
       ></button>
-      <section class="chat-panel" aria-live="polite">
+      <section
+        id="radici-chat-panel"
+        class="chat-panel"
+        role="dialog"
+        aria-labelledby="radici-chat-title"
+      >
         <header>
           <div>
-            <h2>{{ i18n.t('chatbot.title') }}</h2>
+            <h2 id="radici-chat-title">{{ i18n.t('chatbot.title') }}</h2>
             <p>{{ i18n.t('chatbot.intro') }}</p>
           </div>
-          <button
-            type="button"
-            class="icon-button"
-            (click)="ui.close()"
-            [attr.aria-label]="i18n.t('actions.close')"
-          >
-            ×
-          </button>
+          <div class="chat-header-actions">
+            <button
+              type="button"
+              class="text-button"
+              (click)="resetConversation()"
+              [disabled]="isBusy()"
+            >
+              {{ i18n.t('chatbot.newConversation') }}
+            </button>
+            <button
+              type="button"
+              class="icon-button"
+              (click)="ui.close()"
+              [attr.aria-label]="i18n.t('actions.close')"
+            >
+              ×
+            </button>
+          </div>
         </header>
 
-        <div class="quick-prompts" aria-label="Chatbot suggestions">
+        <div class="quick-prompts" [attr.aria-label]="i18n.t('chatbot.suggestions')">
           @for (prompt of i18n.list('chatbot.quickPrompts'); track prompt) {
             <button type="button" class="chip" (click)="send(prompt)" [disabled]="isBusy()">
               {{ prompt }}
@@ -51,7 +68,7 @@ import { ChatbotMessageComponent } from '../chatbot-message/chatbot-message.comp
           }
         </div>
 
-        <div class="chat-log">
+        <div #chatLog class="chat-log" role="log" aria-live="polite" aria-relevant="additions">
           @for (message of messages(); track message.id) {
             <app-chatbot-message [message]="message" />
             @if (message.role === 'assistant' && message.relatedPlaceId) {
@@ -62,6 +79,17 @@ import { ChatbotMessageComponent } from '../chatbot-message/chatbot-message.comp
               >
                 {{ i18n.t('chatbot.openRelatedPlace') }}
               </button>
+            }
+            @if (message.role === 'assistant') {
+              @for (place of relatedPlacesFor(message); track place.id) {
+                <button
+                  type="button"
+                  class="text-button related-place"
+                  (click)="openRelatedPlace(place.id)"
+                >
+                  {{ i18n.t('chatbot.openPlace') }}: {{ place.name }}
+                </button>
+              }
             }
           }
           @if (isBusy()) {
@@ -76,9 +104,11 @@ import { ChatbotMessageComponent } from '../chatbot-message/chatbot-message.comp
             name="question"
             [(ngModel)]="question"
             [placeholder]="i18n.t('chatbot.placeholder')"
+            [attr.aria-label]="i18n.t('chatbot.inputLabel')"
+            autocomplete="off"
             [disabled]="isBusy()"
           />
-          <button type="submit" class="button small" [disabled]="isBusy()">
+          <button type="submit" class="button small" [disabled]="isBusy() || !question.trim()">
             {{ i18n.t('actions.send') }}
           </button>
         </form>
@@ -91,6 +121,7 @@ export class ChatbotWidgetComponent {
   readonly ui = inject(ChatbotUiService);
   private readonly chatbot = inject(ChatbotService);
   private readonly router = inject(Router);
+  @ViewChild('chatLog') private chatLog?: ElementRef<HTMLDivElement>;
   readonly isBusy = signal(false);
   readonly messages = signal<ChatbotMessage[]>([
     {
@@ -105,7 +136,15 @@ export class ChatbotWidgetComponent {
   constructor() {
     effect(() => {
       const welcome = this.i18n.t('chatbot.welcome');
-      this.messages.update((messages) => [{ ...messages[0], text: welcome }, ...messages.slice(1)]);
+      this.messages.update((messages) => {
+        const welcomeMessage = messages.find((message) => message.role === 'assistant');
+        if (!welcomeMessage) {
+          return [this.createMessage('assistant', welcome)];
+        }
+        return messages.map((message) =>
+          message.id === welcomeMessage.id ? { ...message, text: welcome } : message,
+        );
+      });
     });
   }
 
@@ -122,7 +161,12 @@ export class ChatbotWidgetComponent {
       const response = await this.chatbot.ask(text, this.ui.contextPlaceId());
       this.messages.update((messages) => [
         ...messages,
-        this.createMessage('assistant', response.text, response.relatedPlaceId),
+        this.createMessage(
+          'assistant',
+          response.text,
+          response.relatedPlaceId,
+          response.relatedPlaces,
+        ),
       ]);
     } catch {
       this.messages.update((messages) => [
@@ -131,7 +175,17 @@ export class ChatbotWidgetComponent {
       ]);
     } finally {
       this.isBusy.set(false);
+      this.scrollToLatest();
     }
+  }
+
+  resetConversation(): void {
+    this.question = '';
+    this.messages.set([this.createMessage('assistant', this.i18n.t('chatbot.welcome'))]);
+  }
+
+  relatedPlacesFor(message: ChatbotMessage): NonNullable<ChatbotMessage['relatedPlaces']> {
+    return (message.relatedPlaces ?? []).filter((place) => place.id !== message.relatedPlaceId);
   }
 
   openRelatedPlace(placeId: string | undefined): void {
@@ -147,13 +201,22 @@ export class ChatbotWidgetComponent {
     role: ChatbotMessage['role'],
     text: string,
     relatedPlaceId?: string,
+    relatedPlaces?: ChatbotMessage['relatedPlaces'],
   ): ChatbotMessage {
     return {
       id: crypto.randomUUID(),
       role,
       text,
       relatedPlaceId,
+      relatedPlaces,
       createdAt: new Date().toISOString(),
     };
+  }
+
+  private scrollToLatest(): void {
+    setTimeout(() => {
+      const log = this.chatLog?.nativeElement;
+      log?.scrollTo({ top: log.scrollHeight, behavior: 'smooth' });
+    });
   }
 }

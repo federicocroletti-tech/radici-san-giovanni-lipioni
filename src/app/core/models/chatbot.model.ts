@@ -19,10 +19,12 @@ export interface ChatbotMessage {
   role: 'user' | 'assistant';
   text: string;
   relatedPlaceId?: string;
+  relatedPlaces?: Array<{ id: string; name: string }>;
   createdAt: string;
 }
 
 export interface ChatbotResponse {
   text: string;
   relatedPlaceId?: string;
+  relatedPlaces?: Array<{ id: string; name: string }>;
 }

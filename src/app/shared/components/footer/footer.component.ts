@@ -11,6 +11,7 @@ import { LanguageService } from '../../../core/services/language.service';
       <div>
         <strong>{{ i18n.t('app.name') }}</strong>
         <p>{{ i18n.t('footer.description') }}</p>
+        <p class="muted">{{ i18n.t('footer.independentNotice') }}</p>
         <p class="muted">
           {{ i18n.t('footer.rights') }}
           <a href="https://federico-croletti-site.onrender.com" target="_blank" rel="noopener">
@@ -24,6 +25,9 @@ import { LanguageService } from '../../../core/services/language.service';
         <a routerLink="/itinerari">{{ i18n.t('nav.itineraries') }}</a>
         <a routerLink="/racconti">{{ i18n.t('nav.stories') }}</a>
         <a routerLink="/privacy-cookie">{{ i18n.t('nav.privacy') }}</a>
+        <a href="https://radici-san-giovanni-lipioni.onrender.com/" target="_blank" rel="noopener">
+          {{ i18n.t('footer.siteLink') }}
+        </a>
         <button type="button" class="text-button" (click)="cookies.reset()">
           {{ i18n.t('actions.manageCookies') }}
         </button>

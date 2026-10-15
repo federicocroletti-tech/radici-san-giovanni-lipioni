@@ -9,6 +9,11 @@
   "language": {
     "label": "Langue"
   },
+  "sourceStatus": {
+    "verified": "Sources vérifiées",
+    "to-verify": "Information à vérifier",
+    "research": "Contenu en cours de recherche"
+  },
   "nav": {
     "home": "Accueil",
     "explore": "Explorer",
@@ -70,7 +75,15 @@
     "selectPromptTitle": "Sélectionne un lieu",
     "selectPromptText": "Clique sur un marqueur de la carte pour ouvrir description, details et actions rapides.",
     "mapAreaLabel": "Carte et fiche technique des lieux",
-    "filtersLabel": "Filtres de la carte"
+    "filtersLabel": "Filtres de la carte",
+    "coordinates": "Coordonnées géographiques",
+    "sourceStatus": "État des sources",
+    "historicalInterest": "Intérêt historique",
+    "architecturalInterest": "Intérêt architectural",
+    "landscapeInterest": "Intérêt paysager",
+    "curiosity": "Notes et curiosités",
+    "relatedPlaces": "Lieux associés",
+    "informationToVerify": "Information à vérifier"
   },
   "itineraries": {
     "title": "Itinéraires pour découvrir San Giovanni Lipioni",
@@ -92,15 +105,34 @@
   },
   "privacy": {
     "title": "Confidentialité et cookies",
-    "intro": "Cette page explique simplement le fonctionnement de la démo. Ce texte est un modèle de démonstration et doit être validé par un conseiller juridique avant publication définitive.",
+    "intro": "Cette page explique simplement le fonctionnement du projet. Le texte doit être validé par un conseiller juridique avant publication définitive.",
     "sections": [
-      "Responsable du traitement : TODO. Email confidentialité : TODO. Adresse ou siège : TODO.",
+      "Responsable du traitement : projet culturel indépendant Radici di San Giovanni Lipioni. Contact confidentialité et siège : Information à vérifier.",
+      "Radici di San Giovanni Lipioni est un projet culturel indépendant et ne représente pas la Commune de San Giovanni Lipioni.",
       "La démo ne prévoit pas de comptes, formulaires publics, paiements ni téléversements de contenus par les utilisateurs.",
       "Le localStorage est utilisé pour la langue sélectionnée, les préférences cookies et l’état d’interface non sensible.",
+      "Les préférences cookies sont conservées dans localStorage et peuvent être réinitialisées depuis la page confidentialité ou le footer.",
       "AnalyticsService est fictif : aucun script d’analyse réel n’est chargé avant consentement explicite.",
       "Les cookies nécessaires sont toujours actifs ; analytics, marketing et préférences sont désactivés par défaut et modifiables par l’utilisateur.",
-      "Les principaux marqueurs géographiques proviennent de sources publiques OpenStreetMap ; les récits, textes éditoriaux et informations d’accessibilité doivent être vérifiés avant publication réelle."
+      "La carte utilise des tuiles OpenStreetMap chargées depuis des serveurs externes. Le bouton Google Maps ouvre un nouvel onglet uniquement après action explicite de l’utilisateur.",
+      "Instagram n’est pas intégré dans le site : les contenus sociaux restent des supports éditoriaux séparés.",
+      "Les principaux marqueurs géographiques proviennent de sources publiques OpenStreetMap ; les récits, textes éditoriaux, images et informations d’accessibilité doivent être vérifiés avant publication réelle."
     ]
+  },
+  "location": {
+    "kicker": "Carte du village",
+    "title": "Où se trouve San Giovanni Lipioni",
+    "intro": "San Giovanni Lipioni se trouve dans l'Alto Vastese, dans la province de Chieti, en Abruzzes. Les coordonnées identifient le centre du village et servent de repère général pour la visite.",
+    "provinceLabel": "Province",
+    "province": "Chieti",
+    "regionLabel": "Région",
+    "region": "Abruzzes",
+    "coordinatesLabel": "Coordonnées",
+    "openGoogleMaps": "Ouvrir dans Google Maps",
+    "loading": "Chargement de la carte...",
+    "mapLabel": "Carte OpenStreetMap avec un marqueur sur San Giovanni Lipioni, province de Chieti, Abruzzes",
+    "markerLabel": "San Giovanni Lipioni",
+    "touristType": "Archive numérique, tourisme lent, patrimoine local"
   },
   "notFound": {
     "title": "Page introuvable",
@@ -108,16 +140,21 @@
   },
   "chatbot": {
     "title": "Assistant Radici",
-    "intro": "Utilise uniquement des contenus contrôlés et propose des étapes suivantes.",
+    "intro": "Répond à partir des lieux, itinéraires et contenus du guide.",
     "placeholder": "Écris une question sur le village...",
-    "welcome": "Bonjour, je suis l'assistant Radici. Je peux t'aider a choisir un itineraire, raconter un lieu ou ouvrir la fiche la plus utile sur la carte.",
-    "fallback": "Je n’ai pas assez de données contrôlées pour répondre correctement. Tu peux demander par exemple : que voir dans le centre, parle-moi de l’église, où se trouve Fontana Vecchia, ou quel itinéraire tu conseilles.",
+    "inputLabel": "Écris ta question",
+    "welcome": "Bonjour, je suis l’assistant Radici. Je peux t’aider à découvrir les lieux de San Giovanni Lipioni, choisir un parcours et ouvrir les étapes sur la carte. Essaie une suggestion ci-dessous ou pose-moi ta question.",
+    "fallback": "Je ne trouve pas cette information dans le guide. Tu peux demander quoi voir dans le centre, des informations sur un lieu ou un itinéraire. Pour les horaires, services et conditions actuelles, vérifie auprès des sources locales.",
     "openRelatedPlace": "Ouvrir le lieu associé sur la carte",
+    "openPlace": "Ouvrir sur la carte",
+    "newConversation": "Nouvelle conversation",
+    "suggestions": "Questions suggérées",
     "quickPrompts": [
       "Que voir dans le centre ?",
-      "Parle-moi de l’église",
-      "Quel itinéraire conseilles-tu ?",
-      "Que voir pres de la place ?"
+      "Où se trouve Fontana Vecchia ?",
+      "Quel parcours conseilles-tu ?",
+      "Que voir près de la place ?",
+      "Y a-t-il des parkings ou des horaires ?"
     ],
     "thinking": "Je vérifie les données disponibles..."
   },
@@ -136,6 +173,8 @@
   "footer": {
     "description": "Guide numerique dedie a San Giovanni Lipioni, avec carte interactive, fiches des lieux et memoire locale.",
     "repository": "Dépôt GitHub",
+    "siteLink": "Site Radici",
+    "independentNotice": "Radici di San Giovanni Lipioni est un projet culturel indépendant et ne représente pas la Commune de San Giovanni Lipioni.",
     "rights": "Tous droits reserves by"
   },
   "seo": {

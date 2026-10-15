@@ -33,8 +33,9 @@ Il progetto usa file JSON locali e testi UI da file i18n. I marker principali so
 - Schede luogo con note fonte OSM/ODbL e indicazione di cosa resta editoriale
 - Itinerari collegati alla mappa via query param
 - Racconti mock collegati ai luoghi
-- Chatbot integrato basato su `chatbot-knowledge.json`, luoghi JSON e racconti mock
-- Caso fallback quando il chatbot non ha informazioni sufficienti
+- Chatbot IT/EN/FR che usa schede luogo, itinerari e racconti, con suggerimenti generali e collegamenti cliccabili alla mappa
+- Il chatbot distingue i contenuti disponibili dalle informazioni pratiche non verificate e dichiara quando non trova una risposta
+- La conversazione puo essere riavviata e mantiene visibili i messaggi piu recenti
 - Lingua IT/EN/FR con selettore dropdown e preferenza salvata
 - SEO base per pagina, canonical e JSON-LD minimale
 - Cookie banner granulare con analytics/marketing disattivati di default

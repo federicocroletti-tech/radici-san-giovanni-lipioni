@@ -2,7 +2,8 @@
   {
     "id": "centro-storico",
     "name": { "it": "Centro storico", "en": "Historic centre", "fr": "Centre historique" },
-    "category": "heritage",
+    "category": "monuments",
+    "sourceStatus": "to-verify",
     "shortDescription": {
       "it": "Borgo di crinale con vicoli, passaggi arcuati e affacci sulla valle del Trigno.",
       "en": "Ridge village with lanes, arched passages and views over the Trigno valley.",
@@ -12,6 +13,31 @@
       "it": "Il centro storico di San Giovanni Lipioni occupa un poggio dell'Alto Vastese e conserva l'impianto compatto di un borgo cresciuto lungo un asse principale. Le case seguono il crinale, alternando vicoli, gradinate e scorci verso la campagna. La visita funziona bene a passo lento: dalla parte alta si leggono la chiesa, i volumi in pietra e il rapporto continuo tra abitato e paesaggio.",
       "en": "The historic centre of San Giovanni Lipioni sits on a hill in the Alto Vastese and preserves the compact layout of a village grown along a main ridge. Houses follow the crest, alternating lanes, steps and views toward the countryside. It is best explored slowly, reading the church, stone volumes and the constant relation between settlement and landscape.",
       "fr": "Le centre historique de San Giovanni Lipioni occupe une hauteur de l'Alto Vastese et conserve la forme compacte d'un village developpe le long d'un axe principal. Les maisons suivent la crete, entre ruelles, escaliers et vues vers la campagne. La visite se prete a un rythme lent, entre l'eglise, les volumes en pierre et le dialogue avec le paysage."
+    },
+    "historicalInterest": {
+      "it": "Impianto di borgo di crinale e memoria dell'abitato storico. Cronologia puntuale e fonti archivistiche: Informazione da verificare.",
+      "en": "Ridge-village layout and memory of the historic settlement. Exact chronology and archival sources: Information to verify.",
+      "fr": "Structure de village de crête et mémoire du noyau historique. Chronologie précise et sources d'archives : Information à vérifier."
+    },
+    "architecturalInterest": {
+      "it": "Vicolo, gradinate, passaggi e volumi in pietra leggibili nel tessuto urbano. Dettagli costruttivi da verificare sul posto.",
+      "en": "Lanes, steps, passages and stone volumes readable in the urban fabric. Construction details to verify on site.",
+      "fr": "Ruelles, escaliers, passages et volumes en pierre lisibles dans le tissu urbain. Détails constructifs à vérifier sur place."
+    },
+    "landscapeInterest": {
+      "it": "Rapporto diretto tra crinale abitato, campagna e valle del Trigno, con affacci distribuiti lungo il percorso.",
+      "en": "Direct relationship between inhabited ridge, countryside and Trigno valley, with views along the route.",
+      "fr": "Relation directe entre crête habitée, campagne et vallée du Trigno, avec des vues le long du parcours."
+    },
+    "curiosity": {
+      "it": "Il tag locale 'lu pajose' richiede conferma su grafia, uso e fonte orale. Informazione da verificare.",
+      "en": "The local tag 'lu pajose' requires confirmation for spelling, use and oral source. Information to verify.",
+      "fr": "Le tag local 'lu pajose' demande confirmation pour la graphie, l'usage et la source orale. Information à vérifier."
+    },
+    "sourceNotes": {
+      "it": "Scheda editoriale da confrontare con bibliografia locale, sopralluogo e fonti documentarie. Informazione da verificare.",
+      "en": "Editorial sheet to compare with local bibliography, field survey and documentary sources. Information to verify.",
+      "fr": "Fiche éditoriale à confronter avec bibliographie locale, relevé sur place et sources documentaires. Information à vérifier."
     },
     "latitude": 41.8429366,
     "longitude": 14.5621116,
@@ -34,6 +60,7 @@
       "fr": "Piazza Largo del Popolo"
     },
     "category": "community",
+    "sourceStatus": "to-verify",
     "shortDescription": {
       "it": "Spazio centrale del borgo, adatto come punto di arrivo e di incontro.",
       "en": "Central village space, useful as an arrival and meeting point.",
@@ -43,6 +70,31 @@
       "it": "Piazza Largo del Popolo e uno degli spazi piu leggibili del centro abitato: un punto semplice da usare come riferimento prima di entrare nei vicoli o raggiungere la chiesa. La sua scala raccolta racconta il carattere quotidiano del paese, fatto di soste brevi, attraversamenti e incontri. Da qui la mappa collega facilmente la mostra valdese, il centro storico e le tappe principali della visita.",
       "en": "Piazza Largo del Popolo is one of the clearest spaces in the village centre: an easy reference before entering the lanes or walking toward the church. Its modest scale reflects the everyday character of the village, made of short stops, crossings and meetings. From here the map connects the Waldensian exhibition, the historic centre and the main stops of the visit.",
       "fr": "Piazza Largo del Popolo est l'un des espaces les plus lisibles du centre : un repere simple avant d'entrer dans les ruelles ou de rejoindre l'eglise. Son echelle discrete evoque la vie quotidienne du village, faite de pauses, de passages et de rencontres. Depuis cette place, la carte relie facilement l'exposition vaudoise, le centre historique et les etapes principales."
+    },
+    "historicalInterest": {
+      "it": "Spazio civico del centro abitato. Eventuali trasformazioni storiche, denominazioni precedenti e fonti catastali: Informazione da verificare.",
+      "en": "Civic space in the village centre. Historical changes, previous names and cadastral sources: Information to verify.",
+      "fr": "Espace civique du centre habité. Transformations historiques, anciens noms et sources cadastrales : Information à vérifier."
+    },
+    "architecturalInterest": {
+      "it": "Interesse legato alla scala urbana e al rapporto con gli accessi ai vicoli; elementi architettonici specifici da documentare.",
+      "en": "Interest linked to urban scale and the relation with lanes; specific architectural elements to document.",
+      "fr": "Intérêt lié à l'échelle urbaine et au rapport avec les ruelles ; éléments architecturaux précis à documenter."
+    },
+    "landscapeInterest": {
+      "it": "Punto di orientamento interno al borgo, utile per collegare centro, chiesa e percorsi verso gli affacci.",
+      "en": "Orientation point inside the village, useful for connecting the centre, church and routes toward viewpoints.",
+      "fr": "Point de repère dans le village, utile pour relier centre, église et parcours vers les vues."
+    },
+    "curiosity": {
+      "it": "La funzione di luogo di incontro è osservabile, ma testimonianze e usi storici vanno raccolti con fonti locali.",
+      "en": "Its role as a meeting place is observable, but testimonies and historical uses need local sources.",
+      "fr": "Sa fonction de lieu de rencontre est observable, mais témoignages et usages historiques nécessitent des sources locales."
+    },
+    "sourceNotes": {
+      "it": "Descrizione editoriale basata sulla lettura del luogo. Documentazione storica puntuale: Informazione da verificare.",
+      "en": "Editorial description based on reading the place. Precise historical documentation: Information to verify.",
+      "fr": "Description éditoriale fondée sur la lecture du lieu. Documentation historique précise : Information à vérifier."
     },
     "latitude": 41.8440329,
     "longitude": 14.5617977,
@@ -64,7 +116,8 @@
       "en": "Permanent Exhibition: Waldensian Experience",
       "fr": "Exposition permanente Expérience vaudoise"
     },
-    "category": "memory",
+    "category": "memory-places",
+    "sourceStatus": "to-verify",
     "shortDescription": {
       "it": "Presidio culturale dedicato alla memoria valdese nel cuore del paese.",
       "en": "Cultural memory point dedicated to the Waldensian experience in the village centre.",
@@ -74,6 +127,31 @@
       "it": "La Mostra Permanente Esperienza Valdese valorizza una traccia culturale importante per San Giovanni Lipioni e per la memoria religiosa dell'area. Collocata nel cuore del borgo, invita a leggere il paese anche attraverso migrazioni, appartenenze e minoranze. Nella visita digitale diventa una tappa di approfondimento: non solo un punto sulla mappa, ma un invito a collegare luoghi, storie familiari e identita collettive.",
       "en": "The Permanent Exhibition on the Waldensian Experience highlights an important cultural trace for San Giovanni Lipioni and for the religious memory of the area. Set in the village centre, it invites visitors to read the place through migration, belonging and minorities. In the digital visit it becomes a deeper stop: not just a point on the map, but an invitation to connect places, family stories and collective identities.",
       "fr": "L'Exposition permanente sur l'experience vaudoise met en valeur une trace culturelle importante pour San Giovanni Lipioni et pour la memoire religieuse du territoire. Situee au coeur du village, elle invite a lire le lieu a travers migrations, appartenances et minorites. Dans la visite numerique, elle devient une etape d'approfondissement qui relie lieux, histoires familiales et identites collectives."
+    },
+    "historicalInterest": {
+      "it": "Luogo dedicato alla memoria valdese. Periodo, materiali espositivi e riferimenti bibliografici devono essere citati con fonti verificabili.",
+      "en": "Place dedicated to Waldensian memory. Period, exhibition materials and bibliography must be cited with verifiable sources.",
+      "fr": "Lieu consacré à la mémoire vaudoise. Période, supports d'exposition et bibliographie doivent être cités avec des sources vérifiables."
+    },
+    "architecturalInterest": {
+      "it": "Interesse architettonico dell'edificio ospitante: Informazione da verificare.",
+      "en": "Architectural interest of the hosting building: Information to verify.",
+      "fr": "Intérêt architectural du bâtiment d'accueil : Information à vérifier."
+    },
+    "landscapeInterest": {
+      "it": "Tappa interna al borgo, utile per collegare memoria culturale e percorso urbano.",
+      "en": "Stop inside the village, useful for connecting cultural memory and the urban route.",
+      "fr": "Étape à l'intérieur du village, utile pour relier mémoire culturelle et parcours urbain."
+    },
+    "curiosity": {
+      "it": "Il rapporto tra memoria valdese, famiglie e territorio richiede fonti documentarie e testimonianze autorizzate.",
+      "en": "The relationship between Waldensian memory, families and territory requires documentary sources and authorised testimonies.",
+      "fr": "Le lien entre mémoire vaudoise, familles et territoire exige des sources documentaires et des témoignages autorisés."
+    },
+    "sourceNotes": {
+      "it": "Nome e tema della mostra sono presenti nei dati del progetto; contenuti storici e materiali esposti: Informazione da verificare.",
+      "en": "The exhibition name and theme are present in project data; historical content and displayed materials: Information to verify.",
+      "fr": "Le nom et le thème de l'exposition figurent dans les données du projet ; contenus historiques et matériaux exposés : Information à vérifier."
     },
     "latitude": 41.8440321,
     "longitude": 14.5615785,
@@ -95,7 +173,8 @@
       "en": "Church of Santa Maria delle Grazie",
       "fr": "Église Santa Maria delle Grazie"
     },
-    "category": "heritage",
+    "category": "churches",
+    "sourceStatus": "to-verify",
     "shortDescription": {
       "it": "Chiesa parrocchiale in posizione dominante, riconoscibile nel profilo del borgo.",
       "en": "Parish church in a dominant position, clearly visible in the village skyline.",
@@ -105,6 +184,31 @@
       "it": "Santa Maria delle Grazie domina San Giovanni Lipioni con una presenza architettonica netta. Le descrizioni storiche la collegano a fasi costruttive tra Cinquecento e Seicento, con una facciata a capanna scandita da elementi in pietra e decorazioni recuperate nel tempo. Per chi visita il borgo e il punto che organizza lo sguardo: dalla chiesa si comprendono la forma del paese, il crinale e il rapporto con le colline circostanti.",
       "en": "Santa Maria delle Grazie dominates San Giovanni Lipioni with a clear architectural presence. Historical descriptions connect it to building phases between the sixteenth and seventeenth centuries, with a gabled facade marked by stone elements and reused decorative fragments. For visitors it is the point that organises the view: from the church one understands the village form, the ridge and the surrounding hills.",
       "fr": "Santa Maria delle Grazie domine San Giovanni Lipioni par une presence architecturale marquee. Les descriptions historiques la relient a des phases de construction entre le XVIe et le XVIIe siecle, avec une facade a pignon scandee par des elements en pierre. Pour la visite, c'est le point qui organise le regard sur la forme du village, la crete et les collines environnantes."
+    },
+    "historicalInterest": {
+      "it": "Chiesa parrocchiale del borgo. Le fasi costruttive tra Cinquecento e Seicento citate nella scheda richiedono fonte bibliografica puntuale.",
+      "en": "Parish church of the village. The sixteenth- and seventeenth-century building phases mentioned in the sheet require a precise bibliographic source.",
+      "fr": "Église paroissiale du village. Les phases de construction des XVIe-XVIIe siècles mentionnées dans la fiche demandent une source bibliographique précise."
+    },
+    "architecturalInterest": {
+      "it": "Facciata, elementi in pietra e posizione dominante sono elementi da documentare con rilievo fotografico e scheda storico-artistica.",
+      "en": "Facade, stone elements and dominant position should be documented with photographic survey and historical-artistic sheet.",
+      "fr": "Façade, éléments en pierre et position dominante doivent être documentés par relevé photographique et fiche historique-artistique."
+    },
+    "landscapeInterest": {
+      "it": "Punto alto per leggere crinale, abitato compatto e colline circostanti.",
+      "en": "High point for reading the ridge, compact settlement and surrounding hills.",
+      "fr": "Point haut pour lire la crête, l'habitat compact et les collines environnantes."
+    },
+    "curiosity": {
+      "it": "Le decorazioni recuperate citate nella descrizione sono Informazione da verificare con fonte e datazione.",
+      "en": "The reused decorative fragments mentioned in the description are Information to verify with source and dating.",
+      "fr": "Les décors récupérés mentionnés dans la description sont une Information à vérifier avec source et datation."
+    },
+    "sourceNotes": {
+      "it": "Dedicazione e posizione sono dati identificativi; cronologia e dettagli storico-artistici devono essere verificati.",
+      "en": "Dedication and position are identifying data; chronology and historical-artistic details must be verified.",
+      "fr": "La dédicace et la position sont des données d'identification ; chronologie et détails historiques-artistiques doivent être vérifiés."
     },
     "latitude": 41.8430544,
     "longitude": 14.5619544,
@@ -126,7 +230,8 @@
       "en": "Via Salita della Chiesa",
       "fr": "Via Salita della Chiesa"
     },
-    "category": "heritage",
+    "category": "trails",
+    "sourceStatus": "to-verify",
     "shortDescription": {
       "it": "Tratto a gradini che racconta la mobilita lenta del borgo.",
       "en": "Stepped lane that tells the story of slow movement through the village.",
@@ -136,6 +241,31 @@
       "it": "Via Salita della Chiesa e una piccola infrastruttura quotidiana: collega quote diverse del centro e rende fisica la forma del borgo. Percorrerla significa sentire il rapporto tra case, pietra, pendenza e spazi religiosi. Nella mappa e utile come tappa breve, soprattutto per chi vuole capire il paese camminando e non soltanto osservandolo da un punto panoramico.",
       "en": "Via Salita della Chiesa is a small everyday infrastructure: it links different levels of the centre and makes the village form tangible. Walking it means feeling the relation between houses, stone, slope and religious spaces. On the map it is a useful short stop for visitors who want to understand the village by walking through it.",
       "fr": "Via Salita della Chiesa est une petite infrastructure quotidienne : elle relie differents niveaux du centre et rend tangible la forme du village. La parcourir permet de sentir le rapport entre maisons, pierre, pente et espaces religieux. Sur la carte, elle devient une etape courte pour comprendre le village en marchant."
+    },
+    "historicalInterest": {
+      "it": "Percorso interno legato alla mobilità lenta del borgo. Origine del tracciato e trasformazioni: Informazione da verificare.",
+      "en": "Internal route linked to slow movement through the village. Route origin and changes: Information to verify.",
+      "fr": "Parcours interne lié à la mobilité lente du village. Origine du tracé et transformations : Information à vérifier."
+    },
+    "architecturalInterest": {
+      "it": "Interesse legato a gradini, pendenze e rapporto con muri e case; materiali e interventi da censire.",
+      "en": "Interest linked to steps, slopes and relation with walls and houses; materials and interventions to catalogue.",
+      "fr": "Intérêt lié aux marches, pentes et rapport avec murs et maisons ; matériaux et interventions à recenser."
+    },
+    "landscapeInterest": {
+      "it": "Fa percepire a scala pedonale il rapporto tra quote del borgo e spazi religiosi.",
+      "en": "It reveals at pedestrian scale the relation between village levels and religious spaces.",
+      "fr": "Il fait percevoir à l'échelle piétonne la relation entre niveaux du village et espaces religieux."
+    },
+    "curiosity": {
+      "it": "Il valore del luogo è quotidiano più che monumentale: una scheda fotografica può documentare dettagli e cambiamenti.",
+      "en": "Its value is everyday rather than monumental: a photographic sheet can document details and changes.",
+      "fr": "Sa valeur est quotidienne plutôt que monumentale : une fiche photographique peut documenter détails et changements."
+    },
+    "sourceNotes": {
+      "it": "Descrizione basata su lettura urbana. Fonti storiche sul tracciato: Informazione da verificare.",
+      "en": "Description based on urban reading. Historical sources on the route: Information to verify.",
+      "fr": "Description fondée sur une lecture urbaine. Sources historiques sur le tracé : Information à vérifier."
     },
     "latitude": 41.8434745,
     "longitude": 14.5617107,
@@ -153,7 +283,8 @@
   {
     "id": "fontana-vecchia",
     "name": { "it": "Fontana Vecchia", "en": "Fontana Vecchia", "fr": "Fontana Vecchia" },
-    "category": "memory",
+    "category": "fountains",
+    "sourceStatus": "to-verify",
     "shortDescription": {
       "it": "Fontana storica in pietra, legata agli usi quotidiani dell'acqua.",
       "en": "Historic stone fountain connected with everyday water use.",
@@ -163,6 +294,31 @@
       "it": "Fontana Vecchia e uno dei luoghi che trasformano la memoria materiale in esperienza concreta. Le notizie disponibili ricordano restauri ottocenteschi e un'iscrizione collegata alla sistemazione del 1844. Oggi la fontana puo essere letta come punto di relazione tra acqua, lavoro quotidiano e percorsi fuori dal nucleo piu compatto del borgo.",
       "en": "Fontana Vecchia is one of the places where material memory becomes concrete. Available historical notes mention nineteenth-century restorations and an inscription connected with works in 1844. Today the fountain can be read as a point linking water, everyday labour and routes beyond the most compact part of the village.",
       "fr": "Fontana Vecchia est l'un des lieux ou la memoire materielle devient concrete. Les informations disponibles evoquent des restaurations du XIXe siecle et une inscription liee aux travaux de 1844. Aujourd'hui, la fontaine relie eau, travail quotidien et parcours hors du noyau le plus compact du village."
+    },
+    "historicalInterest": {
+      "it": "Fontana storica legata agli usi dell'acqua. Restauri ottocenteschi e data 1844 sono Informazione da verificare con iscrizione o fonte documentaria.",
+      "en": "Historic fountain linked to water use. Nineteenth-century restorations and the 1844 date are Information to verify with inscription or documentary source.",
+      "fr": "Fontaine historique liée aux usages de l'eau. Restaurations du XIXe siècle et date 1844 sont une Information à vérifier avec inscription ou source documentaire."
+    },
+    "architecturalInterest": {
+      "it": "Elemento in pietra da documentare con foto ravvicinate, stato di conservazione e trascrizione dell'eventuale iscrizione.",
+      "en": "Stone element to document with close photographs, conservation state and transcription of any inscription.",
+      "fr": "Élément en pierre à documenter par photos rapprochées, état de conservation et transcription de l'éventuelle inscription."
+    },
+    "landscapeInterest": {
+      "it": "Tappa di raccordo tra borgo, percorsi rurali e area di Santa Liberata.",
+      "en": "Connecting stop between the village, rural routes and the Santa Liberata area.",
+      "fr": "Étape de liaison entre le village, les parcours ruraux et le secteur de Santa Liberata."
+    },
+    "curiosity": {
+      "it": "Il rapporto tra acqua, lavoro quotidiano e memoria orale richiede testimonianze autorizzate e fonti locali.",
+      "en": "The relation between water, everyday work and oral memory requires authorised testimonies and local sources.",
+      "fr": "Le lien entre eau, travail quotidien et mémoire orale exige des témoignages autorisés et des sources locales."
+    },
+    "sourceNotes": {
+      "it": "Le informazioni su iscrizione e restauro non sono corredate da fonte nel repo. Informazione da verificare.",
+      "en": "Information about inscription and restoration has no source in the repository. Information to verify.",
+      "fr": "Les informations sur inscription et restauration ne sont pas sourcées dans le dépôt. Information à vérifier."
     },
     "latitude": 41.8477431,
     "longitude": 14.5626981,
@@ -184,7 +340,8 @@
       "en": "Chapel of Santa Liberata Virgin and Martyr",
       "fr": "Chapelle de Santa Liberata Vierge et Martyre"
     },
-    "category": "heritage",
+    "category": "chapels",
+    "sourceStatus": "to-verify",
     "shortDescription": {
       "it": "Cappella rurale fuori dal centro abitato, nel paesaggio di Santa Liberata.",
       "en": "Rural chapel outside the village centre, in the Santa Liberata landscape.",
@@ -194,6 +351,31 @@
       "it": "La Cappella di Santa Liberata porta la visita fuori dal nucleo principale e apre il racconto verso il paesaggio. La tradizione descrive un edificio in pietra con caratteri semplici e una forte riconoscibilita devozionale. Nella guida digitale e una tappa di respiro: collega il centro abitato ai percorsi rurali, alla Fontana Vecchia e agli alberi monumentali della zona.",
       "en": "The Chapel of Santa Liberata leads the visit outside the main centre and opens the story toward the landscape. Tradition describes a stone building with simple features and a strong devotional identity. In the digital guide it is a breathing point: it links the village to rural routes, Fontana Vecchia and the notable trees of the area.",
       "fr": "La chapelle de Santa Liberata mene la visite hors du noyau principal et ouvre le recit vers le paysage. La tradition decrit un edifice en pierre aux formes simples et a la forte identite devotionnelle. Dans le guide numerique, elle relie le village aux parcours ruraux, a Fontana Vecchia et aux arbres remarquables du secteur."
+    },
+    "historicalInterest": {
+      "it": "Cappella rurale devozionale. Origine, dedicazione completa, trasformazioni e fonti: Informazione da verificare.",
+      "en": "Rural devotional chapel. Origin, full dedication, transformations and sources: Information to verify.",
+      "fr": "Chapelle rurale de dévotion. Origine, dédicace complète, transformations et sources : Information à vérifier."
+    },
+    "architecturalInterest": {
+      "it": "Edificio rurale con caratteri semplici secondo la tradizione; materiali, datazione e stato conservativo da rilevare.",
+      "en": "Rural building with simple features according to tradition; materials, dating and conservation state to survey.",
+      "fr": "Édifice rural aux formes simples selon la tradition ; matériaux, datation et état de conservation à relever."
+    },
+    "landscapeInterest": {
+      "it": "Porta la visita dal centro al paesaggio aperto di Santa Liberata.",
+      "en": "It leads the visit from the centre to the open landscape of Santa Liberata.",
+      "fr": "Elle mène la visite du centre vers le paysage ouvert de Santa Liberata."
+    },
+    "curiosity": {
+      "it": "La componente devozionale e le eventuali tradizioni locali vanno raccolte distinguendo fonte orale e documento scritto.",
+      "en": "The devotional component and local traditions should be collected by distinguishing oral source and written document.",
+      "fr": "La composante dévotionnelle et les traditions locales doivent être recueillies en distinguant source orale et document écrit."
+    },
+    "sourceNotes": {
+      "it": "La descrizione cita la tradizione ma non una fonte verificabile. Informazione da verificare.",
+      "en": "The description cites tradition but not a verifiable source. Information to verify.",
+      "fr": "La description cite la tradition mais pas une source vérifiable. Information à vérifier."
     },
     "latitude": 41.8471971,
     "longitude": 14.560414,
@@ -211,7 +393,8 @@
   {
     "id": "quercia-lozzi",
     "name": { "it": "Quercia di Lozzi", "en": "Lozzi's Oak", "fr": "Chêne de Lozzi" },
-    "category": "viewpoint",
+    "category": "natural-places",
+    "sourceStatus": "to-verify",
     "shortDescription": {
       "it": "Punto naturalistico nell'area di Santa Liberata, tra alberi e paesaggio aperto.",
       "en": "Natural point in the Santa Liberata area, among trees and open landscape.",
@@ -221,6 +404,31 @@
       "it": "La Quercia di Lozzi rappresenta il lato naturalistico della visita. Il luogo e associato a un gruppo di roverelle nell'area di Santa Liberata e funziona come tappa lenta, da raggiungere con attenzione al percorso e alla stagione. Inserirla nella mappa serve a non chiudere il racconto nel solo centro storico: San Giovanni Lipioni e anche margini agricoli, alberi, vento e visuali ampie.",
       "en": "Lozzi's Oak represents the natural side of the visit. The place is associated with a group of downy oaks in the Santa Liberata area and works as a slow stop, to be reached with attention to route and season. Including it on the map keeps the story from ending in the historic centre alone: San Giovanni Lipioni is also agricultural edges, trees, wind and wide views.",
       "fr": "Le Chene de Lozzi represente le cote naturel de la visite. Le lieu est associe a un groupe de chenes pubescents dans le secteur de Santa Liberata et se prete a une etape lente, en tenant compte du parcours et de la saison. L'ajouter a la carte rappelle que San Giovanni Lipioni est aussi marges agricoles, arbres, vent et vues ouvertes."
+    },
+    "historicalInterest": {
+      "it": "Memoria naturalistica e toponomastica locale. Nome, proprietà, eventuale tutela e storia del luogo: Informazione da verificare.",
+      "en": "Natural and local toponymic memory. Name, ownership, possible protection and history of the place: Information to verify.",
+      "fr": "Mémoire naturaliste et toponymique locale. Nom, propriété, éventuelle protection et histoire du lieu : Information à vérifier."
+    },
+    "architecturalInterest": {
+      "it": "Non pertinente come architettura costruita; eventuali muretti, recinzioni o manufatti agricoli vicini sono da censire.",
+      "en": "Not relevant as built architecture; nearby walls, fences or agricultural artefacts should be catalogued.",
+      "fr": "Non pertinent comme architecture bâtie ; murs, clôtures ou ouvrages agricoles proches sont à recenser."
+    },
+    "landscapeInterest": {
+      "it": "Tappa naturalistica tra margini agricoli, alberature e viste aperte nell'area di Santa Liberata.",
+      "en": "Natural stop among agricultural edges, trees and open views in the Santa Liberata area.",
+      "fr": "Étape naturaliste entre marges agricoles, arbres et vues ouvertes dans le secteur de Santa Liberata."
+    },
+    "curiosity": {
+      "it": "L'associazione con roverelle e il nome Lozzi devono essere verificati con sopralluogo e fonte locale.",
+      "en": "The association with downy oaks and the Lozzi name must be verified with field survey and local source.",
+      "fr": "L'association avec des chênes pubescents et le nom Lozzi doivent être vérifiés par relevé sur place et source locale."
+    },
+    "sourceNotes": {
+      "it": "Scheda naturalistica da verificare con rilievo sul posto, foto e fonte locale autorizzata.",
+      "en": "Natural-place sheet to verify with field survey, photos and authorised local source.",
+      "fr": "Fiche naturaliste à vérifier par relevé sur place, photos et source locale autorisée."
     },
     "latitude": 41.8492813,
     "longitude": 14.5585058,
@@ -234,5 +442,181 @@
     "tags": ["quercia", "lozzi", "alberi", "santa liberata", "oak", "trees"],
     "relatedPlaceIds": ["cappella-santa-liberata", "fontana-vecchia"],
     "isVerifiedContent": true
+  },
+  {
+    "id": "edicola-votiva-da-censire",
+    "name": {
+      "it": "Edicola votiva da censire",
+      "en": "Votive shrine to catalogue",
+      "fr": "Édicule votif à recenser"
+    },
+    "category": "votive-shrines",
+    "sourceStatus": "research",
+    "shortDescription": {
+      "it": "Contenuto in fase di ricerca.",
+      "en": "Content under research.",
+      "fr": "Contenu en cours de recherche."
+    },
+    "description": {
+      "it": "Placeholder editoriale per censire eventuali edicole votive del territorio. Contenuto in fase di ricerca.",
+      "en": "Editorial placeholder for cataloguing possible votive shrines in the area. Content under research.",
+      "fr": "Placeholder éditorial pour recenser d'éventuels édicules votifs du territoire. Contenu en cours de recherche."
+    },
+    "historicalInterest": { "it": "Informazione da verificare", "en": "Information to verify", "fr": "Information à vérifier" },
+    "architecturalInterest": { "it": "Informazione da verificare", "en": "Information to verify", "fr": "Information à vérifier" },
+    "landscapeInterest": { "it": "Informazione da verificare", "en": "Information to verify", "fr": "Information à vérifier" },
+    "curiosity": { "it": "Contenuto in fase di ricerca", "en": "Content under research", "fr": "Contenu en cours de recherche" },
+    "sourceNotes": { "it": "Inserire solo dopo rilievo, foto autorizzate e fonte verificabile.", "en": "Add only after survey, authorised photos and verifiable source.", "fr": "Ajouter seulement après relevé, photos autorisées et source vérifiable." },
+    "latitude": 41.8429366,
+    "longitude": 14.5621116,
+    "image": "assets/images/piazza-memory.svg",
+    "alt": { "it": "Illustrazione segnaposto per edicola votiva da censire", "en": "Placeholder illustration for a votive shrine to catalogue", "fr": "Illustration placeholder pour édicule votif à recenser" },
+    "tags": ["edicola votiva", "devozione", "censimento", "placeholder"],
+    "relatedPlaceIds": ["centro-storico"],
+    "isVerifiedContent": false
+  },
+  {
+    "id": "belvedere-da-censire",
+    "name": { "it": "Belvedere da censire", "en": "Belvedere to catalogue", "fr": "Belvédère à recenser" },
+    "category": "belvedere",
+    "sourceStatus": "research",
+    "shortDescription": { "it": "Contenuto in fase di ricerca.", "en": "Content under research.", "fr": "Contenu en cours de recherche." },
+    "description": {
+      "it": "Placeholder per identificare un eventuale belvedere documentabile con coordinate, foto e descrizione del panorama. Contenuto in fase di ricerca.",
+      "en": "Placeholder for identifying a possible belvedere with coordinates, photos and panorama description. Content under research.",
+      "fr": "Placeholder pour identifier un éventuel belvédère avec coordonnées, photos et description du panorama. Contenu en cours de recherche."
+    },
+    "historicalInterest": { "it": "Informazione da verificare", "en": "Information to verify", "fr": "Information à vérifier" },
+    "architecturalInterest": { "it": "Informazione da verificare", "en": "Information to verify", "fr": "Information à vérifier" },
+    "landscapeInterest": { "it": "Informazione da verificare", "en": "Information to verify", "fr": "Information à vérifier" },
+    "curiosity": { "it": "Contenuto in fase di ricerca", "en": "Content under research", "fr": "Contenu en cours de recherche" },
+    "sourceNotes": { "it": "Coordinate provvisorie sul centro del paese: Informazione da verificare.", "en": "Provisional coordinates on the village centre: Information to verify.", "fr": "Coordonnées provisoires sur le centre du village : Information à vérifier." },
+    "latitude": 41.8429366,
+    "longitude": 14.5621116,
+    "image": "assets/images/panorama.svg",
+    "alt": { "it": "Illustrazione segnaposto per belvedere da censire", "en": "Placeholder illustration for a belvedere to catalogue", "fr": "Illustration placeholder pour belvédère à recenser" },
+    "tags": ["belvedere", "panorama", "censimento", "placeholder"],
+    "relatedPlaceIds": ["centro-storico"],
+    "isVerifiedContent": false
+  },
+  {
+    "id": "punto-panoramico-da-censire",
+    "name": { "it": "Punto panoramico da censire", "en": "Viewpoint to catalogue", "fr": "Point de vue à recenser" },
+    "category": "viewpoints",
+    "sourceStatus": "research",
+    "shortDescription": { "it": "Contenuto in fase di ricerca.", "en": "Content under research.", "fr": "Contenu en cours de recherche." },
+    "description": {
+      "it": "Placeholder per un punto panoramico da verificare sul posto, con orientamento della vista e accessibilità. Contenuto in fase di ricerca.",
+      "en": "Placeholder for a viewpoint to verify on site, including view orientation and accessibility. Content under research.",
+      "fr": "Placeholder pour un point de vue à vérifier sur place, avec orientation de la vue et accessibilité. Contenu en cours de recherche."
+    },
+    "historicalInterest": { "it": "Informazione da verificare", "en": "Information to verify", "fr": "Information à vérifier" },
+    "architecturalInterest": { "it": "Informazione da verificare", "en": "Information to verify", "fr": "Information à vérifier" },
+    "landscapeInterest": { "it": "Informazione da verificare", "en": "Information to verify", "fr": "Information à vérifier" },
+    "curiosity": { "it": "Contenuto in fase di ricerca", "en": "Content under research", "fr": "Contenu en cours de recherche" },
+    "sourceNotes": { "it": "Coordinate provvisorie sul centro del paese: Informazione da verificare.", "en": "Provisional coordinates on the village centre: Information to verify.", "fr": "Coordonnées provisoires sur le centre du village : Information à vérifier." },
+    "latitude": 41.8429366,
+    "longitude": 14.5621116,
+    "image": "assets/images/panorama.svg",
+    "alt": { "it": "Illustrazione segnaposto per punto panoramico da censire", "en": "Placeholder illustration for a viewpoint to catalogue", "fr": "Illustration placeholder pour point de vue à recenser" },
+    "tags": ["punto panoramico", "vista", "censimento", "placeholder"],
+    "relatedPlaceIds": ["centro-storico"],
+    "isVerifiedContent": false
+  },
+  {
+    "id": "contrada-da-censire",
+    "name": { "it": "Contrada da censire", "en": "Rural district to catalogue", "fr": "Contrada à recenser" },
+    "category": "contrade",
+    "sourceStatus": "research",
+    "shortDescription": { "it": "Contenuto in fase di ricerca.", "en": "Content under research.", "fr": "Contenu en cours de recherche." },
+    "description": {
+      "it": "Placeholder per censire contrade, toponimi rurali e relazioni con il paesaggio agricolo. Contenuto in fase di ricerca.",
+      "en": "Placeholder for cataloguing rural districts, place names and links with the agricultural landscape. Content under research.",
+      "fr": "Placeholder pour recenser contrade, toponymes ruraux et liens avec le paysage agricole. Contenu en cours de recherche."
+    },
+    "historicalInterest": { "it": "Informazione da verificare", "en": "Information to verify", "fr": "Information à vérifier" },
+    "architecturalInterest": { "it": "Informazione da verificare", "en": "Information to verify", "fr": "Information à vérifier" },
+    "landscapeInterest": { "it": "Informazione da verificare", "en": "Information to verify", "fr": "Information à vérifier" },
+    "curiosity": { "it": "Contenuto in fase di ricerca", "en": "Content under research", "fr": "Contenu en cours de recherche" },
+    "sourceNotes": { "it": "Toponimi e confini richiedono fonti locali o cartografiche. Informazione da verificare.", "en": "Place names and boundaries require local or cartographic sources. Information to verify.", "fr": "Toponymes et limites exigent des sources locales ou cartographiques. Information à vérifier." },
+    "latitude": 41.8429366,
+    "longitude": 14.5621116,
+    "image": "assets/images/tradizioni.svg",
+    "alt": { "it": "Illustrazione segnaposto per contrada da censire", "en": "Placeholder illustration for a rural district to catalogue", "fr": "Illustration placeholder pour contrada à recenser" },
+    "tags": ["contrada", "toponimo", "censimento", "placeholder"],
+    "relatedPlaceIds": ["centro-storico"],
+    "isVerifiedContent": false
+  },
+  {
+    "id": "architettura-rurale-da-censire",
+    "name": { "it": "Architettura rurale da censire", "en": "Rural architecture to catalogue", "fr": "Architecture rurale à recenser" },
+    "category": "rural-architecture",
+    "sourceStatus": "research",
+    "shortDescription": { "it": "Contenuto in fase di ricerca.", "en": "Content under research.", "fr": "Contenu en cours de recherche." },
+    "description": {
+      "it": "Placeholder per manufatti rurali, muretti, ricoveri o elementi agricoli da documentare con rilievo e fonte. Contenuto in fase di ricerca.",
+      "en": "Placeholder for rural artefacts, walls, shelters or agricultural elements to document with survey and source. Content under research.",
+      "fr": "Placeholder pour ouvrages ruraux, murs, abris ou éléments agricoles à documenter avec relevé et source. Contenu en cours de recherche."
+    },
+    "historicalInterest": { "it": "Informazione da verificare", "en": "Information to verify", "fr": "Information à vérifier" },
+    "architecturalInterest": { "it": "Informazione da verificare", "en": "Information to verify", "fr": "Information à vérifier" },
+    "landscapeInterest": { "it": "Informazione da verificare", "en": "Information to verify", "fr": "Information à vérifier" },
+    "curiosity": { "it": "Contenuto in fase di ricerca", "en": "Content under research", "fr": "Contenu en cours de recherche" },
+    "sourceNotes": { "it": "Inserire solo con localizzazione e foto verificabili. Informazione da verificare.", "en": "Add only with verifiable location and photos. Information to verify.", "fr": "Ajouter seulement avec localisation et photos vérifiables. Information à vérifier." },
+    "latitude": 41.8429366,
+    "longitude": 14.5621116,
+    "image": "assets/images/borgo-stone.svg",
+    "alt": { "it": "Illustrazione segnaposto per architettura rurale da censire", "en": "Placeholder illustration for rural architecture to catalogue", "fr": "Illustration placeholder pour architecture rurale à recenser" },
+    "tags": ["architettura rurale", "manufatti", "censimento", "placeholder"],
+    "relatedPlaceIds": ["quercia-lozzi"],
+    "isVerifiedContent": false
+  },
+  {
+    "id": "casolare-storico-da-censire",
+    "name": { "it": "Casolare storico da censire", "en": "Historic farmhouse to catalogue", "fr": "Maison rurale historique à recenser" },
+    "category": "historic-farmhouses",
+    "sourceStatus": "research",
+    "shortDescription": { "it": "Contenuto in fase di ricerca.", "en": "Content under research.", "fr": "Contenu en cours de recherche." },
+    "description": {
+      "it": "Placeholder per eventuali casolari storici da documentare solo con autorizzazione, coordinate e fonti. Contenuto in fase di ricerca.",
+      "en": "Placeholder for possible historic farmhouses to document only with authorisation, coordinates and sources. Content under research.",
+      "fr": "Placeholder pour d'éventuelles maisons rurales historiques à documenter uniquement avec autorisation, coordonnées et sources. Contenu en cours de recherche."
+    },
+    "historicalInterest": { "it": "Informazione da verificare", "en": "Information to verify", "fr": "Information à vérifier" },
+    "architecturalInterest": { "it": "Informazione da verificare", "en": "Information to verify", "fr": "Information à vérifier" },
+    "landscapeInterest": { "it": "Informazione da verificare", "en": "Information to verify", "fr": "Information à vérifier" },
+    "curiosity": { "it": "Contenuto in fase di ricerca", "en": "Content under research", "fr": "Contenu en cours de recherche" },
+    "sourceNotes": { "it": "Attenzione a privacy, proprietà privata e autorizzazioni fotografiche. Informazione da verificare.", "en": "Pay attention to privacy, private property and photo permissions. Information to verify.", "fr": "Attention à la confidentialité, à la propriété privée et aux autorisations photo. Information à vérifier." },
+    "latitude": 41.8429366,
+    "longitude": 14.5621116,
+    "image": "assets/images/borgo-stone.svg",
+    "alt": { "it": "Illustrazione segnaposto per casolare storico da censire", "en": "Placeholder illustration for a historic farmhouse to catalogue", "fr": "Illustration placeholder pour maison rurale historique à recenser" },
+    "tags": ["casolare", "architettura rurale", "censimento", "placeholder"],
+    "relatedPlaceIds": ["quercia-lozzi"],
+    "isVerifiedContent": false
+  },
+  {
+    "id": "paesaggio-agricolo-da-censire",
+    "name": { "it": "Elemento del paesaggio agricolo da censire", "en": "Agricultural landscape element to catalogue", "fr": "Élément du paysage agricole à recenser" },
+    "category": "agricultural-landscape",
+    "sourceStatus": "research",
+    "shortDescription": { "it": "Contenuto in fase di ricerca.", "en": "Content under research.", "fr": "Contenu en cours de recherche." },
+    "description": {
+      "it": "Placeholder per elementi del paesaggio agricolo, come tracciati, coltivi, muri o sistemazioni da documentare. Contenuto in fase di ricerca.",
+      "en": "Placeholder for agricultural landscape elements such as routes, fields, walls or land arrangements to document. Content under research.",
+      "fr": "Placeholder pour des éléments du paysage agricole, comme chemins, cultures, murs ou aménagements à documenter. Contenu en cours de recherche."
+    },
+    "historicalInterest": { "it": "Informazione da verificare", "en": "Information to verify", "fr": "Information à vérifier" },
+    "architecturalInterest": { "it": "Informazione da verificare", "en": "Information to verify", "fr": "Information à vérifier" },
+    "landscapeInterest": { "it": "Informazione da verificare", "en": "Information to verify", "fr": "Information à vérifier" },
+    "curiosity": { "it": "Contenuto in fase di ricerca", "en": "Content under research", "fr": "Contenu en cours de recherche" },
+    "sourceNotes": { "it": "Richiede rilievo fotografico, coordinate e descrizione verificabile. Informazione da verificare.", "en": "Requires photographic survey, coordinates and verifiable description. Information to verify.", "fr": "Exige relevé photographique, coordonnées et description vérifiable. Information à vérifier." },
+    "latitude": 41.8429366,
+    "longitude": 14.5621116,
+    "image": "assets/images/panorama.svg",
+    "alt": { "it": "Illustrazione segnaposto per paesaggio agricolo da censire", "en": "Placeholder illustration for agricultural landscape to catalogue", "fr": "Illustration placeholder pour paysage agricole à recenser" },
+    "tags": ["paesaggio agricolo", "campagna", "censimento", "placeholder"],
+    "relatedPlaceIds": ["quercia-lozzi"],
+    "isVerifiedContent": false
   }
 ]

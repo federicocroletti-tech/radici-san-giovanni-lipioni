@@ -43,6 +43,20 @@ import { SearchInputComponent } from '../../shared/components/search-input/searc
         <button type="button" class="text-button" (click)="clearFilters()">
           {{ i18n.t('actions.clearFilters') }}
         </button>
+        <div class="quick-place-list" [attr.aria-label]="i18n.t('explore.results')">
+          @for (place of filteredPlaces(); track place.id) {
+            <button
+              type="button"
+              class="chip"
+              [class.active]="selectedPlaceId() === place.id"
+              (click)="selectPlace(place)"
+            >
+              {{ i18n.localize(place.name) }}
+            </button>
+          } @empty {
+            <span class="muted">{{ i18n.t('explore.noResults') }}</span>
+          }
+        </div>
       </aside>
 
       <div class="map-panel">
@@ -54,7 +68,12 @@ import { SearchInputComponent } from '../../shared/components/search-input/searc
       </div>
 
       <aside class="places-panel">
-        <app-place-detail-drawer [place]="selectedPlace()" (closed)="selectedPlaceId.set(null)" />
+        <app-place-detail-drawer
+          [place]="selectedPlace()"
+          [relatedPlaces]="relatedPlaces()"
+          (closed)="selectedPlaceId.set(null)"
+          (placeSelected)="selectPlace($event)"
+        />
       </aside>
     </section>
   `,
@@ -95,6 +114,17 @@ export class ExplorePage {
   readonly selectedPlace = computed(
     () => this.places().find((place) => place.id === this.selectedPlaceId()) ?? null,
   );
+
+  readonly relatedPlaces = computed(() => {
+    const selectedPlace = this.selectedPlace();
+    if (!selectedPlace) {
+      return [];
+    }
+
+    return selectedPlace.relatedPlaceIds
+      .map((placeId) => this.places().find((place) => place.id === placeId))
+      .filter((place): place is Place => Boolean(place));
+  });
 
   constructor() {
     inject(SeoService).usePage('explore');

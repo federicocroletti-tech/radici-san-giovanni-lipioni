@@ -6,11 +6,12 @@ import { ChatbotUiService } from '../../core/services/chatbot-ui.service';
 import { LanguageService } from '../../core/services/language.service';
 import { PlacesService } from '../../core/services/places.service';
 import { SeoService } from '../../core/services/seo.service';
+import { LocationMapComponent } from '../../shared/components/location-map/location-map.component';
 import { PlaceCardComponent } from '../../shared/components/place-card/place-card.component';
 
 @Component({
   selector: 'app-home-page',
-  imports: [RouterLink, PlaceCardComponent],
+  imports: [RouterLink, LocationMapComponent, PlaceCardComponent],
   template: `
     <section class="hero-section">
       <div class="hero-copy">
@@ -34,6 +35,8 @@ import { PlaceCardComponent } from '../../shared/components/place-card/place-car
       </div>
       <p>{{ i18n.t('home.whyText') }}</p>
     </section>
+
+    <app-location-map />
 
     <section class="section">
       <h2>{{ i18n.t('home.cardsTitle') }}</h2>
