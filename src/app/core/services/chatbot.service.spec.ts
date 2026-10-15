@@ -1,6 +1,15 @@
+import { vi } from 'vitest';
+
 import '@angular/compiler';
+
+vi.mock('@angular/common/http', () => ({ HttpClient: class HttpClient {} }));
+vi.mock('./language.service', () => ({ LanguageService: class LanguageService {} }));
+vi.mock('./itineraries.service', () => ({ ItinerariesService: class ItinerariesService {} }));
+vi.mock('./places.service', () => ({ PlacesService: class PlacesService {} }));
+vi.mock('./stories.service', () => ({ StoriesService: class StoriesService {} }));
+
 import { HttpClient } from '@angular/common/http';
-import { Injector } from '@angular/core';
+import { Injector, runInInjectionContext } from '@angular/core';
 import { of } from 'rxjs';
 import { ChatbotKnowledgeBase } from '../models/chatbot.model';
 import { Itinerary } from '../models/itinerary.model';
@@ -78,7 +87,6 @@ describe('ChatbotService', () => {
     const knowledge: ChatbotKnowledgeBase = { entries: [] };
     const injector = Injector.create({
       providers: [
-        ChatbotService,
         {
           provide: HttpClient,
           useValue: { get: () => of(knowledge) },
@@ -89,7 +97,7 @@ describe('ChatbotService', () => {
             currentLanguage: () => 'it',
             localize: (value: { it: string } | string | undefined) =>
               typeof value === 'string' ? value : (value?.it ?? ''),
-            t: (key: string) => key,
+            t: (key: string) => (key === 'location.intro' ? 'Nell’Alto Vastese, in Abruzzo.' : key),
           },
         },
         { provide: PlacesService, useValue: { getPlaces: () => of(places) } },
@@ -97,7 +105,7 @@ describe('ChatbotService', () => {
         { provide: StoriesService, useValue: { getStories: () => of([]) } },
       ],
     });
-    service = injector.get(ChatbotService);
+    service = runInInjectionContext(injector, () => new ChatbotService());
   });
 
   it('recommends a route and links its stops for broad visit questions', async () => {
@@ -125,5 +133,12 @@ describe('ChatbotService', () => {
 
     expect(response.text).toContain('non riportano informazioni aggiornate');
     expect(response.relatedPlaces?.[0]?.id).toBe('fontana-vecchia');
+  });
+
+  it('answers where the village is and links to the map', async () => {
+    const response = await service.ask('Dove si trova San Giovanni Lipioni?');
+
+    expect(response.text).toContain('Alto Vastese');
+    expect(response.relatedPlaceId).toBe('centro-storico');
   });
 });

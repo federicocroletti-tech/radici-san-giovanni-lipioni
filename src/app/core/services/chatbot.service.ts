@@ -62,6 +62,10 @@ export class ChatbotService {
       );
     }
 
+    if (this.isVillageLocationQuestion(normalizedQuestion)) {
+      return this.buildVillageLocationResponse();
+    }
+
     const placeMatch = this.bestMatch(
       places,
       (place) => [
@@ -310,6 +314,13 @@ export class ChatbotService {
     };
   }
 
+  private buildVillageLocationResponse(): ChatbotResponse {
+    return {
+      text: this.language.t('location.intro'),
+      relatedPlaceId: 'centro-storico',
+    };
+  }
+
   private getRelatedPlaces(
     placeIds: string[],
     places: Place[],
@@ -446,6 +457,20 @@ export class ChatbotService {
       'quoi voir',
       'que visiter',
       'a visiter',
+    ].some((keyword) => question.includes(keyword));
+  }
+
+  private isVillageLocationQuestion(question: string): boolean {
+    return [
+      'dove si trova san giovanni lipioni',
+      'dove si trova il paese',
+      'dove si trova questo paese',
+      'where is san giovanni lipioni',
+      'where is the village',
+      'where is this village',
+      'ou se trouve san giovanni lipioni',
+      'ou se trouve le village',
+      'localisation du village',
     ].some((keyword) => question.includes(keyword));
   }
 
