@@ -15,7 +15,9 @@ import { LanguageService } from '../../../core/services/language.service';
       <span class="eyebrow">{{ categoryLabel }}</span>
       <strong>{{ i18n.localize(place.name) }}</strong>
       <span>{{ i18n.localize(place.shortDescription) }}</span>
-      <small class="status" [class.research]="place.sourceStatus === 'research'">{{ sourceLabel }}</small>
+      <small class="status" [class.research]="place.sourceStatus === 'research'">{{
+        sourceLabel
+      }}</small>
     </button>
   `,
 })
@@ -38,12 +40,28 @@ export class PlaceCardComponent {
       monuments: { it: 'Monumenti', en: 'Monuments', fr: 'Monuments' },
       belvedere: { it: 'Belvedere', en: 'Belvedere', fr: 'Belvédères' },
       viewpoints: { it: 'Punti panoramici', en: 'Viewpoints', fr: 'Points de vue' },
-      'memory-places': { it: 'Luoghi della memoria', en: 'Places of memory', fr: 'Lieux de mémoire' },
+      'memory-places': {
+        it: 'Luoghi della memoria',
+        en: 'Places of memory',
+        fr: 'Lieux de mémoire',
+      },
       contrade: { it: 'Contrade', en: 'Rural districts', fr: 'Contrade' },
       trails: { it: 'Sentieri', en: 'Trails', fr: 'Sentiers' },
-      'rural-architecture': { it: 'Architettura rurale', en: 'Rural architecture', fr: 'Architecture rurale' },
-      'historic-farmhouses': { it: 'Casolari storici', en: 'Historic farmhouses', fr: 'Maisons rurales historiques' },
-      'agricultural-landscape': { it: 'Paesaggio agricolo', en: 'Agricultural landscape', fr: 'Paysage agricole' },
+      'rural-architecture': {
+        it: 'Architettura rurale',
+        en: 'Rural architecture',
+        fr: 'Architecture rurale',
+      },
+      'historic-farmhouses': {
+        it: 'Casolari storici',
+        en: 'Historic farmhouses',
+        fr: 'Maisons rurales historiques',
+      },
+      'agricultural-landscape': {
+        it: 'Paesaggio agricolo',
+        en: 'Agricultural landscape',
+        fr: 'Paysage agricole',
+      },
       'natural-places': { it: 'Luoghi naturalistici', en: 'Natural places', fr: 'Lieux naturels' },
     };
 
@@ -51,7 +69,8 @@ export class PlaceCardComponent {
   }
 
   get sourceLabel(): string {
-    const status = this.place.sourceStatus ?? (this.place.isVerifiedContent ? 'verified' : 'to-verify');
+    const status =
+      this.place.sourceStatus ?? (this.place.isVerifiedContent ? 'verified' : 'to-verify');
     return this.i18n.t(`sourceStatus.${status}`);
   }
 }

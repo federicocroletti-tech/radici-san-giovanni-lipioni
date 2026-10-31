@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
-import { Injectable, inject, signal } from '@angular/core';
+import { DOCUMENT, isPlatformBrowser } from '@angular/common';
+import { afterNextRender, Injectable, inject, PLATFORM_ID, signal } from '@angular/core';
 import { firstValueFrom } from 'rxjs';
 import { LanguageCode, LocalizedText } from '../models/localized-text.model';
 
@@ -8,22 +9,30 @@ type TranslationDictionary = Record<string, unknown>;
 @Injectable({ providedIn: 'root' })
 export class LanguageService {
   private readonly http = inject(HttpClient);
+  private readonly document = inject(DOCUMENT);
+  private readonly isBrowser = isPlatformBrowser(inject(PLATFORM_ID));
   private readonly storageKey = 'radici-language';
   private readonly dictionary = signal<TranslationDictionary>({});
 
   readonly availableLanguages: LanguageCode[] = ['it', 'en', 'fr'];
-  readonly currentLanguage = signal<LanguageCode>(this.readStoredLanguage());
+  readonly currentLanguage = signal<LanguageCode>('it');
 
   constructor() {
-    document.documentElement.lang = this.currentLanguage();
+    this.document.documentElement.lang = this.currentLanguage();
     void this.loadLanguage(this.currentLanguage());
+
+    if (!this.isBrowser) return;
+    afterNextRender(() => {
+      const language = this.readStoredLanguage();
+      if (language !== this.currentLanguage()) void this.setLanguage(language);
+    });
   }
 
   async setLanguage(language: LanguageCode): Promise<void> {
     await this.loadLanguage(language);
     this.currentLanguage.set(language);
-    localStorage.setItem(this.storageKey, language);
-    document.documentElement.lang = language;
+    if (this.isBrowser) localStorage.setItem(this.storageKey, language);
+    this.document.documentElement.lang = language;
   }
 
   t(key: string, fallback = ''): string {
@@ -63,6 +72,7 @@ export class LanguageService {
   }
 
   private readStoredLanguage(): LanguageCode {
+    if (!this.isBrowser) return 'it';
     const value = localStorage.getItem(this.storageKey);
     return value === 'en' || value === 'fr' ? value : 'it';
   }

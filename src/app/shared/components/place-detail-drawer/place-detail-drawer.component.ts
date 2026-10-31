@@ -7,7 +7,12 @@ import { LanguageService } from '../../../core/services/language.service';
   selector: 'app-place-detail-drawer',
   template: `
     @if (place) {
-      <aside class="detail-drawer" role="region" [attr.aria-label]="i18n.localize(place.name)" aria-live="polite">
+      <aside
+        class="detail-drawer"
+        role="region"
+        [attr.aria-label]="i18n.localize(place.name)"
+        aria-live="polite"
+      >
         <button
           type="button"
           class="icon-button close"

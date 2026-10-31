@@ -15,7 +15,8 @@
     "mobile:android:debug": "npm run mobile:build && cd android && gradlew.bat assembleDebug",
     "mobile:android:apk": "powershell -ExecutionPolicy Bypass -File scripts/build-android-apk.ps1",
     "mobile:android:release": "powershell -ExecutionPolicy Bypass -File scripts/build-android-release.ps1",
-    "mobile:ios": "npm run build && npx cap run ios"
+    "mobile:ios": "npm run build && npx cap run ios",
+    "serve:ssr:radici-san-giovanni-lipioni": "node dist/radici-san-giovanni-lipioni/server/server.mjs"
   },
   "private": true,
   "packageManager": "npm@10.9.8",
@@ -25,11 +26,14 @@
     "@angular/core": "^22.0.0",
     "@angular/forms": "^22.0.0",
     "@angular/platform-browser": "^22.0.0",
+    "@angular/platform-server": "^22.0.0",
     "@angular/router": "^22.0.0",
+    "@angular/ssr": "^22.0.8",
     "@capacitor/android": "^8.5.2",
     "@capacitor/core": "^8.5.2",
     "@capacitor/ios": "^8.5.2",
     "@types/leaflet": "^1.9.21",
+    "express": "^5.1.0",
     "leaflet": "^1.9.4",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0"
@@ -39,6 +43,8 @@
     "@angular/cli": "^22.0.8",
     "@angular/compiler-cli": "^22.0.0",
     "@capacitor/cli": "^8.5.2",
+    "@types/express": "^5.0.1",
+    "@types/node": "^20.17.19",
     "jsdom": "^28.0.0",
     "prettier": "^3.8.1",
     "typescript": "~6.0.2",

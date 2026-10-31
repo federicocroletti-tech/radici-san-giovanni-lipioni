@@ -462,159 +462,375 @@
       "en": "Editorial placeholder for cataloguing possible votive shrines in the area. Content under research.",
       "fr": "Placeholder éditorial pour recenser d'éventuels édicules votifs du territoire. Contenu en cours de recherche."
     },
-    "historicalInterest": { "it": "Informazione da verificare", "en": "Information to verify", "fr": "Information à vérifier" },
-    "architecturalInterest": { "it": "Informazione da verificare", "en": "Information to verify", "fr": "Information à vérifier" },
-    "landscapeInterest": { "it": "Informazione da verificare", "en": "Information to verify", "fr": "Information à vérifier" },
-    "curiosity": { "it": "Contenuto in fase di ricerca", "en": "Content under research", "fr": "Contenu en cours de recherche" },
-    "sourceNotes": { "it": "Inserire solo dopo rilievo, foto autorizzate e fonte verificabile.", "en": "Add only after survey, authorised photos and verifiable source.", "fr": "Ajouter seulement après relevé, photos autorisées et source vérifiable." },
+    "historicalInterest": {
+      "it": "Informazione da verificare",
+      "en": "Information to verify",
+      "fr": "Information à vérifier"
+    },
+    "architecturalInterest": {
+      "it": "Informazione da verificare",
+      "en": "Information to verify",
+      "fr": "Information à vérifier"
+    },
+    "landscapeInterest": {
+      "it": "Informazione da verificare",
+      "en": "Information to verify",
+      "fr": "Information à vérifier"
+    },
+    "curiosity": {
+      "it": "Contenuto in fase di ricerca",
+      "en": "Content under research",
+      "fr": "Contenu en cours de recherche"
+    },
+    "sourceNotes": {
+      "it": "Inserire solo dopo rilievo, foto autorizzate e fonte verificabile.",
+      "en": "Add only after survey, authorised photos and verifiable source.",
+      "fr": "Ajouter seulement après relevé, photos autorisées et source vérifiable."
+    },
     "latitude": 41.8429366,
     "longitude": 14.5621116,
     "image": "assets/images/piazza-memory.svg",
-    "alt": { "it": "Illustrazione segnaposto per edicola votiva da censire", "en": "Placeholder illustration for a votive shrine to catalogue", "fr": "Illustration placeholder pour édicule votif à recenser" },
+    "alt": {
+      "it": "Illustrazione segnaposto per edicola votiva da censire",
+      "en": "Placeholder illustration for a votive shrine to catalogue",
+      "fr": "Illustration placeholder pour édicule votif à recenser"
+    },
     "tags": ["edicola votiva", "devozione", "censimento", "placeholder"],
     "relatedPlaceIds": ["centro-storico"],
     "isVerifiedContent": false
   },
   {
     "id": "belvedere-da-censire",
-    "name": { "it": "Belvedere da censire", "en": "Belvedere to catalogue", "fr": "Belvédère à recenser" },
+    "name": {
+      "it": "Belvedere da censire",
+      "en": "Belvedere to catalogue",
+      "fr": "Belvédère à recenser"
+    },
     "category": "belvedere",
     "sourceStatus": "research",
-    "shortDescription": { "it": "Contenuto in fase di ricerca.", "en": "Content under research.", "fr": "Contenu en cours de recherche." },
+    "shortDescription": {
+      "it": "Contenuto in fase di ricerca.",
+      "en": "Content under research.",
+      "fr": "Contenu en cours de recherche."
+    },
     "description": {
       "it": "Placeholder per identificare un eventuale belvedere documentabile con coordinate, foto e descrizione del panorama. Contenuto in fase di ricerca.",
       "en": "Placeholder for identifying a possible belvedere with coordinates, photos and panorama description. Content under research.",
       "fr": "Placeholder pour identifier un éventuel belvédère avec coordonnées, photos et description du panorama. Contenu en cours de recherche."
     },
-    "historicalInterest": { "it": "Informazione da verificare", "en": "Information to verify", "fr": "Information à vérifier" },
-    "architecturalInterest": { "it": "Informazione da verificare", "en": "Information to verify", "fr": "Information à vérifier" },
-    "landscapeInterest": { "it": "Informazione da verificare", "en": "Information to verify", "fr": "Information à vérifier" },
-    "curiosity": { "it": "Contenuto in fase di ricerca", "en": "Content under research", "fr": "Contenu en cours de recherche" },
-    "sourceNotes": { "it": "Coordinate provvisorie sul centro del paese: Informazione da verificare.", "en": "Provisional coordinates on the village centre: Information to verify.", "fr": "Coordonnées provisoires sur le centre du village : Information à vérifier." },
+    "historicalInterest": {
+      "it": "Informazione da verificare",
+      "en": "Information to verify",
+      "fr": "Information à vérifier"
+    },
+    "architecturalInterest": {
+      "it": "Informazione da verificare",
+      "en": "Information to verify",
+      "fr": "Information à vérifier"
+    },
+    "landscapeInterest": {
+      "it": "Informazione da verificare",
+      "en": "Information to verify",
+      "fr": "Information à vérifier"
+    },
+    "curiosity": {
+      "it": "Contenuto in fase di ricerca",
+      "en": "Content under research",
+      "fr": "Contenu en cours de recherche"
+    },
+    "sourceNotes": {
+      "it": "Coordinate provvisorie sul centro del paese: Informazione da verificare.",
+      "en": "Provisional coordinates on the village centre: Information to verify.",
+      "fr": "Coordonnées provisoires sur le centre du village : Information à vérifier."
+    },
     "latitude": 41.8429366,
     "longitude": 14.5621116,
     "image": "assets/images/panorama.svg",
-    "alt": { "it": "Illustrazione segnaposto per belvedere da censire", "en": "Placeholder illustration for a belvedere to catalogue", "fr": "Illustration placeholder pour belvédère à recenser" },
+    "alt": {
+      "it": "Illustrazione segnaposto per belvedere da censire",
+      "en": "Placeholder illustration for a belvedere to catalogue",
+      "fr": "Illustration placeholder pour belvédère à recenser"
+    },
     "tags": ["belvedere", "panorama", "censimento", "placeholder"],
     "relatedPlaceIds": ["centro-storico"],
     "isVerifiedContent": false
   },
   {
     "id": "punto-panoramico-da-censire",
-    "name": { "it": "Punto panoramico da censire", "en": "Viewpoint to catalogue", "fr": "Point de vue à recenser" },
+    "name": {
+      "it": "Punto panoramico da censire",
+      "en": "Viewpoint to catalogue",
+      "fr": "Point de vue à recenser"
+    },
     "category": "viewpoints",
     "sourceStatus": "research",
-    "shortDescription": { "it": "Contenuto in fase di ricerca.", "en": "Content under research.", "fr": "Contenu en cours de recherche." },
+    "shortDescription": {
+      "it": "Contenuto in fase di ricerca.",
+      "en": "Content under research.",
+      "fr": "Contenu en cours de recherche."
+    },
     "description": {
       "it": "Placeholder per un punto panoramico da verificare sul posto, con orientamento della vista e accessibilità. Contenuto in fase di ricerca.",
       "en": "Placeholder for a viewpoint to verify on site, including view orientation and accessibility. Content under research.",
       "fr": "Placeholder pour un point de vue à vérifier sur place, avec orientation de la vue et accessibilité. Contenu en cours de recherche."
     },
-    "historicalInterest": { "it": "Informazione da verificare", "en": "Information to verify", "fr": "Information à vérifier" },
-    "architecturalInterest": { "it": "Informazione da verificare", "en": "Information to verify", "fr": "Information à vérifier" },
-    "landscapeInterest": { "it": "Informazione da verificare", "en": "Information to verify", "fr": "Information à vérifier" },
-    "curiosity": { "it": "Contenuto in fase di ricerca", "en": "Content under research", "fr": "Contenu en cours de recherche" },
-    "sourceNotes": { "it": "Coordinate provvisorie sul centro del paese: Informazione da verificare.", "en": "Provisional coordinates on the village centre: Information to verify.", "fr": "Coordonnées provisoires sur le centre du village : Information à vérifier." },
+    "historicalInterest": {
+      "it": "Informazione da verificare",
+      "en": "Information to verify",
+      "fr": "Information à vérifier"
+    },
+    "architecturalInterest": {
+      "it": "Informazione da verificare",
+      "en": "Information to verify",
+      "fr": "Information à vérifier"
+    },
+    "landscapeInterest": {
+      "it": "Informazione da verificare",
+      "en": "Information to verify",
+      "fr": "Information à vérifier"
+    },
+    "curiosity": {
+      "it": "Contenuto in fase di ricerca",
+      "en": "Content under research",
+      "fr": "Contenu en cours de recherche"
+    },
+    "sourceNotes": {
+      "it": "Coordinate provvisorie sul centro del paese: Informazione da verificare.",
+      "en": "Provisional coordinates on the village centre: Information to verify.",
+      "fr": "Coordonnées provisoires sur le centre du village : Information à vérifier."
+    },
     "latitude": 41.8429366,
     "longitude": 14.5621116,
     "image": "assets/images/panorama.svg",
-    "alt": { "it": "Illustrazione segnaposto per punto panoramico da censire", "en": "Placeholder illustration for a viewpoint to catalogue", "fr": "Illustration placeholder pour point de vue à recenser" },
+    "alt": {
+      "it": "Illustrazione segnaposto per punto panoramico da censire",
+      "en": "Placeholder illustration for a viewpoint to catalogue",
+      "fr": "Illustration placeholder pour point de vue à recenser"
+    },
     "tags": ["punto panoramico", "vista", "censimento", "placeholder"],
     "relatedPlaceIds": ["centro-storico"],
     "isVerifiedContent": false
   },
   {
     "id": "contrada-da-censire",
-    "name": { "it": "Contrada da censire", "en": "Rural district to catalogue", "fr": "Contrada à recenser" },
+    "name": {
+      "it": "Contrada da censire",
+      "en": "Rural district to catalogue",
+      "fr": "Contrada à recenser"
+    },
     "category": "contrade",
     "sourceStatus": "research",
-    "shortDescription": { "it": "Contenuto in fase di ricerca.", "en": "Content under research.", "fr": "Contenu en cours de recherche." },
+    "shortDescription": {
+      "it": "Contenuto in fase di ricerca.",
+      "en": "Content under research.",
+      "fr": "Contenu en cours de recherche."
+    },
     "description": {
       "it": "Placeholder per censire contrade, toponimi rurali e relazioni con il paesaggio agricolo. Contenuto in fase di ricerca.",
       "en": "Placeholder for cataloguing rural districts, place names and links with the agricultural landscape. Content under research.",
       "fr": "Placeholder pour recenser contrade, toponymes ruraux et liens avec le paysage agricole. Contenu en cours de recherche."
     },
-    "historicalInterest": { "it": "Informazione da verificare", "en": "Information to verify", "fr": "Information à vérifier" },
-    "architecturalInterest": { "it": "Informazione da verificare", "en": "Information to verify", "fr": "Information à vérifier" },
-    "landscapeInterest": { "it": "Informazione da verificare", "en": "Information to verify", "fr": "Information à vérifier" },
-    "curiosity": { "it": "Contenuto in fase di ricerca", "en": "Content under research", "fr": "Contenu en cours de recherche" },
-    "sourceNotes": { "it": "Toponimi e confini richiedono fonti locali o cartografiche. Informazione da verificare.", "en": "Place names and boundaries require local or cartographic sources. Information to verify.", "fr": "Toponymes et limites exigent des sources locales ou cartographiques. Information à vérifier." },
+    "historicalInterest": {
+      "it": "Informazione da verificare",
+      "en": "Information to verify",
+      "fr": "Information à vérifier"
+    },
+    "architecturalInterest": {
+      "it": "Informazione da verificare",
+      "en": "Information to verify",
+      "fr": "Information à vérifier"
+    },
+    "landscapeInterest": {
+      "it": "Informazione da verificare",
+      "en": "Information to verify",
+      "fr": "Information à vérifier"
+    },
+    "curiosity": {
+      "it": "Contenuto in fase di ricerca",
+      "en": "Content under research",
+      "fr": "Contenu en cours de recherche"
+    },
+    "sourceNotes": {
+      "it": "Toponimi e confini richiedono fonti locali o cartografiche. Informazione da verificare.",
+      "en": "Place names and boundaries require local or cartographic sources. Information to verify.",
+      "fr": "Toponymes et limites exigent des sources locales ou cartographiques. Information à vérifier."
+    },
     "latitude": 41.8429366,
     "longitude": 14.5621116,
     "image": "assets/images/tradizioni.svg",
-    "alt": { "it": "Illustrazione segnaposto per contrada da censire", "en": "Placeholder illustration for a rural district to catalogue", "fr": "Illustration placeholder pour contrada à recenser" },
+    "alt": {
+      "it": "Illustrazione segnaposto per contrada da censire",
+      "en": "Placeholder illustration for a rural district to catalogue",
+      "fr": "Illustration placeholder pour contrada à recenser"
+    },
     "tags": ["contrada", "toponimo", "censimento", "placeholder"],
     "relatedPlaceIds": ["centro-storico"],
     "isVerifiedContent": false
   },
   {
     "id": "architettura-rurale-da-censire",
-    "name": { "it": "Architettura rurale da censire", "en": "Rural architecture to catalogue", "fr": "Architecture rurale à recenser" },
+    "name": {
+      "it": "Architettura rurale da censire",
+      "en": "Rural architecture to catalogue",
+      "fr": "Architecture rurale à recenser"
+    },
     "category": "rural-architecture",
     "sourceStatus": "research",
-    "shortDescription": { "it": "Contenuto in fase di ricerca.", "en": "Content under research.", "fr": "Contenu en cours de recherche." },
+    "shortDescription": {
+      "it": "Contenuto in fase di ricerca.",
+      "en": "Content under research.",
+      "fr": "Contenu en cours de recherche."
+    },
     "description": {
       "it": "Placeholder per manufatti rurali, muretti, ricoveri o elementi agricoli da documentare con rilievo e fonte. Contenuto in fase di ricerca.",
       "en": "Placeholder for rural artefacts, walls, shelters or agricultural elements to document with survey and source. Content under research.",
       "fr": "Placeholder pour ouvrages ruraux, murs, abris ou éléments agricoles à documenter avec relevé et source. Contenu en cours de recherche."
     },
-    "historicalInterest": { "it": "Informazione da verificare", "en": "Information to verify", "fr": "Information à vérifier" },
-    "architecturalInterest": { "it": "Informazione da verificare", "en": "Information to verify", "fr": "Information à vérifier" },
-    "landscapeInterest": { "it": "Informazione da verificare", "en": "Information to verify", "fr": "Information à vérifier" },
-    "curiosity": { "it": "Contenuto in fase di ricerca", "en": "Content under research", "fr": "Contenu en cours de recherche" },
-    "sourceNotes": { "it": "Inserire solo con localizzazione e foto verificabili. Informazione da verificare.", "en": "Add only with verifiable location and photos. Information to verify.", "fr": "Ajouter seulement avec localisation et photos vérifiables. Information à vérifier." },
+    "historicalInterest": {
+      "it": "Informazione da verificare",
+      "en": "Information to verify",
+      "fr": "Information à vérifier"
+    },
+    "architecturalInterest": {
+      "it": "Informazione da verificare",
+      "en": "Information to verify",
+      "fr": "Information à vérifier"
+    },
+    "landscapeInterest": {
+      "it": "Informazione da verificare",
+      "en": "Information to verify",
+      "fr": "Information à vérifier"
+    },
+    "curiosity": {
+      "it": "Contenuto in fase di ricerca",
+      "en": "Content under research",
+      "fr": "Contenu en cours de recherche"
+    },
+    "sourceNotes": {
+      "it": "Inserire solo con localizzazione e foto verificabili. Informazione da verificare.",
+      "en": "Add only with verifiable location and photos. Information to verify.",
+      "fr": "Ajouter seulement avec localisation et photos vérifiables. Information à vérifier."
+    },
     "latitude": 41.8429366,
     "longitude": 14.5621116,
     "image": "assets/images/borgo-stone.svg",
-    "alt": { "it": "Illustrazione segnaposto per architettura rurale da censire", "en": "Placeholder illustration for rural architecture to catalogue", "fr": "Illustration placeholder pour architecture rurale à recenser" },
+    "alt": {
+      "it": "Illustrazione segnaposto per architettura rurale da censire",
+      "en": "Placeholder illustration for rural architecture to catalogue",
+      "fr": "Illustration placeholder pour architecture rurale à recenser"
+    },
     "tags": ["architettura rurale", "manufatti", "censimento", "placeholder"],
     "relatedPlaceIds": ["quercia-lozzi"],
     "isVerifiedContent": false
   },
   {
     "id": "casolare-storico-da-censire",
-    "name": { "it": "Casolare storico da censire", "en": "Historic farmhouse to catalogue", "fr": "Maison rurale historique à recenser" },
+    "name": {
+      "it": "Casolare storico da censire",
+      "en": "Historic farmhouse to catalogue",
+      "fr": "Maison rurale historique à recenser"
+    },
     "category": "historic-farmhouses",
     "sourceStatus": "research",
-    "shortDescription": { "it": "Contenuto in fase di ricerca.", "en": "Content under research.", "fr": "Contenu en cours de recherche." },
+    "shortDescription": {
+      "it": "Contenuto in fase di ricerca.",
+      "en": "Content under research.",
+      "fr": "Contenu en cours de recherche."
+    },
     "description": {
       "it": "Placeholder per eventuali casolari storici da documentare solo con autorizzazione, coordinate e fonti. Contenuto in fase di ricerca.",
       "en": "Placeholder for possible historic farmhouses to document only with authorisation, coordinates and sources. Content under research.",
       "fr": "Placeholder pour d'éventuelles maisons rurales historiques à documenter uniquement avec autorisation, coordonnées et sources. Contenu en cours de recherche."
     },
-    "historicalInterest": { "it": "Informazione da verificare", "en": "Information to verify", "fr": "Information à vérifier" },
-    "architecturalInterest": { "it": "Informazione da verificare", "en": "Information to verify", "fr": "Information à vérifier" },
-    "landscapeInterest": { "it": "Informazione da verificare", "en": "Information to verify", "fr": "Information à vérifier" },
-    "curiosity": { "it": "Contenuto in fase di ricerca", "en": "Content under research", "fr": "Contenu en cours de recherche" },
-    "sourceNotes": { "it": "Attenzione a privacy, proprietà privata e autorizzazioni fotografiche. Informazione da verificare.", "en": "Pay attention to privacy, private property and photo permissions. Information to verify.", "fr": "Attention à la confidentialité, à la propriété privée et aux autorisations photo. Information à vérifier." },
+    "historicalInterest": {
+      "it": "Informazione da verificare",
+      "en": "Information to verify",
+      "fr": "Information à vérifier"
+    },
+    "architecturalInterest": {
+      "it": "Informazione da verificare",
+      "en": "Information to verify",
+      "fr": "Information à vérifier"
+    },
+    "landscapeInterest": {
+      "it": "Informazione da verificare",
+      "en": "Information to verify",
+      "fr": "Information à vérifier"
+    },
+    "curiosity": {
+      "it": "Contenuto in fase di ricerca",
+      "en": "Content under research",
+      "fr": "Contenu en cours de recherche"
+    },
+    "sourceNotes": {
+      "it": "Attenzione a privacy, proprietà privata e autorizzazioni fotografiche. Informazione da verificare.",
+      "en": "Pay attention to privacy, private property and photo permissions. Information to verify.",
+      "fr": "Attention à la confidentialité, à la propriété privée et aux autorisations photo. Information à vérifier."
+    },
     "latitude": 41.8429366,
     "longitude": 14.5621116,
     "image": "assets/images/borgo-stone.svg",
-    "alt": { "it": "Illustrazione segnaposto per casolare storico da censire", "en": "Placeholder illustration for a historic farmhouse to catalogue", "fr": "Illustration placeholder pour maison rurale historique à recenser" },
+    "alt": {
+      "it": "Illustrazione segnaposto per casolare storico da censire",
+      "en": "Placeholder illustration for a historic farmhouse to catalogue",
+      "fr": "Illustration placeholder pour maison rurale historique à recenser"
+    },
     "tags": ["casolare", "architettura rurale", "censimento", "placeholder"],
     "relatedPlaceIds": ["quercia-lozzi"],
     "isVerifiedContent": false
   },
   {
     "id": "paesaggio-agricolo-da-censire",
-    "name": { "it": "Elemento del paesaggio agricolo da censire", "en": "Agricultural landscape element to catalogue", "fr": "Élément du paysage agricole à recenser" },
+    "name": {
+      "it": "Elemento del paesaggio agricolo da censire",
+      "en": "Agricultural landscape element to catalogue",
+      "fr": "Élément du paysage agricole à recenser"
+    },
     "category": "agricultural-landscape",
     "sourceStatus": "research",
-    "shortDescription": { "it": "Contenuto in fase di ricerca.", "en": "Content under research.", "fr": "Contenu en cours de recherche." },
+    "shortDescription": {
+      "it": "Contenuto in fase di ricerca.",
+      "en": "Content under research.",
+      "fr": "Contenu en cours de recherche."
+    },
     "description": {
       "it": "Placeholder per elementi del paesaggio agricolo, come tracciati, coltivi, muri o sistemazioni da documentare. Contenuto in fase di ricerca.",
       "en": "Placeholder for agricultural landscape elements such as routes, fields, walls or land arrangements to document. Content under research.",
       "fr": "Placeholder pour des éléments du paysage agricole, comme chemins, cultures, murs ou aménagements à documenter. Contenu en cours de recherche."
     },
-    "historicalInterest": { "it": "Informazione da verificare", "en": "Information to verify", "fr": "Information à vérifier" },
-    "architecturalInterest": { "it": "Informazione da verificare", "en": "Information to verify", "fr": "Information à vérifier" },
-    "landscapeInterest": { "it": "Informazione da verificare", "en": "Information to verify", "fr": "Information à vérifier" },
-    "curiosity": { "it": "Contenuto in fase di ricerca", "en": "Content under research", "fr": "Contenu en cours de recherche" },
-    "sourceNotes": { "it": "Richiede rilievo fotografico, coordinate e descrizione verificabile. Informazione da verificare.", "en": "Requires photographic survey, coordinates and verifiable description. Information to verify.", "fr": "Exige relevé photographique, coordonnées et description vérifiable. Information à vérifier." },
+    "historicalInterest": {
+      "it": "Informazione da verificare",
+      "en": "Information to verify",
+      "fr": "Information à vérifier"
+    },
+    "architecturalInterest": {
+      "it": "Informazione da verificare",
+      "en": "Information to verify",
+      "fr": "Information à vérifier"
+    },
+    "landscapeInterest": {
+      "it": "Informazione da verificare",
+      "en": "Information to verify",
+      "fr": "Information à vérifier"
+    },
+    "curiosity": {
+      "it": "Contenuto in fase di ricerca",
+      "en": "Content under research",
+      "fr": "Contenu en cours de recherche"
+    },
+    "sourceNotes": {
+      "it": "Richiede rilievo fotografico, coordinate e descrizione verificabile. Informazione da verificare.",
+      "en": "Requires photographic survey, coordinates and verifiable description. Information to verify.",
+      "fr": "Exige relevé photographique, coordonnées et description vérifiable. Information à vérifier."
+    },
     "latitude": 41.8429366,
     "longitude": 14.5621116,
     "image": "assets/images/panorama.svg",
-    "alt": { "it": "Illustrazione segnaposto per paesaggio agricolo da censire", "en": "Placeholder illustration for agricultural landscape to catalogue", "fr": "Illustration placeholder pour paysage agricole à recenser" },
+    "alt": {
+      "it": "Illustrazione segnaposto per paesaggio agricolo da censire",
+      "en": "Placeholder illustration for agricultural landscape to catalogue",
+      "fr": "Illustration placeholder pour paysage agricole à recenser"
+    },
     "tags": ["paesaggio agricolo", "campagna", "censimento", "placeholder"],
     "relatedPlaceIds": ["quercia-lozzi"],
     "isVerifiedContent": false

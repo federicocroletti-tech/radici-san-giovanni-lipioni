@@ -1,5 +1,5 @@
 import {
-  AfterViewInit,
+  afterNextRender,
   Component,
   ElementRef,
   EventEmitter,
@@ -28,7 +28,7 @@ type LeafletImport = LeafletModule & { default?: LeafletModule };
     [attr.aria-label]="i18n.t('explore.mapAreaLabel')"
   ></div>`,
 })
-export class MapComponent implements AfterViewInit, OnChanges, OnDestroy {
+export class MapComponent implements OnChanges, OnDestroy {
   readonly i18n = inject(LanguageService);
   private leaflet?: LeafletModule;
   private map?: import('leaflet').Map;
@@ -40,20 +40,22 @@ export class MapComponent implements AfterViewInit, OnChanges, OnDestroy {
   @Input() selectedPlaceId: string | null = null;
   @Output() placeSelected = new EventEmitter<Place>();
 
-  async ngAfterViewInit(): Promise<void> {
-    this.leaflet = this.resolveLeafletModule(await import('leaflet'));
-    this.map = this.leaflet
-      .map(this.mapContainer.nativeElement, { scrollWheelZoom: false })
-      .setView(
-        [SAN_GIOVANNI_LIPIONI_CENTER.latitude, SAN_GIOVANNI_LIPIONI_CENTER.longitude],
-        SAN_GIOVANNI_LIPIONI_CENTER.zoom,
-      );
-    this.leaflet
-      .tileLayer(MAP_TILE_LAYER.url, { attribution: MAP_TILE_LAYER.attribution })
-      .addTo(this.map);
-    this.markerLayer = this.leaflet.layerGroup().addTo(this.map);
-    this.renderMarkers();
-    queueMicrotask(() => this.map?.invalidateSize());
+  constructor() {
+    afterNextRender(async () => {
+      this.leaflet = this.resolveLeafletModule(await import('leaflet'));
+      this.map = this.leaflet
+        .map(this.mapContainer.nativeElement, { scrollWheelZoom: false })
+        .setView(
+          [SAN_GIOVANNI_LIPIONI_CENTER.latitude, SAN_GIOVANNI_LIPIONI_CENTER.longitude],
+          SAN_GIOVANNI_LIPIONI_CENTER.zoom,
+        );
+      this.leaflet
+        .tileLayer(MAP_TILE_LAYER.url, { attribution: MAP_TILE_LAYER.attribution })
+        .addTo(this.map);
+      this.markerLayer = this.leaflet.layerGroup().addTo(this.map);
+      this.renderMarkers();
+      queueMicrotask(() => this.map?.invalidateSize());
+    });
   }
 
   ngOnChanges(_changes: SimpleChanges): void {

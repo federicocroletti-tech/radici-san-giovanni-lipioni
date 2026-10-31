@@ -1,4 +1,5 @@
-import { AfterViewInit, Component, ElementRef, OnDestroy, ViewChild, inject } from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
+import { afterNextRender, Component, ElementRef, OnDestroy, PLATFORM_ID, ViewChild, inject } from '@angular/core';
 import { SAN_GIOVANNI_LIPIONI_CENTER } from '../../../core/constants/map.constants';
 import { LanguageService } from '../../../core/services/language.service';
 
@@ -43,8 +44,9 @@ type LeafletImport = LeafletModule & { default?: LeafletModule };
     </section>
   `,
 })
-export class LocationMapComponent implements AfterViewInit, OnDestroy {
+export class LocationMapComponent implements OnDestroy {
   readonly i18n = inject(LanguageService);
+  private readonly isBrowser = isPlatformBrowser(inject(PLATFORM_ID));
   readonly coordinates = `${SAN_GIOVANNI_LIPIONI_CENTER.latitude.toFixed(6)}, ${SAN_GIOVANNI_LIPIONI_CENTER.longitude.toFixed(6)}`;
   readonly googleMapsUrl = `https://www.google.com/maps/search/?api=1&query=${SAN_GIOVANNI_LIPIONI_CENTER.latitude},${SAN_GIOVANNI_LIPIONI_CENTER.longitude}`;
   private map?: import('leaflet').Map;
@@ -52,38 +54,39 @@ export class LocationMapComponent implements AfterViewInit, OnDestroy {
   @ViewChild('mapContainer', { static: true })
   private readonly mapContainer!: ElementRef<HTMLDivElement>;
 
-  async ngAfterViewInit(): Promise<void> {
-    const leaflet = this.resolveLeafletModule(await import('leaflet'));
-    this.map = leaflet
-      .map(this.mapContainer.nativeElement, {
-        attributionControl: true,
-        scrollWheelZoom: false,
-        zoomControl: true,
-      })
-      .setView(
-        [SAN_GIOVANNI_LIPIONI_CENTER.latitude, SAN_GIOVANNI_LIPIONI_CENTER.longitude],
-        12,
-      );
+  constructor() {
+    if (!this.isBrowser) return;
 
-    leaflet
-      .tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        attribution: '&copy; OpenStreetMap contributors',
-      })
-      .addTo(this.map);
+    afterNextRender(async () => {
+      const leaflet = this.resolveLeafletModule(await import('leaflet'));
+      this.map = leaflet
+        .map(this.mapContainer.nativeElement, {
+          attributionControl: true,
+          scrollWheelZoom: false,
+          zoomControl: true,
+        })
+        .setView([SAN_GIOVANNI_LIPIONI_CENTER.latitude, SAN_GIOVANNI_LIPIONI_CENTER.longitude], 12);
 
-    leaflet
-      .marker([SAN_GIOVANNI_LIPIONI_CENTER.latitude, SAN_GIOVANNI_LIPIONI_CENTER.longitude], {
-        icon: leaflet.divIcon({
-          className: 'map-marker selected location-marker',
-          html: '<span></span>',
-          iconSize: [30, 30],
-          iconAnchor: [15, 30],
-        }),
-      })
-      .bindTooltip(this.i18n.t('location.markerLabel'), { direction: 'top', offset: [0, -28] })
-      .addTo(this.map);
+      leaflet
+        .tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+          attribution: '&copy; OpenStreetMap contributors',
+        })
+        .addTo(this.map);
 
-    queueMicrotask(() => this.map?.invalidateSize());
+      leaflet
+        .marker([SAN_GIOVANNI_LIPIONI_CENTER.latitude, SAN_GIOVANNI_LIPIONI_CENTER.longitude], {
+          icon: leaflet.divIcon({
+            className: 'map-marker selected location-marker',
+            html: '<span></span>',
+            iconSize: [30, 30],
+            iconAnchor: [15, 30],
+          }),
+        })
+        .bindTooltip(this.i18n.t('location.markerLabel'), { direction: 'top', offset: [0, -28] })
+        .addTo(this.map);
+
+      queueMicrotask(() => this.map?.invalidateSize());
+    });
   }
 
   ngOnDestroy(): void {
