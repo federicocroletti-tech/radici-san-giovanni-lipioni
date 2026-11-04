@@ -50,7 +50,7 @@
     "detailsPath": "assets/content/places/centro-storico.md",
     "tags": ["centro storico", "lu pajose", "borgo", "vicoli", "historic centre", "village"],
     "relatedPlaceIds": ["piazza-largo-popolo", "salita-della-chiesa"],
-    "isVerifiedContent": true
+    "isVerifiedContent": false
   },
   {
     "id": "piazza-largo-popolo",
@@ -107,7 +107,7 @@
     "detailsPath": "assets/content/places/piazza-largo-popolo.md",
     "tags": ["piazza", "largo del popolo", "incontro", "square", "community"],
     "relatedPlaceIds": ["mostra-valdese", "chiesa-santa-maria"],
-    "isVerifiedContent": true
+    "isVerifiedContent": false
   },
   {
     "id": "mostra-valdese",
@@ -164,7 +164,7 @@
     "detailsPath": "assets/content/places/mostra-valdese.md",
     "tags": ["mostra", "valdese", "museo", "memoria", "museum", "waldensian"],
     "relatedPlaceIds": ["piazza-largo-popolo", "centro-storico"],
-    "isVerifiedContent": true
+    "isVerifiedContent": false
   },
   {
     "id": "chiesa-santa-maria",
@@ -221,7 +221,7 @@
     "detailsPath": "assets/content/places/chiesa-santa-maria.md",
     "tags": ["chiesa", "santa maria", "grazie", "church", "heritage"],
     "relatedPlaceIds": ["salita-della-chiesa", "piazza-largo-popolo"],
-    "isVerifiedContent": true
+    "isVerifiedContent": false
   },
   {
     "id": "salita-della-chiesa",
@@ -278,7 +278,7 @@
     "detailsPath": "assets/content/places/salita-della-chiesa.md",
     "tags": ["scalini", "salita", "chiesa", "steps", "walking"],
     "relatedPlaceIds": ["chiesa-santa-maria", "centro-storico"],
-    "isVerifiedContent": true
+    "isVerifiedContent": false
   },
   {
     "id": "fontana-vecchia",
@@ -331,7 +331,7 @@
     "detailsPath": "assets/content/places/fontana-vecchia.md",
     "tags": ["fontana", "fontana vecchia", "monumento", "fountain", "monument"],
     "relatedPlaceIds": ["cappella-santa-liberata", "quercia-lozzi"],
-    "isVerifiedContent": true
+    "isVerifiedContent": false
   },
   {
     "id": "cappella-santa-liberata",
@@ -388,7 +388,7 @@
     "detailsPath": "assets/content/places/cappella-santa-liberata.md",
     "tags": ["cappella", "santa liberata", "chapel", "heritage"],
     "relatedPlaceIds": ["fontana-vecchia", "quercia-lozzi"],
-    "isVerifiedContent": true
+    "isVerifiedContent": false
   },
   {
     "id": "quercia-lozzi",
@@ -441,7 +441,7 @@
     "detailsPath": "assets/content/places/quercia-lozzi.md",
     "tags": ["quercia", "lozzi", "alberi", "santa liberata", "oak", "trees"],
     "relatedPlaceIds": ["cappella-santa-liberata", "fontana-vecchia"],
-    "isVerifiedContent": true
+    "isVerifiedContent": false
   },
   {
     "id": "edicola-votiva-da-censire",

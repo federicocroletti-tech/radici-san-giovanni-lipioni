@@ -9,13 +9,15 @@ Questo inventario registra ciò che è presente nel repository; non certifica l�
 ## Sintesi
 
 - 15 record di luogo; 8 schede Markdown di dettaglio e 7 voci ancora da censire.
-- 8 record risultano `sourceStatus: "to-verify"` ma hanno `isVerifiedContent: true`: i due indicatori sono incoerenti. L’inventario non modifica i dati.
+- Alla baseline, 8 record avevano `sourceStatus: "to-verify"` ma `isVerifiedContent: true`; il flag è stato poi allineato a `false` per tutti e 8.
 - Alla baseline dell’inventario, due fotografie JPG erano assegnate a 8 luoghi (4 record per immagine); per la maggior parte degli usi l’immagine non documentava il luogo specifico indicato.
 - Le 7 voci “da censire” condividono esattamente le coordinate `41.8429366, 14.5621116`; non sono coordinate verificate per i singoli luoghi.
 - Per nessuna delle due fotografie è stata trovata nel repository una registrazione di URL della fonte, autore/titolare, licenza o attribuzione. La possibilità di pubblicazione resta **NON VERIFICABILE**.
 - Le schede Markdown descrittive non contengono citazioni o bibliografie puntuali. README dichiara che le coordinate principali derivano da OpenStreetMap/Overpass, ma non riporta per ciascun record un riferimento OSM stabile e un’attribuzione completa.
 
 ## Inventario per luogo
+
+La tabella registra le associazioni osservate all’inizio dell’audit; le sostituzioni successive sono elencate in fondo al documento.
 
 | ID | Luogo | Immagine assegnata | Corrispondenza visiva preliminare | Fonte e diritti |
 |---|---|---|---|---|
@@ -59,7 +61,7 @@ La cronologia Git mostra l’introduzione delle due fotografie nel commit `a4979
 
 ## Problemi dati osservati
 
-- Gli 8 record con `sourceStatus: "to-verify"` hanno anche `isVerifiedContent: true`. Le schede mostrano l’etichetta `sourceStatus` quando presente, ma il campo booleano resta incoerente e può confondere manutenzione o usi futuri.
+- Gli 8 record inizialmente incoerenti hanno ora `isVerifiedContent: false`, coerente con `sourceStatus: "to-verify"`. Le schede continuano a mostrare lo stato dichiarato in `sourceStatus`.
 - Le 7 voci da censire sono concentrate sul medesimo punto cartografico. Finché non si raccolgono coordinate individuali, non sono punti geografici utilizzabili; il raggruppamento può inoltre nascondere marker.
 - Tutti i 15 record hanno un testo alternativo italiano presente; la sua accuratezza descrittiva non è stata validata indipendentemente.
 - L’esistenza del file immagine è stata verificata per tutti i riferimenti. Questo non prova che l’immagine sia pertinente o che il suo uso sia autorizzato.
@@ -67,14 +69,12 @@ La cronologia Git mostra l’introduzione delle due fotografie nel commit `a4979
 ## Prossime azioni raccomandate
 
 1. Chiedere al titolare del progetto la provenienza e i diritti delle due fotografie; non dedurli dal repository.
-2. Sostituire temporaneamente con segnaposto coerenti le associazioni fotografiche specifiche classificate ERRATA, senza cancellare o alterare gli originali.
-3. Correggere l’incoerenza tra `sourceStatus` e `isVerifiedContent` con una modifica dati e test dedicati.
-4. Non mostrare le voci “da censire” come posizioni confermate: raccogliere coordinate o adottare una rappresentazione esplicitamente non geografica.
-5. Aggiungere per ogni affermazione storica una fonte consultabile (autore, titolo, data, pagina/sezione e URL o collocazione archivistica); lasciare non verificati i contenuti privi di riscontro.
+2. Non mostrare le voci “da censire” come posizioni confermate: raccogliere coordinate o adottare una rappresentazione esplicitamente non geografica.
+3. Aggiungere per ogni affermazione storica una fonte consultabile (autore, titolo, data, pagina/sezione e URL o collocazione archivistica); lasciare non verificati i contenuti privi di riscontro.
 
 Nessuna immagine è stata scaricata, sostituita, modificata o pubblicata durante la redazione di questo inventario.
 
-## Aggiornamento: associazioni delle fotografie
+## Aggiornamenti successivi all’inventario
 
 Il 4 novembre 2026 gli 8 record che puntavano alle due fotografie JPG sono stati aggiornati per usare illustrazioni segnaposto locali. Per gli 8 record gli alt text indicano ora esplicitamente che l’immagine è un segnaposto non documentario.
 
@@ -90,3 +90,5 @@ Il 4 novembre 2026 gli 8 record che puntavano alle due fotografie JPG sono stati
 | `quercia-lozzi` | `panorama.svg` |
 
 Le due fotografie restano nel repository come asset non attribuiti, ma non sono più selezionate dai record dei luoghi. Poiché si trovano ancora nella directory degli asset, possono restare raggiungibili direttamente negli output statici: provenienza e diritti restano NON VERIFICABILI. Chiarire la titolarità e decidere separatamente se rimuoverle dal repository e dagli output pubblicati.
+
+Gli 8 record con `sourceStatus: "to-verify"` hanno inoltre `isVerifiedContent` impostato a `false`. I 7 record `research` erano già impostati a `false`; i record non sono quindi più marcati come verificati mentre le rispettive fonti restano da controllare.
