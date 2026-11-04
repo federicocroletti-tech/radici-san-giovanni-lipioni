@@ -1,6 +1,7 @@
 # Inventario iniziale di luoghi, immagini e fonti
 
-Data di verifica: 4 novembre 2026  
+Data di verifica: 4 novembre 2026
+
 Ambito: record in `src/assets/data/places.json`, immagini in `src/assets/images` e schede in `src/assets/content/places`.
 
 Questo inventario registra ciò che è presente nel repository; non certifica l’identità dei luoghi, l’autenticità delle fotografie o i diritti d’uso. Le classificazioni visive si basano soltanto sull’ispezione degli asset locali. Un nome file, un commit Git o l’aspetto di un’immagine non dimostrano autore, provenienza o licenza.
