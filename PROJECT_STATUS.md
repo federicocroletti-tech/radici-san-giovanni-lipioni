@@ -1,0 +1,251 @@
+# Stato del progetto
+
+## Identificazione
+
+- Nome: San Giovanni Lipioni
+- Obiettivo: guida digitale interattiva dedicata alle origini del paese, alla memoria locale, ai luoghi significativi e ai percorsi del territorio.
+- Pubblico previsto: visitatori, residenti, famiglie originarie, discendenti e utenti interessati a borghi, paesaggio, architettura e turismo lento.
+- Repository: https://github.com/federicocroletti-tech/radici-san-giovanni-lipioni.git
+- Branch: main
+- Deployment previsto: Render Static Site (configurazione presente in `render.yaml`)
+- Tecnologie: Angular 22, TypeScript, SCSS, Leaflet, Capacitor, JSON statici, i18n locale, SSR Angular
+
+## Baseline verificata
+
+- Data analisi: 2026-11-04
+- Commit analizzato: `7132daf` ("Add SSR support and refresh village content")
+- Ambiente: Windows 11, Node.js 22.22.3, npm 10.9.8
+- Comandi eseguiti:
+  - `git config --global --add safe.directory "C:/Federico/Progetti/radici-san-giovanni-lipioni"`
+  - `git status --short --branch`
+  - `git remote -v`
+  - `git log --oneline -n 12`
+  - `npm test` (runner Vitest in ambiente locale non termina correttamente per timeout del pool worker; il codice dei test specifici non appare bloccato a livello semantico)
+  - `npm run build` (successo)
+  - `npx vitest run src/app/app.spec.ts src/app/core/services/chatbot.service.spec.ts --environment jsdom --globals --pool forks --maxWorkers=1` (i test del servizio passano logicamente, ma il runner termina con errore di timeout del pool in questa sessione Windows)
+
+### Risultati chiave
+
+- VERIFICATO: la build Angular di produzione completa correttamente e genera `dist/radici-san-giovanni-lipioni`.
+- VERIFICATO: il progetto è un front-end statico con pagine Angular, mappe Leaflet e dati JSON locali.
+- VERIFICATO: il repository è pulito e il branch di lavoro è `main` con tracking su `origin/main`.
+- DICHIARATO: l’applicazione è pronta per deployment statico su Render, ma non esiste evidenza di un deployment attivo verificato online in questa sessione.
+- DEDOTTO: il progetto è ancora una demo tecnica/culturale, non una pubblicazione editoriale definitiva.
+- DICHIARATO: testi storici e contenuti editoriali richiedono ulteriore verifica con fonti locali/documentarie.
+- VERIFICATO: la documentazione e il codice concordano sul fatto che i contenuti storici e le immagini devono essere controllati prima di pubblicazione definitiva.
+
+## Funzionalità presenti
+
+- Home con CTA, card e presentazione del borgo.
+- Pagina `esplora` con mappa Leaflet, marker, filtri, ricerca e dettaglio luogo.
+- Pagina `itinerari` con una struttura di dati dedicata e card tematiche.
+- Pagina `racconti` con filtri e contenuti mock collegati ai luoghi.
+- Pagina `privacy-cookie` con banner granulare e preferenze.
+- 404 dedicata.
+- Supporto multi-lingua IT/EN/FR con preferenza salvata in `localStorage`.
+- Chatbot globale con conoscenza basata sui JSON del progetto.
+- SEO base e `robots.txt`/`sitemap.xml`.
+- Capacitor per Android/iOS.
+- File statici in `src/assets/data` e contenuti markdown dedicati ai luoghi.
+
+## Funzionalità parziali
+
+- La mappa è centrale ma il modello dati dei luoghi richiede normalizzazione e verifica delle coordinate e delle fonti.
+- I contenuti di paesaggio, storia e architettura sono in parte editorializzati ma non ancora supportati da una documentazione storica completa.
+- Le immagini esistenti sono asset dimostrativi e non sempre attribuibili o verificabili per uso finale.
+- Il chatbot è funzionale come mock, ma deve restare vincolato a dati verificati e non inventare informazioni pratiche non confermate.
+- La privacy/cookie è implementata come demo; la conformità legale effettiva richiede consulenza professionale.
+
+## Funzionalità mancanti
+
+- Inventario completo di luoghi, immagini, fonti e licenze.
+- Verifica storica documentale per molte schede dei luoghi.
+- Inventario definitivo di immagini autorizzate e relative attribuzioni.
+- Lista accessibile alternativa sincronizzata alla mappa.
+- Itinerari verificati e non mock.
+- Schema di contenuti, revisioni editoriali e workflow di validazione.
+- Pipeline CI reali o controlli automatizzati definitivi oltre alla build locale.
+
+## Architettura
+
+- Struttura: Angular standalone components con `app.routes.ts` e pagine dedicate in `src/app/pages`.
+- Shared components: header, footer, map, marker popup, place card, detail drawer, chatbot widget.
+- Servizi: `places.service`, `itineraries.service`, `stories.service`, `language.service`, `seo.service`, `analytics.service`, `cookie-consent.service`, `chatbot.service`.
+- Dati: JSON statici in `src/assets/data` e contenuti markdown in `src/assets/content/places`.
+- Architettura coerente con una demo static site, ma non ancora con un modello editoriale o CMS verificato.
+
+## Mappa e dati territoriali
+
+- Implementazione: Leaflet con marker e popup da `places.json`.
+- Supporto geocodifica: i principali luoghi sono basati su coordinate OSM, con note di origine in ciascun record.
+- Stato: riconoscibile e funzionale come demo; necessita verifica su campo per coordinate, accessibilità, nomi corretti e rappresentazione dei luoghi.
+- Rischio: la generica descrizione del territorio potrebbe sopravvalutare dati non verificati se usati come fonte definitiva.
+
+## Contenuti storici
+
+- Il progetto usa testo editoriale generico in diverse schede di luogo con indicazioni esplicite di verifica mancante.
+- In più casi il testo indica "Informazione da verificare"; questa è una pratica corretta, ma il contenuto non è ancora sufficiente per una pubblicazione culturale definitiva.
+- Non è presente un archivio di fonti strutturato e verificato per ogni luogo.
+- Il nome corretto da utilizzare nel progetto è “San Giovanni Lipioni”, non varianti non supportate.
+
+## Immagini e licenze
+
+- Asset demo in `src/assets/images` e immagini di riferimento nei dati dei luoghi.
+- Nessun inventario complessivo di origine, autore, licenza, attribuzione e utilizzo finale.
+- La documentazione del progetto richiama esplicitamente il fatto che le immagini reali vanno sostituite con foto autorizzate e non devono essere inventate.
+- Rischio: immagini generiche o ripetitive possono mettere in discussione l’accuratezza storica e la conformità ai diritti d’autore.
+
+## Layout e identità visiva
+
+- Identità: progetto coerente come app territoriale moderna e sobria.
+- Layout: funzionale e leggero, ma ancora distaccato rispetto alla concretezza del borgo e alle sue trasformazioni narrative.
+- Sicurezza visiva: la UI non è improvvisamente disordinata, ma la gerarchia editoriale e le card di luogo richiedono un raffinamento per aumentare calore, riconoscibilità e identità territoriale.
+
+## Accessibilità
+
+- Dato verificato: il progetto include renderizzazione responsiva e componenti condivisi coerenti.
+- Dato verificato: i contenuti sono stati progettati per un approccio accessibile, ma non esiste una verifica sistematica con axe/Lighthouse o una checklist WCAG 2.2 completa.
+- MANCANTE: lista accessibile alternativa sincronizzata con la mappa.
+- MANCANTE: audit completo su focus, contrasto, semantica e comportamento mobile.
+
+## SEO
+
+- La piattaforma include title/meta, canonical, `robots.txt` e `sitemap.xml` in base alla documentazione.
+- La struttura SEO è presente come demo; non emerge una validazione con controlli di contenuti, duplicati, schema e performance misurate su pubblico reale.
+
+## Privacy
+
+- Il progetto implementa un banner cookie granulare e una pagina demo di privacy/cookie.
+- Il testo legale è chiaramente dichiarato come modello dimostrativo da validare con consulenza legale.
+- Nessuna evidenza di analytics o servizi esterni in esecuzione; la documentazione indica che `AnalyticsService` resti mock.
+- Rischio: la rimozione di script terzi non basta da sola a dichiarare una conformità legale assoluta.
+
+## Test
+
+- Presenza di test sommari in `src/app/app.spec.ts` e `src/app/core/services/chatbot.service.spec.ts`.
+- Esecuzione attuale: `npm test` e la variante con runner direct `npx vitest ...` mostrano un problema del pool worker/runner in questa sessione Windows (timeout del runner), che impedisce una convalida automatica stabile.
+- Build production: riuscita con `npm run build`.
+- Stato: i test di logica del chatbot passano in una esecuzione isolata, ma l’ambiente di test non è ancora affidabile in questa baseline.
+
+## Git e GitHub
+
+- Stato: repository pulito, branch `main`, tracking `origin/main`.
+- Remote: `https://github.com/federicocroletti-tech/radici-san-giovanni-lipioni.git`
+- Cronologia recente: ci sono diversi commit di sviluppo su Angular e contenui geografici; nessun lavoro non salvato in locale.
+- Nessuna evidenza di file sensibili o credenziali custoditi nel repository.
+
+## Deployment
+
+- Configurazione Render presente in `render.yaml`.
+- Comando build previsto: `npm ci && npm run build`
+- Publish directory: `dist/radici-san-giovanni-lipioni/browser`
+- Rewrite SPA: `/* -> /index.html`
+- Nessuna verifica online attiva eseguita da questa sessione; la configurazione è coerente con un static site, ma non certifica il deployment contemporaneo.
+
+## Debito tecnico
+
+- Dati storici e geografici da verificare con fonti locali e archivistiche.
+- Inventario immagini/licenze incompleto.
+- Mappa e contenuti non ancora completamente normalizzati.
+- Test runner instabile in questo ambiente.
+- Documentazione di progetto e fatto editoriale non ancora consolidata in un archivio unico.
+
+## Rischi
+
+- P0: pubblicazione di contenuti storici non verificati o immagini non autorizzate.
+- P1: marker o dati geografici incoerenti o incompleti.
+- P1: contenuti editoriali generici o non verificati.
+- P2: layout poco riconoscibile per il territorio e poca profondità narrativa.
+- P2: accessibilità mappa/lista non ancora sistematicamente verificata.
+- P3: mantenimento/estensione di dati mock senza un workflow gestionale chiaro.
+
+## Decisioni aperte
+
+- Definire se la prima versione vuole essere una demo tecnica o una pubblicazione culturale semi-ufficiale.
+- Stabilire il modello di gestione immagini e licenze prima di pubblicazione.
+- Decidere se la mappa deve rimanere un centro narrativo di base o diventare un sistema di esplorazione più ricco.
+- Scegliere il livello di dettaglio storico da pubblicare nei contenuti e quanto lasciare a revisione locale/archivistica.
+
+## Roadmap
+
+### P0
+
+1. Controllo e aggiornamento del flusso di validazione dei contenuti storici e immagini
+   - Motivazione: prevenire pubblicazione di dati non verificati o immagini non autorizzate.
+   - Evidenza: README e documentazione specificano il vincolo di verificare le fonti.
+   - Area: `src/assets/data`, `src/assets/content`, immagini e documentazione.
+   - Dipendenze: inventario immagini, fonti, aggiornamento dati.
+   - Rischio: alto.
+   - Complessità: M.
+   - Criteri di accettazione: ogni luogo ha fonti, immagine verificata o placeholder dichiarato, e attributi di licenza.
+   - Test richiesti: controllo dati e audit immagini.
+
+### P1
+
+2. Correggere l’associazione tra marker, luoghi e schede
+   - Motivazione: garantire che la mappa e i contenuti puntuali siano coerenti tra loro.
+   - Evidenza: modello dati e render della mappa indicano una relazione centrale tra luoghi e contenuti.
+   - Area: `src/assets/data/places.json`, componenti mappa, pagine di dettaglio.
+   - Dipendenze: normalizzazione dati, revisione di immagini.
+   - Rischio: medio-alto.
+   - Complessità: S/M.
+   - Criteri di accettazione: ogni marker ha scheda collegata; no duplicati, no slug vuoti, no immagini irrelate.
+   - Test richiesti: controllo automatizzato dati e verifica visuale.
+
+3. Sostituire immagini errate o duplicate con placeholder o asset autorizzati
+   - Motivazione: evitare uso improprio di immagini e perdita di fiducia dell’utente.
+   - Evidenza: repository non presenta inventario completo di licenze e sorgenti.
+   - Area: `src/assets/images`, `places.json`, documentazione immagini.
+   - Dipendenze: acquisizione autorizzazioni o placeholder.
+   - Rischio: alto.
+   - Complessità: M.
+   - Criteri di accettazione: tutte le immagini hanno stato di verifica e attributi corretti.
+   - Test richiesti: inventario immagini e controllo di dato.
+
+### P2
+
+4. Migliorare la gerarchia visiva e l’identità territoriale del layout
+   - Motivazione: rendere l’esperienza più concreta e meno anonima.
+   - Evidenza: README e requisiti indicano la necessità di calore, identità e concretezza territoriale.
+   - Area: `src/app/shared/components`, `src/styles.scss`, `app.scss`.
+   - Dipendenze: design token e revisione pagine chiave.
+   - Rischio: medio.
+   - Complessità: M.
+   - Criteri di accettazione: hierarchia chiara, card coerenti, responsive e accessibile.
+   - Test richiesti: controllo visivo desktop/tablet/mobile.
+
+5. Completare la lista accessibile alternativa alla mappa
+   - Motivazione: migliorare accessibilità e fruizione senza esclusiva mappa.
+   - Evidenza: requisito del progetto e linee guida WCAG 2.2.
+   - Area: `ExplorePage`, componenti di mappa, lista filtri.
+   - Dipendenze: normalizzazione dati luoghi.
+   - Rischio: medio.
+   - Complessità: M.
+   - Criteri di accettazione: elenco sincronizzato con mappe, navigabile da tastiera, senza contenuti duplicati.
+   - Test richiesti: accessibilità manuale e test automatici.
+
+### P3
+
+6. Progettare e introdurre itinerari verificati e non mock
+   - Motivazione: trasformare il progetto da demo in esperienza narrativa robusta.
+   - Evidenza: il progetto già include `itineraries.json` e pagine dedicate.
+   - Area: `src/assets/data/itineraries.json`, `src/app/pages/itineraries`, componenti correlati.
+   - Dipendenze: coordinamento di luoghi e fonti.
+   - Rischio: medio.
+   - Complessità: L.
+   - Criteri di accettazione: tutte le tappe hanno fonti, distanze e tempi dichiarati verificati.
+   - Test richiesti: controllo dati e verifica editioriale.
+
+7. Consolidare SEO, privacy e performance
+   - Motivazione: rendere il sito più sostenibile, leggibile e conforme ai requisiti digitali.
+   - Evidenza: documentazione del progetto indica SEO e privacy come parte del vincolo.
+   - Area: `src/app/core/services/seo.service.ts`, `privacy-cookie` e build finali.
+   - Dipendenze: audit legale, performance, schema.
+   - Rischio: medio.
+   - Complessità: M.
+   - Criteri di accettazione: controlli SEO e privacy documentati e validati.
+   - Test richiesti: build, Lighthouse, audit privacy.
+
+## Sintesi dello stato
+
+Il progetto è in una fase di baseline funzionante ma non ancora definitiva: costruzione front-end stabile, build di produzione riuscita, documentazione chiara sui vincoli, ma dati territoriali, immagini, fonti e verifica storica ancora da consolidare. La priorità immediata è la normalizzazione e la verifica dei contenuti prima di ogni ulteriore evoluzione estetica o narrativa.
