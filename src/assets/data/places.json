@@ -41,11 +41,11 @@
     },
     "latitude": 41.8429366,
     "longitude": 14.5621116,
-    "image": "assets/images/san-giovanni-lipioni-borgo.jpg",
+    "image": "assets/images/borgo-stone.svg",
     "alt": {
-      "it": "Veduta del borgo di San Giovanni Lipioni tra colline e case in pietra",
-      "en": "View of San Giovanni Lipioni village among hills and stone houses",
-      "fr": "Vue du village de San Giovanni Lipioni entre collines et maisons en pierre"
+      "it": "Illustrazione segnaposto, non immagine documentaria.",
+      "en": "Placeholder illustration, not a documentary image.",
+      "fr": "Illustration de remplacement, pas une image documentaire."
     },
     "detailsPath": "assets/content/places/centro-storico.md",
     "tags": ["centro storico", "lu pajose", "borgo", "vicoli", "historic centre", "village"],
@@ -98,11 +98,11 @@
     },
     "latitude": 41.8440329,
     "longitude": 14.5617977,
-    "image": "assets/images/san-giovanni-lipioni-borgo.jpg",
+    "image": "assets/images/piazza-memory.svg",
     "alt": {
-      "it": "Case e chiesa del borgo viste dal paesaggio circostante",
-      "en": "Village houses and church seen from the surrounding landscape",
-      "fr": "Maisons et eglise du village vues depuis le paysage environnant"
+      "it": "Illustrazione segnaposto, non immagine documentaria.",
+      "en": "Placeholder illustration, not a documentary image.",
+      "fr": "Illustration de remplacement, pas une image documentaire."
     },
     "detailsPath": "assets/content/places/piazza-largo-popolo.md",
     "tags": ["piazza", "largo del popolo", "incontro", "square", "community"],
@@ -155,11 +155,11 @@
     },
     "latitude": 41.8440321,
     "longitude": 14.5615785,
-    "image": "assets/images/san-giovanni-lipioni-panorama.jpg",
+    "image": "assets/images/tradizioni.svg",
     "alt": {
-      "it": "Panorama di San Giovanni Lipioni con il profilo della chiesa e delle case",
-      "en": "Panorama of San Giovanni Lipioni with the church and houses skyline",
-      "fr": "Panorama de San Giovanni Lipioni avec le profil de l'eglise et des maisons"
+      "it": "Illustrazione segnaposto, non immagine documentaria.",
+      "en": "Placeholder illustration, not a documentary image.",
+      "fr": "Illustration de remplacement, pas une image documentaire."
     },
     "detailsPath": "assets/content/places/mostra-valdese.md",
     "tags": ["mostra", "valdese", "museo", "memoria", "museum", "waldensian"],
@@ -212,11 +212,11 @@
     },
     "latitude": 41.8430544,
     "longitude": 14.5619544,
-    "image": "assets/images/san-giovanni-lipioni-panorama.jpg",
+    "image": "assets/images/borgo-stone.svg",
     "alt": {
-      "it": "Chiesa e abitato di San Giovanni Lipioni visti dal lato panoramico",
-      "en": "Church and settlement of San Giovanni Lipioni seen from the panoramic side",
-      "fr": "Eglise et habitat de San Giovanni Lipioni vus depuis le cote panoramique"
+      "it": "Illustrazione segnaposto, non immagine documentaria.",
+      "en": "Placeholder illustration, not a documentary image.",
+      "fr": "Illustration de remplacement, pas une image documentaire."
     },
     "detailsPath": "assets/content/places/chiesa-santa-maria.md",
     "tags": ["chiesa", "santa maria", "grazie", "church", "heritage"],
@@ -269,11 +269,11 @@
     },
     "latitude": 41.8434745,
     "longitude": 14.5617107,
-    "image": "assets/images/san-giovanni-lipioni-borgo.jpg",
+    "image": "assets/images/scalinate.svg",
     "alt": {
-      "it": "Veduta del borgo arroccato sulle colline",
-      "en": "View of the village perched on the hills",
-      "fr": "Vue du village perche sur les collines"
+      "it": "Illustrazione segnaposto, non immagine documentaria.",
+      "en": "Placeholder illustration, not a documentary image.",
+      "fr": "Illustration de remplacement, pas une image documentaire."
     },
     "detailsPath": "assets/content/places/salita-della-chiesa.md",
     "tags": ["scalini", "salita", "chiesa", "steps", "walking"],
@@ -322,11 +322,11 @@
     },
     "latitude": 41.8477431,
     "longitude": 14.5626981,
-    "image": "assets/images/san-giovanni-lipioni-borgo.jpg",
+    "image": "assets/images/fontana.svg",
     "alt": {
-      "it": "San Giovanni Lipioni visto dal verde della campagna circostante",
-      "en": "San Giovanni Lipioni seen from the surrounding green countryside",
-      "fr": "San Giovanni Lipioni vu depuis la campagne environnante"
+      "it": "Illustrazione segnaposto, non immagine documentaria.",
+      "en": "Placeholder illustration, not a documentary image.",
+      "fr": "Illustration de remplacement, pas une image documentaire."
     },
     "detailsPath": "assets/content/places/fontana-vecchia.md",
     "tags": ["fontana", "fontana vecchia", "monumento", "fountain", "monument"],
@@ -379,11 +379,11 @@
     },
     "latitude": 41.8471971,
     "longitude": 14.560414,
-    "image": "assets/images/san-giovanni-lipioni-panorama.jpg",
+    "image": "assets/images/borgo-stone.svg",
     "alt": {
-      "it": "Profilo panoramico del borgo e delle colline attorno a San Giovanni Lipioni",
-      "en": "Panoramic profile of the village and hills around San Giovanni Lipioni",
-      "fr": "Profil panoramique du village et des collines autour de San Giovanni Lipioni"
+      "it": "Illustrazione segnaposto, non immagine documentaria.",
+      "en": "Placeholder illustration, not a documentary image.",
+      "fr": "Illustration de remplacement, pas une image documentaire."
     },
     "detailsPath": "assets/content/places/cappella-santa-liberata.md",
     "tags": ["cappella", "santa liberata", "chapel", "heritage"],
@@ -432,11 +432,11 @@
     },
     "latitude": 41.8492813,
     "longitude": 14.5585058,
-    "image": "assets/images/san-giovanni-lipioni-panorama.jpg",
+    "image": "assets/images/panorama.svg",
     "alt": {
-      "it": "Panorama luminoso del borgo e delle montagne sullo sfondo",
-      "en": "Bright panorama of the village and mountains in the background",
-      "fr": "Panorama lumineux du village et des montagnes en arriere-plan"
+      "it": "Illustrazione segnaposto, non immagine documentaria.",
+      "en": "Placeholder illustration, not a documentary image.",
+      "fr": "Illustration de remplacement, pas une image documentaire."
     },
     "detailsPath": "assets/content/places/quercia-lozzi.md",
     "tags": ["quercia", "lozzi", "alberi", "santa liberata", "oak", "trees"],

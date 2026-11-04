@@ -10,7 +10,7 @@ Questo inventario registra ciò che è presente nel repository; non certifica l�
 
 - 15 record di luogo; 8 schede Markdown di dettaglio e 7 voci ancora da censire.
 - 8 record risultano `sourceStatus: "to-verify"` ma hanno `isVerifiedContent: true`: i due indicatori sono incoerenti. L’inventario non modifica i dati.
-- Due fotografie JPG sono assegnate a 8 luoghi (4 record per immagine); per la maggior parte degli usi l’immagine non documenta il luogo specifico indicato.
+- Alla baseline dell’inventario, due fotografie JPG erano assegnate a 8 luoghi (4 record per immagine); per la maggior parte degli usi l’immagine non documentava il luogo specifico indicato.
 - Le 7 voci “da censire” condividono esattamente le coordinate `41.8429366, 14.5621116`; non sono coordinate verificate per i singoli luoghi.
 - Per nessuna delle due fotografie è stata trovata nel repository una registrazione di URL della fonte, autore/titolare, licenza o attribuzione. La possibilità di pubblicazione resta **NON VERIFICABILE**.
 - Le schede Markdown descrittive non contengono citazioni o bibliografie puntuali. README dichiara che le coordinate principali derivano da OpenStreetMap/Overpass, ma non riporta per ciascun record un riferimento OSM stabile e un’attribuzione completa.
@@ -37,10 +37,10 @@ Questo inventario registra ciò che è presente nel repository; non certifica l�
 
 ## Asset fotografici
 
-| File | Dimensioni e peso | Usi nei dati | Autore, fonte, licenza e attribuzione | Azione |
+| File | Dimensioni e peso | Usi nel JSON all’inizio dell’audit | Autore, fonte, licenza e attribuzione | Azione |
 |---|---:|---|---|---|
-| `src/assets/images/san-giovanni-lipioni-borgo.jpg` | 2288 × 1712 px; 1.210.386 byte | Centro storico, piazza, salita, fontana | NON VERIFICABILE; non registrati. | Conservare solo come veduta generale finché provenienza e diritti non sono documentati. Rimuovere le associazioni a luoghi specifici con una successiva modifica mirata. |
-| `src/assets/images/san-giovanni-lipioni-panorama.jpg` | 1524 × 1485 px; 491.970 byte | Mostra valdese, chiesa, cappella, quercia | NON VERIFICABILE; non registrati. | Conservare solo come veduta generale finché provenienza e diritti non sono documentati. Rimuovere le associazioni a luoghi specifici con una successiva modifica mirata. |
+| `src/assets/images/san-giovanni-lipioni-borgo.jpg` | 2288 × 1712 px; 1.210.386 byte | Centro storico, piazza, salita, fontana | NON VERIFICABILE; non registrati. | Non più referenziata dai record dei luoghi; chiarire titolarità e diritti prima di mantenerla nella directory pubblicata. |
+| `src/assets/images/san-giovanni-lipioni-panorama.jpg` | 1524 × 1485 px; 491.970 byte | Mostra valdese, chiesa, cappella, quercia | NON VERIFICABILE; non registrati. | Non più referenziata dai record dei luoghi; chiarire titolarità e diritti prima di mantenerla nella directory pubblicata. |
 
 La cronologia Git mostra l’introduzione delle due fotografie nel commit `a49794f` del 25 luglio 2026. La cronologia non prova titolarità, consenso o licenza. È stata rilevata la presenza di metadati incorporati; i valori non sono stati estratti o riportati, perché potrebbero contenere dati personali.
 
@@ -73,3 +73,20 @@ La cronologia Git mostra l’introduzione delle due fotografie nel commit `a4979
 5. Aggiungere per ogni affermazione storica una fonte consultabile (autore, titolo, data, pagina/sezione e URL o collocazione archivistica); lasciare non verificati i contenuti privi di riscontro.
 
 Nessuna immagine è stata scaricata, sostituita, modificata o pubblicata durante la redazione di questo inventario.
+
+## Aggiornamento: associazioni delle fotografie
+
+Il 4 novembre 2026 gli 8 record che puntavano alle due fotografie JPG sono stati aggiornati per usare illustrazioni segnaposto locali. Per gli 8 record gli alt text indicano ora esplicitamente che l’immagine è un segnaposto non documentario.
+
+| ID | Immagine segnaposto assegnata |
+|---|---|
+| `centro-storico` | `borgo-stone.svg` |
+| `piazza-largo-popolo` | `piazza-memory.svg` |
+| `mostra-valdese` | `tradizioni.svg` |
+| `chiesa-santa-maria` | `borgo-stone.svg` |
+| `salita-della-chiesa` | `scalinate.svg` |
+| `fontana-vecchia` | `fontana.svg` |
+| `cappella-santa-liberata` | `borgo-stone.svg` |
+| `quercia-lozzi` | `panorama.svg` |
+
+Le due fotografie restano nel repository come asset non attribuiti, ma non sono più selezionate dai record dei luoghi. Poiché si trovano ancora nella directory degli asset, possono restare raggiungibili direttamente negli output statici: provenienza e diritti restano NON VERIFICABILI. Chiarire la titolarità e decidere separatamente se rimuoverle dal repository e dagli output pubblicati.
