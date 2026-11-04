@@ -12,7 +12,7 @@ Questo inventario registra ciò che è presente nel repository; non certifica l�
 - Alla baseline, 8 record avevano `sourceStatus: "to-verify"` ma `isVerifiedContent: true`; il flag è stato poi allineato a `false` per tutti e 8.
 - Alla baseline dell’inventario, due fotografie JPG erano assegnate a 8 luoghi (4 record per immagine); per la maggior parte degli usi l’immagine non documentava il luogo specifico indicato.
 - Le 7 voci “da censire” condividono esattamente le coordinate `41.8429366, 14.5621116`; non sono coordinate verificate per i singoli luoghi.
-- Per nessuna delle due fotografie è stata trovata nel repository una registrazione di URL della fonte, autore/titolare, licenza o attribuzione. La possibilità di pubblicazione resta **NON VERIFICABILE**.
+- Per nessuna delle due fotografie è stata trovata nel repository una registrazione di URL della fonte, autore/titolare, licenza specifica o attribuzione. L’utente ha dichiarato che l’uso è autorizzato; i dettagli documentali restano mancanti.
 - Le schede Markdown descrittive non contengono citazioni o bibliografie puntuali. README dichiara che le coordinate principali derivano da OpenStreetMap/Overpass, ma non riporta per ciascun record un riferimento OSM stabile e un’attribuzione completa.
 
 ## Inventario per luogo
@@ -41,8 +41,8 @@ La tabella registra le associazioni osservate all’inizio dell’audit; le sost
 
 | File | Dimensioni e peso | Usi nel JSON all’inizio dell’audit | Autore, fonte, licenza e attribuzione | Azione |
 |---|---:|---|---|---|
-| `src/assets/images/san-giovanni-lipioni-borgo.jpg` | 2288 × 1712 px; 1.210.386 byte | Centro storico, piazza, salita, fontana | NON VERIFICABILE; non registrati. | Non più referenziata dai record dei luoghi; chiarire titolarità e diritti prima di mantenerla nella directory pubblicata. |
-| `src/assets/images/san-giovanni-lipioni-panorama.jpg` | 1524 × 1485 px; 491.970 byte | Mostra valdese, chiesa, cappella, quercia | NON VERIFICABILE; non registrati. | Non più referenziata dai record dei luoghi; chiarire titolarità e diritti prima di mantenerla nella directory pubblicata. |
+| `src/assets/images/san-giovanni-lipioni-borgo.jpg` | 2288 × 1712 px; 1.210.386 byte | Centro storico, piazza, salita, fontana | DICHIARATO dall’utente: uso autorizzato; fonte, licenza specifica e attribuzione non registrate. | Non più referenziata dai record dei luoghi per evitare associazioni non specifiche. |
+| `src/assets/images/san-giovanni-lipioni-panorama.jpg` | 1524 × 1485 px; 491.970 byte | Mostra valdese, chiesa, cappella, quercia | DICHIARATO dall’utente: uso autorizzato; fonte, licenza specifica e attribuzione non registrate. | Non più referenziata dai record dei luoghi per evitare associazioni non specifiche. |
 
 La cronologia Git mostra l’introduzione delle due fotografie nel commit `a49794f` del 25 luglio 2026. La cronologia non prova titolarità, consenso o licenza. È stata rilevata la presenza di metadati incorporati; i valori non sono stati estratti o riportati, perché potrebbero contenere dati personali.
 
@@ -89,6 +89,8 @@ Il 4 novembre 2026 gli 8 record che puntavano alle due fotografie JPG sono stati
 | `cappella-santa-liberata` | `borgo-stone.svg` |
 | `quercia-lozzi` | `panorama.svg` |
 
-Le due fotografie restano nel repository come asset non attribuiti, ma non sono più selezionate dai record dei luoghi. Poiché si trovano ancora nella directory degli asset, possono restare raggiungibili direttamente negli output statici: provenienza e diritti restano NON VERIFICABILI. Chiarire la titolarità e decidere separatamente se rimuoverle dal repository e dagli output pubblicati.
+Le due fotografie restano nel repository, ma non sono più selezionate dai record dei luoghi. Poiché si trovano ancora nella directory degli asset, possono restare raggiungibili direttamente negli output statici. L’utente ha dichiarato che l’uso è autorizzato; provenienza, licenza specifica e attribuzione non sono documentate nel repository.
 
 Gli 8 record con `sourceStatus: "to-verify"` hanno inoltre `isVerifiedContent` impostato a `false`. I 7 record `research` erano già impostati a `false`; i record non sono quindi più marcati come verificati mentre le rispettive fonti restano da controllare.
+
+La dichiarazione di autorizzazione è stata fornita dall’utente il 4 novembre 2026. Non sono stati aggiunti dettagli di autore, fonte o licenza che non siano stati forniti.
