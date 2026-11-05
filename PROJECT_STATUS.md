@@ -64,7 +64,7 @@
 - Lista accessibile alternativa sincronizzata alla mappa.
 - Itinerari verificati e non mock.
 - Schema di contenuti, revisioni editoriali e workflow di validazione.
-- Pipeline CI reali o controlli automatizzati definitivi oltre alla build locale.
+- Pipeline CI reali; i controlli automatizzati sui dati sono parziali e al momento coprono soltanto le coordinate.
 
 ## Architettura
 
@@ -124,9 +124,11 @@
 ## Test
 
 - Presenza di test sommari in `src/app/app.spec.ts` e `src/app/core/services/chatbot.service.spec.ts`.
-- Esecuzione attuale: `npm test` e la variante con runner direct `npx vitest ...` mostrano un problema del pool worker/runner in questa sessione Windows (timeout del runner), che impedisce una convalida automatica stabile.
+- `npm test` con il pool `threads` non termina correttamente in questa sessione Windows; i test mirati di `app.spec.ts` passano con `vmThreads`.
+- `npm run validate:place-coordinates`: valida ID, coppie coordinate, intervalli WGS84 e coordinate duplicate; non verifica i confini comunali, per i quali manca una geometria documentata.
+- `npm run test:place-coordinates`: 3 test superati con il runner integrato di Node.js.
 - Build production: riuscita con `npm run build`.
-- Stato: i test di logica del chatbot passano in una esecuzione isolata, ma l’ambiente di test non è ancora affidabile in questa baseline.
+- Stato: la validazione automatica delle coordinate è disponibile; la suite Vitest completa resta non affidabile in questo ambiente.
 
 ## Git e GitHub
 
