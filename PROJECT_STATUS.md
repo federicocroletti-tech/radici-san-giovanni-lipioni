@@ -78,6 +78,7 @@
 
 - Implementazione: Leaflet con marker e popup da `places.json`.
 - Supporto geocodifica: i principali luoghi sono basati su coordinate OSM, con note di origine in ciascun record.
+- I 7 record `research` non hanno coordinate verificate; i marker e i link cartografici sono omessi finché non viene documentata una localizzazione.
 - Stato: riconoscibile e funzionale come demo; necessita verifica su campo per coordinate, accessibilità, nomi corretti e rappresentazione dei luoghi.
 - Rischio: la generica descrizione del territorio potrebbe sopravvalutare dati non verificati se usati come fonte definitiva.
 

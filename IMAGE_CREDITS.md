@@ -11,7 +11,7 @@ Questo inventario registra ciò che è presente nel repository; non certifica l�
 - 15 record di luogo; 8 schede Markdown di dettaglio e 7 voci ancora da censire.
 - Alla baseline, 8 record avevano `sourceStatus: "to-verify"` ma `isVerifiedContent: true`; il flag è stato poi allineato a `false` per tutti e 8.
 - Alla baseline dell’inventario, due fotografie JPG erano assegnate a 8 luoghi (4 record per immagine); per la maggior parte degli usi l’immagine non documentava il luogo specifico indicato.
-- Le 7 voci “da censire” condividono esattamente le coordinate `41.8429366, 14.5621116`; non sono coordinate verificate per i singoli luoghi.
+- Alla baseline dell’inventario, le 7 voci “da censire” condividevano esattamente le coordinate `41.8429366, 14.5621116`; non erano coordinate verificate per i singoli luoghi. Le coordinate sono state rimosse e le schede non vengono più rappresentate come marker.
 - Per nessuna delle due fotografie è stata trovata nel repository una registrazione di URL della fonte, autore/titolare, licenza specifica o attribuzione. L’utente ha dichiarato che l’uso è autorizzato; i dettagli documentali restano mancanti.
 - Le schede Markdown descrittive non contengono citazioni o bibliografie puntuali. README dichiara che le coordinate principali derivano da OpenStreetMap/Overpass, ma non riporta per ciascun record un riferimento OSM stabile e un’attribuzione completa.
 
@@ -62,14 +62,14 @@ La cronologia Git mostra l’introduzione delle due fotografie nel commit `a4979
 ## Problemi dati osservati
 
 - Gli 8 record inizialmente incoerenti hanno ora `isVerifiedContent: false`, coerente con `sourceStatus: "to-verify"`. Le schede continuano a mostrare lo stato dichiarato in `sourceStatus`.
-- Le 7 voci da censire sono concentrate sul medesimo punto cartografico. Finché non si raccolgono coordinate individuali, non sono punti geografici utilizzabili; il raggruppamento può inoltre nascondere marker.
+- Le 7 voci da censire non hanno coordinate individuali verificate e non sono quindi rappresentate come marker.
 - Tutti i 15 record hanno un testo alternativo italiano presente; la sua accuratezza descrittiva non è stata validata indipendentemente.
 - L’esistenza del file immagine è stata verificata per tutti i riferimenti. Questo non prova che l’immagine sia pertinente o che il suo uso sia autorizzato.
 
 ## Prossime azioni raccomandate
 
 1. Chiedere al titolare del progetto la provenienza e i diritti delle due fotografie; non dedurli dal repository.
-2. Non mostrare le voci “da censire” come posizioni confermate: raccogliere coordinate o adottare una rappresentazione esplicitamente non geografica.
+2. Raccogliere coordinate verificabili per le voci “da censire” prima di aggiungerle alla mappa.
 3. Aggiungere per ogni affermazione storica una fonte consultabile (autore, titolo, data, pagina/sezione e URL o collocazione archivistica); lasciare non verificati i contenuti privi di riscontro.
 
 Nessuna immagine è stata scaricata, sostituita, modificata o pubblicata durante la redazione di questo inventario.
@@ -94,3 +94,5 @@ Le due fotografie restano nel repository, ma non sono più selezionate dai recor
 Gli 8 record con `sourceStatus: "to-verify"` hanno inoltre `isVerifiedContent` impostato a `false`. I 7 record `research` erano già impostati a `false`; i record non sono quindi più marcati come verificati mentre le rispettive fonti restano da controllare.
 
 La dichiarazione di autorizzazione è stata fornita dall’utente il 4 novembre 2026. Non sono stati aggiunti dettagli di autore, fonte o licenza che non siano stati forniti.
+
+Nel successivo aggiornamento del modello, le coordinate placeholder sono state rimosse dai 7 record `research`. La mappa ignora i record senza coordinate; le schede indicano che la localizzazione non è disponibile e non mostrano un link a OpenStreetMap.

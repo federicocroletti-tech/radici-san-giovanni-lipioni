@@ -487,8 +487,6 @@
       "en": "Add only after survey, authorised photos and verifiable source.",
       "fr": "Ajouter seulement après relevé, photos autorisées et source vérifiable."
     },
-    "latitude": 41.8429366,
-    "longitude": 14.5621116,
     "image": "assets/images/piazza-memory.svg",
     "alt": {
       "it": "Illustrazione segnaposto per edicola votiva da censire",
@@ -539,12 +537,10 @@
       "fr": "Contenu en cours de recherche"
     },
     "sourceNotes": {
-      "it": "Coordinate provvisorie sul centro del paese: Informazione da verificare.",
-      "en": "Provisional coordinates on the village centre: Information to verify.",
-      "fr": "Coordonnées provisoires sur le centre du village : Information à vérifier."
+      "it": "Individuare il luogo con un rilievo verificabile. Informazione da verificare.",
+      "en": "Identify the place through a verifiable field survey. Information to verify.",
+      "fr": "Identifier le lieu au moyen d'un relevé vérifiable. Information à vérifier."
     },
-    "latitude": 41.8429366,
-    "longitude": 14.5621116,
     "image": "assets/images/panorama.svg",
     "alt": {
       "it": "Illustrazione segnaposto per belvedere da censire",
@@ -595,12 +591,10 @@
       "fr": "Contenu en cours de recherche"
     },
     "sourceNotes": {
-      "it": "Coordinate provvisorie sul centro del paese: Informazione da verificare.",
-      "en": "Provisional coordinates on the village centre: Information to verify.",
-      "fr": "Coordonnées provisoires sur le centre du village : Information à vérifier."
+      "it": "Individuare il luogo con un rilievo verificabile. Informazione da verificare.",
+      "en": "Identify the place through a verifiable field survey. Information to verify.",
+      "fr": "Identifier le lieu au moyen d'un relevé vérifiable. Information à vérifier."
     },
-    "latitude": 41.8429366,
-    "longitude": 14.5621116,
     "image": "assets/images/panorama.svg",
     "alt": {
       "it": "Illustrazione segnaposto per punto panoramico da censire",
@@ -655,8 +649,6 @@
       "en": "Place names and boundaries require local or cartographic sources. Information to verify.",
       "fr": "Toponymes et limites exigent des sources locales ou cartographiques. Information à vérifier."
     },
-    "latitude": 41.8429366,
-    "longitude": 14.5621116,
     "image": "assets/images/tradizioni.svg",
     "alt": {
       "it": "Illustrazione segnaposto per contrada da censire",
@@ -711,8 +703,6 @@
       "en": "Add only with verifiable location and photos. Information to verify.",
       "fr": "Ajouter seulement avec localisation et photos vérifiables. Information à vérifier."
     },
-    "latitude": 41.8429366,
-    "longitude": 14.5621116,
     "image": "assets/images/borgo-stone.svg",
     "alt": {
       "it": "Illustrazione segnaposto per architettura rurale da censire",
@@ -767,8 +757,6 @@
       "en": "Pay attention to privacy, private property and photo permissions. Information to verify.",
       "fr": "Attention à la confidentialité, à la propriété privée et aux autorisations photo. Information à vérifier."
     },
-    "latitude": 41.8429366,
-    "longitude": 14.5621116,
     "image": "assets/images/borgo-stone.svg",
     "alt": {
       "it": "Illustrazione segnaposto per casolare storico da censire",
@@ -823,8 +811,6 @@
       "en": "Requires photographic survey, coordinates and verifiable description. Information to verify.",
       "fr": "Exige relevé photographique, coordonnées et description vérifiable. Information à vérifier."
     },
-    "latitude": 41.8429366,
-    "longitude": 14.5621116,
     "image": "assets/images/panorama.svg",
     "alt": {
       "it": "Illustrazione segnaposto per paesaggio agricolo da censire",

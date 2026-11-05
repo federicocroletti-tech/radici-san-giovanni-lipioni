@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Input, Output, inject } from '@angular/core';
 import { ChatbotUiService } from '../../../core/services/chatbot-ui.service';
-import { Place } from '../../../core/models/place.model';
+import { hasPlaceCoordinates, Place } from '../../../core/models/place.model';
 import { LanguageService } from '../../../core/services/language.service';
 
 @Component({
@@ -71,9 +71,11 @@ import { LanguageService } from '../../../core/services/language.service';
         </div>
 
         <div class="actions-row">
-          <a class="button" [href]="mapsUrl(place)" target="_blank" rel="noopener">{{
-            i18n.t('actions.openExternalMap')
-          }}</a>
+          @if (mapsUrl(place); as mapUrl) {
+            <a class="button" [href]="mapUrl" target="_blank" rel="noopener">{{
+              i18n.t('actions.openExternalMap')
+            }}</a>
+          }
           <button type="button" class="button secondary" (click)="askAbout(place.id)">
             {{ i18n.t('explore.askAboutPlace') }}
           </button>
@@ -96,11 +98,19 @@ export class PlaceDetailDrawerComponent {
   @Output() closed = new EventEmitter<void>();
   @Output() placeSelected = new EventEmitter<Place>();
 
-  mapsUrl(place: Place): string {
+  mapsUrl(place: Place): string | null {
+    if (!hasPlaceCoordinates(place)) {
+      return null;
+    }
+
     return `https://www.openstreetmap.org/?mlat=${place.latitude}&mlon=${place.longitude}#map=17/${place.latitude}/${place.longitude}`;
   }
 
   coordinates(place: Place): string {
+    if (!hasPlaceCoordinates(place)) {
+      return this.i18n.t('explore.coordinatesUnavailable');
+    }
+
     return `${place.latitude.toFixed(6)}, ${place.longitude.toFixed(6)}`;
   }
 

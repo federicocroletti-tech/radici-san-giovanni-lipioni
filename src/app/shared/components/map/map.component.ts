@@ -12,7 +12,7 @@ import {
   inject,
 } from '@angular/core';
 import { MAP_TILE_LAYER, SAN_GIOVANNI_LIPIONI_CENTER } from '../../../core/constants/map.constants';
-import { Place } from '../../../core/models/place.model';
+import { hasPlaceCoordinates, Place } from '../../../core/models/place.model';
 import { LanguageService } from '../../../core/services/language.service';
 
 type LeafletModule = typeof import('leaflet');
@@ -73,9 +73,10 @@ export class MapComponent implements OnChanges, OnDestroy {
 
     this.markerLayer.clearLayers();
 
+    const placesWithCoordinates = this.places.filter(hasPlaceCoordinates);
     const selectedPlace = this.places.find((place) => place.id === this.selectedPlaceId);
 
-    for (const place of this.places) {
+    for (const place of placesWithCoordinates) {
       const marker = this.leaflet.marker([place.latitude, place.longitude], {
         icon: this.leaflet.divIcon({
           className: `map-marker ${this.selectedPlaceId === place.id ? 'selected' : ''}`,
@@ -93,14 +94,14 @@ export class MapComponent implements OnChanges, OnDestroy {
       marker.addTo(this.markerLayer);
     }
 
-    if (selectedPlace) {
+    if (selectedPlace && hasPlaceCoordinates(selectedPlace)) {
       this.map?.panTo([selectedPlace.latitude, selectedPlace.longitude]);
       return;
     }
 
-    if (this.places.length > 1) {
+    if (!selectedPlace && placesWithCoordinates.length > 1) {
       const bounds = this.leaflet.latLngBounds(
-        this.places.map((place) => [place.latitude, place.longitude] as [number, number]),
+        placesWithCoordinates.map((place) => [place.latitude, place.longitude] as [number, number]),
       );
       this.map?.fitBounds(bounds.pad(0.18), { maxZoom: 16 });
     }
