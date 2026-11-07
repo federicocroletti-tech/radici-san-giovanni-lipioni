@@ -43,7 +43,7 @@
 - Validatori: `npm run validate:places` supera il controllo di 15 schede (8 con coordinate, 7 senza) e 8 asset inventariati; `npm run test:place-validation` supera 9 test.
 - Build: `npm run build` superato, con 5 route prerenderizzate.
 - Deploy Render: `render.yaml` e `DEPLOYMENT.md` eseguono ora `npm ci`, validazione dati, test di validazione, `npm test` e build in sequenza prima della pubblicazione. Il deploy statico è automatico al push sul branch configurato.
-- Controllo produzione prima di questo rilascio: endpoint del manifesto immagini HTTP 200; la verifica del nuovo deploy va fatta dopo il push, controllando home, route interne e manifesto.
+- Deploy del commit `cbf09ab` verificato: manifesto immagini HTTP 200 con 8 record identici al repository; home, `/esplora`, `/itinerari`, `/racconti` e `/privacy-cookie` rispondono tutti HTTP 200. `Last-Modified` del manifesto: 2026-11-07 00:42:52 UTC.
 - Le verifiche automatiche non certificano accuratezza storica, diritti d'uso, accessibilità fisica o precisione delle geometrie territoriali.
 
 ### Passaggio per la prossima sessione
@@ -52,7 +52,7 @@
 - Modifiche già pubblicate in questa serie: `b0df64f` (baseline), `a6e77c4` e `9f9cfe3` (inventario immagini), `83b780c` (segnaposto), `18b1263` (flag di verifica), `bf13831` (autorizzazione dichiarata), `05409a2` (rimozione coordinate placeholder), `43e6569` (validatore coordinate).
 - Stato dati: 15 luoghi; 8 localizzati, 7 record `research` senza coordinate; nessun riferimento JPG nei record; le due fotografie JPG rimangono nel repository ma non sono associate alle schede.
 - Stato build/test: eseguire `npm run validate:places`, `npm run test:place-validation`, `npm test` e `npm run build`; la configurazione Render applica questi gate prima della pubblicazione.
-- Dopo il push di questo aggiornamento, verificare la pubblicazione Render e confrontare `assets/data/image-assets.json` con il repository.
+- Stato online: deploy di `cbf09ab` verificato con tutte le route principali HTTP 200 e il manifesto pubblicato identico a quello locale.
 - Prossima attività suggerita: acquisire dall'utente i dettagli verificabili di autore, fonte, licenza e attribuzione delle immagini; raccogliere fonti locali puntuali per le schede e le geometrie verificate, senza inventare metadati o riscontri.
 - Alla ripresa, verificare `git status`, branch e upstream; usare questo documento per riprendere dal prossimo controllo dati e non ripetere le attività già pubblicate.
 
