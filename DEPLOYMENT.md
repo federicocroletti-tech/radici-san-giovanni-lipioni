@@ -6,7 +6,7 @@ Questa app e una Angular static site senza backend.
 
 - **Service type:** Static Site
 - **Root directory:** lascia vuoto se il repository contiene solo questo progetto; altrimenti usa `radici-san-giovanni-lipioni`
-- **Build command:** `npm install && npm run build`
+- **Build command:** `npm ci && npm run validate:places && npm run test:place-validation && npm test && npm run build`
 - **Publish directory:** `dist/radici-san-giovanni-lipioni/browser`
 
 ## Rewrite SPA
@@ -26,7 +26,10 @@ La prima versione non richiede segreti o API key. Usa `.env.example` solo come p
 ## Controlli prima del deploy
 
 ```bash
-npm install
+npm ci
+npm run validate:places
+npm run test:place-validation
+npm test
 npm run build
 ```
 

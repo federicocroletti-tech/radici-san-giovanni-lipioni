@@ -3,7 +3,7 @@ services:
     name: radici-san-giovanni-lipioni
     runtime: static
     plan: free
-    buildCommand: npm ci && npm run build
+    buildCommand: npm ci && npm run validate:places && npm run test:place-validation && npm test && npm run build
     staticPublishPath: ./dist/radici-san-giovanni-lipioni/browser
     routes:
       - type: rewrite

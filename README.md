@@ -133,7 +133,7 @@ Vedi `DEPLOYMENT.md`.
 
 Configurazione consigliata:
 
-- Build command: `npm install && npm run build`
+- Build command: `npm ci && npm run validate:places && npm run test:place-validation && npm test && npm run build`
 - Publish directory: `dist/radici-san-giovanni-lipioni/browser`
 - Rewrite SPA: `/* -> /index.html` tramite `public/_redirects`
 

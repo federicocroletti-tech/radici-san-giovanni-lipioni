@@ -6,7 +6,7 @@
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "node ./node_modules/vitest/vitest.mjs run src/app/app.spec.ts src/app/core/services/chatbot.service.spec.ts --environment jsdom --globals --pool threads --maxWorkers=1",
+    "test": "node ./node_modules/vitest/vitest.mjs run src/app/app.spec.ts src/app/core/services/chatbot.service.spec.ts --environment jsdom --globals --pool vmThreads --maxWorkers=1 --no-isolate",
     "test:place-coordinates": "node --test scripts/validate-place-coordinates.test.mjs",
     "validate:place-coordinates": "node scripts/validate-place-coordinates.mjs",
     "test:place-data": "node --test scripts/validate-place-data.test.mjs",

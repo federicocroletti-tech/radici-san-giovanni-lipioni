@@ -27,21 +27,32 @@
 
 ### Avanzamento locale verificato il 2026-11-07
 
-- Branch `main`, commit `a439b7e`; le modifiche correnti sono locali e non ancora pubblicate.
+- Branch `main`, commit remoto iniziale `3ba9918`; worktree pulito alla ripresa.
 - Aggiunti controlli per testi localizzati, categorie, relazioni tra luoghi, note fonte, testo alternativo, immagini locali e schede Markdown dichiarate.
 - Il controllo coordinate rifiuta anche il placeholder comune `0,0`; questo non sostituisce una verifica dei confini comunali.
 - Aggiunto `src/assets/data/image-assets.json`: inventario degli 8 file immagine con natura, stato documentale e campi autore/fonte/licenza/attribuzione. Le foto hanno solo la dichiarazione d'autorizzazione dell'utente; tali dettagli restano mancanti. Anche i diritti dei segnaposto restano non documentati.
 - Il validatore richiede che ogni immagine assegnata a un luogo sia nell'inventario; se un record dichiara diritti documentati, richiede autore, fonte, licenza e attribuzione.
-- Verifiche superate: `npm run test:place-validation` (9 test), `npm run validate:places` (15 schede, 8 asset inventariati; 8 schede con coordinate e 7 senza), `npm run build`, controllo Prettier e `git diff --check`.
+- Configurato `npm test` con il pool Vitest `vmThreads` che ha superato la suite applicativa; il build Render ora esegue validazione dati e test prima del build di produzione.
+- Verifiche superate: `npm run test:place-validation` (9 test), `npm test` (7 test), `npm run validate:places` (15 schede, 8 asset inventariati; 8 schede con coordinate e 7 senza), `npm run build`, controllo Prettier e `git diff --check`.
 - La build include il manifesto tra gli asset statici. I controlli assicurano coerenza strutturale e presenza dei file, non verificano l'accuratezza storica, i diritti d'uso o l'esattezza geografica.
+- Produzione verificata: il sito Render e l'endpoint `https://radici-san-giovanni-lipioni.onrender.com/assets/data/image-assets.json` rispondono HTTP 200 e il manifesto pubblicato contiene gli asset inventariati.
+
+### Validazione e rilascio del 2026-11-07
+
+- Suite completa esistente: `npm test`, 7 test superati. Il comando usa `vmThreads` e `--no-isolate`, configurazione che evita il blocco già osservato con il pool `threads`.
+- Validatori: `npm run validate:places` supera il controllo di 15 schede (8 con coordinate, 7 senza) e 8 asset inventariati; `npm run test:place-validation` supera 9 test.
+- Build: `npm run build` superato, con 5 route prerenderizzate.
+- Deploy Render: `render.yaml` e `DEPLOYMENT.md` eseguono ora `npm ci`, validazione dati, test di validazione, `npm test` e build in sequenza prima della pubblicazione. Il deploy statico è automatico al push sul branch configurato.
+- Controllo produzione prima di questo rilascio: endpoint del manifesto immagini HTTP 200; la verifica del nuovo deploy va fatta dopo il push, controllando home, route interne e manifesto.
+- Le verifiche automatiche non certificano accuratezza storica, diritti d'uso, accessibilità fisica o precisione delle geometrie territoriali.
 
 ### Passaggio per la prossima sessione
 
-- Ultimo stato remoto prima del presente aggiornamento: branch `main`, commit `43e6569`; worktree pulito.
+- Ultimo stato remoto prima del presente aggiornamento: branch `main`, commit `3ba9918`; il presente aggiornamento aggiunge i controlli automatizzati al deploy Render.
 - Modifiche già pubblicate in questa serie: `b0df64f` (baseline), `a6e77c4` e `9f9cfe3` (inventario immagini), `83b780c` (segnaposto), `18b1263` (flag di verifica), `bf13831` (autorizzazione dichiarata), `05409a2` (rimozione coordinate placeholder), `43e6569` (validatore coordinate).
 - Stato dati: 15 luoghi; 8 localizzati, 7 record `research` senza coordinate; nessun riferimento JPG nei record; le due fotografie JPG rimangono nel repository ma non sono associate alle schede.
-- Stato build/test al precedente aggiornamento: build production superata; suite Vitest completa (7 test) superata con pool `vmThreads`; il comando `npm test` standard resta bloccato sul pool `threads`. Al 2026-11-07 passano anche build, validazione dati e 8 test Node mirati.
-- Stato online: Render risponde; i dati pubblicati corrispondono allo stato atteso e i fingerprint degli asset coincidono con la build locale.
+- Stato build/test: eseguire `npm run validate:places`, `npm run test:place-validation`, `npm test` e `npm run build`; la configurazione Render applica questi gate prima della pubblicazione.
+- Dopo il push di questo aggiornamento, verificare la pubblicazione Render e confrontare `assets/data/image-assets.json` con il repository.
 - Prossima attività suggerita: acquisire dall'utente i dettagli verificabili di autore, fonte, licenza e attribuzione delle immagini; raccogliere fonti locali puntuali per le schede e le geometrie verificate, senza inventare metadati o riscontri.
 - Alla ripresa, verificare `git status`, branch e upstream; usare questo documento per riprendere dal prossimo controllo dati e non ripetere le attività già pubblicate.
 
