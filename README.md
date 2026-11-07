@@ -47,6 +47,7 @@ Il progetto usa file JSON locali e testi UI da file i18n. I marker principali so
 src/assets/data/
   categories.json
   places.json
+  image-assets.json
   itineraries.json
   stories.json
   chatbot-knowledge.json
@@ -77,6 +78,17 @@ npm run build
 ```
 
 Output: `dist/radici-san-giovanni-lipioni/browser`.
+
+## Validazione dei dati dei luoghi
+
+Prima di pubblicare modifiche alle schede, esegui:
+
+```bash
+npm run validate:places
+npm run test:place-validation
+```
+
+I controlli verificano coordinate plausibili senza duplicati o placeholder `0,0`, categorie e relazioni esistenti, testi e note fonte in italiano, inglese e francese, immagini locali presenti in `image-assets.json` e schede Markdown quando dichiarate. Il manifesto distingue segnaposto e fotografie e registra esplicitamente le provenienze o i diritti ancora da documentare. Lo stato `to-verify` o `research` resta valido: i controlli non certificano accuratezza storica, geografica o giuridica.
 
 ## App mobile
 

@@ -1,0 +1,82 @@
+[
+  {
+    "path": "assets/images/borgo-stone.svg",
+    "type": "placeholder-illustration",
+    "status": "rights-unverified",
+    "author": null,
+    "source": null,
+    "license": null,
+    "attribution": null,
+    "notes": "Placeholder illustration; not documentary imagery."
+  },
+  {
+    "path": "assets/images/fontana.svg",
+    "type": "placeholder-illustration",
+    "status": "rights-unverified",
+    "author": null,
+    "source": null,
+    "license": null,
+    "attribution": null,
+    "notes": "Placeholder illustration; not documentary imagery. Not currently assigned to a place record."
+  },
+  {
+    "path": "assets/images/panorama.svg",
+    "type": "placeholder-illustration",
+    "status": "rights-unverified",
+    "author": null,
+    "source": null,
+    "license": null,
+    "attribution": null,
+    "notes": "Placeholder illustration; not documentary imagery."
+  },
+  {
+    "path": "assets/images/piazza-memory.svg",
+    "type": "placeholder-illustration",
+    "status": "rights-unverified",
+    "author": null,
+    "source": null,
+    "license": null,
+    "attribution": null,
+    "notes": "Placeholder illustration; not documentary imagery."
+  },
+  {
+    "path": "assets/images/san-giovanni-lipioni-borgo.jpg",
+    "type": "photograph",
+    "status": "user-declared-authorized-details-unrecorded",
+    "author": null,
+    "source": null,
+    "license": null,
+    "attribution": null,
+    "notes": "The user declared use authorized on 2026-11-04; source, author, specific license, and attribution are not recorded. Not assigned to a place record."
+  },
+  {
+    "path": "assets/images/san-giovanni-lipioni-panorama.jpg",
+    "type": "photograph",
+    "status": "user-declared-authorized-details-unrecorded",
+    "author": null,
+    "source": null,
+    "license": null,
+    "attribution": null,
+    "notes": "The user declared use authorized on 2026-11-04; source, author, specific license, and attribution are not recorded. Not assigned to a place record."
+  },
+  {
+    "path": "assets/images/scalinate.svg",
+    "type": "placeholder-illustration",
+    "status": "rights-unverified",
+    "author": null,
+    "source": null,
+    "license": null,
+    "attribution": null,
+    "notes": "Placeholder illustration; not documentary imagery."
+  },
+  {
+    "path": "assets/images/tradizioni.svg",
+    "type": "placeholder-illustration",
+    "status": "rights-unverified",
+    "author": null,
+    "source": null,
+    "license": null,
+    "attribution": null,
+    "notes": "Placeholder illustration; not documentary imagery."
+  }
+]

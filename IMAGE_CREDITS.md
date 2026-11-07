@@ -6,6 +6,8 @@ Ambito: record in `src/assets/data/places.json`, immagini in `src/assets/images`
 
 Questo inventario registra ciò che è presente nel repository; non certifica l’identità dei luoghi, l’autenticità delle fotografie o i diritti d’uso. Le classificazioni visive si basano soltanto sull’ispezione degli asset locali. Un nome file, un commit Git o l’aspetto di un’immagine non dimostrano autore, provenienza o licenza.
 
+Il registro macchina degli asset correnti è `src/assets/data/image-assets.json`. Ogni file immagine nella directory è elencato, inclusi quelli non assegnati a una scheda. `npm run validate:places` controlla che i file dichiarati esistano, che ogni immagine usata da un luogo sia nel registro e che un eventuale record `rights-documented` contenga autore, fonte, licenza e attribuzione. `rights-unverified` e `user-declared-authorized-details-unrecorded` indicano esplicitamente informazioni mancanti, non un'autorizzazione o una licenza verificata dal validatore.
+
 ## Sintesi
 
 - 15 record di luogo; 8 schede Markdown di dettaglio e 7 voci ancora da censire.
@@ -19,30 +21,30 @@ Questo inventario registra ciò che è presente nel repository; non certifica l�
 
 La tabella registra le associazioni osservate all’inizio dell’audit; le sostituzioni successive sono elencate in fondo al documento.
 
-| ID | Luogo | Immagine assegnata | Corrispondenza visiva preliminare | Fonte e diritti |
-|---|---|---|---|---|
-| `centro-storico` | Centro storico | `san-giovanni-lipioni-borgo.jpg` | PROBABILMENTE CORRETTA: mostra una veduta ampia del borgo; il punto preciso e la data non sono documentati. | NON VERIFICABILE |
-| `piazza-largo-popolo` | Piazza Largo del Popolo | `san-giovanni-lipioni-borgo.jpg` | ERRATA come immagine specifica della piazza: la veduta non identifica la piazza. | NON VERIFICABILE |
-| `mostra-valdese` | Mostra Permanente Esperienza Valdese | `san-giovanni-lipioni-panorama.jpg` | ERRATA come immagine specifica della mostra: mostra il borgo e la chiesa, non lo spazio espositivo. | NON VERIFICABILE |
-| `chiesa-santa-maria` | Chiesa di Santa Maria delle Grazie | `san-giovanni-lipioni-panorama.jpg` | PROBABILMENTE CORRETTA: la chiesa è visibile nella veduta; identità, data e provenienza non sono documentate. | NON VERIFICABILE |
-| `salita-della-chiesa` | Via Salita della Chiesa | `san-giovanni-lipioni-borgo.jpg` | ERRATA come immagine specifica della via: la veduta non mostra chiaramente la salita. | NON VERIFICABILE |
-| `fontana-vecchia` | Fontana Vecchia | `san-giovanni-lipioni-borgo.jpg` | ERRATA come immagine specifica della fontana: la fontana non è identificabile nella veduta. | NON VERIFICABILE |
-| `cappella-santa-liberata` | Cappella di Santa Liberata | `san-giovanni-lipioni-panorama.jpg` | ERRATA come immagine specifica della cappella: la cappella non è identificabile nella veduta. | NON VERIFICABILE |
-| `quercia-lozzi` | Quercia di Lozzi | `san-giovanni-lipioni-panorama.jpg` | ERRATA come immagine specifica dell’albero: l’immagine non documenta la quercia. | NON VERIFICABILE |
-| `edicola-votiva-da-censire` | Edicola votiva da censire | `piazza-memory.svg` | MANCANTE: illustrazione segnaposto, non fotografia del luogo. | Asset SVG locale; autore/licenza non registrati. |
-| `belvedere-da-censire` | Belvedere da censire | `panorama.svg` | MANCANTE: illustrazione segnaposto, non fotografia del punto. | Asset SVG locale; autore/licenza non registrati. |
-| `punto-panoramico-da-censire` | Punto panoramico da censire | `panorama.svg` | MANCANTE: illustrazione segnaposto, non fotografia del punto. | Asset SVG locale; autore/licenza non registrati. |
-| `contrada-da-censire` | Contrada da censire | `tradizioni.svg` | MANCANTE: illustrazione segnaposto, non fotografia della contrada. | Asset SVG locale; autore/licenza non registrati. |
-| `architettura-rurale-da-censire` | Architettura rurale da censire | `borgo-stone.svg` | MANCANTE: illustrazione segnaposto, non documentazione dell’edificio. | Asset SVG locale; autore/licenza non registrati. |
-| `casolare-storico-da-censire` | Casolare storico da censire | `borgo-stone.svg` | MANCANTE: illustrazione segnaposto, non documentazione del casolare. | Asset SVG locale; autore/licenza non registrati. |
-| `paesaggio-agricolo-da-censire` | Elemento del paesaggio agricolo da censire | `panorama.svg` | MANCANTE: illustrazione segnaposto, non fotografia del luogo. | Asset SVG locale; autore/licenza non registrati. |
+| ID                               | Luogo                                      | Immagine assegnata                  | Corrispondenza visiva preliminare                                                                             | Fonte e diritti                                  |
+| -------------------------------- | ------------------------------------------ | ----------------------------------- | ------------------------------------------------------------------------------------------------------------- | ------------------------------------------------ |
+| `centro-storico`                 | Centro storico                             | `san-giovanni-lipioni-borgo.jpg`    | PROBABILMENTE CORRETTA: mostra una veduta ampia del borgo; il punto preciso e la data non sono documentati.   | NON VERIFICABILE                                 |
+| `piazza-largo-popolo`            | Piazza Largo del Popolo                    | `san-giovanni-lipioni-borgo.jpg`    | ERRATA come immagine specifica della piazza: la veduta non identifica la piazza.                              | NON VERIFICABILE                                 |
+| `mostra-valdese`                 | Mostra Permanente Esperienza Valdese       | `san-giovanni-lipioni-panorama.jpg` | ERRATA come immagine specifica della mostra: mostra il borgo e la chiesa, non lo spazio espositivo.           | NON VERIFICABILE                                 |
+| `chiesa-santa-maria`             | Chiesa di Santa Maria delle Grazie         | `san-giovanni-lipioni-panorama.jpg` | PROBABILMENTE CORRETTA: la chiesa è visibile nella veduta; identità, data e provenienza non sono documentate. | NON VERIFICABILE                                 |
+| `salita-della-chiesa`            | Via Salita della Chiesa                    | `san-giovanni-lipioni-borgo.jpg`    | ERRATA come immagine specifica della via: la veduta non mostra chiaramente la salita.                         | NON VERIFICABILE                                 |
+| `fontana-vecchia`                | Fontana Vecchia                            | `san-giovanni-lipioni-borgo.jpg`    | ERRATA come immagine specifica della fontana: la fontana non è identificabile nella veduta.                   | NON VERIFICABILE                                 |
+| `cappella-santa-liberata`        | Cappella di Santa Liberata                 | `san-giovanni-lipioni-panorama.jpg` | ERRATA come immagine specifica della cappella: la cappella non è identificabile nella veduta.                 | NON VERIFICABILE                                 |
+| `quercia-lozzi`                  | Quercia di Lozzi                           | `san-giovanni-lipioni-panorama.jpg` | ERRATA come immagine specifica dell’albero: l’immagine non documenta la quercia.                              | NON VERIFICABILE                                 |
+| `edicola-votiva-da-censire`      | Edicola votiva da censire                  | `piazza-memory.svg`                 | MANCANTE: illustrazione segnaposto, non fotografia del luogo.                                                 | Asset SVG locale; autore/licenza non registrati. |
+| `belvedere-da-censire`           | Belvedere da censire                       | `panorama.svg`                      | MANCANTE: illustrazione segnaposto, non fotografia del punto.                                                 | Asset SVG locale; autore/licenza non registrati. |
+| `punto-panoramico-da-censire`    | Punto panoramico da censire                | `panorama.svg`                      | MANCANTE: illustrazione segnaposto, non fotografia del punto.                                                 | Asset SVG locale; autore/licenza non registrati. |
+| `contrada-da-censire`            | Contrada da censire                        | `tradizioni.svg`                    | MANCANTE: illustrazione segnaposto, non fotografia della contrada.                                            | Asset SVG locale; autore/licenza non registrati. |
+| `architettura-rurale-da-censire` | Architettura rurale da censire             | `borgo-stone.svg`                   | MANCANTE: illustrazione segnaposto, non documentazione dell’edificio.                                         | Asset SVG locale; autore/licenza non registrati. |
+| `casolare-storico-da-censire`    | Casolare storico da censire                | `borgo-stone.svg`                   | MANCANTE: illustrazione segnaposto, non documentazione del casolare.                                          | Asset SVG locale; autore/licenza non registrati. |
+| `paesaggio-agricolo-da-censire`  | Elemento del paesaggio agricolo da censire | `panorama.svg`                      | MANCANTE: illustrazione segnaposto, non fotografia del luogo.                                                 | Asset SVG locale; autore/licenza non registrati. |
 
 ## Asset fotografici
 
-| File | Dimensioni e peso | Usi nel JSON all’inizio dell’audit | Autore, fonte, licenza e attribuzione | Azione |
-|---|---:|---|---|---|
-| `src/assets/images/san-giovanni-lipioni-borgo.jpg` | 2288 × 1712 px; 1.210.386 byte | Centro storico, piazza, salita, fontana | DICHIARATO dall’utente: uso autorizzato; fonte, licenza specifica e attribuzione non registrate. | Non più referenziata dai record dei luoghi per evitare associazioni non specifiche. |
-| `src/assets/images/san-giovanni-lipioni-panorama.jpg` | 1524 × 1485 px; 491.970 byte | Mostra valdese, chiesa, cappella, quercia | DICHIARATO dall’utente: uso autorizzato; fonte, licenza specifica e attribuzione non registrate. | Non più referenziata dai record dei luoghi per evitare associazioni non specifiche. |
+| File                                                  |              Dimensioni e peso | Usi nel JSON all’inizio dell’audit        | Autore, fonte, licenza e attribuzione                                                            | Azione                                                                              |
+| ----------------------------------------------------- | -----------------------------: | ----------------------------------------- | ------------------------------------------------------------------------------------------------ | ----------------------------------------------------------------------------------- |
+| `src/assets/images/san-giovanni-lipioni-borgo.jpg`    | 2288 × 1712 px; 1.210.386 byte | Centro storico, piazza, salita, fontana   | DICHIARATO dall’utente: uso autorizzato; fonte, licenza specifica e attribuzione non registrate. | Non più referenziata dai record dei luoghi per evitare associazioni non specifiche. |
+| `src/assets/images/san-giovanni-lipioni-panorama.jpg` |   1524 × 1485 px; 491.970 byte | Mostra valdese, chiesa, cappella, quercia | DICHIARATO dall’utente: uso autorizzato; fonte, licenza specifica e attribuzione non registrate. | Non più referenziata dai record dei luoghi per evitare associazioni non specifiche. |
 
 La cronologia Git mostra l’introduzione delle due fotografie nel commit `a49794f` del 25 luglio 2026. La cronologia non prova titolarità, consenso o licenza. È stata rilevata la presenza di metadati incorporati; i valori non sono stati estratti o riportati, perché potrebbero contenere dati personali.
 
@@ -78,21 +80,23 @@ Nessuna immagine è stata scaricata, sostituita, modificata o pubblicata durante
 
 Il 4 novembre 2026 gli 8 record che puntavano alle due fotografie JPG sono stati aggiornati per usare illustrazioni segnaposto locali. Per gli 8 record gli alt text indicano ora esplicitamente che l’immagine è un segnaposto non documentario.
 
-| ID | Immagine segnaposto assegnata |
-|---|---|
-| `centro-storico` | `borgo-stone.svg` |
-| `piazza-largo-popolo` | `piazza-memory.svg` |
-| `mostra-valdese` | `tradizioni.svg` |
-| `chiesa-santa-maria` | `borgo-stone.svg` |
-| `salita-della-chiesa` | `scalinate.svg` |
-| `fontana-vecchia` | `fontana.svg` |
-| `cappella-santa-liberata` | `borgo-stone.svg` |
-| `quercia-lozzi` | `panorama.svg` |
+| ID                        | Immagine segnaposto assegnata |
+| ------------------------- | ----------------------------- |
+| `centro-storico`          | `borgo-stone.svg`             |
+| `piazza-largo-popolo`     | `piazza-memory.svg`           |
+| `mostra-valdese`          | `tradizioni.svg`              |
+| `chiesa-santa-maria`      | `borgo-stone.svg`             |
+| `salita-della-chiesa`     | `scalinate.svg`               |
+| `fontana-vecchia`         | `fontana.svg`                 |
+| `cappella-santa-liberata` | `borgo-stone.svg`             |
+| `quercia-lozzi`           | `panorama.svg`                |
 
 Le due fotografie restano nel repository, ma non sono più selezionate dai record dei luoghi. Poiché si trovano ancora nella directory degli asset, possono restare raggiungibili direttamente negli output statici. L’utente ha dichiarato che l’uso è autorizzato; provenienza, licenza specifica e attribuzione non sono documentate nel repository.
 
 Gli 8 record con `sourceStatus: "to-verify"` hanno inoltre `isVerifiedContent` impostato a `false`. I 7 record `research` erano già impostati a `false`; i record non sono quindi più marcati come verificati mentre le rispettive fonti restano da controllare.
 
 La dichiarazione di autorizzazione è stata fornita dall’utente il 4 novembre 2026. Non sono stati aggiunti dettagli di autore, fonte o licenza che non siano stati forniti.
+
+Il manifesto `src/assets/data/image-assets.json` registra tutti gli otto file immagine attualmente presenti, i quattro segnaposto usati nei record, i due segnaposto non assegnati e le due fotografie non assegnate. Per le fotografie annota soltanto la dichiarazione dell’utente e lascia autore, fonte, licenza specifica e attribuzione non documentati. Anche autore e licenza dei segnaposto SVG restano da verificare.
 
 Nel successivo aggiornamento del modello, le coordinate placeholder sono state rimosse dai 7 record `research`. La mappa ignora i record senza coordinate; le schede indicano che la localizzazione non è disponibile e non mostrano un link a OpenStreetMap.

@@ -24,6 +24,15 @@ test('rejects incomplete and out-of-range coordinates', () => {
   ]);
 });
 
+test('rejects the common 0,0 placeholder coordinate', () => {
+  const result = validatePlaceCoordinates([{ id: 'placeholder-place', latitude: 0, longitude: 0 }]);
+
+  assert.deepEqual(result.errors, [
+    'placeholder-place: coordinates must not use the 0,0 placeholder.',
+  ]);
+  assert.equal(result.locatedCount, 0);
+});
+
 test('rejects duplicate ids and coordinate pairs', () => {
   const result = validatePlaceCoordinates([
     { id: 'first-place', latitude: 41.84, longitude: 14.56 },

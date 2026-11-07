@@ -25,14 +25,24 @@
   - `node ./node_modules/vitest/vitest.mjs run src/app/app.spec.ts src/app/core/services/chatbot.service.spec.ts --environment jsdom --globals --pool vmThreads --maxWorkers=1 --no-isolate`
   - richieste HTTP al sito Render e ai dati pubblicati.
 
+### Avanzamento locale verificato il 2026-11-07
+
+- Branch `main`, commit `a439b7e`; le modifiche correnti sono locali e non ancora pubblicate.
+- Aggiunti controlli per testi localizzati, categorie, relazioni tra luoghi, note fonte, testo alternativo, immagini locali e schede Markdown dichiarate.
+- Il controllo coordinate rifiuta anche il placeholder comune `0,0`; questo non sostituisce una verifica dei confini comunali.
+- Aggiunto `src/assets/data/image-assets.json`: inventario degli 8 file immagine con natura, stato documentale e campi autore/fonte/licenza/attribuzione. Le foto hanno solo la dichiarazione d'autorizzazione dell'utente; tali dettagli restano mancanti. Anche i diritti dei segnaposto restano non documentati.
+- Il validatore richiede che ogni immagine assegnata a un luogo sia nell'inventario; se un record dichiara diritti documentati, richiede autore, fonte, licenza e attribuzione.
+- Verifiche superate: `npm run test:place-validation` (9 test), `npm run validate:places` (15 schede, 8 asset inventariati; 8 schede con coordinate e 7 senza), `npm run build`, controllo Prettier e `git diff --check`.
+- La build include il manifesto tra gli asset statici. I controlli assicurano coerenza strutturale e presenza dei file, non verificano l'accuratezza storica, i diritti d'uso o l'esattezza geografica.
+
 ### Passaggio per la prossima sessione
 
 - Ultimo stato remoto prima del presente aggiornamento: branch `main`, commit `43e6569`; worktree pulito.
 - Modifiche già pubblicate in questa serie: `b0df64f` (baseline), `a6e77c4` e `9f9cfe3` (inventario immagini), `83b780c` (segnaposto), `18b1263` (flag di verifica), `bf13831` (autorizzazione dichiarata), `05409a2` (rimozione coordinate placeholder), `43e6569` (validatore coordinate).
 - Stato dati: 15 luoghi; 8 localizzati, 7 record `research` senza coordinate; nessun riferimento JPG nei record; le due fotografie JPG rimangono nel repository ma non sono associate alle schede.
-- Stato build/test: build production superata; validatore e 3 test Node superati; suite Vitest completa (7 test) superata con pool `vmThreads`; il comando `npm test` standard resta bloccato sul pool `threads`.
+- Stato build/test al precedente aggiornamento: build production superata; suite Vitest completa (7 test) superata con pool `vmThreads`; il comando `npm test` standard resta bloccato sul pool `threads`. Al 2026-11-07 passano anche build, validazione dati e 8 test Node mirati.
 - Stato online: Render risponde; i dati pubblicati corrispondono allo stato atteso e i fingerprint degli asset coincidono con la build locale.
-- Prossima attività suggerita: ampliare i controlli automatizzati per riferimenti immagine, schede, fonti e alt text, definendo i criteri prima di implementare; non inventare fonti, licenze o geometrie comunali.
+- Prossima attività suggerita: acquisire dall'utente i dettagli verificabili di autore, fonte, licenza e attribuzione delle immagini; raccogliere fonti locali puntuali per le schede e le geometrie verificate, senza inventare metadati o riscontri.
 - Alla ripresa, verificare `git status`, branch e upstream; usare questo documento per riprendere dal prossimo controllo dati e non ripetere le attività già pubblicate.
 
 ### Risultati chiave
@@ -209,6 +219,7 @@
    - Complessità: M.
    - Criteri di accettazione: record coerenti, riferimenti immagine esistenti, fonti e schede presenti dove dichiarate; nessuna coordinata placeholder.
    - Test richiesti: `npm run validate:place-coordinates`, test automatici per i controlli aggiunti e verifica visuale della mappa.
+   - Stato: controlli strutturali aggiunti localmente; restano necessari verifica editoriale e sopralluogo per validare i contenuti e le posizioni.
 
 3. Completare la revisione di immagini e diritti
    - Motivazione: evitare uso improprio di immagini e perdita di fiducia dell’utente.

@@ -54,6 +54,11 @@ export function validatePlaceCoordinates(places) {
       continue;
     }
 
+    if (place.latitude === 0 && place.longitude === 0) {
+      errors.push(`${label}: coordinates must not use the 0,0 placeholder.`);
+      continue;
+    }
+
     locatedCount += 1;
     const coordinateKey = `${place.latitude},${place.longitude}`;
     const previousPlace = coordinatesByPlace.get(coordinateKey);
