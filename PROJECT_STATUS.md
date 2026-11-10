@@ -49,6 +49,7 @@
 ### Verifica e incremento del 2026-11-10
 
 - Il validatore dei luoghi rifiuta ora anche ID duplicati per luoghi e categorie, evitando riferimenti ambigui nei dati statici.
+- La home non promette più immagini reali: il testo localizzato IT/EN/FR chiarisce che le illustrazioni correnti sono segnaposto.
 - Verifiche locali superate: `npm run validate:places`, `npm run test:place-validation` (10 test), `npm test` (7 test) e `npm run build` (5 route prerenderizzate).
 - Il worktree era pulito prima di questa modifica; la pubblicazione su Render va verificata dopo il push.
 
