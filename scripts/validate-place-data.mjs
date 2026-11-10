@@ -125,6 +125,24 @@ export function validatePlaceData(places, categories, imageAssets, sourceDirecto
     places.filter((place) => place && typeof place.id === 'string').map((place) => place.id),
   );
 
+  for (const [label, records] of [
+    ['category', categories],
+    ['place', places],
+  ]) {
+    const seenIds = new Set();
+    for (const record of records) {
+      if (!isNonEmptyString(record?.id)) {
+        continue;
+      }
+
+      if (seenIds.has(record.id)) {
+        errors.push(`${record.id}: duplicate ${label} id.`);
+      } else {
+        seenIds.add(record.id);
+      }
+    }
+  }
+
   for (const [index, place] of places.entries()) {
     const label = isNonEmptyString(place?.id) ? place.id : `record ${index + 1}`;
 

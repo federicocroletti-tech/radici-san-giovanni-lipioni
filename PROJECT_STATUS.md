@@ -46,6 +46,12 @@
 - Deploy del commit `cbf09ab` verificato: manifesto immagini HTTP 200 con 8 record identici al repository; home, `/esplora`, `/itinerari`, `/racconti` e `/privacy-cookie` rispondono tutti HTTP 200. `Last-Modified` del manifesto: 2026-11-07 00:42:52 UTC.
 - Le verifiche automatiche non certificano accuratezza storica, diritti d'uso, accessibilità fisica o precisione delle geometrie territoriali.
 
+### Verifica e incremento del 2026-11-10
+
+- Il validatore dei luoghi rifiuta ora anche ID duplicati per luoghi e categorie, evitando riferimenti ambigui nei dati statici.
+- Verifiche locali superate: `npm run validate:places`, `npm run test:place-validation` (10 test), `npm test` (7 test) e `npm run build` (5 route prerenderizzate).
+- Il worktree era pulito prima di questa modifica; la pubblicazione su Render va verificata dopo il push.
+
 ### Passaggio per la prossima sessione
 
 - Ultimo stato remoto prima del presente aggiornamento: branch `main`, commit `3ba9918`; il presente aggiornamento aggiunge i controlli automatizzati al deploy Render.

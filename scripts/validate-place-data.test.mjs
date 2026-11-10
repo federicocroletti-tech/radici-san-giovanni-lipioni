@@ -25,6 +25,20 @@ test('accepts repository place data and all referenced local assets', () => {
   assert.deepEqual(validatePlaceData(places, categories, imageAssets, sourceDirectory).errors, []);
 });
 
+test('rejects duplicate place and category identifiers', () => {
+  const result = validatePlaceData(
+    [...places, { ...places[0], id: places[1].id }],
+    [...categories, { ...categories[0] }],
+    imageAssets,
+    sourceDirectory,
+  );
+
+  assert.deepEqual(result.errors, [
+    `${categories[0].id}: duplicate category id.`,
+    `${places[1].id}: duplicate place id.`,
+  ]);
+});
+
 test('rejects missing image and declared detail sheet files', () => {
   const result = validatePlaceData(
     updateFirstPlace({
