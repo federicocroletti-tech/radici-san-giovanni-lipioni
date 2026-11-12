@@ -54,7 +54,7 @@ function validateAssetReference(assetPath, label, sourceDirectory, errors) {
   }
 }
 
-export function validatePlaceData(places, categories, imageAssets, sourceDirectory) {
+export function validatePlaceData(places, categories, imageAssets, sources, sourceDirectory) {
   const errors = [];
 
   if (!Array.isArray(places)) {
@@ -67,6 +67,10 @@ export function validatePlaceData(places, categories, imageAssets, sourceDirecto
 
   if (!Array.isArray(imageAssets)) {
     return { errors: ['Image asset data must be a JSON array.'] };
+  }
+
+  if (!Array.isArray(sources)) {
+    return { errors: ['Source data must be a JSON array.'] };
   }
 
   if (!isNonEmptyString(sourceDirectory)) {
@@ -124,6 +128,81 @@ export function validatePlaceData(places, categories, imageAssets, sourceDirecto
   const placeIds = new Set(
     places.filter((place) => place && typeof place.id === 'string').map((place) => place.id),
   );
+  const supportedPlaceIds = new Set();
+
+  const sourceIds = new Set();
+  for (const [index, source] of sources.entries()) {
+    const label = isNonEmptyString(source?.id) ? source.id : `source ${index + 1}`;
+
+    if (!source || typeof source !== 'object' || Array.isArray(source)) {
+      errors.push(`${label}: record must be an object.`);
+      continue;
+    }
+
+    if (!isNonEmptyString(source.id)) {
+      errors.push(`${label}: id must be a non-empty string.`);
+    } else if (sourceIds.has(source.id)) {
+      errors.push(`${source.id}: duplicate source id.`);
+    } else {
+      sourceIds.add(source.id);
+    }
+
+    for (const field of ['title', 'citation']) {
+      if (!isNonEmptyString(source[field])) {
+        errors.push(`${label}: ${field} must be a non-empty string.`);
+      }
+    }
+
+    for (const field of ['creator', 'publisher']) {
+      if (source[field] !== null && !isNonEmptyString(source[field])) {
+        errors.push(`${label}: ${field} must be a non-empty string or null.`);
+      }
+    }
+
+    if (source.creator === null && source.publisher === null) {
+      errors.push(`${label}: creator or publisher is required.`);
+    }
+
+    if (
+      source.url !== null &&
+      (!isNonEmptyString(source.url) || !/^https?:\/\//i.test(source.url))
+    ) {
+      errors.push(`${label}: url must be an http(s) URL or null.`);
+    }
+
+    if (
+      !/^\d{4}-\d{2}-\d{2}$/.test(source.consultedAt ?? '') ||
+      Number.isNaN(Date.parse(`${source.consultedAt}T00:00:00Z`)) ||
+      new Date(`${source.consultedAt}T00:00:00Z`).toISOString().slice(0, 10) !== source.consultedAt
+    ) {
+      errors.push(`${label}: consultedAt must be a valid YYYY-MM-DD date.`);
+    }
+
+    if (!Array.isArray(source.supports) || source.supports.length === 0) {
+      errors.push(`${label}: supports must contain at least one place claim.`);
+      continue;
+    }
+
+    for (const [supportIndex, support] of source.supports.entries()) {
+      const supportLabel = `${label} support ${supportIndex + 1}`;
+      if (!support || typeof support !== 'object' || Array.isArray(support)) {
+        errors.push(`${supportLabel}: record must be an object.`);
+        continue;
+      }
+
+      if (!isNonEmptyString(support.placeId) || !placeIds.has(support.placeId)) {
+        errors.push(`${supportLabel}: placeId must reference an existing place.`);
+      } else {
+        supportedPlaceIds.add(support.placeId);
+      }
+
+      if (!Array.isArray(support.claims) || support.claims.length === 0) {
+        errors.push(`${supportLabel}: claims must contain at least one non-empty string.`);
+      } else if (support.claims.some((claim) => !isNonEmptyString(claim))) {
+        errors.push(`${supportLabel}: claims must contain at least one non-empty string.`);
+      }
+    }
+  }
 
   for (const [label, records] of [
     ['category', categories],
@@ -173,6 +252,18 @@ export function validatePlaceData(places, categories, imageAssets, sourceDirecto
       errors.push(`${label}: isVerifiedContent must be a boolean.`);
     }
 
+    if (place.sourceStatus === 'verified' && place.isVerifiedContent !== true) {
+      errors.push(`${label}: verified sourceStatus requires isVerifiedContent to be true.`);
+    }
+
+    if (place.isVerifiedContent === true && place.sourceStatus !== 'verified') {
+      errors.push(`${label}: verified content requires sourceStatus to be verified.`);
+    }
+
+    if (place.sourceStatus === 'verified' && !supportedPlaceIds.has(place.id)) {
+      errors.push(`${label}: verified content must be supported by a registered source.`);
+    }
+
     if (!imageAssetsByPath.has(place.image)) {
       errors.push(`${label}: image must reference an entry in the image asset inventory.`);
     }
@@ -215,7 +306,10 @@ if (process.argv[1] && fileURLToPath(import.meta.url) === resolve(process.argv[1
   const imageAssets = JSON.parse(
     readFileSync(resolve(sourceDirectory, 'assets/data/image-assets.json'), 'utf8'),
   );
-  const { errors } = validatePlaceData(places, categories, imageAssets, sourceDirectory);
+  const sources = JSON.parse(
+    readFileSync(resolve(sourceDirectory, 'assets/data/sources.json'), 'utf8'),
+  );
+  const { errors } = validatePlaceData(places, categories, imageAssets, sources, sourceDirectory);
 
   if (errors.length) {
     console.error('Place data validation failed:');
@@ -225,7 +319,7 @@ if (process.argv[1] && fileURLToPath(import.meta.url) === resolve(process.argv[1
     process.exitCode = 1;
   } else {
     console.log(
-      `Validated ${places.length} place records, ${imageAssets.length} inventoried images, and declared detail sheets.`,
+      `Validated ${places.length} place records, ${imageAssets.length} inventoried images, ${sources.length} sources, and declared detail sheets.`,
     );
   }
 }

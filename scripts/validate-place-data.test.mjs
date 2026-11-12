@@ -16,13 +16,32 @@ const categories = JSON.parse(
 const imageAssets = JSON.parse(
   readFileSync(resolve(sourceDirectory, 'assets/data/image-assets.json'), 'utf8'),
 );
+const sources = JSON.parse(
+  readFileSync(resolve(sourceDirectory, 'assets/data/sources.json'), 'utf8'),
+);
+
+const testSource = {
+  id: 'fonte-test',
+  title: 'Riferimento sintetico per test automatici',
+  creator: 'Fixture test',
+  publisher: null,
+  citation: 'Riferimento di test, non fonte editoriale.',
+  url: null,
+  consultedAt: '2026-11-12',
+  supports: [
+    { placeId: 'centro-storico', claims: ['Affermazione sintetica usata solo nei test.'] },
+  ],
+};
 
 function updateFirstPlace(changes) {
   return places.map((place, index) => (index === 0 ? { ...place, ...changes } : place));
 }
 
 test('accepts repository place data and all referenced local assets', () => {
-  assert.deepEqual(validatePlaceData(places, categories, imageAssets, sourceDirectory).errors, []);
+  assert.deepEqual(
+    validatePlaceData(places, categories, imageAssets, sources, sourceDirectory).errors,
+    [],
+  );
 });
 
 test('rejects duplicate place and category identifiers', () => {
@@ -30,6 +49,7 @@ test('rejects duplicate place and category identifiers', () => {
     [...places, { ...places[0], id: places[1].id }],
     [...categories, { ...categories[0] }],
     imageAssets,
+    sources,
     sourceDirectory,
   );
 
@@ -47,6 +67,7 @@ test('rejects missing image and declared detail sheet files', () => {
     }),
     categories,
     imageAssets,
+    sources,
     sourceDirectory,
   );
 
@@ -67,6 +88,7 @@ test('rejects invalid categories, source status, localized text, and related pla
     }),
     categories,
     imageAssets,
+    sources,
     sourceDirectory,
   );
 
@@ -83,6 +105,7 @@ test('rejects asset paths that escape the source directory', () => {
     updateFirstPlace({ image: 'assets/../../outside.svg' }),
     categories,
     imageAssets,
+    sources,
     sourceDirectory,
   );
 
@@ -109,6 +132,7 @@ test('requires a place image to be registered and rights-documented assets to ha
         notes: 'Incomplete provenance.',
       },
     ],
+    sources,
     sourceDirectory,
   );
 
@@ -120,5 +144,62 @@ test('requires a place image to be registered and rights-documented assets to ha
     'assets/images/unverified.svg: attribution is required when rights are documented.',
     'centro-storico: image must reference an entry in the image asset inventory.',
     'centro-storico image: file does not exist (assets/images/not-in-inventory.svg).',
+  ]);
+});
+
+test('requires a registered source claim before content can be marked verified', () => {
+  const verifiedPlace = updateFirstPlace({ sourceStatus: 'verified', isVerifiedContent: true });
+  const unsupported = validatePlaceData(
+    verifiedPlace,
+    categories,
+    imageAssets,
+    sources,
+    sourceDirectory,
+  );
+
+  assert.deepEqual(unsupported.errors, [
+    'centro-storico: verified content must be supported by a registered source.',
+  ]);
+  assert.deepEqual(
+    validatePlaceData(verifiedPlace, categories, imageAssets, [testSource], sourceDirectory).errors,
+    [],
+  );
+});
+
+test('rejects source claims that refer to missing places or have no claim text', () => {
+  const result = validatePlaceData(
+    places,
+    categories,
+    imageAssets,
+    [
+      {
+        ...testSource,
+        supports: [
+          { placeId: 'missing-place', claims: ['Affermazione sintetica.'] },
+          { placeId: 'centro-storico', claims: [] },
+        ],
+      },
+    ],
+    sourceDirectory,
+  );
+
+  assert.deepEqual(result.errors, [
+    'fonte-test support 1: placeId must reference an existing place.',
+    'fonte-test support 2: claims must contain at least one non-empty string.',
+  ]);
+});
+
+test('requires source metadata and a valid consultation date', () => {
+  const result = validatePlaceData(
+    places,
+    categories,
+    imageAssets,
+    [{ ...testSource, creator: null, publisher: null, consultedAt: '2026-02-31' }],
+    sourceDirectory,
+  );
+
+  assert.deepEqual(result.errors, [
+    'fonte-test: creator or publisher is required.',
+    'fonte-test: consultedAt must be a valid YYYY-MM-DD date.',
   ]);
 });

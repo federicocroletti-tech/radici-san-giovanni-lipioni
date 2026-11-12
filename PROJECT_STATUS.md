@@ -53,6 +53,14 @@
 - Verifiche locali superate: `npm run validate:places`, `npm run test:place-validation` (10 test), `npm test` (7 test) e `npm run build` (5 route prerenderizzate).
 - Il worktree era pulito prima di questa modifica; la pubblicazione su Render va verificata dopo il push.
 
+### Registro fonti del 2026-11-12
+
+- Aggiunto `src/assets/data/sources.json` come registro editoriale strutturato. Al momento e intenzionalmente vuoto: non sono state introdotte fonti non documentate.
+- Il validatore controlla metadati, data di consultazione, affermazioni supportate e riferimenti a luoghi esistenti; una scheda con `sourceStatus: verified` deve avere almeno una fonte collegata e `isVerifiedContent: true`.
+- La suite include casi per fonti valide, schede verificate senza fonte, riferimenti orfani, affermazioni vuote e date invalide.
+- Verifiche locali: validazione dati superata (15 luoghi, 8 asset, 0 fonti); 13 test di validazione dati e coordinate, 7 test applicativi e build production con 5 route prerenderizzate superati.
+- Prossimo passo editoriale: raccogliere fonti reali e registrare quali affermazioni di ciascuna scheda sostengono, prima di promuovere contenuti a verificati.
+
 ### Passaggio per la prossima sessione
 
 - Ultimo stato remoto prima del presente aggiornamento: branch `main`, commit `3ba9918`; il presente aggiornamento aggiunge i controlli automatizzati al deploy Render.
@@ -60,7 +68,7 @@
 - Stato dati: 15 luoghi; 8 localizzati, 7 record `research` senza coordinate; nessun riferimento JPG nei record; le due fotografie JPG rimangono nel repository ma non sono associate alle schede.
 - Stato build/test: eseguire `npm run validate:places`, `npm run test:place-validation`, `npm test` e `npm run build`; la configurazione Render applica questi gate prima della pubblicazione.
 - Stato online: deploy di `cbf09ab` verificato con tutte le route principali HTTP 200 e il manifesto pubblicato identico a quello locale.
-- Prossima attività suggerita: acquisire dall'utente i dettagli verificabili di autore, fonte, licenza e attribuzione delle immagini; raccogliere fonti locali puntuali per le schede e le geometrie verificate, senza inventare metadati o riscontri.
+- Prossima attività: raccogliere fonti locali puntuali da associare alle schede tramite `sources.json`; acquisire inoltre dettagli verificabili di autore, fonte, licenza e attribuzione delle fotografie, senza inventare metadati o riscontri.
 - Alla ripresa, verificare `git status`, branch e upstream; usare questo documento per riprendere dal prossimo controllo dati e non ripetere le attività già pubblicate.
 
 ### Risultati chiave

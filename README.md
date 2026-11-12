@@ -48,6 +48,7 @@ src/assets/data/
   categories.json
   places.json
   image-assets.json
+  sources.json
   itineraries.json
   stories.json
   chatbot-knowledge.json
@@ -88,7 +89,9 @@ npm run validate:places
 npm run test:place-validation
 ```
 
-I controlli verificano coordinate plausibili senza duplicati o placeholder `0,0`, categorie e relazioni esistenti, testi e note fonte in italiano, inglese e francese, immagini locali presenti in `image-assets.json` e schede Markdown quando dichiarate. Il manifesto distingue segnaposto e fotografie e registra esplicitamente le provenienze o i diritti ancora da documentare. Lo stato `to-verify` o `research` resta valido: i controlli non certificano accuratezza storica, geografica o giuridica.
+I controlli verificano coordinate plausibili senza duplicati o placeholder `0,0`, categorie e relazioni esistenti, testi e note fonte in italiano, inglese e francese, immagini locali presenti in `image-assets.json` e schede Markdown quando dichiarate. Il manifesto distingue segnaposto e fotografie e registra esplicitamente le provenienze o i diritti ancora da documentare.
+
+`sources.json` e il registro delle fonti editoriali. Ogni voce deve riportare ID, titolo, citazione, creatore o ente editore, URL quando disponibile, data di consultazione e una o piu affermazioni collegate agli ID dei luoghi supportati. Una scheda puo essere marcata `verified` solo se almeno una voce del registro supporta esplicitamente quel luogo. Le schede `to-verify` e `research` restano ammesse; il registro iniziale e vuoto finche non vengono raccolti riferimenti verificabili. I controlli non certificano da soli accuratezza storica, geografica o giuridica.
 
 ## App mobile
 
