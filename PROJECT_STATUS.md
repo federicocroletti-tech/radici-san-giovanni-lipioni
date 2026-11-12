@@ -55,19 +55,25 @@
 
 ### Registro fonti del 2026-11-12
 
-- Aggiunto `src/assets/data/sources.json` come registro editoriale strutturato. Al momento e intenzionalmente vuoto: non sono state introdotte fonti non documentate.
+- Aggiunto `src/assets/data/sources.json` come registro editoriale strutturato, inizialmente vuoto e senza fonti inventate.
 - Il validatore controlla metadati, data di consultazione, affermazioni supportate e riferimenti a luoghi esistenti; una scheda con `sourceStatus: verified` deve avere almeno una fonte collegata e `isVerifiedContent: true`.
 - La suite include casi per fonti valide, schede verificate senza fonte, riferimenti orfani, affermazioni vuote e date invalide.
-- Verifiche locali: validazione dati superata (15 luoghi, 8 asset, 0 fonti); 13 test di validazione dati e coordinate, 7 test applicativi e build production con 5 route prerenderizzate superati.
+- Verifiche al rilascio del registro: validazione dati superata (15 luoghi, 8 asset, 0 fonti); 13 test di validazione dati e coordinate, 7 test applicativi e build production con 5 route prerenderizzate superati.
 - Deploy Render del commit `0057ade` verificato: `https://radici-san-giovanni-lipioni.onrender.com/assets/data/sources.json` risponde con il registro vuoto previsto.
-- Prossimo passo editoriale: raccogliere fonti reali e registrare quali affermazioni di ciascuna scheda sostengono, prima di promuovere contenuti a verificati.
+
+### Scheda pilota della chiesa del 2026-11-12
+
+- `sources.json` ora contiene due fonti per `chiesa-santa-maria`: Diocesi di Trivento per la datazione al XVII secolo e BeWeB-CEI per denominazione e classificazione parrocchiale.
+- La descrizione e la scheda Markdown attribuiscono esplicitamente le informazioni; rimosso il riferimento non documentato a decorazioni recuperate.
+- `sourceStatus` resta `to-verify` e `isVerifiedContent` resta `false`: le fonti non documentano tutte le fasi costruttive né i dettagli architettonici.
+- Le pagine sono state consultate il 2026-11-12; la datazione della Diocesi è una fonte istituzionale utile, ma non sostituisce una scheda storico-artistica o documenti d'archivio per i dettagli.
 
 ### Passaggio per la prossima sessione
 
-- Stato Git: branch `main`, commit funzionale `0057ade` pubblicato e verificato su Render; worktree pulito al termine delle verifiche.
-- Stato dati: 15 luoghi, 8 con coordinate e 7 senza; 8 asset inventariati; `sources.json` e vuoto e nessuna scheda e marcata verificata.
+- Stato Git: branch `main`; l'ultima baseline pubblicata prima della scheda pilota e il commit `0057ade` verificato su Render. Le modifiche pilota devono ancora superare i gate ed essere pubblicate.
+- Stato dati: 15 luoghi, 8 con coordinate e 7 senza; 8 asset inventariati; due fonti collegate alla chiesa, che resta `to-verify`; nessuna scheda è marcata verificata.
 - Gate locali superati: `npm run validate:places`, `npm run test:place-validation` (13 test), `npm test` (7 test), `npm run build` (5 route prerenderizzate).
-- Prossima attività: acquisire fonti locali puntuali e associare ciascuna alle affermazioni delle schede; completare inoltre autore, fonte, licenza e attribuzione delle fotografie prima di usarle.
+- Prossima attività: verificare fasi costruttive e dettagli architettonici della chiesa con fonti storico-artistiche o d'archivio; poi applicare la stessa ricognizione agli altri luoghi e completare provenienza e licenze delle fotografie.
 
 ### Risultati chiave
 

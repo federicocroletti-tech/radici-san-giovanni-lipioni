@@ -1,1 +1,36 @@
-[]
+[
+  {
+    "id": "diocesi-trivento-san-giovanni-lipioni",
+    "title": "San Giovanni Lipioni",
+    "creator": "Diocesi di Trivento",
+    "publisher": null,
+    "citation": "La pagina indica la chiesa di Santa Maria delle Grazie come edificio del XVII secolo.",
+    "url": "https://www.diocesitrivento.it/diocesi/i-comuni-della-diocesi/san-giovanni-lipioni/39",
+    "consultedAt": "2026-11-12",
+    "supports": [
+      {
+        "placeId": "chiesa-santa-maria",
+        "claims": [
+          "La Diocesi di Trivento colloca la chiesa di Santa Maria delle Grazie nel XVII secolo."
+        ]
+      }
+    ]
+  },
+  {
+    "id": "beweb-cei-santa-maria-delle-grazie",
+    "title": "San Giovanni Lipioni (CH) | Chiesa di Santa Maria delle Grazie",
+    "creator": "Conferenza Episcopale Italiana, Ufficio Nazionale per i beni culturali ecclesiastici e l'edilizia di culto",
+    "publisher": null,
+    "citation": "La scheda catalografica intitola l'edificio Chiesa di Santa Maria delle Grazie e lo classifica come chiesa parrocchiale.",
+    "url": "https://www.beweb.chiesacattolica.it/edificios/edificio/26939/San+Giovanni+Lipioni+%28CH%29+%7C+Chiesa+di+Santa+Maria+delle+Grazie",
+    "consultedAt": "2026-11-12",
+    "supports": [
+      {
+        "placeId": "chiesa-santa-maria",
+        "claims": [
+          "La scheda CEI identifica l'edificio come chiesa parrocchiale di Santa Maria delle Grazie a San Giovanni Lipioni."
+        ]
+      }
+    ]
+  }
+]

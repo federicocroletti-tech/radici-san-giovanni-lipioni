@@ -2,7 +2,12 @@
 
 ## Descrizione
 
-Santa Maria delle Grazie domina San Giovanni Lipioni con una presenza architettonica netta. Le descrizioni storiche la collegano a fasi costruttive tra Cinquecento e Seicento, con una facciata a capanna scandita da elementi in pietra e decorazioni recuperate nel tempo. Per chi visita il borgo e il punto che organizza lo sguardo: dalla chiesa si comprendono la forma del paese, il crinale e il rapporto con le colline circostanti.
+La scheda della Diocesi di Trivento indica Santa Maria delle Grazie come chiesa del XVII secolo; il censimento BeWeB della Conferenza Episcopale Italiana la classifica come chiesa parrocchiale. La sua posizione nel profilo dell'abitato offre un punto di osservazione sul crinale e sulle colline circostanti. Le singole fasi costruttive, i materiali e gli elementi decorativi richiedono ulteriori verifiche documentarie e un sopralluogo.
+
+## Fonti
+
+- [Diocesi di Trivento, San Giovanni Lipioni](https://www.diocesitrivento.it/diocesi/i-comuni-della-diocesi/san-giovanni-lipioni/39): indica la chiesa di Santa Maria delle Grazie come edificio del XVII secolo.
+- [BeWeB-CEI, Chiesa di Santa Maria delle Grazie](https://www.beweb.chiesacattolica.it/edificios/edificio/26939/San+Giovanni+Lipioni+%28CH%29+%7C+Chiesa+di+Santa+Maria+delle+Grazie): censisce la denominazione e la classificazione come chiesa parrocchiale.
 
 ## Scheda tecnica
 

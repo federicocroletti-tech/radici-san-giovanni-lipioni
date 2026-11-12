@@ -181,14 +181,14 @@
       "fr": "Eglise paroissiale en position dominante, visible dans le profil du village."
     },
     "description": {
-      "it": "Santa Maria delle Grazie domina San Giovanni Lipioni con una presenza architettonica netta. Le descrizioni storiche la collegano a fasi costruttive tra Cinquecento e Seicento, con una facciata a capanna scandita da elementi in pietra e decorazioni recuperate nel tempo. Per chi visita il borgo e il punto che organizza lo sguardo: dalla chiesa si comprendono la forma del paese, il crinale e il rapporto con le colline circostanti.",
-      "en": "Santa Maria delle Grazie dominates San Giovanni Lipioni with a clear architectural presence. Historical descriptions connect it to building phases between the sixteenth and seventeenth centuries, with a gabled facade marked by stone elements and reused decorative fragments. For visitors it is the point that organises the view: from the church one understands the village form, the ridge and the surrounding hills.",
-      "fr": "Santa Maria delle Grazie domine San Giovanni Lipioni par une presence architecturale marquee. Les descriptions historiques la relient a des phases de construction entre le XVIe et le XVIIe siecle, avec une facade a pignon scandee par des elements en pierre. Pour la visite, c'est le point qui organise le regard sur la forme du village, la crete et les collines environnantes."
+      "it": "La scheda della Diocesi di Trivento indica Santa Maria delle Grazie come chiesa del XVII secolo; il censimento BeWeB della Conferenza Episcopale Italiana la classifica come chiesa parrocchiale. La sua posizione nel profilo dell'abitato offre un punto di osservazione sul crinale e sulle colline circostanti. Le singole fasi costruttive, i materiali e gli elementi decorativi richiedono ulteriori verifiche documentarie e un sopralluogo.",
+      "en": "The Diocese of Trivento lists Santa Maria delle Grazie as a seventeenth-century church; the Italian Episcopal Conference's BeWeB inventory classifies it as a parish church. Its position in the village skyline offers a viewpoint over the ridge and surrounding hills. Specific building phases, materials and decorative elements require further documentary research and a site survey.",
+      "fr": "La fiche du diocèse de Trivento indique que Santa Maria delle Grazie date du XVIIe siècle ; l'inventaire BeWeB de la Conférence épiscopale italienne la classe comme église paroissiale. Sa position dans le profil du village offre un point de vue sur la crête et les collines environnantes. Les phases de construction précises, les matériaux et les éléments décoratifs demandent des recherches documentaires et un relevé sur place."
     },
     "historicalInterest": {
-      "it": "Chiesa parrocchiale del borgo. Le fasi costruttive tra Cinquecento e Seicento citate nella scheda richiedono fonte bibliografica puntuale.",
-      "en": "Parish church of the village. The sixteenth- and seventeenth-century building phases mentioned in the sheet require a precise bibliographic source.",
-      "fr": "Église paroissiale du village. Les phases de construction des XVIe-XVIIe siècles mentionnées dans la fiche demandent une source bibliographique précise."
+      "it": "La Diocesi di Trivento la indica come edificio del XVII secolo. La cronologia delle singole fasi costruttive richiede ulteriori riscontri storico-artistici e archivistici.",
+      "en": "The Diocese of Trivento identifies it as a seventeenth-century building. The chronology of individual construction phases needs further historical-artistic and archival research.",
+      "fr": "Le diocèse de Trivento la présente comme un édifice du XVIIe siècle. La chronologie des différentes phases de construction demande des recherches historiques, artistiques et archivistiques complémentaires."
     },
     "architecturalInterest": {
       "it": "Facciata, elementi in pietra e posizione dominante sono elementi da documentare con rilievo fotografico e scheda storico-artistica.",
@@ -201,14 +201,14 @@
       "fr": "Point haut pour lire la crête, l'habitat compact et les collines environnantes."
     },
     "curiosity": {
-      "it": "Le decorazioni recuperate citate nella descrizione sono Informazione da verificare con fonte e datazione.",
-      "en": "The reused decorative fragments mentioned in the description are Information to verify with source and dating.",
-      "fr": "Les décors récupérés mentionnés dans la description sont une Information à vérifier avec source et datation."
+      "it": "La datazione al XVII secolo è riportata dalla Diocesi di Trivento; eventuali fasi precedenti o rimaneggiamenti non sono documentati in questa scheda.",
+      "en": "The seventeenth-century dating is reported by the Diocese of Trivento; earlier phases or later alterations are not documented in this sheet.",
+      "fr": "La datation au XVIIe siècle est indiquée par le diocèse de Trivento ; les phases antérieures ou les remaniements ultérieurs ne sont pas documentés dans cette fiche."
     },
     "sourceNotes": {
-      "it": "Dedicazione e posizione sono dati identificativi; cronologia e dettagli storico-artistici devono essere verificati.",
-      "en": "Dedication and position are identifying data; chronology and historical-artistic details must be verified.",
-      "fr": "La dédicace et la position sont des données d'identification ; chronologie et détails historiques-artistiques doivent être vérifiés."
+      "it": "Fonti consultate: Diocesi di Trivento, pagina San Giovanni Lipioni (datazione al XVII secolo); BeWeB-CEI, scheda Chiesa di Santa Maria delle Grazie (denominazione e classificazione parrocchiale). Fasi costruttive e dettagli architettonici restano da verificare.",
+      "en": "Sources consulted: Diocese of Trivento, San Giovanni Lipioni page (seventeenth-century dating); BeWeB-CEI, Church of Santa Maria delle Grazie record (name and parish classification). Building phases and architectural details remain to be verified.",
+      "fr": "Sources consultées : diocèse de Trivento, page San Giovanni Lipioni (datation au XVIIe siècle) ; BeWeB-CEI, fiche Chiesa di Santa Maria delle Grazie (nom et statut paroissial). Les phases de construction et les détails architecturaux restent à vérifier."
     },
     "latitude": 41.8430544,
     "longitude": 14.5619544,
