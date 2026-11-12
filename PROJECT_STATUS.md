@@ -67,12 +67,13 @@
 - La descrizione e la scheda Markdown attribuiscono esplicitamente le informazioni; rimosso il riferimento non documentato a decorazioni recuperate.
 - `sourceStatus` resta `to-verify` e `isVerifiedContent` resta `false`: le fonti non documentano tutte le fasi costruttive né i dettagli architettonici.
 - Le pagine sono state consultate il 2026-11-12; la datazione della Diocesi è una fonte istituzionale utile, ma non sostituisce una scheda storico-artistica o documenti d'archivio per i dettagli.
+- Commit `08132f2` pubblicato e verificato su Render con cache-bust: `sources.json` contiene le due fonti e `places.json` serve la descrizione aggiornata.
 
 ### Passaggio per la prossima sessione
 
-- Stato Git: branch `main`; l'ultima baseline pubblicata prima della scheda pilota e il commit `0057ade` verificato su Render. Le modifiche pilota devono ancora superare i gate ed essere pubblicate.
+- Stato Git: branch `main`, commit applicativo `08132f2` pubblicato; la scheda pilota e le due fonti sono state verificate live su Render.
 - Stato dati: 15 luoghi, 8 con coordinate e 7 senza; 8 asset inventariati; due fonti collegate alla chiesa, che resta `to-verify`; nessuna scheda è marcata verificata.
-- Gate locali superati: `npm run validate:places`, `npm run test:place-validation` (13 test), `npm test` (7 test), `npm run build` (5 route prerenderizzate).
+- Gate locali superati: `npm run validate:places` (2 fonti), `npm run test:place-validation` (13 test), `npm test` (7 test), `npm run build` (5 route prerenderizzate).
 - Prossima attività: verificare fasi costruttive e dettagli architettonici della chiesa con fonti storico-artistiche o d'archivio; poi applicare la stessa ricognizione agli altri luoghi e completare provenienza e licenze delle fotografie.
 
 ### Risultati chiave
