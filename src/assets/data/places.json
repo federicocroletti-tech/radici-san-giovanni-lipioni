@@ -181,19 +181,19 @@
       "fr": "Eglise paroissiale en position dominante, visible dans le profil du village."
     },
     "description": {
-      "it": "La scheda della Diocesi di Trivento indica Santa Maria delle Grazie come chiesa del XVII secolo; il censimento BeWeB della Conferenza Episcopale Italiana la classifica come chiesa parrocchiale. La sua posizione nel profilo dell'abitato offre un punto di osservazione sul crinale e sulle colline circostanti. Le singole fasi costruttive, i materiali e gli elementi decorativi richiedono ulteriori verifiche documentarie e un sopralluogo.",
-      "en": "The Diocese of Trivento lists Santa Maria delle Grazie as a seventeenth-century church; the Italian Episcopal Conference's BeWeB inventory classifies it as a parish church. Its position in the village skyline offers a viewpoint over the ridge and surrounding hills. Specific building phases, materials and decorative elements require further documentary research and a site survey.",
-      "fr": "La fiche du diocèse de Trivento indique que Santa Maria delle Grazie date du XVIIe siècle ; l'inventaire BeWeB de la Conférence épiscopale italienne la classe comme église paroissiale. Sa position dans le profil du village offre un point de vue sur la crête et les collines environnantes. Les phases de construction précises, les matériaux et les éléments décoratifs demandent des recherches documentaires et un relevé sur place."
+      "it": "La Diocesi di Trivento indica Santa Maria delle Grazie come chiesa del XVII secolo, mentre una scheda di AltoVastese del 2010 riporta il XVI: le fonti consultate non concordano sulla datazione. AltoVastese descrive una facciata a capanna con due registri, cornice marcapiano, paraste e lesene in pietra; riferisce inoltre un impianto a navata unica e un rinnovo dell'interno tra fine XVIII e inizio XIX secolo. Questi dettagli richiedono verifica nella bibliografia citata e un sopralluogo.",
+      "en": "The Diocese of Trivento dates Santa Maria delle Grazie to the seventeenth century, while a 2010 AltoVastese record gives the sixteenth: the consulted sources disagree on the dating. AltoVastese describes a gabled facade with two levels, a string course, and stone pilasters; it also reports a single-nave plan and an interior renewal between the late eighteenth and early nineteenth centuries. These details need checking against the cited bibliography and a site survey.",
+      "fr": "Le diocèse de Trivento date Santa Maria delle Grazie du XVIIe siècle, tandis qu'une fiche AltoVastese de 2010 indique le XVIe : les sources consultées divergent. AltoVastese décrit une façade à pignon à deux registres, avec corniche et pilastres en pierre ; la fiche signale également une nef unique et un renouvellement de l'intérieur entre la fin du XVIIIe et le début du XIXe siècle. Ces détails doivent être vérifiés dans la bibliographie citée et lors d'un relevé sur place."
     },
     "historicalInterest": {
-      "it": "La Diocesi di Trivento la indica come edificio del XVII secolo. La cronologia delle singole fasi costruttive richiede ulteriori riscontri storico-artistici e archivistici.",
-      "en": "The Diocese of Trivento identifies it as a seventeenth-century building. The chronology of individual construction phases needs further historical-artistic and archival research.",
-      "fr": "Le diocèse de Trivento la présente comme un édifice du XVIIe siècle. La chronologie des différentes phases de construction demande des recherches historiques, artistiques et archivistiques complémentaires."
+      "it": "Le fonti consultate propongono due datazioni: XVII secolo per la Diocesi di Trivento, XVI secolo per AltoVastese. La cronologia va confrontata con i riferimenti bibliografici citati e con documenti storico-artistici o d'archivio.",
+      "en": "The consulted sources give two datings: the seventeenth century according to the Diocese of Trivento and the sixteenth according to AltoVastese. The chronology needs to be checked against the cited bibliography and historical-artistic or archival documents.",
+      "fr": "Les sources consultées proposent deux datations : le XVIIe siècle selon le diocèse de Trivento et le XVIe selon AltoVastese. La chronologie doit être confrontée à la bibliographie citée et à des documents historiques, artistiques ou d'archives."
     },
     "architecturalInterest": {
-      "it": "Facciata, elementi in pietra e posizione dominante sono elementi da documentare con rilievo fotografico e scheda storico-artistica.",
-      "en": "Facade, stone elements and dominant position should be documented with photographic survey and historical-artistic sheet.",
-      "fr": "Façade, éléments en pierre et position dominante doivent être documentés par relevé photographique et fiche historique-artistique."
+      "it": "AltoVastese (2010) descrive una facciata a capanna divisa in due registri da cornice marcapiano, con paraste e lesene in pietra. La descrizione è secondaria e va confrontata con la scheda storico-artistica e con un rilievo sul posto.",
+      "en": "AltoVastese (2010) describes a gabled facade divided into two levels by a string course, with stone pilasters. This is a secondary description and should be checked against a historical-artistic record and an on-site survey.",
+      "fr": "AltoVastese (2010) décrit une façade à pignon divisée en deux registres par une corniche, avec des pilastres en pierre. Cette description secondaire doit être confrontée à une fiche historique-artistique et à un relevé sur place."
     },
     "landscapeInterest": {
       "it": "Punto alto per leggere crinale, abitato compatto e colline circostanti.",
@@ -201,14 +201,14 @@
       "fr": "Point haut pour lire la crête, l'habitat compact et les collines environnantes."
     },
     "curiosity": {
-      "it": "La datazione al XVII secolo è riportata dalla Diocesi di Trivento; eventuali fasi precedenti o rimaneggiamenti non sono documentati in questa scheda.",
-      "en": "The seventeenth-century dating is reported by the Diocese of Trivento; earlier phases or later alterations are not documented in this sheet.",
-      "fr": "La datation au XVIIe siècle est indiquée par le diocèse de Trivento ; les phases antérieures ou les remaniements ultérieurs ne sont pas documentés dans cette fiche."
+      "it": "AltoVastese segnala elementi lapidei reimpiegati, tra cui un capitello e un piccolo rosone definiti quattrocenteschi, e un leone stiloforo; alcuni elementi sono riferiti con cautela a una possibile fabbrica medievale. La lettura va verificata sul posto e nella bibliografia citata.",
+      "en": "AltoVastese notes reused stone pieces, including a capital and small rose window it dates to the fifteenth century, and a small supporting lion; some pieces are cautiously linked to a possible medieval structure. This interpretation needs checking on site and against the cited bibliography.",
+      "fr": "AltoVastese signale des éléments en pierre remployés, dont un chapiteau et une petite rosace datés du XVe siècle, ainsi qu'un petit lion support ; certains éléments sont prudemment rattachés à une possible construction médiévale. Cette interprétation doit être vérifiée sur place et dans la bibliographie citée."
     },
     "sourceNotes": {
-      "it": "Fonti consultate: Diocesi di Trivento, pagina San Giovanni Lipioni (datazione al XVII secolo); BeWeB-CEI, scheda Chiesa di Santa Maria delle Grazie (denominazione e classificazione parrocchiale). Fasi costruttive e dettagli architettonici restano da verificare.",
-      "en": "Sources consulted: Diocese of Trivento, San Giovanni Lipioni page (seventeenth-century dating); BeWeB-CEI, Church of Santa Maria delle Grazie record (name and parish classification). Building phases and architectural details remain to be verified.",
-      "fr": "Sources consultées : diocèse de Trivento, page San Giovanni Lipioni (datation au XVIIe siècle) ; BeWeB-CEI, fiche Chiesa di Santa Maria delle Grazie (nom et statut paroissial). Les phases de construction et les détails architecturaux restent à vérifier."
+      "it": "Fonti consultate: Diocesi di Trivento (XVII secolo); AltoVastese, articolo del 25 giugno 2010 (XVI secolo e descrizione architettonica; bibliografia citata: Furlani 1993 e 1998-99, Picciani 1995); BeWeB-CEI (denominazione e classificazione parrocchiale). La datazione è discordante e i dettagli restano da verificare.",
+      "en": "Sources consulted: Diocese of Trivento (seventeenth century); AltoVastese, article of 25 June 2010 (sixteenth century and architectural description; cited bibliography: Furlani 1993 and 1998-99, Picciani 1995); BeWeB-CEI (name and parish classification). Dating is conflicting and details remain to be verified.",
+      "fr": "Sources consultées : diocèse de Trivento (XVIIe siècle) ; AltoVastese, article du 25 juin 2010 (XVIe siècle et description architecturale ; bibliographie citée : Furlani 1993 et 1998-99, Picciani 1995) ; BeWeB-CEI (nom et statut paroissial). Les datations divergent et les détails restent à vérifier."
     },
     "latitude": 41.8430544,
     "longitude": 14.5619544,

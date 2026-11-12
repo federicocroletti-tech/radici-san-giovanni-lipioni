@@ -32,5 +32,24 @@
         ]
       }
     ]
+  },
+  {
+    "id": "altovastese-santa-maria-delle-grazie-2010",
+    "title": "La Chiesa di Santa Maria delle Grazie di San Giovanni Lipioni (CH)",
+    "creator": "admin (firma indicata nell'articolo; nome civile non riportato)",
+    "publisher": "AltoVastese.it",
+    "citation": "Articolo pubblicato il 25 giugno 2010. Riporta il XVI secolo come epoca di costruzione e descrive la facciata a capanna, i registri separati da cornice marcapiano, paraste e lesene in pietra, una navata unica e il rinnovo dell'interno tra fine XVIII e inizio XIX secolo. Riferimenti bibliografici dichiarati: V. Furlani (1993; 1998-99) e L. Picciani (1995).",
+    "url": "https://www.altovastese.it/arte/santa-maria-delle-grazie-san-giovanni-lipioni/",
+    "consultedAt": "2026-11-12",
+    "supports": [
+      {
+        "placeId": "chiesa-santa-maria",
+        "claims": [
+          "La scheda AltoVastese del 2010 riporta il XVI secolo come epoca di costruzione, in contrasto con la datazione al XVII secolo riportata dalla Diocesi di Trivento.",
+          "L'articolo descrive una facciata a capanna divisa in due registri da cornice marcapiano, con paraste e lesene in pietra.",
+          "L'articolo descrive l'interno come navata unica e riferisce un rinnovo tra la fine del XVIII e l'inizio del XIX secolo."
+        ]
+      }
+    ]
   }
 ]
