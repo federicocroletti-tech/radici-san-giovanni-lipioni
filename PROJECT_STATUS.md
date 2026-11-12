@@ -59,17 +59,15 @@
 - Il validatore controlla metadati, data di consultazione, affermazioni supportate e riferimenti a luoghi esistenti; una scheda con `sourceStatus: verified` deve avere almeno una fonte collegata e `isVerifiedContent: true`.
 - La suite include casi per fonti valide, schede verificate senza fonte, riferimenti orfani, affermazioni vuote e date invalide.
 - Verifiche locali: validazione dati superata (15 luoghi, 8 asset, 0 fonti); 13 test di validazione dati e coordinate, 7 test applicativi e build production con 5 route prerenderizzate superati.
+- Deploy Render del commit `0057ade` verificato: `https://radici-san-giovanni-lipioni.onrender.com/assets/data/sources.json` risponde con il registro vuoto previsto.
 - Prossimo passo editoriale: raccogliere fonti reali e registrare quali affermazioni di ciascuna scheda sostengono, prima di promuovere contenuti a verificati.
 
 ### Passaggio per la prossima sessione
 
-- Ultimo stato remoto prima del presente aggiornamento: branch `main`, commit `3ba9918`; il presente aggiornamento aggiunge i controlli automatizzati al deploy Render.
-- Modifiche già pubblicate in questa serie: `b0df64f` (baseline), `a6e77c4` e `9f9cfe3` (inventario immagini), `83b780c` (segnaposto), `18b1263` (flag di verifica), `bf13831` (autorizzazione dichiarata), `05409a2` (rimozione coordinate placeholder), `43e6569` (validatore coordinate).
-- Stato dati: 15 luoghi; 8 localizzati, 7 record `research` senza coordinate; nessun riferimento JPG nei record; le due fotografie JPG rimangono nel repository ma non sono associate alle schede.
-- Stato build/test: eseguire `npm run validate:places`, `npm run test:place-validation`, `npm test` e `npm run build`; la configurazione Render applica questi gate prima della pubblicazione.
-- Stato online: deploy di `cbf09ab` verificato con tutte le route principali HTTP 200 e il manifesto pubblicato identico a quello locale.
-- Prossima attività: raccogliere fonti locali puntuali da associare alle schede tramite `sources.json`; acquisire inoltre dettagli verificabili di autore, fonte, licenza e attribuzione delle fotografie, senza inventare metadati o riscontri.
-- Alla ripresa, verificare `git status`, branch e upstream; usare questo documento per riprendere dal prossimo controllo dati e non ripetere le attività già pubblicate.
+- Stato Git: branch `main`, commit funzionale `0057ade` pubblicato e verificato su Render; worktree pulito al termine delle verifiche.
+- Stato dati: 15 luoghi, 8 con coordinate e 7 senza; 8 asset inventariati; `sources.json` e vuoto e nessuna scheda e marcata verificata.
+- Gate locali superati: `npm run validate:places`, `npm run test:place-validation` (13 test), `npm test` (7 test), `npm run build` (5 route prerenderizzate).
+- Prossima attività: acquisire fonti locali puntuali e associare ciascuna alle affermazioni delle schede; completare inoltre autore, fonte, licenza e attribuzione delle fotografie prima di usarle.
 
 ### Risultati chiave
 
