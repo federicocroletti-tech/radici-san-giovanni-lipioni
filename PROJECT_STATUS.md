@@ -68,14 +68,16 @@
 - La descrizione e la scheda Markdown attribuiscono esplicitamente le informazioni architettoniche alla fonte secondaria; resta da verificare la documentazione bibliografica e sul posto.
 - `sourceStatus` resta `to-verify` e `isVerifiedContent` resta `false`.
 - Gate locali superati per questa revisione: validazione di 15 luoghi e 3 fonti, 13 test dati, 7 test app e build con 5 route prerenderizzate.
-- L'aggiornamento con AltoVastese e la segnalazione del conflitto cronologico sono pronti per la pubblicazione.
+- Ricognizione bibliografica: l'indice locale Jimdo `Libri su San Giovanni Lipioni` elenca Luciano Picciani, `San Giovanni Lipioni. Sulle orme dei padri`, Edizioni Tinari, 1995; non è una scheda catalografica né prova il contenuto del volume. Non è stato reperito un record SBN o una copia digitale consultabile.
+- Il record ICCD `1300025988`, inizialmente candidato per la chiesa, risulta riferito alla Cappella di Santa Liberata e viene escluso dalla scheda di Santa Maria delle Grazie.
+- Aggiornamento editoriale del commit `2775db6` pubblicato e verificato su Render; la descrizione live conserva la discordanza e lo stato `to-verify`.
 
 ### Passaggio per la prossima sessione
 
-- Stato Git: branch `main`, ultima versione pubblicata `08132f2`; il nuovo aggiornamento editoriale ha superato i gate locali.
+- Stato Git: branch `main`, commit `2775db6` pubblicato e verificato su Render; verificare `git status` alla ripresa.
 - Stato dati: 15 luoghi, 8 con coordinate e 7 senza; 8 asset inventariati; tre fonti collegate alla chiesa, che resta `to-verify`; nessuna scheda è marcata verificata.
-- Gate locali superati: `npm run validate:places` (2 fonti), `npm run test:place-validation` (13 test), `npm test` (7 test), `npm run build` (5 route prerenderizzate).
-- Prossima attività: reperire e consultare direttamente Furlani e Picciani per risolvere la discordanza cronologica e verificare i dettagli architettonici; poi applicare la stessa ricognizione agli altri luoghi e completare provenienza e licenze delle fotografie.
+- Gate locali superati: `npm run validate:places` (3 fonti), `npm run test:place-validation` (13 test), `npm test` (7 test), `npm run build` (5 route prerenderizzate).
+- Prossima attività: consultare direttamente Furlani e Picciani tramite biblioteche, archivio comunale o documenti forniti dalla comunità per chiarire la datazione e i dettagli architettonici; poi applicare la ricognizione agli altri luoghi e completare provenienza e licenze delle fotografie.
 
 ### Risultati chiave
 
