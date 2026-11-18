@@ -10,7 +10,14 @@ import { LanguageSwitcherComponent } from '../language-switcher/language-switche
   template: `
     <header class="site-header">
       <a class="brand" routerLink="/" (click)="menuOpen.set(false)">
-        <span class="brand-mark" aria-hidden="true">R</span>
+        <img
+          class="brand-mark"
+          src="branding/logo-radici.jpg"
+          alt=""
+          width="48"
+          height="48"
+          decoding="async"
+        />
         <span>
           <strong>{{ i18n.t('app.name') }}</strong>
           <small>{{ i18n.t('app.tagline') }}</small>

@@ -67,6 +67,8 @@ src/assets/i18n/
 
 Le immagini in `src/assets/images` sono asset dimostrativi sostituibili con foto reali autorizzate.
 
+Il marchio nell'intestazione, la favicon e le icone PWA derivano dal logo Instagram gia presente in `social/instagram/primo-carosello/source/assets/logo-radici-instagram.png`. Per rigenerare gli asset web ottimizzati senza modificare l'originale, esegui `powershell -ExecutionPolicy Bypass -File scripts/generate-brand-assets.ps1` su Windows. Le icone PWA includono un margine per il ritaglio maskable e sono disponibili anche offline.
+
 ## Fonti geografiche
 
 I luoghi principali in `places.json` usano nomi e coordinate ricavati da OpenStreetMap tramite Overpass, con note fonte nei singoli record. I dati OSM sono disponibili sotto Open Database License (ODbL). Prima di pubblicare una guida ufficiale, verificare sul posto coordinate, accessibilita, apertura e contenuti descrittivi.
@@ -100,6 +102,8 @@ npm run test:production
 I test browser usano Playwright. Al primo avvio, installa Chromium con `npx playwright install chromium`.
 
 Il workflow GitHub Actions `Quality checks` esegue installazione pulita, lint, validazione e test dei dati, test unitari, audit delle dipendenze, test browser e controlli del server sulla build di produzione per ogni pull request e aggiornamento di `main`. I test browser avviano un server dedicato sulla porta 4000; `test:production` richiede una build gia generata e verifica le route di produzione e il rifiuto di host non autorizzati sulla porta 4188. Queste porte devono essere libere. In caso di errore, le tracce browser sono disponibili negli artefatti del workflow per 7 giorni.
+
+La regressione responsive verifica anche che i controlli di Esplora non si sovrappongano o escano dal pannello a 320, 390, 768, 1024, 1280 e 1440 pixel, in italiano, inglese e francese. Screenshot e tracce vengono salvati in caso di errore.
 
 ## Uso offline
 
