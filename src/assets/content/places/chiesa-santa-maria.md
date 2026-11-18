@@ -8,7 +8,7 @@ Le fonti consultate non concordano sulla datazione: la Diocesi di Trivento indic
 
 - [Diocesi di Trivento, San Giovanni Lipioni](https://www.diocesitrivento.it/diocesi/i-comuni-della-diocesi/san-giovanni-lipioni/39): indica la chiesa di Santa Maria delle Grazie come edificio del XVII secolo.
 - [BeWeB-CEI, Chiesa di Santa Maria delle Grazie](https://www.beweb.chiesacattolica.it/edificios/edificio/26939/San+Giovanni+Lipioni+%28CH%29+%7C+Chiesa+di+Santa+Maria+delle+Grazie): censisce la denominazione e la classificazione come chiesa parrocchiale.
-- [AltoVastese.it, La Chiesa di Santa Maria delle Grazie di San Giovanni Lipioni (CH)](https://www.altovastese.it/arte/santa-maria-delle-grazie-san-giovanni-lipioni/): articolo del 25 giugno 2010, firmato “admin”; riporta il XVI secolo e descrive elementi architettonici. Bibliografia citata: V. Furlani (1993; 1998-99) e L. Picciani (1995).
+- [AltoVastese.it, La Chiesa di Santa Maria delle Grazie di San Giovanni Lipioni (CH)](https://www.altovastese.it/arte/santa-maria-delle-grazie-san-giovanni-lipioni/): articolo del 25 giugno 2010, firmato “admin”; riporta il XVI secolo e descrive elementi architettonici. Fonte secondaria: l'articolo dichiara di aver tratto le informazioni dal sito trignosinelloturismo.it. Bibliografia citata: V. Furlani (1993; 1998-99) e L. Picciani (1995), non consultata.
 
 ## Scheda tecnica
 

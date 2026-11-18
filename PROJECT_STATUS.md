@@ -313,3 +313,14 @@
 ## Sintesi dello stato
 
 Il progetto è in una fase di baseline funzionante ma non ancora definitiva: costruzione front-end stabile, build di produzione riuscita, documentazione chiara sui vincoli, ma dati territoriali, immagini, fonti e verifica storica ancora da consolidare. La priorità immediata è la normalizzazione e la verifica dei contenuti prima di ogni ulteriore evoluzione estetica o narrativa.
+
+## Micro-attività: chiesa Santa Maria delle Grazie (fonti e scheda)
+
+- Branch: `content/chiesa-santa-maria-fonti`, da `main` aggiornato.
+- User story: come lettore, voglio capire quali fonti sostengono la scheda della chiesa e quanto sono affidabili.
+- Verifica fonti (12 novembre 2026): la pagina della Diocesi di Trivento conferma il XVII secolo per la chiesa; la scheda AltoVastese riporta il XVI secolo e dichiara di riprendere le informazioni da trignosinelloturismo.it.
+- Correzione: l'articolo AltoVastese è registrato come fonte secondaria in `sources.json`, nella scheda Markdown e nelle note di fonte di `places.json` (it/en/fr). La bibliografia citata (Furlani, Picciani) non è stata consultata.
+- Immagine: resta il segnaposto `borgo-stone.svg`, dichiarato non documentario. Il segnaposto è condiviso con `centro-storico` e `cappella-santa-liberata`; non esiste una fotografia della chiesa con diritti verificati.
+- Mappa: coordinate `41.8430544, 14.5619544` non verificate con un rilievo; da confermare.
+- Stato: `isVerifiedContent` resta `false` e `sourceStatus` resta `to-verify`, perché mancano sopralluogo e consultazione della bibliografia.
+- Aperto: datazione XVI/XVII secolo; autorizzazione per una fotografia della chiesa; segnaposto dedicato.
