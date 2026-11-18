@@ -52,7 +52,7 @@ import { SearchInputComponent } from '../../shared/components/search-input/searc
         </button>
       </nav>
 
-      <aside
+      <div
         id="explore-list-panel"
         class="filters-panel"
         role="tabpanel"
@@ -119,7 +119,7 @@ import { SearchInputComponent } from '../../shared/components/search-input/searc
             <span class="muted">{{ i18n.t('explore.noResults') }}</span>
           }
         </div>
-      </aside>
+      </div>
 
       <div
         id="explore-map-panel"
