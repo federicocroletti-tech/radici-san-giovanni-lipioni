@@ -73,38 +73,42 @@ import { SearchInputComponent } from '../../shared/components/search-input/searc
           [allLabel]="i18n.t('explore.allCategories')"
           (selectedCategoryChange)="setCategory($event)"
         />
-        <div class="chips" [attr.aria-label]="i18n.t('explore.collectionLabel')">
-          <button
-            type="button"
-            class="chip"
-            [class.active]="collection() === 'all'"
-            (click)="setCollection('all')"
-          >
-            {{ i18n.t('explore.allPlaces') }}
-          </button>
-          <button
-            type="button"
-            class="chip"
-            [class.active]="collection() === 'favorites'"
-            (click)="setCollection('favorites')"
-          >
-            {{ i18n.t('explore.favorites') }} ({{ visitorPlaces.favorites().length }})
-          </button>
-          <button
-            type="button"
-            class="chip"
-            [class.active]="collection() === 'visited'"
-            (click)="setCollection('visited')"
-          >
-            {{ i18n.t('explore.visited') }} ({{ visitorPlaces.visited().length }})
-          </button>
+        <div class="filter-toolbar">
+          <div class="chips" [attr.aria-label]="i18n.t('explore.collectionLabel')">
+            <button
+              type="button"
+              class="chip"
+              [class.active]="collection() === 'all'"
+              (click)="setCollection('all')"
+            >
+              {{ i18n.t('explore.allPlaces') }}
+            </button>
+            <button
+              type="button"
+              class="chip"
+              [class.active]="collection() === 'favorites'"
+              (click)="setCollection('favorites')"
+            >
+              {{ i18n.t('explore.favorites') }} ({{ visitorPlaces.favorites().length }})
+            </button>
+            <button
+              type="button"
+              class="chip"
+              [class.active]="collection() === 'visited'"
+              (click)="setCollection('visited')"
+            >
+              {{ i18n.t('explore.visited') }} ({{ visitorPlaces.visited().length }})
+            </button>
+          </div>
+          <div class="filter-actions">
+            <button type="button" class="text-button" (click)="clearFilters()">
+              {{ i18n.t('actions.clearFilters') }}
+            </button>
+            <button type="button" class="text-button" (click)="locateMe()" [disabled]="locating()">
+              {{ i18n.t(locating() ? 'explore.locating' : 'explore.locateMe') }}
+            </button>
+          </div>
         </div>
-        <button type="button" class="text-button" (click)="clearFilters()">
-          {{ i18n.t('actions.clearFilters') }}
-        </button>
-        <button type="button" class="text-button" (click)="locateMe()" [disabled]="locating()">
-          {{ i18n.t(locating() ? 'explore.locating' : 'explore.locateMe') }}
-        </button>
         <div class="quick-place-list" [attr.aria-label]="i18n.t('explore.results')">
           @for (place of filteredPlaces(); track place.id) {
             <button

@@ -13,7 +13,7 @@
   --color-border: rgba(31, 41, 51, 0.14);
   --shadow-soft: 0 18px 42px rgba(71, 49, 28, 0.1);
   --shadow-tight: 0 8px 22px rgba(71, 49, 28, 0.08);
-  --header-height: 72px;
+  --header-height: 76px;
   --radius: 8px;
   --container: 1320px;
 }
@@ -145,17 +145,16 @@ p {
   align-items: center;
   gap: 0.75rem;
   text-decoration: none;
+  min-width: 0;
 }
 
 .brand-mark {
-  display: grid;
-  width: 42px;
-  height: 42px;
-  place-items: center;
+  display: block;
+  flex: 0 0 48px;
+  width: 48px;
+  height: 48px;
   border-radius: 50%;
-  background: var(--color-primary);
-  color: #fff;
-  font-weight: 800;
+  object-fit: contain;
 }
 
 .brand small,
@@ -532,10 +531,48 @@ p {
 .filters-panel {
   grid-area: filters;
   display: grid;
-  grid-template-columns: minmax(280px, 1fr) minmax(220px, 0.55fr) auto auto;
+  grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
   gap: 0.85rem;
   align-items: end;
   padding: 0.85rem;
+}
+
+.filters-panel > *,
+.filters-panel .field {
+  min-width: 0;
+}
+
+.filters-panel input,
+.filters-panel select {
+  min-width: 0;
+  width: 100%;
+}
+
+.filter-toolbar {
+  grid-column: 1 / -1;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.85rem 1rem;
+}
+
+.filter-toolbar > .chips,
+.filter-actions {
+  min-width: 0;
+  max-width: 100%;
+}
+
+.filter-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.85rem 1rem;
+}
+
+.filter-actions .text-button {
+  min-height: 44px;
+  text-align: left;
 }
 
 .quick-place-list {
@@ -546,6 +583,12 @@ p {
   max-height: 8.5rem;
   overflow: auto;
   padding-top: 0.25rem;
+}
+
+.quick-place-list .chip {
+  max-width: 100%;
+  overflow-wrap: anywhere;
+  text-align: left;
 }
 
 .places-panel {
@@ -726,6 +769,9 @@ dd {
   width: min(920px, calc(100% - 2rem));
   margin-inline: auto;
   padding: 1rem;
+  max-height: calc(100dvh - 2rem);
+  overflow-y: auto;
+  background: var(--color-surface);
 }
 
 .cookie-grid {
@@ -933,10 +979,6 @@ dd {
     grid-area: tabs;
   }
 
-  .filters-panel {
-    grid-template-columns: minmax(220px, 1fr) minmax(220px, 0.75fr) auto auto;
-  }
-
   .compact-heading {
     grid-template-columns: 1fr;
     gap: 0.45rem;
@@ -1003,7 +1045,7 @@ dd {
   }
 
   .filters-panel {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
   }
 
   .location-data,
@@ -1036,6 +1078,12 @@ dd {
 
   .brand small {
     display: none;
+  }
+
+  .brand strong {
+    display: block;
+    font-size: 0.9rem;
+    line-height: 1.3;
   }
 
   .main-nav.open {

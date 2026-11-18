@@ -1,9 +1,89 @@
 import { expect, test } from '@playwright/test';
 
+test('expanded cookie preferences remain usable on a small screen', async ({ page }) => {
+  await page.setViewportSize({ width: 320, height: 480 });
+  await page.goto('/esplora');
+  const banner = page.locator('.cookie-banner');
+  await banner.getByRole('button', { name: 'Gestisci preferenze cookie' }).click();
+  await expect
+    .poll(() =>
+      banner.evaluate((element) => {
+        const bounds = element.getBoundingClientRect();
+        return bounds.top >= 0 && bounds.bottom <= window.innerHeight;
+      }),
+    )
+    .toBe(true);
+  await banner.getByRole('button', { name: 'Rifiuta opzionali' }).click();
+  await expect(banner).toBeHidden();
+});
+
+test('explore controls stay within their panel without overlaps at every breakpoint', async ({ page }) => {
+  await page.setViewportSize({ width: 1440, height: 1000 });
+  await page.goto('/esplora?place=chiesa-santa-maria&view=list');
+  await expect(page.locator('.quick-place-list button').first()).toBeVisible();
+
+  for (const language of ['it', 'en', 'fr']) {
+    await page.setViewportSize({ width: 1440, height: 1000 });
+    const languageSelect = page.locator('.language-select');
+    if ((await languageSelect.inputValue()) !== language) {
+      await languageSelect.selectOption(language);
+    }
+    await expect(page.locator('html')).toHaveAttribute('lang', language);
+
+    for (const width of [1440, 1280, 1024, 768, 390, 320]) {
+      await page.setViewportSize({ width, height: 1000 });
+      await expect
+        .poll(
+          () =>
+            page.locator('.filters-panel').evaluate((panel) => {
+              const bounds = panel.getBoundingClientRect();
+              const controls = [...panel.querySelectorAll('input, select, button')].map((element) => ({
+                name: element.textContent?.trim().slice(0, 45) || element.tagName,
+                rect: element.getBoundingClientRect(),
+              }));
+              const violations: string[] = [];
+              if (document.documentElement.scrollWidth > window.innerWidth + 1) {
+                violations.push('Page overflows horizontally');
+              }
+              for (const [index, control] of controls.entries()) {
+                if (control.rect.width === 0) continue;
+                if (control.rect.left < bounds.left - 1 || control.rect.right > bounds.right + 1) {
+                  violations.push(`${control.name} extends outside the filter panel`);
+                }
+                for (const other of controls.slice(index + 1)) {
+                  const overlapX =
+                    Math.min(control.rect.right, other.rect.right) -
+                    Math.max(control.rect.left, other.rect.left);
+                  const overlapY =
+                    Math.min(control.rect.bottom, other.rect.bottom) -
+                    Math.max(control.rect.top, other.rect.top);
+                  if (overlapX > 1 && overlapY > 1) {
+                    violations.push(`${control.name} overlaps ${other.name}`);
+                  }
+                }
+              }
+              return violations;
+            }),
+          { message: `Filter layout at ${width}px in ${language}` },
+        )
+        .toEqual([]);
+    }
+  }
+});
+
 test('mobile explore filters, deep links, and remembers favorites', async ({ page }) => {
   await page.context().grantPermissions(['clipboard-read', 'clipboard-write']);
   await page.setViewportSize({ width: 390, height: 844 });
   await page.goto('/esplora');
+
+  const logo = page.locator('.brand img');
+  await expect(logo).toBeVisible();
+  await expect
+    .poll(() => logo.evaluate((image: HTMLImageElement) => image.naturalWidth))
+    .toBeGreaterThan(0);
+  await expect
+    .poll(() => page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth))
+    .toBe(true);
 
   const search = page.getByLabel('Cerca luoghi o tag');
   await search.fill('Santa Maria delle Grazie');

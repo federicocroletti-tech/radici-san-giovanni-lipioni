@@ -80,7 +80,7 @@ export class SeoService {
         '@id': `${SITE_URL}#organization`,
         name: this.language.t('app.name'),
         url: SITE_URL,
-        logo: this.absoluteUrl(DEFAULT_SOCIAL_IMAGE),
+        logo: this.absoluteUrl('branding/logo-radici.jpg'),
         description: this.language.t('footer.independentNotice'),
       },
       {
