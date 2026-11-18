@@ -1,0 +1,43 @@
+[
+  {
+    "id": "chiesa-santa-maria-datazione",
+    "kind": "storico",
+    "dateLabel": "XVI o XVII secolo",
+    "title": {
+      "it": "Datazione della chiesa di Santa Maria delle Grazie",
+      "en": "Dating of the church of Santa Maria delle Grazie",
+      "fr": "Datation de l'église Santa Maria delle Grazie"
+    },
+    "summary": {
+      "it": "Le fonti non concordano sull'epoca di costruzione: la Diocesi di Trivento indica il XVII secolo, mentre l'articolo di AltoVastese del 2010 indica il XVI secolo. La questione resta aperta fino alla consultazione diretta della bibliografia citata.",
+      "en": "The sources do not agree on the construction period: the Diocese of Trivento indicates the 17th century, while the 2010 AltoVastese article indicates the 16th century. The question remains open until the cited bibliography is consulted directly.",
+      "fr": "Les sources ne concordent pas sur la période de construction : le diocèse de Trivento indique le XVIIe siècle, tandis que l'article d'AltoVastese de 2010 indique le XVIe siècle. La question reste ouverte jusqu'à la consultation directe de la bibliographie citée."
+    },
+    "sourceStatus": "to-verify",
+    "sourceIds": [
+      "diocesi-trivento-san-giovanni-lipioni",
+      "altovastese-santa-maria-delle-grazie-2010"
+    ],
+    "placeId": "chiesa-santa-maria"
+  },
+  {
+    "id": "fontana-vecchia-restauri",
+    "kind": "storico",
+    "dateLabel": "1808-1844",
+    "title": {
+      "it": "Restauri della Fontana Vecchia",
+      "en": "Restorations of the Fontana Vecchia",
+      "fr": "Restaurations de la Fontana Vecchia"
+    },
+    "summary": {
+      "it": "Secondo la voce Wikipedia, la fontana fu restaurata nel 1808, nel 1821 e nel 1832, e sottoposta a una ristrutturazione globale nel 1844. Le date non sono ancora confrontate con le fonti originali.",
+      "en": "According to the Wikipedia entry, the fountain was restored in 1808, 1821 and 1832, and underwent a comprehensive renovation in 1844. The dates have not yet been checked against the original sources.",
+      "fr": "Selon l'entrée Wikipédia, la fontaine fut restaurée en 1808, 1821 et 1832, et fit l'objet d'une rénovation complète en 1844. Les dates n'ont pas encore été vérifiées auprès des sources originales."
+    },
+    "sourceStatus": "to-verify",
+    "sourceIds": [
+      "wikipedia-it-san-giovanni-lipioni"
+    ],
+    "placeId": "fontana-vecchia"
+  }
+]

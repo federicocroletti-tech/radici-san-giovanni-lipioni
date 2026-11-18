@@ -22,6 +22,8 @@ Il progetto usa file JSON locali e testi UI da file i18n. I marker principali so
 - `/esplora` mappa Leaflet, marker, ricerca, filtri e dettaglio luogo
 - `/itinerari` tre itinerari mock
 - `/racconti` racconti dimostrativi e temi filtrabili
+- `/cronologia` eventi storici, sismici, persone, emigrazione e tradizioni orali, ciascuno con fonti e stato di verifica
+- `/fonti` registro delle fonti consultate
 - `/privacy-cookie` privacy/cookie demo e gestione consenso
 - `/**` pagina 404
 
@@ -30,6 +32,10 @@ Il progetto usa file JSON locali e testi UI da file i18n. I marker principali so
 - Mappa centrata su San Giovanni Lipioni con marker da `places.json`, basati su punti nominati OpenStreetMap quando disponibili
 - Lista luoghi accessibile anche senza usare la mappa
 - Filtri per categoria e ricerca testuale
+- URL condivisibili per ricerca, categoria, itinerario e luogo selezionato
+- Vista mobile accessibile con schede mappa/lista
+- Geolocalizzazione attivata solo su richiesta, senza memorizzare la posizione
+- Preferiti e luoghi visitati salvati localmente sul dispositivo
 - Schede luogo con note fonte OSM/ODbL e indicazione di cosa resta editoriale
 - Itinerari collegati alla mappa via query param
 - Racconti mock collegati ai luoghi
@@ -40,6 +46,8 @@ Il progetto usa file JSON locali e testi UI da file i18n. I marker principali so
 - SEO base per pagina, canonical e JSON-LD minimale
 - Cookie banner granulare con analytics/marketing disattivati di default
 - `AnalyticsService` mock senza script terzi caricati
+- PWA con shell, dati, traduzioni e immagini gia consultate disponibili offline
+- Le tile OpenStreetMap restano online e non vengono memorizzate offline
 
 ## Struttura dati
 
@@ -79,6 +87,20 @@ npm run build
 ```
 
 Output: `dist/radici-san-giovanni-lipioni/browser`.
+
+## Controlli di qualita
+
+```bash
+npm test
+npm run lint
+npm run test:e2e
+```
+
+I test browser usano Playwright. Al primo avvio, installa Chromium con `npx playwright install chromium`.
+
+## Uso offline
+
+In produzione il service worker rende disponibili offline l'applicazione, i dati JSON e le traduzioni; le immagini vengono memorizzate dopo il primo accesso. Le tile della mappa sono fornite da OpenStreetMap e restano online: non vengono precacheate o memorizzate, quindi la mappa cartografica richiede una connessione.
 
 ## Validazione dei dati dei luoghi
 
@@ -144,7 +166,7 @@ Configurazione consigliata:
 
 La demo include title e meta description per pagina, canonical URL, `robots.txt`, `sitemap.xml`, cookie banner e pagina privacy/cookie. Il testo privacy e cookie e solo un modello dimostrativo e deve essere validato da un consulente legale prima della pubblicazione definitiva.
 
-## Roadmap
+## Sviluppi futuri
 
 - Aggiunta foto reali autorizzate
 - Coordinate precise dei luoghi
@@ -152,7 +174,6 @@ La demo include title e meta description per pagina, canonical URL, `robots.txt`
 - Backend per gestione contenuti
 - Chatbot AI con RAG
 - CMS
-- PWA
 - Itinerari avanzati
 - Audio-guide
 - Collaborazione con associazioni locali

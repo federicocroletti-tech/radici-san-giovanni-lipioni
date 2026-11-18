@@ -51,5 +51,28 @@
         ]
       }
     ]
+  },
+  {
+    "id": "wikipedia-it-san-giovanni-lipioni",
+    "title": "San Giovanni Lipioni",
+    "creator": "Wikipedia in italiano (autori vari)",
+    "publisher": "Wikimedia Foundation",
+    "citation": "Voce enciclopedica. Attribuisce la costruzione di Santa Maria delle Grazie al 1504 citando una pagina turistica del Comune (link non più raggiungibile) e data i restauri della Fontana Vecchia al 1808, 1821, 1832 e 1844. Fonte secondaria: da verificare sulle fonti originali prima di usare le date.",
+    "url": "https://it.wikipedia.org/wiki/San_Giovanni_Lipioni",
+    "consultedAt": "2026-11-18",
+    "supports": [
+      {
+        "placeId": "chiesa-santa-maria",
+        "claims": [
+          "Wikipedia riporta la costruzione della chiesa di Santa Maria delle Grazie nel 1504, in un terzo dato rispetto alle altre fonti."
+        ]
+      },
+      {
+        "placeId": "fontana-vecchia",
+        "claims": [
+          "Wikipedia riporta restauri della Fontana Vecchia nel 1808, nel 1821, nel 1832 e una ristrutturazione globale nel 1844."
+        ]
+      }
+    ]
   }
 ]

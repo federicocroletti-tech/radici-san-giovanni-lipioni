@@ -3,5 +3,7 @@ export const AppRoutes = {
   explore: '/esplora',
   itineraries: '/itinerari',
   stories: '/racconti',
+  timeline: '/cronologia',
+  sourceRegistry: '/fonti',
   privacyCookie: '/privacy-cookie',
 } as const;

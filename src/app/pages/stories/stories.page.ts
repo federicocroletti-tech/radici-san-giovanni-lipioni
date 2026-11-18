@@ -19,6 +19,15 @@ import { StoryCardComponent } from '../../shared/components/story-card/story-car
       <p>{{ i18n.t('stories.intro') }}</p>
     </section>
 
+    @if (dataLoadError()) {
+      <p class="error-message" role="alert">
+        {{ i18n.t('app.dataLoadError') }}
+        <button type="button" class="text-button" (click)="loadData()">
+          {{ i18n.t('actions.retry') }}
+        </button>
+      </p>
+    }
+
     <section class="section compact">
       <label class="field narrow">
         <span>{{ i18n.t('stories.themeLabel') }}</span>
@@ -43,6 +52,9 @@ export class StoriesPage {
   readonly stories = signal<Story[]>([]);
   readonly places = signal<Place[]>([]);
   readonly selectedTheme = signal('all');
+  readonly dataLoadError = signal(false);
+  private readonly storiesService = inject(StoriesService);
+  private readonly placesService = inject(PlacesService);
   private readonly router = inject(Router);
   private readonly destroyRef = inject(DestroyRef);
 
@@ -56,14 +68,25 @@ export class StoriesPage {
 
   constructor() {
     inject(SeoService).usePage('stories');
-    inject(StoriesService)
+    this.loadData();
+  }
+
+  loadData(): void {
+    this.dataLoadError.set(false);
+    this.storiesService
       .getStories()
       .pipe(takeUntilDestroyed(this.destroyRef))
-      .subscribe((stories) => this.stories.set(stories));
-    inject(PlacesService)
+      .subscribe({
+        next: (stories) => this.stories.set(stories),
+        error: () => this.dataLoadError.set(true),
+      });
+    this.placesService
       .getPlaces()
       .pipe(takeUntilDestroyed(this.destroyRef))
-      .subscribe((places) => this.places.set(places));
+      .subscribe({
+        next: (places) => this.places.set(places),
+        error: () => this.dataLoadError.set(true),
+      });
   }
 
   openPlace(placeId: string): void {

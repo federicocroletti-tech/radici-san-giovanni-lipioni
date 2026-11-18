@@ -15,7 +15,7 @@ function isNonEmptyString(value) {
   return typeof value === 'string' && value.trim().length > 0;
 }
 
-function validateLocalizedText(value, label, errors) {
+export function validateLocalizedText(value, label, errors) {
   if (!value || typeof value !== 'object' || Array.isArray(value)) {
     errors.push(`${label}: localized text must be an object.`);
     return;

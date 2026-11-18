@@ -1,7 +1,9 @@
-import { Component, EventEmitter, Input, Output, inject } from '@angular/core';
+import { DOCUMENT } from '@angular/common';
+import { Component, EventEmitter, Input, Output, inject, signal } from '@angular/core';
 import { ChatbotUiService } from '../../../core/services/chatbot-ui.service';
 import { hasPlaceCoordinates, Place } from '../../../core/models/place.model';
 import { LanguageService } from '../../../core/services/language.service';
+import { VisitorPlacesService } from '../../../core/services/visitor-places.service';
 
 @Component({
   selector: 'app-place-detail-drawer',
@@ -72,14 +74,53 @@ import { LanguageService } from '../../../core/services/language.service';
 
         <div class="actions-row">
           @if (mapsUrl(place); as mapUrl) {
-            <a class="button" [href]="mapUrl" target="_blank" rel="noopener">{{
-              i18n.t('actions.openExternalMap')
-            }}</a>
+            <a class="button" [href]="mapUrl" target="_blank" rel="noopener">
+              {{ i18n.t('actions.openExternalMap') }}
+            </a>
           }
+          @if (directionsUrl(place); as url) {
+            <a class="button" [href]="url" target="_blank" rel="noopener">
+              {{ i18n.t('actions.directions') }}
+            </a>
+          }
+          <button
+            type="button"
+            class="button secondary"
+            [attr.aria-pressed]="visitorPlaces.isFavorite(place.id)"
+            (click)="visitorPlaces.toggleFavorite(place.id)"
+          >
+            {{
+              i18n.t(
+                visitorPlaces.isFavorite(place.id)
+                  ? 'actions.removeSavedPlace'
+                  : 'actions.savePlace'
+              )
+            }}
+          </button>
+          <button
+            type="button"
+            class="button secondary"
+            [attr.aria-pressed]="visitorPlaces.isVisited(place.id)"
+            (click)="visitorPlaces.toggleVisited(place.id)"
+          >
+            {{
+              i18n.t(
+                visitorPlaces.isVisited(place.id)
+                  ? 'actions.markUnvisited'
+                  : 'actions.markVisited'
+              )
+            }}
+          </button>
+          <button type="button" class="button secondary" (click)="share(place)">
+            {{ i18n.t('actions.share') }}
+          </button>
           <button type="button" class="button secondary" (click)="askAbout(place.id)">
             {{ i18n.t('explore.askAboutPlace') }}
           </button>
         </div>
+        @if (shareStatus()) {
+          <p class="muted" role="status">{{ i18n.t(shareStatus()) }}</p>
+        }
       </aside>
     } @else {
       <aside class="detail-drawer detail-empty" aria-live="polite">
@@ -92,7 +133,10 @@ import { LanguageService } from '../../../core/services/language.service';
 })
 export class PlaceDetailDrawerComponent {
   readonly i18n = inject(LanguageService);
+  readonly visitorPlaces = inject(VisitorPlacesService);
   private readonly chatbotUi = inject(ChatbotUiService);
+  private readonly document = inject(DOCUMENT);
+  readonly shareStatus = signal('');
   @Input() place: Place | null = null;
   @Input() relatedPlaces: Place[] = [];
   @Output() closed = new EventEmitter<void>();
@@ -104,6 +148,44 @@ export class PlaceDetailDrawerComponent {
     }
 
     return `https://www.openstreetmap.org/?mlat=${place.latitude}&mlon=${place.longitude}#map=17/${place.latitude}/${place.longitude}`;
+  }
+
+  directionsUrl(place: Place): string | null {
+    if (!hasPlaceCoordinates(place)) {
+      return null;
+    }
+
+    return `https://www.google.com/maps/dir/?api=1&destination=${place.latitude},${place.longitude}`;
+  }
+
+  async share(place: Place): Promise<void> {
+    const windowRef = this.document.defaultView;
+    if (!windowRef) {
+      this.shareStatus.set('actions.shareUnavailable');
+      return;
+    }
+
+    const url = new URL('/esplora', windowRef.location.origin);
+    url.searchParams.set('place', place.id);
+    url.searchParams.set('view', 'map');
+
+    try {
+      if (windowRef.navigator.share) {
+        await windowRef.navigator.share({
+          title: this.i18n.localize(place.name),
+          url: url.toString(),
+        });
+        this.shareStatus.set('');
+      } else if (windowRef.navigator.clipboard?.writeText) {
+        await windowRef.navigator.clipboard.writeText(url.toString());
+        this.shareStatus.set('actions.linkCopied');
+      } else {
+        this.shareStatus.set('actions.shareUnavailable');
+      }
+    } catch (error) {
+      if (error instanceof DOMException && error.name === 'AbortError') return;
+      this.shareStatus.set('actions.shareFailed');
+    }
   }
 
   coordinates(place: Place): string {

@@ -4,7 +4,8 @@
     "tagline": "Interactive digital guide to the village",
     "demoNotice": "Interactive map and place sheets for San Giovanni Lipioni.",
     "openMenu": "Open menu",
-    "closeMenu": "Close menu"
+    "closeMenu": "Close menu",
+    "dataLoadError": "Some content could not be loaded."
   },
   "language": {
     "label": "Language"
@@ -19,6 +20,8 @@
     "explore": "Explore",
     "itineraries": "Itineraries",
     "stories": "Stories",
+    "timeline": "Timeline",
+    "sourceRegistry": "Sources",
     "privacy": "Privacy and Cookies",
     "chatbot": "Chatbot"
   },
@@ -26,7 +29,7 @@
     "exploreMap": "Explore the map",
     "askChatbot": "Ask the chatbot",
     "openOnMap": "Open on map",
-    "openExternalMap": "External directions",
+    "openExternalMap": "Open in OpenStreetMap",
     "discoverLinkedPlaces": "Discover linked places",
     "manageCookies": "Manage cookie preferences",
     "backHome": "Back to Home",
@@ -35,7 +38,17 @@
     "close": "Close",
     "acceptAll": "Accept all",
     "rejectAll": "Reject optional",
-    "savePreferences": "Save preferences"
+    "savePreferences": "Save preferences",
+    "retry": "Retry",
+    "directions": "Get directions",
+    "savePlace": "Save to favorites",
+    "removeSavedPlace": "Remove from favorites",
+    "markVisited": "Mark as visited",
+    "markUnvisited": "Mark as not visited",
+    "share": "Share place",
+    "linkCopied": "Link copied.",
+    "shareUnavailable": "Sharing is not available in this browser.",
+    "shareFailed": "The link could not be shared."
   },
   "home": {
     "kicker": "Village, memory, roots",
@@ -63,8 +76,13 @@
     "searchPlaceholder": "Example: square, viewpoint, memory",
     "categoryLabel": "Category",
     "allCategories": "All",
+    "collectionLabel": "Filter personal list",
+    "allPlaces": "All places",
+    "favorites": "Favorites",
+    "visited": "Visited",
     "mapTab": "Map",
     "listTab": "List",
+    "mobileViewLabel": "Map or list view",
     "results": "Results",
     "noResults": "No places found with these filters.",
     "selectedPlace": "Selected place",
@@ -84,7 +102,16 @@
     "landscapeInterest": "Landscape interest",
     "curiosity": "Notes and curiosities",
     "relatedPlaces": "Related places",
-    "informationToVerify": "Information to verify"
+    "informationToVerify": "Information to verify",
+    "locateMe": "Show my location",
+    "locating": "Finding your location…",
+    "locationFound": "Location shown for this session only.",
+    "locationUnavailable": "Geolocation is not available on this device.",
+    "locationDenied": "Location permission denied. You can enable it in your browser settings.",
+    "locationTimeout": "Your location could not be found in time.",
+    "youAreHere": "Your location",
+    "mapError": "The map is unavailable. Try reloading the page.",
+    "savedPlacesNotPersisted": "Favorites and visits are temporary because this browser does not allow storage."
   },
   "itineraries": {
     "title": "Itineraries to discover San Giovanni Lipioni",
@@ -104,6 +131,29 @@
     "consentNotice": "Consent note",
     "linkedPlaces": "Linked places"
   },
+  "timeline": {
+    "eyebrow": "Events and dates",
+    "title": "Timeline of San Giovanni Lipioni",
+    "intro": "Events and information about the village, each with its declared sources. Entries marked as to verify are not yet confirmed. Oral traditions are popular memory, not historical documentation.",
+    "kindLabel": "Event type",
+    "allKinds": "All types",
+    "kinds": {
+      "sismico": "Seismic",
+      "storico": "Historical",
+      "persona": "Person",
+      "emigrazione": "Emigration",
+      "tradizione": "Oral tradition"
+    },
+    "empty": "Timeline entries are being checked against documentary sources.",
+    "sourcesLabel": "Sources"
+  },
+  "sourceRegistry": {
+    "eyebrow": "Transparency",
+    "title": "Consulted sources",
+    "intro": "List of sources registered in the project. Every historical item in the timeline refers to one or more of these sources.",
+    "consultedAt": "Consulted on",
+    "openSource": "Open the source"
+  },
   "privacy": {
     "title": "Privacy and Cookies",
     "intro": "This page explains simply how the project works. The text must be validated by a legal consultant before final publication.",
@@ -117,7 +167,8 @@
       "Necessary cookies are always active; analytics, marketing and preferences are disabled by default and editable by the user.",
       "The map uses OpenStreetMap tiles loaded from external servers. The Google Maps button opens a new tab only after an explicit user action.",
       "Instagram is not embedded in the site: social content remains separate editorial material.",
-      "Main geographic markers come from public OpenStreetMap sources; stories, editorial text, images and accessibility must be verified before real publication."
+      "Main geographic markers come from public OpenStreetMap sources; stories, editorial text, images and accessibility must be verified before real publication.",
+      "Favorites and visited places are stored only in this device's localStorage. Location is requested only after an explicit action and is not stored. Map tiles come from OpenStreetMap and are not available offline."
     ]
   },
   "location": {
@@ -198,6 +249,16 @@
       "title": "Stories and memory of San Giovanni Lipioni",
       "description": "A demo collection of stories, memories and reflections connected to San Giovanni Lipioni, its traditions and its places.",
       "canonical": "/racconti"
+    },
+    "timeline": {
+      "title": "Timeline of San Giovanni Lipioni | Events and dates",
+      "description": "Timeline of the village of San Giovanni Lipioni with events, people and traditions, each linked to its sources.",
+      "canonical": "/cronologia"
+    },
+    "sourceRegistry": {
+      "title": "Sources | Radici San Giovanni Lipioni",
+      "description": "List of sources consulted by the Radici San Giovanni Lipioni digital guide.",
+      "canonical": "/fonti"
     },
     "privacy": {
       "title": "Privacy and Cookies | Radici San Giovanni Lipioni",

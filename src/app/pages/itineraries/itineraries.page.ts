@@ -20,6 +20,15 @@ import { ItineraryCardComponent } from '../../shared/components/itinerary-card/i
       <p>{{ i18n.t('itineraries.intro') }}</p>
     </section>
 
+    @if (dataLoadError()) {
+      <p class="error-message" role="alert">
+        {{ i18n.t('app.dataLoadError') }}
+        <button type="button" class="text-button" (click)="loadData()">
+          {{ i18n.t('actions.retry') }}
+        </button>
+      </p>
+    }
+
     <section class="card-list">
       @for (itinerary of itineraries(); track itinerary.id) {
         <app-itinerary-card
@@ -36,20 +45,34 @@ export class ItinerariesPage {
   readonly i18n = inject(LanguageService);
   readonly itineraries = signal<Itinerary[]>([]);
   readonly places = signal<Place[]>([]);
+  readonly dataLoadError = signal(false);
+  private readonly itinerariesService = inject(ItinerariesService);
+  private readonly placesService = inject(PlacesService);
   private readonly router = inject(Router);
   private readonly chatbotUi = inject(ChatbotUiService);
   private readonly destroyRef = inject(DestroyRef);
 
   constructor() {
     inject(SeoService).usePage('itineraries');
-    inject(ItinerariesService)
+    this.loadData();
+  }
+
+  loadData(): void {
+    this.dataLoadError.set(false);
+    this.itinerariesService
       .getItineraries()
       .pipe(takeUntilDestroyed(this.destroyRef))
-      .subscribe((itineraries) => this.itineraries.set(itineraries));
-    inject(PlacesService)
+      .subscribe({
+        next: (itineraries) => this.itineraries.set(itineraries),
+        error: () => this.dataLoadError.set(true),
+      });
+    this.placesService
       .getPlaces()
       .pipe(takeUntilDestroyed(this.destroyRef))
-      .subscribe((places) => this.places.set(places));
+      .subscribe({
+        next: (places) => this.places.set(places),
+        error: () => this.dataLoadError.set(true),
+      });
   }
 
   openMap(itinerary: Itinerary): void {
