@@ -320,7 +320,7 @@ Il progetto è in una fase di baseline funzionante ma non ancora definitiva: cos
 - User story: come lettore, voglio capire quali fonti sostengono la scheda della chiesa e quanto sono affidabili.
 - Verifica fonti (12 novembre 2026): la pagina della Diocesi di Trivento conferma il XVII secolo per la chiesa; la scheda AltoVastese riporta il XVI secolo e dichiara di riprendere le informazioni da trignosinelloturismo.it.
 - Correzione: l'articolo AltoVastese è registrato come fonte secondaria in `sources.json`, nella scheda Markdown e nelle note di fonte di `places.json` (it/en/fr). La bibliografia citata (Furlani, Picciani) non è stata consultata.
-- Immagine: resta il segnaposto `borgo-stone.svg`, dichiarato non documentario. Il segnaposto è condiviso con `centro-storico` e `cappella-santa-liberata`; non esiste una fotografia della chiesa con diritti verificati.
+- Immagine: `chiesa-placeholder.svg`, segnaposto simbolico e non documentario. Non è disponibile una fotografia della chiesa con diritti verificati; provenienza e licenza dell'illustrazione restano da documentare.
 - Mappa: coordinate `41.8430544, 14.5619544` non verificate con un rilievo; da confermare.
 - Stato: `isVerifiedContent` resta `false` e `sourceStatus` resta `to-verify`, perché mancano sopralluogo e consultazione della bibliografia.
 - Aperto: datazione XVI/XVII secolo; autorizzazione per una fotografia della chiesa; provenienza e licenza dell'illustrazione segnaposto da documentare.
