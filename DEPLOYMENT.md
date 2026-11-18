@@ -43,6 +43,16 @@ npm run test:production
 
 Il sito Render usa solo i file statici. Per l'avvio opzionale del server Node (`npm run serve:ssr:radici-san-giovanni-lipioni`), gli host locali sono consentiti. Su un dominio pubblico, configurare `NG_ALLOWED_HOSTS` con l'elenco dei soli nomi host autorizzati separati da virgole, senza schema o porta; non usare un wildcard.
 
+## Integrita delle immagini PWA
+
+Il service worker verifica l'hash degli asset prima di salvarli offline. L'ottimizzazione automatica delle immagini della CDN puo modificare JPEG e PNG dopo la build, causando un errore `Hash mismatch` e impedendo il completamento della cache.
+
+`render.yaml` imposta `Cache-Control: public, max-age=0, s-maxage=300, no-transform` per `/branding/*`, `/icons/*`, `/assets/images/*` e `/favicon.ico`. Questo mantiene la cache CDN senza permettere trasformazioni dei file.
+
+Se il servizio non e gestito da un Blueprint sincronizzato, aggiungere gli stessi quattro header in **Render Dashboard > servizio > Headers**: un header `Cache-Control` per ogni percorso, con il valore indicato sopra. Il solo deploy del codice non aggiorna le impostazioni di un servizio configurato manualmente.
+
+Verificare sul sito pubblicato che gli header includano `no-transform`, che gli asset corrispondano agli hash del manifesto live `/ngsw.json` e che `/ngsw/state` riporti `Driver state: NORMAL` dopo il completamento della cache. Infine disattivare la rete e ricaricare Esplora, controllando anche il logo.
+
 Dopo la pubblicazione, verifica:
 
 - home `/`

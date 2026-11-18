@@ -153,6 +153,8 @@ test('cached guide content remains available offline', async ({ page, context })
             appUrls.some((url) => url.endsWith('/index.html')) &&
             appUrls.some((url) => /\/main-[^/]+\.js$/.test(url)) &&
             appUrls.some((url) => /\/styles-[^/]+\.css$/.test(url)) &&
+            appUrls.some((url) => url.endsWith('/branding/logo-radici.jpg')) &&
+            appUrls.some((url) => url.endsWith('/icons/icon-192x192.png')) &&
             dataUrls.some((url) => url.endsWith('/assets/data/places.json')) &&
             dataUrls.some((url) => url.endsWith('/assets/i18n/it.json'))
           );
@@ -169,4 +171,7 @@ test('cached guide content remains available offline', async ({ page, context })
 
   await expect(page.getByRole('heading', { name: 'Esplora la mappa di San Giovanni Lipioni' })).toBeVisible();
   await expect(page.locator('.quick-place-list button').first()).toBeVisible();
+  await expect
+    .poll(() => page.locator('.brand img').evaluate((image: HTMLImageElement) => image.naturalWidth))
+    .toBeGreaterThan(0);
 });
