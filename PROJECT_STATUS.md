@@ -326,3 +326,11 @@ Il progetto è in una fase di baseline funzionante ma non ancora definitiva: cos
 - Aperto: datazione XVI/XVII secolo; autorizzazione per una fotografia della chiesa; provenienza e licenza dell'illustrazione segnaposto da documentare.
 - Aggiornamento 18 novembre 2026: il segnaposto condiviso è stato sostituito con `chiesa-placeholder.svg`, un'illustrazione simbolica dedicata, esplicitamente non documentaria. Asset registrato in `image-assets.json` e `IMAGE_CREDITS.md`; nessuna fotografia è stata associata senza verifica dei diritti.
 - Verifiche: `npm run validate:places`, `npm run test:place-validation`, `npm test` e `npm run build` completati con esito positivo.
+
+### Pubblicazione autorizzata del 18 novembre 2026
+
+- Autorizzati merge su `main`, push su `origin/main` e verifica del deploy di produzione.
+- Ambito del rilascio: fonti della chiesa, segnaposto dedicato, testo alternativo e registri correlati; nessun altro luogo modificato.
+- Controllo preliminare: worktree pulito, `main` allineato a `origin/main` (`6861dbb`), nessun workflow GitHub Actions presente. Render esegue i controlli configurati prima della pubblicazione.
+- Rimossi spazi iniziali accidentali nelle note di fonte italiane e riallineata l'indentazione delle traduzioni, senza modifiche alle affermazioni.
+- Verifica prevista dopo il push: risposte HTTP delle pagine pubbliche, corrispondenza dei JSON e del nuovo SVG con i file locali. La scheda resta `to-verify` e non certifica datazione, coordinate o diritti fotografici.
