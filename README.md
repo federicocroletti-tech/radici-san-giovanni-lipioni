@@ -94,9 +94,12 @@ Output: `dist/radici-san-giovanni-lipioni/browser`.
 npm test
 npm run lint
 npm run test:e2e
+npm run test:production
 ```
 
 I test browser usano Playwright. Al primo avvio, installa Chromium con `npx playwright install chromium`.
+
+Il workflow GitHub Actions `Quality checks` esegue installazione pulita, lint, validazione e test dei dati, test unitari, audit delle dipendenze, test browser e controlli del server sulla build di produzione per ogni pull request e aggiornamento di `main`. I test browser avviano un server dedicato sulla porta 4000; `test:production` richiede una build gia generata e verifica le route di produzione e il rifiuto di host non autorizzati sulla porta 4188. Queste porte devono essere libere. In caso di errore, le tracce browser sono disponibili negli artefatti del workflow per 7 giorni.
 
 ## Uso offline
 

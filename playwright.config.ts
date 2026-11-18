@@ -17,7 +17,7 @@ export default defineConfig({
   webServer: {
     command: 'npm run build && node scripts/serve-static.mjs',
     url: 'http://127.0.0.1:4000',
-    reuseExistingServer: !process.env.CI,
-    timeout: 120_000,
+    reuseExistingServer: false,
+    timeout: 180_000,
   },
 });

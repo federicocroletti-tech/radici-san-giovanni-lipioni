@@ -26,6 +26,7 @@
     "mobile:ios": "npm run build && npx cap run ios",
     "serve:ssr:radici-san-giovanni-lipioni": "node dist/radici-san-giovanni-lipioni/server/server.mjs",
     "lint": "ng lint",
+    "test:production": "node --test scripts/production-server.test.mjs",
     "test:e2e": "playwright test"
   },
   "private": true,

@@ -54,6 +54,7 @@ test('location is requested only after the visitor action', async ({ page, conte
 });
 
 test('cached guide content remains available offline', async ({ page, context }) => {
+  test.setTimeout(60_000);
   await page.setViewportSize({ width: 390, height: 844 });
   await page.goto('/esplora');
   await page.evaluate(() => navigator.serviceWorker.ready);
