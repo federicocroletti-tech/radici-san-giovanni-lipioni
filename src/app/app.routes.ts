@@ -21,6 +21,18 @@ export const routes: Routes = [
       import('./pages/stories/stories.page').then((component) => component.StoriesPage),
   },
   {
+    path: 'cronologia',
+    loadComponent: () =>
+      import('./pages/timeline/timeline.page').then((component) => component.TimelinePage),
+  },
+  {
+    path: 'fonti',
+    loadComponent: () =>
+      import('./pages/source-registry/source-registry.page').then(
+        (component) => component.SourceRegistryPage,
+      ),
+  },
+  {
     path: 'privacy-cookie',
     loadComponent: () =>
       import('./pages/privacy-cookie/privacy-cookie.page').then(

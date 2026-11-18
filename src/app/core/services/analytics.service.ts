@@ -5,6 +5,7 @@ import { CookieConsentService } from './cookie-consent.service';
 export class AnalyticsService {
   private readonly cookieConsent = inject(CookieConsentService);
   readonly analyticsEnabled = signal(false);
+  readonly lastTrackedPath = signal<string | null>(null);
 
   constructor() {
     effect(() => {
@@ -12,9 +13,10 @@ export class AnalyticsService {
     });
   }
 
-  trackPageView(_path: string): void {
+  trackPageView(path: string): void {
     if (!this.analyticsEnabled()) {
       return;
     }
+    this.lastTrackedPath.set(path);
   }
 }

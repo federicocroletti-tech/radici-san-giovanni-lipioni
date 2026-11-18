@@ -24,6 +24,8 @@ import { LanguageService } from '../../../core/services/language.service';
         <a routerLink="/esplora">{{ i18n.t('nav.explore') }}</a>
         <a routerLink="/itinerari">{{ i18n.t('nav.itineraries') }}</a>
         <a routerLink="/racconti">{{ i18n.t('nav.stories') }}</a>
+        <a routerLink="/cronologia">{{ i18n.t('nav.timeline') }}</a>
+        <a routerLink="/fonti">{{ i18n.t('nav.sourceRegistry') }}</a>
         <a routerLink="/privacy-cookie">{{ i18n.t('nav.privacy') }}</a>
         <a href="https://radici-san-giovanni-lipioni.onrender.com/" target="_blank" rel="noopener">
           {{ i18n.t('footer.siteLink') }}

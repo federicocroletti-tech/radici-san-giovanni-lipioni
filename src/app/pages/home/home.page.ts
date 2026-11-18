@@ -58,6 +58,14 @@ import { PlaceCardComponent } from '../../shared/components/place-card/place-car
 
     <section class="section">
       <h2>{{ i18n.t('home.featuredTitle') }}</h2>
+      @if (dataLoadError()) {
+        <p class="error-message" role="alert">
+          {{ i18n.t('app.dataLoadError') }}
+          <button type="button" class="text-button" (click)="loadPlaces()">
+            {{ i18n.t('actions.retry') }}
+          </button>
+        </p>
+      }
       <div class="place-grid">
         @for (place of featuredPlaces(); track place.id) {
           <app-place-card [place]="place" (selectedPlace)="openPlace(place)" />
@@ -82,16 +90,25 @@ export class HomePage {
   readonly i18n = inject(LanguageService);
   readonly chatbot = inject(ChatbotUiService);
   readonly featuredPlaces = signal<Place[]>([]);
+  readonly dataLoadError = signal(false);
   private readonly placesService = inject(PlacesService);
   private readonly destroyRef = inject(DestroyRef);
   private readonly router = inject(Router);
 
   constructor() {
     inject(SeoService).usePage('home');
+    this.loadPlaces();
+  }
+
+  loadPlaces(): void {
+    this.dataLoadError.set(false);
     this.placesService
       .getPlaces()
       .pipe(takeUntilDestroyed(this.destroyRef))
-      .subscribe((places) => this.featuredPlaces.set(places.slice(0, 3)));
+      .subscribe({
+        next: (places) => this.featuredPlaces.set(places.slice(0, 3)),
+        error: () => this.dataLoadError.set(true),
+      });
   }
 
   openPlace(place: Place): void {

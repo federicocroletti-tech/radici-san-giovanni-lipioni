@@ -334,3 +334,14 @@ Il progetto è in una fase di baseline funzionante ma non ancora definitiva: cos
 - Controllo preliminare: worktree pulito, `main` allineato a `origin/main` (`6861dbb`), nessun workflow GitHub Actions presente. Render esegue i controlli configurati prima della pubblicazione.
 - Rimossi spazi iniziali accidentali nelle note di fonte italiane e riallineata l'indentazione delle traduzioni, senza modifiche alle affermazioni.
 - Verifica prevista dopo il push: risposte HTTP delle pagine pubbliche, corrispondenza dei JSON e del nuovo SVG con i file locali. La scheda resta `to-verify` e non certifica datazione, coordinate o diritti fotografici.
+
+### Ricognizione bibliografica della chiesa — 18 novembre 2026
+
+- Branch: `research/chiesa-bibliografia`, creato da `main` aggiornato (`178a15e`).
+- UdaLibrary restituisce il record UDA00295920 (BID TER0031157): Luciano Picciani, *San Giovanni Lipioni sulle orme dei padri*, Bucchianico, Casa editrice Tinari, stampa 2009, 303 p. illustrate. Copia indicata presso la Biblioteca dell'Archivio di Stato di Chieti e Sezione di Lanciano, inventario 11409, collocazione CH-MON CHI/191, “Document for internal consultation only”.
+- La stessa notizia SBN (IT\\ICCU\\TER\\0031157; https://opac.sbn.it/opacmobilegw/full.json?bid=IT%5CICCU%5CTER%5C0031157) conferma la stampa 2009 e localizza copie a Vasto, Chieti e Pescara. Non prova l'edizione Tinari del 1995 citata dalla bibliografia locale né che il testo sia stato consultato.
+- Il record del 2009 non prova che sia l'edizione del 1995 citata da AltoVastese. La pagina di bibliografia locale elenca il titolo nel 1995, ma non dà una scheda catalografica o accesso al testo.
+- Query SBN `any=Picciani+Lipioni`: 1 notizia, ID IT\\ICCU\\TER\\0031157. Query SBN `any=Furlani+centri+storici+Chieti`, `any=Furlani+schedatura+analitica` e `any=Furlani+studio+progetto+fattibilita`: 0 notizie. Query UdaLibrary “Sulle orme dei padri 1995” e ricerche per i titoli Furlani: nessun risultato. Esiti limitati alle query; zero risultati non dimostra l'inesistenza delle opere.
+- La Provincia di Chieti descrive il progetto di analisi degli insediamenti storici e indica che la fase “Centri Storici” produsse un CD-ROM ipertestuale provvisorio, concluso nel 1998-99. La pagina non pubblica il CD-ROM né i dati specifici della chiesa.
+- Esito editoriale: nessun volume o CD-ROM consultato; nessuna affermazione storica modificata. Datazione XVI/XVII secolo e dettagli architettonici restano da verificare; `sourceStatus: to-verify`.
+- Prossimo passo: chiedere alla Biblioteca dell'Archivio di Stato di Chieti se è possibile consultare la copia 2009 e se esiste o è reperibile l'edizione 1995; per Furlani, individuare l'accesso al CD-ROM o alla Schedatura Analitica. Nessuna richiesta è stata inviata.

@@ -324,7 +324,7 @@ export class ChatbotService {
   private getRelatedPlaces(
     placeIds: string[],
     places: Place[],
-  ): Array<{ id: string; name: string }> {
+  ): { id: string; name: string }[] {
     return placeIds
       .map((placeId) => places.find((place) => place.id === placeId))
       .filter((place): place is Place => Boolean(place))

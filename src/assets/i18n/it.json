@@ -4,7 +4,8 @@
     "tagline": "Guida digitale interattiva del borgo",
     "demoNotice": "Mappa interattiva e schede dei luoghi di San Giovanni Lipioni.",
     "openMenu": "Apri menu",
-    "closeMenu": "Chiudi menu"
+    "closeMenu": "Chiudi menu",
+    "dataLoadError": "Non è stato possibile caricare alcuni contenuti."
   },
   "language": {
     "label": "Lingua"
@@ -19,6 +20,8 @@
     "explore": "Esplora",
     "itineraries": "Itinerari",
     "stories": "Racconti",
+    "timeline": "Cronologia",
+    "sourceRegistry": "Fonti",
     "privacy": "Privacy e Cookie",
     "chatbot": "Chatbot"
   },
@@ -26,7 +29,7 @@
     "exploreMap": "Esplora la mappa",
     "askChatbot": "Chiedi al chatbot",
     "openOnMap": "Apri sulla mappa",
-    "openExternalMap": "Indicazioni esterne",
+    "openExternalMap": "Apri su OpenStreetMap",
     "discoverLinkedPlaces": "Scopri i luoghi collegati",
     "manageCookies": "Gestisci preferenze cookie",
     "backHome": "Torna alla Home",
@@ -35,7 +38,17 @@
     "close": "Chiudi",
     "acceptAll": "Accetta tutto",
     "rejectAll": "Rifiuta opzionali",
-    "savePreferences": "Salva preferenze"
+    "savePreferences": "Salva preferenze",
+    "retry": "Riprova",
+    "directions": "Indicazioni stradali",
+    "savePlace": "Salva tra i preferiti",
+    "removeSavedPlace": "Rimuovi dai preferiti",
+    "markVisited": "Segna come visitato",
+    "markUnvisited": "Segna come non visitato",
+    "share": "Condividi luogo",
+    "linkCopied": "Link copiato.",
+    "shareUnavailable": "Condivisione non disponibile in questo browser.",
+    "shareFailed": "Non è stato possibile condividere il link."
   },
   "home": {
     "kicker": "Borgo, memoria, radici",
@@ -63,8 +76,13 @@
     "searchPlaceholder": "Esempio: piazza, panorama, memoria",
     "categoryLabel": "Categoria",
     "allCategories": "Tutte",
+    "collectionLabel": "Filtra per elenco personale",
+    "allPlaces": "Tutti i luoghi",
+    "favorites": "Preferiti",
+    "visited": "Visitati",
     "mapTab": "Mappa",
     "listTab": "Lista",
+    "mobileViewLabel": "Vista mappa o lista",
     "results": "Risultati",
     "noResults": "Nessun luogo trovato con questi filtri.",
     "selectedPlace": "Luogo selezionato",
@@ -84,7 +102,16 @@
     "landscapeInterest": "Interesse paesaggistico",
     "curiosity": "Curiosità",
     "relatedPlaces": "Luoghi correlati",
-    "informationToVerify": "Informazione da verificare"
+    "informationToVerify": "Informazione da verificare",
+    "locateMe": "Mostra la mia posizione",
+    "locating": "Ricerca della posizione…",
+    "locationFound": "Posizione rilevata solo per questa sessione.",
+    "locationUnavailable": "Geolocalizzazione non disponibile su questo dispositivo.",
+    "locationDenied": "Permesso di posizione negato. Puoi abilitarlo nelle impostazioni del browser.",
+    "locationTimeout": "La posizione non è stata rilevata in tempo.",
+    "youAreHere": "La tua posizione",
+    "mapError": "La mappa non è disponibile. Riprova a caricare la pagina.",
+    "savedPlacesNotPersisted": "Preferiti e visite restano temporanei: il browser non consente di salvarli."
   },
   "itineraries": {
     "title": "Itinerari per scoprire San Giovanni Lipioni",
@@ -104,6 +131,29 @@
     "consentNotice": "Nota consenso",
     "linkedPlaces": "Luoghi collegati"
   },
+  "timeline": {
+    "eyebrow": "Eventi e date",
+    "title": "Cronologia di San Giovanni Lipioni",
+    "intro": "Eventi e informazioni legati al borgo, ciascuno con le fonti dichiarate. Le voci contrassegnate come da verificare non sono ancora confermate. Le tradizioni orali sono memoria popolare e non documentazione storica.",
+    "kindLabel": "Tipo di evento",
+    "allKinds": "Tutti i tipi",
+    "kinds": {
+      "sismico": "Sismico",
+      "storico": "Storico",
+      "persona": "Persona",
+      "emigrazione": "Emigrazione",
+      "tradizione": "Tradizione orale"
+    },
+    "empty": "Le voci di cronologia sono in fase di verifica documentaria.",
+    "sourcesLabel": "Fonti"
+  },
+  "sourceRegistry": {
+    "eyebrow": "Trasparenza",
+    "title": "Fonti consultate",
+    "intro": "Elenco delle fonti registrate nel progetto. Ogni informazione storica della cronologia rimanda a una o più di queste fonti.",
+    "consultedAt": "Consultata il",
+    "openSource": "Apri la fonte"
+  },
   "privacy": {
     "title": "Privacy e Cookie",
     "intro": "Questa pagina descrive in modo semplice come funziona il progetto. Il testo deve essere validato da un consulente legale prima della pubblicazione definitiva.",
@@ -117,7 +167,8 @@
       "Cookie necessari sempre attivi; analytics, marketing e preferenze sono disattivati di default e modificabili dall'utente.",
       "La mappa usa tile OpenStreetMap caricati da server esterni. Il pulsante Google Maps apre una nuova scheda solo su azione esplicita dell'utente.",
       "Instagram non viene incorporato nel sito: eventuali contenuti social restano materiali editoriali separati.",
-      "I marker geografici principali derivano da fonti pubbliche OpenStreetMap; racconti, testi editoriali, immagini e accessibilita devono essere verificati prima della pubblicazione reale."
+      "I marker geografici principali derivano da fonti pubbliche OpenStreetMap; racconti, testi editoriali, immagini e accessibilita devono essere verificati prima della pubblicazione reale.",
+      "Preferiti e luoghi visitati vengono salvati solo nel localStorage del dispositivo. La posizione viene richiesta solo su azione esplicita e non viene memorizzata. Le tile della mappa arrivano da OpenStreetMap e non sono disponibili offline."
     ]
   },
   "location": {
@@ -198,6 +249,16 @@
       "title": "Racconti e memoria di San Giovanni Lipioni",
       "description": "Una raccolta dimostrativa di racconti, memorie e suggestioni legate a San Giovanni Lipioni, alle sue tradizioni e ai suoi luoghi.",
       "canonical": "/racconti"
+    },
+    "timeline": {
+      "title": "Cronologia di San Giovanni Lipioni | Eventi e date",
+      "description": "Cronologia del borgo di San Giovanni Lipioni con eventi, persone e tradizioni, ciascuno collegato alle proprie fonti.",
+      "canonical": "/cronologia"
+    },
+    "sourceRegistry": {
+      "title": "Fonti | Radici San Giovanni Lipioni",
+      "description": "Elenco delle fonti consultate dalla guida digitale Radici San Giovanni Lipioni.",
+      "canonical": "/fonti"
     },
     "privacy": {
       "title": "Privacy e Cookie | Radici San Giovanni Lipioni",
