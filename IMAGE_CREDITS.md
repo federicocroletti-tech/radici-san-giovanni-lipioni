@@ -50,7 +50,7 @@ La cronologia Git mostra l’introduzione delle due fotografie nel commit `a4979
 
 ## Altri asset grafici
 
-- Segnaposto in uso: `borgo-stone.svg`, `panorama.svg`, `piazza-memory.svg`, `tradizioni.svg`.
+- Segnaposto in uso: `borgo-stone.svg`, `chiesa-placeholder.svg`, `panorama.svg`, `piazza-memory.svg`, `tradizioni.svg`.
 - Asset presenti ma non referenziati nei record luoghi: `fontana.svg`, `scalinate.svg`.
 - Gli SVG sono illustrazioni, non immagini documentarie. Anche per gli asset locali non è presente una registrazione esplicita di autore e licenza.
 
@@ -85,11 +85,13 @@ Il 4 novembre 2026 gli 8 record che puntavano alle due fotografie JPG sono stati
 | `centro-storico`          | `borgo-stone.svg`             |
 | `piazza-largo-popolo`     | `piazza-memory.svg`           |
 | `mostra-valdese`          | `tradizioni.svg`              |
-| `chiesa-santa-maria`      | `borgo-stone.svg`             |
+| `chiesa-santa-maria`      | `chiesa-placeholder.svg`      |
 | `salita-della-chiesa`     | `scalinate.svg`               |
 | `fontana-vecchia`         | `fontana.svg`                 |
 | `cappella-santa-liberata` | `borgo-stone.svg`             |
 | `quercia-lozzi`           | `panorama.svg`                |
+
+Il 18 novembre 2026 il record corrente della chiesa è stato spostato su `chiesa-placeholder.svg`, un'illustrazione simbolica del progetto che non pretende di documentare l'edificio. La fotografia resta necessaria e non verrà associata finché provenienza e diritti non saranno verificati.
 
 Le due fotografie restano nel repository, ma non sono più selezionate dai record dei luoghi. Poiché si trovano ancora nella directory degli asset, possono restare raggiungibili direttamente negli output statici. L’utente ha dichiarato che l’uso è autorizzato; provenienza, licenza specifica e attribuzione non sono documentate nel repository.
 

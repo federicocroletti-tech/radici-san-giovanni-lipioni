@@ -323,4 +323,6 @@ Il progetto è in una fase di baseline funzionante ma non ancora definitiva: cos
 - Immagine: resta il segnaposto `borgo-stone.svg`, dichiarato non documentario. Il segnaposto è condiviso con `centro-storico` e `cappella-santa-liberata`; non esiste una fotografia della chiesa con diritti verificati.
 - Mappa: coordinate `41.8430544, 14.5619544` non verificate con un rilievo; da confermare.
 - Stato: `isVerifiedContent` resta `false` e `sourceStatus` resta `to-verify`, perché mancano sopralluogo e consultazione della bibliografia.
-- Aperto: datazione XVI/XVII secolo; autorizzazione per una fotografia della chiesa; segnaposto dedicato.
+- Aperto: datazione XVI/XVII secolo; autorizzazione per una fotografia della chiesa; provenienza e licenza dell'illustrazione segnaposto da documentare.
+- Aggiornamento 18 novembre 2026: il segnaposto condiviso è stato sostituito con `chiesa-placeholder.svg`, un'illustrazione simbolica dedicata, esplicitamente non documentaria. Asset registrato in `image-assets.json` e `IMAGE_CREDITS.md`; nessuna fotografia è stata associata senza verifica dei diritti.
+- Verifiche: `npm run validate:places`, `npm run test:place-validation`, `npm test` e `npm run build` completati con esito positivo.

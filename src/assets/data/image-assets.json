@@ -10,6 +10,16 @@
     "notes": "Placeholder illustration; not documentary imagery."
   },
   {
+    "path": "assets/images/chiesa-placeholder.svg",
+    "type": "placeholder-illustration",
+    "status": "rights-unverified",
+    "author": null,
+    "source": null,
+    "license": null,
+    "attribution": null,
+    "notes": "Project-created symbolic placeholder for the church record; not a documentary representation or photograph. Rights metadata remains to be documented."
+  },
+  {
     "path": "assets/images/fontana.svg",
     "type": "placeholder-illustration",
     "status": "rights-unverified",

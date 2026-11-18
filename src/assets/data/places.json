@@ -212,11 +212,11 @@
     },
     "latitude": 41.8430544,
     "longitude": 14.5619544,
-    "image": "assets/images/borgo-stone.svg",
+    "image": "assets/images/chiesa-placeholder.svg",
     "alt": {
-      "it": "Illustrazione segnaposto, non immagine documentaria.",
-      "en": "Placeholder illustration, not a documentary image.",
-      "fr": "Illustration de remplacement, pas une image documentaire."
+      "it": "Illustrazione simbolica segnaposto per la chiesa, non rappresentazione documentaria.",
+      "en": "Symbolic placeholder illustration for the church, not a documentary representation.",
+      "fr": "Illustration symbolique de remplacement pour l'église, pas une représentation documentaire."
     },
     "detailsPath": "assets/content/places/chiesa-santa-maria.md",
     "tags": ["chiesa", "santa maria", "grazie", "church", "heritage"],
