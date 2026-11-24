@@ -121,6 +121,7 @@
     "duration": "Durata",
     "difficulty": "Difficolta",
     "places": "Tappe",
+    "progress": "Tappe visitate: {completed} di {total}",
     "openMap": "Apri itinerario sulla mappa",
     "ask": "Chiedi al chatbot"
   },
