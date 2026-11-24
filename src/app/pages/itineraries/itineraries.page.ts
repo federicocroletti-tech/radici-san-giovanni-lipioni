@@ -8,6 +8,7 @@ import { ItinerariesService } from '../../core/services/itineraries.service';
 import { LanguageService } from '../../core/services/language.service';
 import { PlacesService } from '../../core/services/places.service';
 import { SeoService } from '../../core/services/seo.service';
+import { VisitorPlacesService } from '../../core/services/visitor-places.service';
 import { ItineraryCardComponent } from '../../shared/components/itinerary-card/itinerary-card.component';
 
 @Component({
@@ -39,6 +40,9 @@ import { ItineraryCardComponent } from '../../shared/components/itinerary-card/i
         />
       }
     </section>
+    @if (!visitorPlaces.persistenceAvailable()) {
+      <p class="muted" role="status">{{ i18n.t('explore.savedPlacesNotPersisted') }}</p>
+    }
   `,
 })
 export class ItinerariesPage {
@@ -48,6 +52,7 @@ export class ItinerariesPage {
   readonly dataLoadError = signal(false);
   private readonly itinerariesService = inject(ItinerariesService);
   private readonly placesService = inject(PlacesService);
+  readonly visitorPlaces = inject(VisitorPlacesService);
   private readonly router = inject(Router);
   private readonly chatbotUi = inject(ChatbotUiService);
   private readonly destroyRef = inject(DestroyRef);
