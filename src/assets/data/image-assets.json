@@ -88,5 +88,25 @@
     "license": null,
     "attribution": null,
     "notes": "Placeholder illustration; not documentary imagery."
+  },
+  {
+    "path": "assets/images/commons-san-giovanni-lipioni-panorama.jpg",
+    "type": "photograph",
+    "status": "rights-documented",
+    "author": "Bluholmes82",
+    "source": "https://commons.wikimedia.org/wiki/File:San_giovanni_lipioni.JPG",
+    "license": "CC BY-SA 3.0",
+    "attribution": "Bluholmes82, CC BY-SA 3.0, https://commons.wikimedia.org/wiki/File:San_giovanni_lipioni.JPG",
+    "notes": "Panorama del borgo risalente al 10 aprile 2005 secondo i dati EXIF. Non assegnata a una singola scheda; non sostituisce fotografie documentarie dei monumenti."
+  },
+  {
+    "path": "assets/images/commons-san-giovanni-lipioni-via-fontana.jpg",
+    "type": "photograph",
+    "status": "rights-documented",
+    "author": "Benghazi69",
+    "source": "https://commons.wikimedia.org/wiki/File:SGiovLipioni_pano.jpg",
+    "license": "CC BY 4.0",
+    "attribution": "Benghazi69, CC BY 4.0, https://commons.wikimedia.org/wiki/File:SGiovLipioni_pano.jpg",
+    "notes": "Veduta di San Giovanni Lipioni da Via Fontana, scattata l'11 marzo 2020. Non assegnata a una singola scheda; non sostituisce fotografie documentarie dei monumenti."
   }
 ]
