@@ -116,3 +116,5 @@ Attribuzioni pronte per il sito:
 
 - «Panorama di San Giovanni Lipioni» di Bluholmes82, [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/), via Wikimedia Commons.
 - «San Giovanni Lipioni visto da Via Fontana» di Benghazi69, [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/), via Wikimedia Commons.
+
+La prima fotografia è assegnata al record `centro-storico` come veduta generale documentata del borgo. Non è stata assegnata alle schede dei singoli monumenti perché l’inventario disponibile non ne verifica l’inquadratura specifica.

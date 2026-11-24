@@ -18,6 +18,7 @@ export interface Place {
   longitude?: number;
   image: string;
   alt: LocalizedText;
+  imageCredit?: LocalizedText;
   detailsPath?: string;
   tags: string[];
   relatedPlaceIds: string[];
