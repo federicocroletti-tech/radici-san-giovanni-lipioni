@@ -24,6 +24,9 @@ import { VisitorPlacesService } from '../../../core/services/visitor-places.serv
           ×
         </button>
         <img [src]="place.image" [alt]="i18n.localize(place.alt)" loading="lazy" decoding="async" />
+        @if (place.imageCredit) {
+          <small class="image-credit">{{ i18n.localize(place.imageCredit) }}</small>
+        }
         <div class="detail-content">
           <p class="eyebrow">{{ i18n.t('explore.selectedPlace') }}</p>
           <h2>{{ i18n.localize(place.name) }}</h2>
