@@ -102,3 +102,17 @@ La dichiarazione di autorizzazione è stata fornita dall’utente il 4 novembre 
 Il manifesto `src/assets/data/image-assets.json` registra tutti gli otto file immagine attualmente presenti, i quattro segnaposto usati nei record, i due segnaposto non assegnati e le due fotografie non assegnate. Per le fotografie annota soltanto la dichiarazione dell’utente e lascia autore, fonte, licenza specifica e attribuzione non documentati. Anche autore e licenza dei segnaposto SVG restano da verificare.
 
 Nel successivo aggiornamento del modello, le coordinate placeholder sono state rimosse dai 7 record `research`. La mappa ignora i record senza coordinate; le schede indicano che la localizzazione non è disponibile e non mostrano un link a OpenStreetMap.
+
+## Fotografie Wikimedia con diritti documentati
+
+Le due immagini seguenti sono state scaricate da Wikimedia Commons il 25 novembre 2026. Sono fotografie generali del borgo o del suo panorama, non immagini specifiche e verificate dei singoli monumenti.
+
+| File locale | Fotografia | Autore | Licenza | Fonte |
+| --- | --- | --- | --- | --- |
+| `src/assets/images/commons-san-giovanni-lipioni-panorama.jpg` | Panorama di San Giovanni Lipioni, 10 aprile 2005 secondo i dati EXIF | Bluholmes82 | [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/) | [File:San giovanni lipioni.JPG](https://commons.wikimedia.org/wiki/File:San_giovanni_lipioni.JPG) |
+| `src/assets/images/commons-san-giovanni-lipioni-via-fontana.jpg` | San Giovanni Lipioni visto da Via Fontana, 11 marzo 2020 | Benghazi69 | [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) | [File:SGiovLipioni pano.jpg](https://commons.wikimedia.org/wiki/File:SGiovLipioni_pano.jpg) |
+
+Attribuzioni pronte per il sito:
+
+- «Panorama di San Giovanni Lipioni» di Bluholmes82, [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/), via Wikimedia Commons.
+- «San Giovanni Lipioni visto da Via Fontana» di Benghazi69, [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/), via Wikimedia Commons.
