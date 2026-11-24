@@ -97,6 +97,8 @@
     "coordinates": "Coordonnées géographiques",
     "coordinatesUnavailable": "Indisponibles : ce lieu n'a pas encore été localisé.",
     "sourceStatus": "État des sources",
+    "imageSource": "Source",
+    "imageLicense": "Licence",
     "historicalInterest": "Intérêt historique",
     "architecturalInterest": "Intérêt architectural",
     "landscapeInterest": "Intérêt paysager",

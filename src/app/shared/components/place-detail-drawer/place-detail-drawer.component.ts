@@ -25,7 +25,19 @@ import { VisitorPlacesService } from '../../../core/services/visitor-places.serv
         </button>
         <img [src]="place.image" [alt]="i18n.localize(place.alt)" loading="lazy" decoding="async" />
         @if (place.imageCredit) {
-          <small class="image-credit">{{ i18n.localize(place.imageCredit) }}</small>
+          <small class="image-credit">
+            {{ i18n.localize(place.imageCredit) }}
+            @if (place.imageSourceUrl) {
+              <a [href]="place.imageSourceUrl" target="_blank" rel="noopener noreferrer">
+                {{ i18n.t('explore.imageSource') }}
+              </a>
+            }
+            @if (place.imageLicenseUrl) {
+              <a [href]="place.imageLicenseUrl" target="_blank" rel="noopener noreferrer">
+                {{ i18n.t('explore.imageLicense') }}
+              </a>
+            }
+          </small>
         }
         <div class="detail-content">
           <p class="eyebrow">{{ i18n.t('explore.selectedPlace') }}</p>

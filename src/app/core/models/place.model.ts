@@ -19,6 +19,9 @@ export interface Place {
   image: string;
   alt: LocalizedText;
   imageCredit?: LocalizedText;
+  imageSourceUrl?: string;
+  imageLicenseUrl?: string;
+  imageVerifiedAt?: string;
   detailsPath?: string;
   tags: string[];
   relatedPlaceIds: string[];

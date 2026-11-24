@@ -240,6 +240,29 @@ export function validatePlaceData(places, categories, imageAssets, sources, sour
     validateLocalizedText(place.alt, `${label} alt`, errors);
     validateLocalizedText(place.sourceNotes, `${label} sourceNotes`, errors);
 
+    if (Object.hasOwn(place, 'imageCredit')) {
+      validateLocalizedText(place.imageCredit, `${label} imageCredit`, errors);
+    }
+
+    for (const [field, value] of [
+      ['imageSourceUrl', place.imageSourceUrl],
+      ['imageLicenseUrl', place.imageLicenseUrl],
+    ]) {
+      if (value !== undefined && (!isNonEmptyString(value) || !/^https?:\/\//i.test(value))) {
+        errors.push(`${label}: ${field} must be an http(s) URL.`);
+      }
+    }
+
+    if (
+      place.imageVerifiedAt !== undefined &&
+      (!/^\d{4}-\d{2}-\d{2}$/.test(place.imageVerifiedAt) ||
+        Number.isNaN(Date.parse(`${place.imageVerifiedAt}T00:00:00Z`)) ||
+        new Date(`${place.imageVerifiedAt}T00:00:00Z`).toISOString().slice(0, 10) !==
+          place.imageVerifiedAt)
+    ) {
+      errors.push(`${label}: imageVerifiedAt must be a valid YYYY-MM-DD date.`);
+    }
+
     if (!categoryIds.has(place.category)) {
       errors.push(`${label}: category must reference an existing category.`);
     }
