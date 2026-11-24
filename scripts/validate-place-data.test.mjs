@@ -115,6 +115,26 @@ test('rejects asset paths that escape the source directory', () => {
   ]);
 });
 
+test('rejects invalid image credit URLs and verification dates', () => {
+  const result = validatePlaceData(
+    updateFirstPlace({
+      imageSourceUrl: 'not-a-url',
+      imageLicenseUrl: 'ftp://example.test/license',
+      imageVerifiedAt: '2026-02-30',
+    }),
+    categories,
+    imageAssets,
+    sources,
+    sourceDirectory,
+  );
+
+  assert.deepEqual(result.errors, [
+    'centro-storico: imageSourceUrl must be an http(s) URL.',
+    'centro-storico: imageLicenseUrl must be an http(s) URL.',
+    'centro-storico: imageVerifiedAt must be a valid YYYY-MM-DD date.',
+  ]);
+});
+
 test('requires a place image to be registered and rights-documented assets to have provenance', () => {
   const result = validatePlaceData(
     updateFirstPlace({ image: 'assets/images/not-in-inventory.svg' }),
