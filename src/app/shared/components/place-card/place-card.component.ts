@@ -12,6 +12,9 @@ import { LanguageService } from '../../../core/services/language.service';
       (click)="selectedPlace.emit(place)"
     >
       <img [src]="place.image" [alt]="i18n.localize(place.alt)" loading="lazy" />
+      @if (place.imageCredit) {
+        <small class="image-credit">{{ i18n.localize(place.imageCredit) }}</small>
+      }
       <span class="eyebrow">{{ categoryLabel }}</span>
       <strong>{{ i18n.localize(place.name) }}</strong>
       <span>{{ i18n.localize(place.shortDescription) }}</span>

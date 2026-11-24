@@ -487,6 +487,14 @@ p {
   background: var(--color-surface-alt);
 }
 
+.place-card .image-credit,
+.detail-drawer .image-credit {
+  color: var(--color-muted);
+  font-size: 0.72rem;
+  line-height: 1.35;
+  font-weight: 500;
+}
+
 .place-card small,
 .status {
   color: var(--color-secondary);
