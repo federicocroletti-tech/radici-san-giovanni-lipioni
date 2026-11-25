@@ -13,6 +13,7 @@ import { VisitorPlacesService } from '../../../core/services/visitor-places.serv
       </p>
       <h2>{{ i18n.localize(itinerary.title) }}</h2>
       <p>{{ i18n.localize(itinerary.shortDescription) }}</p>
+      <p>{{ i18n.localize(itinerary.description) }}</p>
       <dl>
         <div>
           <dt>{{ i18n.t('itineraries.difficulty') }}</dt>
