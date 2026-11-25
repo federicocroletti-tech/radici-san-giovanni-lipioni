@@ -33,6 +33,13 @@ import { VisitorPlacesService } from '../../../core/services/visitor-places.serv
               type="button"
               class="text-button"
               [attr.aria-pressed]="visitorPlaces.isVisited(place.id)"
+              [attr.aria-label]="
+                i18n.t(
+                  visitorPlaces.isVisited(place.id)
+                    ? 'actions.markUnvisited'
+                    : 'actions.markVisited'
+                ) + ': ' + i18n.localize(place.name)
+              "
               (click)="visitorPlaces.toggleVisited(place.id)"
             >
               {{
