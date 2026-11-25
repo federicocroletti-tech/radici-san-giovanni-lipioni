@@ -122,6 +122,22 @@ test('mobile explore filters, deep links, and remembers favorites', async ({ pag
   await expect(page.locator('.quick-place-list button')).toHaveCount(1);
 });
 
+test('explore warns when browser storage blocks favorite persistence', async ({ page }) => {
+  await page.addInitScript(() => {
+    Storage.prototype.setItem = function () {
+      throw new DOMException('Storage is unavailable', 'QuotaExceededError');
+    };
+  });
+  await page.goto('/esplora?place=chiesa-santa-maria&view=list');
+
+  await page.getByRole('button', { name: 'Salva tra i preferiti' }).click();
+
+  await expect(page.getByRole('button', { name: 'Rimuovi dai preferiti' })).toBeVisible();
+  await expect(page.getByRole('status')).toContainText(
+    'Preferiti e visite restano temporanei: il browser non consente di salvarli.',
+  );
+});
+
 test('location is requested only after the visitor action', async ({ page, context }) => {
   await context.grantPermissions(['geolocation']);
   await context.setGeolocation({ latitude: 41.8449, longitude: 14.5621 });
