@@ -61,12 +61,30 @@ import { ChatbotMessageComponent } from '../chatbot-message/chatbot-message.comp
           </div>
         </header>
 
-        <div class="quick-prompts" [attr.aria-label]="i18n.t('chatbot.suggestions')">
-          @for (prompt of i18n.list('chatbot.quickPrompts'); track prompt) {
-            <button type="button" class="chip" (click)="send(prompt)" [disabled]="isBusy()">
-              {{ prompt }}
-            </button>
-          }
+        <div class="chat-suggestions">
+          <button
+            type="button"
+            class="suggestions-toggle"
+            [attr.aria-expanded]="suggestionsExpanded()"
+            aria-controls="radici-chat-suggestions"
+            (click)="suggestionsExpanded.update((expanded) => !expanded)"
+          >
+            <span>{{ i18n.t('chatbot.suggestions') }}</span>
+            <span aria-hidden="true">{{ suggestionsExpanded() ? '−' : '+' }}</span>
+          </button>
+          <div
+            id="radici-chat-suggestions"
+            class="quick-prompts"
+            role="group"
+            [attr.aria-label]="i18n.t('chatbot.suggestions')"
+            [hidden]="!suggestionsExpanded()"
+          >
+            @for (prompt of i18n.list('chatbot.quickPrompts'); track prompt) {
+              <button type="button" class="chip" (click)="send(prompt)" [disabled]="isBusy()">
+                {{ prompt }}
+              </button>
+            }
+          </div>
         </div>
 
         <div #chatLog class="chat-log" role="log" aria-live="polite" aria-relevant="additions">
@@ -124,6 +142,7 @@ export class ChatbotWidgetComponent {
   private readonly router = inject(Router);
   @ViewChild('chatLog') private chatLog?: ElementRef<HTMLDivElement>;
   readonly isBusy = signal(false);
+  readonly suggestionsExpanded = signal(false);
   readonly messages = signal<ChatbotMessage[]>([
     {
       id: crypto.randomUUID(),
@@ -153,6 +172,10 @@ export class ChatbotWidgetComponent {
     const text = (prompt ?? this.question).trim();
     if (!text || this.isBusy()) {
       return;
+    }
+
+    if (prompt) {
+      this.suggestionsExpanded.set(false);
     }
 
     this.question = '';
