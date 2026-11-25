@@ -71,7 +71,7 @@ Il marchio nell'intestazione, la favicon e le icone PWA derivano dal logo Instag
 
 ## Fonti geografiche
 
-I luoghi principali in `places.json` usano nomi e coordinate ricavati da OpenStreetMap tramite Overpass, con note fonte nei singoli record. I dati OSM sono disponibili sotto Open Database License (ODbL). Prima di pubblicare una guida ufficiale, verificare sul posto coordinate, accessibilita, apertura e contenuti descrittivi.
+I luoghi principali in `places.json` usano nomi e coordinate ricavati da OpenStreetMap tramite Overpass, con note fonte nei singoli record. I dati OSM sono disponibili sotto Open Database License (ODbL). Ogni luogo localizzato dichiara `coordinateStatus` e `coordinateSource`: le coordinate correnti sono indicate come `osm-unverified` e non risultano verificate sul posto. Solo un rilievo documentato puo impostare `field-verified`, insieme alla fonte e alla data di verifica. I luoghi senza coordinate restano disponibili nella lista, ma non ricevono marker o indicazioni stradali. Prima di pubblicare una guida ufficiale, verificare sul posto coordinate, accessibilita, apertura e contenuti descrittivi.
 
 ## Avvio locale
 
@@ -118,7 +118,7 @@ npm run validate:places
 npm run test:place-validation
 ```
 
-I controlli verificano coordinate plausibili senza duplicati o placeholder `0,0`, categorie e relazioni esistenti, testi e note fonte in italiano, inglese e francese, immagini locali presenti in `image-assets.json` e schede Markdown quando dichiarate. Il manifesto distingue segnaposto e fotografie e registra esplicitamente le provenienze o i diritti ancora da documentare.
+I controlli verificano coordinate plausibili senza duplicati o placeholder `0,0`, origine e stato di verifica per ogni coppia di coordinate, categorie e relazioni esistenti, testi e note fonte in italiano, inglese e francese, immagini locali presenti in `image-assets.json` e schede Markdown quando dichiarate. Il manifesto distingue segnaposto e fotografie e registra esplicitamente le provenienze o i diritti ancora da documentare.
 
 `sources.json` e il registro delle fonti editoriali. Ogni voce deve riportare ID, titolo, citazione, creatore o ente editore, URL quando disponibile, data di consultazione e una o piu affermazioni collegate agli ID dei luoghi supportati. Una scheda puo essere marcata `verified` solo se almeno una voce del registro supporta esplicitamente quel luogo. Le schede `to-verify` e `research` restano ammesse; il registro iniziale e vuoto finche non vengono raccolti riferimenti verificabili. I controlli non certificano da soli accuratezza storica, geografica o giuridica.
 

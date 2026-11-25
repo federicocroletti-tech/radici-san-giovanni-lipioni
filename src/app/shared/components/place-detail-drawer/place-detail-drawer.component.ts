@@ -48,6 +48,19 @@ import { VisitorPlacesService } from '../../../core/services/visitor-places.serv
               <dt>{{ i18n.t('explore.coordinates') }}</dt>
               <dd>{{ coordinates(place) }}</dd>
             </div>
+            @if (hasPlaceCoordinates(place)) {
+              <div>
+                <dt>{{ i18n.t('explore.coordinateVerification') }}</dt>
+                <dd>
+                  {{ coordinateSourceLabel(place) }}; {{ coordinateVerificationLabel(place) }}
+                  @if (place.coordinateStatus === 'field-verified' && place.coordinateVerifiedAt) {
+                    <time [attr.datetime]="place.coordinateVerifiedAt">
+                      {{ place.coordinateVerifiedAt }}
+                    </time>
+                  }
+                </dd>
+              </div>
+            }
             <div>
               <dt>{{ i18n.t('explore.sourceStatus') }}</dt>
               <dd class="status">{{ sourceLabel(place) }}</dd>
@@ -209,6 +222,22 @@ export class PlaceDetailDrawerComponent {
     }
 
     return `${place.latitude.toFixed(6)}, ${place.longitude.toFixed(6)}`;
+  }
+
+  hasPlaceCoordinates(place: Place): boolean {
+    return hasPlaceCoordinates(place);
+  }
+
+  coordinateVerificationLabel(place: Place): string {
+    if (place.coordinateStatus === 'field-verified') {
+      return this.i18n.t('explore.coordinatesFieldVerified');
+    }
+
+    return this.i18n.t('explore.coordinatesOsmUnverified');
+  }
+
+  coordinateSourceLabel(place: Place): string {
+    return place.coordinateSource || this.i18n.t('explore.coordinateSourceUnavailable');
   }
 
   sourceLabel(place: Place): string {
