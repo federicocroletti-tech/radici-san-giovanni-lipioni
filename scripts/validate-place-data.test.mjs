@@ -186,6 +186,28 @@ test('requires a registered source claim before content can be marked verified',
   );
 });
 
+test('requires documented rights metadata before content can be marked verified', () => {
+  const verifiedPlace = updateFirstPlace({
+    sourceStatus: 'verified',
+    isVerifiedContent: true,
+  });
+  const result = validatePlaceData(
+    verifiedPlace,
+    categories,
+    imageAssets.map((asset) =>
+      asset.path === verifiedPlace[0].image
+        ? { ...asset, status: 'rights-unverified' }
+        : asset,
+    ),
+    [testSource],
+    sourceDirectory,
+  );
+
+  assert.deepEqual(result.errors, [
+    'centro-storico: verified content requires an image with documented rights.',
+  ]);
+});
+
 test('rejects source claims that refer to missing places or have no claim text', () => {
   const result = validatePlaceData(
     places,

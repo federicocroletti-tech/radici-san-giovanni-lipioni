@@ -287,10 +287,32 @@ export function validatePlaceData(places, categories, imageAssets, sources, sour
       errors.push(`${label}: verified content must be supported by a registered source.`);
     }
 
-    if (!imageAssetsByPath.has(place.image)) {
+    const placeImageAsset = imageAssetsByPath.get(place.image);
+    if (!placeImageAsset) {
       errors.push(`${label}: image must reference an entry in the image asset inventory.`);
     }
     validateAssetReference(place.image, `${label} image`, sourceDirectory, errors);
+
+    if (place.isVerifiedContent === true && placeImageAsset?.status !== 'rights-documented') {
+      errors.push(
+        `${label}: verified content requires an image with documented rights.`,
+      );
+    }
+
+    if (placeImageAsset?.status === 'rights-documented') {
+      if (!isNonEmptyString(place.imageCredit?.it)) {
+        errors.push(`${label}: localized imageCredit is required for rights-documented images.`);
+      }
+      if (!isNonEmptyString(place.imageSourceUrl)) {
+        errors.push(`${label}: imageSourceUrl is required for rights-documented images.`);
+      }
+      if (!isNonEmptyString(place.imageLicenseUrl)) {
+        errors.push(`${label}: imageLicenseUrl is required for rights-documented images.`);
+      }
+      if (!isNonEmptyString(place.imageVerifiedAt)) {
+        errors.push(`${label}: imageVerifiedAt is required for rights-documented images.`);
+      }
+    }
 
     if (Object.hasOwn(place, 'detailsPath')) {
       validateAssetReference(place.detailsPath, `${label} detailsPath`, sourceDirectory, errors);
