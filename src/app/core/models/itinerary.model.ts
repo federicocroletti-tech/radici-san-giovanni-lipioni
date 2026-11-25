@@ -1,5 +1,16 @@
 import { LocalizedText } from './localized-text.model';
 
+export type ItineraryVerificationStatus = 'unverified' | 'field-verified';
+
+export interface ItineraryFieldVerification {
+  verifiedAt: string;
+  source: string;
+  distanceMeters: number;
+  durationMinutes: number;
+  difficulty: LocalizedText;
+  accessibility: LocalizedText;
+}
+
 export interface Itinerary {
   id: string;
   title: LocalizedText;
@@ -9,6 +20,8 @@ export interface Itinerary {
   description: LocalizedText;
   placeIds: string[];
   tags: string[];
+  verificationStatus: ItineraryVerificationStatus;
+  fieldVerification?: ItineraryFieldVerification;
 }
 
 export function getItineraryProgress(
