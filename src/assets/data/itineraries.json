@@ -19,7 +19,8 @@
       "fr": "Itinéraire fondé sur des points cartographiés par OpenStreetMap. Les temps et l’accessibilité doivent être vérifiés sur place avant tout usage public définitif."
     },
     "placeIds": ["centro-storico", "piazza-largo-popolo", "mostra-valdese", "chiesa-santa-maria"],
-    "tags": ["centro", "piazza", "valdese", "chiesa", "centre", "square", "church"]
+    "tags": ["centro", "piazza", "valdese", "chiesa", "centre", "square", "church"],
+    "verificationStatus": "unverified"
   },
   {
     "id": "scalinate-centro",
@@ -46,7 +47,8 @@
       "chiesa-santa-maria",
       "piazza-largo-popolo"
     ],
-    "tags": ["scalini", "vicoli", "centro", "steps", "lanes"]
+    "tags": ["scalini", "vicoli", "centro", "steps", "lanes"],
+    "verificationStatus": "unverified"
   },
   {
     "id": "santa-liberata-fontana",
@@ -72,6 +74,7 @@
       "fr": "Les étapes sont réelles selon OSM, mais la praticabilité, les temps et les conditions doivent être vérifiés avant de proposer l’itinéraire comme guide officiel."
     },
     "placeIds": ["fontana-vecchia", "cappella-santa-liberata", "quercia-lozzi"],
-    "tags": ["fontana", "santa liberata", "quercia", "fountain", "oak"]
+    "tags": ["fontana", "santa liberata", "quercia", "fountain", "oak"],
+    "verificationStatus": "unverified"
   }
 ]

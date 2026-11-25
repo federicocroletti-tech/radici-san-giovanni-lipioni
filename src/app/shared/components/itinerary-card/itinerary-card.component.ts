@@ -9,7 +9,21 @@ import { VisitorPlacesService } from '../../../core/services/visitor-places.serv
   template: `
     <article class="content-card itinerary-card">
       <p class="eyebrow">
-        {{ i18n.t('itineraries.duration') }}: {{ i18n.localize(itinerary.duration) }}
+        {{ i18n.t(itinerary.fieldVerification ? 'itineraries.duration' : 'itineraries.estimatedDuration') }}:
+        @if (itinerary.fieldVerification; as verification) {
+          {{ verification.durationMinutes }} {{ i18n.t('itineraries.minutes') }}
+        } @else {
+          {{ i18n.localize(itinerary.duration) }}
+        }
+      </p>
+      <p class="verification-status" role="note">
+        {{
+          i18n.t(
+            itinerary.verificationStatus === 'field-verified'
+              ? 'itineraries.fieldVerified'
+              : 'itineraries.unverified'
+          )
+        }}
       </p>
       <h2>{{ i18n.localize(itinerary.title) }}</h2>
       <p>{{ i18n.localize(itinerary.shortDescription) }}</p>
@@ -17,12 +31,34 @@ import { VisitorPlacesService } from '../../../core/services/visitor-places.serv
       <dl>
         <div>
           <dt>{{ i18n.t('itineraries.difficulty') }}</dt>
-          <dd>{{ i18n.localize(itinerary.difficulty) }}</dd>
+          <dd>
+            {{
+              i18n.localize(itinerary.fieldVerification?.difficulty ?? itinerary.difficulty)
+            }}
+          </dd>
         </div>
         <div>
           <dt>{{ i18n.t('itineraries.places') }}</dt>
           <dd>{{ placeNames }}</dd>
         </div>
+        @if (itinerary.fieldVerification; as verification) {
+          <div>
+            <dt>{{ i18n.t('itineraries.distance') }}</dt>
+            <dd>{{ verification.distanceMeters }} {{ i18n.t('itineraries.meters') }}</dd>
+          </div>
+          <div>
+            <dt>{{ i18n.t('itineraries.accessibility') }}</dt>
+            <dd>{{ i18n.localize(verification.accessibility) }}</dd>
+          </div>
+          <div>
+            <dt>{{ i18n.t('itineraries.fieldVerifiedAt') }}</dt>
+            <dd><time [attr.datetime]="verification.verifiedAt">{{ verification.verifiedAt }}</time></dd>
+          </div>
+          <div>
+            <dt>{{ i18n.t('itineraries.fieldVerificationSource') }}</dt>
+            <dd>{{ verification.source }}</dd>
+          </div>
+        }
       </dl>
       <p class="itinerary-progress" aria-live="polite">{{ progressLabel }}</p>
       <ul class="itinerary-stops">

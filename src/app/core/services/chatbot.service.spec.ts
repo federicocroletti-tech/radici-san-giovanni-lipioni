@@ -77,6 +77,7 @@ const itineraries: Itinerary[] = [
     description: { it: '', en: '', fr: '' },
     placeIds: ['centro-storico', 'fontana-vecchia'],
     tags: ['centro'],
+    verificationStatus: 'unverified',
   },
 ];
 

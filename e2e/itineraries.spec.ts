@@ -5,6 +5,8 @@ test('itinerary stops update progress and remain visited after reload', async ({
 
   const itinerary = page.locator('.itinerary-card').first();
   await expect(itinerary).toContainText('Tappe visitate: 0 di 4');
+  await expect(itinerary).toContainText('Durata indicativa, non verificata: 30-45 minuti');
+  await expect(itinerary).toContainText('Percorso non verificato sul posto');
   await expect(itinerary).toContainText('Tempi e accessibilita vanno verificati sul posto');
 
   const firstStop = itinerary.locator('.itinerary-stops li').first();
