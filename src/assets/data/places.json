@@ -41,6 +41,8 @@
     },
     "latitude": 41.8429366,
     "longitude": 14.5621116,
+    "coordinateStatus": "osm-unverified",
+    "coordinateSource": "OpenStreetMap",
     "image": "assets/images/commons-san-giovanni-lipioni-panorama.jpg",
     "alt": {
       "it": "Panorama documentario di San Giovanni Lipioni.",
@@ -106,6 +108,8 @@
     },
     "latitude": 41.8440329,
     "longitude": 14.5617977,
+    "coordinateStatus": "osm-unverified",
+    "coordinateSource": "OpenStreetMap",
     "image": "assets/images/piazza-memory.svg",
     "alt": {
       "it": "Illustrazione segnaposto, non immagine documentaria.",
@@ -163,6 +167,8 @@
     },
     "latitude": 41.8440321,
     "longitude": 14.5615785,
+    "coordinateStatus": "osm-unverified",
+    "coordinateSource": "OpenStreetMap",
     "image": "assets/images/tradizioni.svg",
     "alt": {
       "it": "Illustrazione segnaposto, non immagine documentaria.",
@@ -220,6 +226,8 @@
     },
     "latitude": 41.8430544,
     "longitude": 14.5619544,
+    "coordinateStatus": "osm-unverified",
+    "coordinateSource": "OpenStreetMap",
     "image": "assets/images/chiesa-placeholder.svg",
     "alt": {
       "it": "Illustrazione simbolica segnaposto per la chiesa, non rappresentazione documentaria.",
@@ -277,6 +285,8 @@
     },
     "latitude": 41.8434745,
     "longitude": 14.5617107,
+    "coordinateStatus": "osm-unverified",
+    "coordinateSource": "OpenStreetMap",
     "image": "assets/images/scalinate.svg",
     "alt": {
       "it": "Illustrazione segnaposto, non immagine documentaria.",
@@ -330,6 +340,8 @@
     },
     "latitude": 41.8477431,
     "longitude": 14.5626981,
+    "coordinateStatus": "osm-unverified",
+    "coordinateSource": "OpenStreetMap",
     "image": "assets/images/fontana.svg",
     "alt": {
       "it": "Illustrazione segnaposto, non immagine documentaria.",
@@ -387,6 +399,8 @@
     },
     "latitude": 41.8471971,
     "longitude": 14.560414,
+    "coordinateStatus": "osm-unverified",
+    "coordinateSource": "OpenStreetMap",
     "image": "assets/images/borgo-stone.svg",
     "alt": {
       "it": "Illustrazione segnaposto, non immagine documentaria.",
@@ -440,6 +454,8 @@
     },
     "latitude": 41.8492813,
     "longitude": 14.5585058,
+    "coordinateStatus": "osm-unverified",
+    "coordinateSource": "OpenStreetMap",
     "image": "assets/images/panorama.svg",
     "alt": {
       "it": "Illustrazione segnaposto, non immagine documentaria.",

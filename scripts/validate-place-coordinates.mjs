@@ -10,6 +10,7 @@ export function validatePlaceCoordinates(places) {
   const errors = [];
   const seenIds = new Set();
   const coordinatesByPlace = new Map();
+  const coordinateStatuses = new Set(['osm-unverified', 'field-verified']);
   let locatedCount = 0;
 
   for (const [index, place] of places.entries()) {
@@ -37,6 +38,13 @@ export function validatePlaceCoordinates(places) {
     }
 
     if (!hasLatitude) {
+      if (
+        Object.hasOwn(place, 'coordinateStatus') ||
+        Object.hasOwn(place, 'coordinateSource') ||
+        Object.hasOwn(place, 'coordinateVerifiedAt')
+      ) {
+        errors.push(`${label}: coordinate metadata requires coordinates.`);
+      }
       continue;
     }
 
@@ -57,6 +65,28 @@ export function validatePlaceCoordinates(places) {
     if (place.latitude === 0 && place.longitude === 0) {
       errors.push(`${label}: coordinates must not use the 0,0 placeholder.`);
       continue;
+    }
+
+    if (!coordinateStatuses.has(place.coordinateStatus)) {
+      errors.push(`${label}: coordinateStatus must be osm-unverified or field-verified.`);
+    }
+
+    if (typeof place.coordinateSource !== 'string' || !place.coordinateSource.trim()) {
+      errors.push(`${label}: coordinateSource must be a non-empty string.`);
+    }
+
+    if (
+      place.coordinateStatus === 'field-verified' &&
+      (!/^\d{4}-\d{2}-\d{2}$/.test(place.coordinateVerifiedAt ?? '') ||
+        Number.isNaN(Date.parse(`${place.coordinateVerifiedAt}T00:00:00Z`)) ||
+        new Date(`${place.coordinateVerifiedAt}T00:00:00Z`).toISOString().slice(0, 10) !==
+          place.coordinateVerifiedAt)
+    ) {
+      errors.push(`${label}: field-verified coordinates require a valid coordinateVerifiedAt date.`);
+    }
+
+    if (place.coordinateStatus === 'osm-unverified' && place.coordinateVerifiedAt !== undefined) {
+      errors.push(`${label}: osm-unverified coordinates must not have a verification date.`);
     }
 
     locatedCount += 1;

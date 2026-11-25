@@ -120,6 +120,7 @@ test('mobile explore filters, deep links, and remembers favorites', async ({ pag
 
   await expect(page).toHaveURL(/place=chiesa-santa-maria/);
   await expect(page.getByRole('heading', { name: 'Chiesa di Santa Maria delle Grazie' })).toBeVisible();
+  await expect(page.getByText('OpenStreetMap; non verificate sul posto')).toBeVisible();
   await page.getByRole('button', { name: 'Salva tra i preferiti' }).click();
   await expect(page.getByRole('button', { name: 'Rimuovi dai preferiti' })).toBeVisible();
   await page.getByRole('button', { name: 'Segna come visitato' }).click();
@@ -141,6 +142,18 @@ test('mobile explore filters, deep links, and remembers favorites', async ({ pag
   await expect(page.locator('.quick-place-list button').first()).toContainText('Chiesa');
   await page.getByRole('button', { name: /Visitati/ }).click();
   await expect(page.locator('.quick-place-list button')).toHaveCount(1);
+});
+
+test('unlocated research places remain available in the accessible list without map directions', async ({
+  page,
+}) => {
+  await page.goto('/esplora');
+  await page.getByRole('button', { name: 'Belvedere da censire' }).click();
+
+  await expect(page.getByRole('heading', { name: 'Belvedere da censire' })).toBeVisible();
+  await expect(page.getByText('Non disponibili: luogo non ancora localizzato.')).toBeVisible();
+  await expect(page.getByRole('link', { name: 'Indicazioni stradali' })).toHaveCount(0);
+  await expect(page.getByRole('link', { name: 'Apri su OpenStreetMap' })).toHaveCount(0);
 });
 
 test('explore warns when browser storage blocks favorite persistence', async ({ page }) => {

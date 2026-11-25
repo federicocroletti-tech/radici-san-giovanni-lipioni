@@ -2,6 +2,7 @@ import { LocalizedText } from './localized-text.model';
 
 export type PlaceSourceStatus = 'verified' | 'to-verify' | 'research';
 export type EditorialStatus = 'draft' | 'review' | 'approved' | 'published';
+export type PlaceCoordinateStatus = 'osm-unverified' | 'field-verified';
 
 export interface Place {
   id: string;
@@ -9,6 +10,9 @@ export interface Place {
   category: string;
   sourceStatus?: PlaceSourceStatus;
   editorialStatus?: EditorialStatus;
+  coordinateStatus?: PlaceCoordinateStatus;
+  coordinateSource?: string;
+  coordinateVerifiedAt?: string;
   shortDescription: LocalizedText;
   description: LocalizedText;
   historicalInterest?: LocalizedText;
