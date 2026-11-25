@@ -97,7 +97,11 @@ export class MapComponent implements OnChanges, OnDestroy {
     const selectedPlace = this.places.find((place) => place.id === this.selectedPlaceId);
 
     for (const place of placesWithCoordinates) {
+      const markerName = this.i18n.localize(place.name);
       const marker = this.leaflet.marker([place.latitude, place.longitude], {
+        keyboard: true,
+        title: markerName,
+        alt: markerName,
         icon: this.leaflet.divIcon({
           className: `map-marker ${this.selectedPlaceId === place.id ? 'selected' : ''}`,
           html: '<span></span>',
@@ -106,12 +110,14 @@ export class MapComponent implements OnChanges, OnDestroy {
         }),
       });
 
-      marker.bindTooltip(this.escape(this.i18n.localize(place.name)), {
+      marker.bindTooltip(this.escape(markerName), {
         direction: 'top',
         offset: [0, -28],
       });
       marker.on('click', () => this.placeSelected.emit(place));
       marker.addTo(this.markerLayer);
+      marker.getElement()?.setAttribute('aria-label', markerName);
+      marker.getElement()?.setAttribute('role', 'button');
     }
 
     if (this.userLocation) {
