@@ -100,6 +100,20 @@ test('rejects invalid categories, source status, localized text, and related pla
   ]);
 });
 
+test('requires published places to carry verified content', () => {
+  const result = validatePlaceData(
+    updateFirstPlace({ editorialStatus: 'published', isVerifiedContent: false }),
+    categories,
+    imageAssets,
+    sources,
+    sourceDirectory,
+  );
+
+  assert.deepEqual(result.errors, [
+    'centro-storico: published editorialStatus requires isVerifiedContent to be true.',
+  ]);
+});
+
 test('rejects asset paths that escape the source directory', () => {
   const result = validatePlaceData(
     updateFirstPlace({ image: 'assets/../../outside.svg' }),

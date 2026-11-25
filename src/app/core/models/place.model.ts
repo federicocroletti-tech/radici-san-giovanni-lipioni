@@ -1,12 +1,14 @@
 import { LocalizedText } from './localized-text.model';
 
 export type PlaceSourceStatus = 'verified' | 'to-verify' | 'research';
+export type EditorialStatus = 'draft' | 'review' | 'approved' | 'published';
 
 export interface Place {
   id: string;
   name: LocalizedText;
   category: string;
   sourceStatus?: PlaceSourceStatus;
+  editorialStatus?: EditorialStatus;
   shortDescription: LocalizedText;
   description: LocalizedText;
   historicalInterest?: LocalizedText;

@@ -4,6 +4,7 @@ import { dirname, isAbsolute, relative, resolve, sep } from 'node:path';
 
 const locales = ['it', 'en', 'fr'];
 const sourceStatuses = new Set(['verified', 'to-verify', 'research']);
+const editorialStatuses = new Set(['draft', 'review', 'approved', 'published']);
 const imageTypes = new Set(['placeholder-illustration', 'photograph']);
 const imageStatuses = new Set([
   'rights-unverified',
@@ -269,6 +270,21 @@ export function validatePlaceData(places, categories, imageAssets, sources, sour
 
     if (!sourceStatuses.has(place.sourceStatus)) {
       errors.push(`${label}: sourceStatus must be verified, to-verify, or research.`);
+    }
+
+    if (
+      place.editorialStatus !== undefined &&
+      !editorialStatuses.has(place.editorialStatus)
+    ) {
+      errors.push(
+        `${label}: editorialStatus must be draft, review, approved, or published.`,
+      );
+    }
+
+    if (place.editorialStatus === 'published' && place.isVerifiedContent !== true) {
+      errors.push(
+        `${label}: published editorialStatus requires isVerifiedContent to be true.`,
+      );
     }
 
     if (typeof place.isVerifiedContent !== 'boolean') {
