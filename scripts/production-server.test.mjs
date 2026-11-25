@@ -29,9 +29,13 @@ test('production server renders local routes and rejects untrusted hosts', { tim
   });
 
   for (const [route, heading] of [
+    ['/', 'Radici San Giovanni Lipioni'],
+    ['/itinerari', 'Itinerari per scoprire San Giovanni Lipioni'],
+    ['/racconti', 'Racconti, memoria e radici'],
     ['/esplora', 'Esplora la mappa di San Giovanni Lipioni'],
     ['/cronologia', 'Cronologia di San Giovanni Lipioni'],
     ['/fonti', 'Fonti consultate'],
+    ['/privacy-cookie', 'Privacy e Cookie'],
   ]) {
     const response = await fetch(`http://127.0.0.1:4188${route}`);
     assert.equal(response.status, 200, `${route}: ${await response.clone().text()}`);
