@@ -215,6 +215,8 @@
     "fallback": "Non trovo questa informazione nei contenuti della guida. Puoi chiedermi cosa vedere in centro, informazioni su un luogo o un itinerario. Per orari, servizi e condizioni aggiornate, verifica sempre con le fonti locali.",
     "openRelatedPlace": "Apri luogo collegato sulla mappa",
     "openPlace": "Apri sulla mappa",
+    "citations": "Fonti collegate",
+    "consultedAt": "consultata il",
     "newConversation": "Nuova chat",
     "suggestions": "Domande suggerite",
     "quickPrompts": [

@@ -985,6 +985,31 @@ dd {
   overflow-wrap: anywhere;
 }
 
+.chatbot-citations {
+  margin-top: 0.75rem;
+  border-top: 1px solid var(--color-border);
+  padding-top: 0.65rem;
+  font-size: 0.78rem;
+  overflow-wrap: anywhere;
+}
+
+.chatbot-citations h3 {
+  margin: 0 0 0.4rem;
+  font-size: 0.85rem;
+}
+
+.chatbot-citations ul {
+  display: grid;
+  gap: 0.4rem;
+  margin: 0;
+  padding-left: 1.2rem;
+}
+
+.chatbot-citations p {
+  margin-top: 0.25rem;
+  color: var(--color-muted);
+}
+
 .related-place {
   justify-self: start;
   max-width: 100%;

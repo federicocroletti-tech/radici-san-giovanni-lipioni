@@ -190,6 +190,7 @@ export class ChatbotWidgetComponent {
           response.text,
           response.relatedPlaceId,
           response.relatedPlaces,
+          response.citations,
         ),
       ]);
     } catch {
@@ -226,6 +227,7 @@ export class ChatbotWidgetComponent {
     text: string,
     relatedPlaceId?: string,
     relatedPlaces?: ChatbotMessage['relatedPlaces'],
+    citations?: ChatbotMessage['citations'],
   ): ChatbotMessage {
     return {
       id: crypto.randomUUID(),
@@ -233,6 +235,7 @@ export class ChatbotWidgetComponent {
       text,
       relatedPlaceId,
       relatedPlaces,
+      citations,
       createdAt: new Date().toISOString(),
     };
   }

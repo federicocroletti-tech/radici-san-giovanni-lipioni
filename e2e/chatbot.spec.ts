@@ -85,3 +85,25 @@ test('translated chatbot prompts fit a narrow mobile panel', async ({ page }) =>
     .poll(() => page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth))
     .toBe(true);
 });
+
+test('place answers show registered supporting sources and conflicting claims', async ({ page }) => {
+  await page.goto('/');
+  await page.getByRole('button', { name: 'Rifiuta opzionali' }).click();
+  await page.locator('.chat-fab').click();
+
+  const panel = page.locator('.chat-panel');
+  await panel
+    .getByLabel('Scrivi la tua domanda')
+    .fill('Parlami della Chiesa di Santa Maria delle Grazie');
+  await panel.getByRole('button', { name: 'Invia' }).click();
+
+  const citations = panel.locator('.chatbot-citations');
+  await expect(citations).toBeVisible();
+  await expect(
+    citations.getByRole('link', {
+      name: 'La Chiesa di Santa Maria delle Grazie di San Giovanni Lipioni (CH)',
+    }),
+  ).toHaveAttribute('href', 'https://www.altovastese.it/arte/santa-maria-delle-grazie-san-giovanni-lipioni/');
+  await expect(citations).toContainText('XVI secolo');
+  await expect(citations).toContainText('XVII secolo');
+});

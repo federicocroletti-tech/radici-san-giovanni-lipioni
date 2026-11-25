@@ -2,17 +2,20 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable, inject } from '@angular/core';
 import { firstValueFrom, shareReplay } from 'rxjs';
 import {
+  ChatbotCitation,
   ChatbotKnowledgeBase,
   ChatbotKnowledgeEntry,
   ChatbotResponse,
 } from '../models/chatbot.model';
 import { Itinerary } from '../models/itinerary.model';
 import { Place } from '../models/place.model';
+import { Source } from '../models/source.model';
 import { Story } from '../models/story.model';
 import { LanguageService } from './language.service';
 import { ItinerariesService } from './itineraries.service';
 import { PlacesService } from './places.service';
 import { StoriesService } from './stories.service';
+import { SourcesService } from './sources.service';
 
 interface ScoredMatch<T> {
   item: T;
@@ -26,17 +29,19 @@ export class ChatbotService {
   private readonly placesService = inject(PlacesService);
   private readonly itinerariesService = inject(ItinerariesService);
   private readonly storiesService = inject(StoriesService);
+  private readonly sourcesService = inject(SourcesService);
   private readonly knowledge$ = this.http
     .get<ChatbotKnowledgeBase>('assets/data/chatbot-knowledge.json')
     .pipe(shareReplay(1));
 
   async ask(question: string, contextPlaceId?: string | null): Promise<ChatbotResponse> {
     const normalizedQuestion = this.normalize(question);
-    const [knowledge, places, itineraries, stories] = await Promise.all([
+    const [knowledge, places, itineraries, stories, sources] = await Promise.all([
       firstValueFrom(this.knowledge$),
       firstValueFrom(this.placesService.getPlaces()),
       firstValueFrom(this.itinerariesService.getItineraries()),
       firstValueFrom(this.storiesService.getStories()),
+      firstValueFrom(this.sourcesService.getSources()),
     ]);
 
     const contextualPlace = contextPlaceId
@@ -47,7 +52,7 @@ export class ChatbotService {
       contextualPlace &&
       (this.isContextualQuestion(normalizedQuestion) || normalizedQuestion.length < 4)
     ) {
-      return await this.buildPlaceResponse(contextualPlace, places);
+      return await this.buildPlaceResponse(contextualPlace, places, sources);
     }
 
     if (this.isPracticalInformationQuestion(normalizedQuestion)) {
@@ -59,6 +64,7 @@ export class ChatbotService {
       return this.buildPracticalInformationResponse(
         places,
         mentionedPlace && mentionedPlace.score >= 2 ? mentionedPlace.item.id : undefined,
+        sources,
       );
     }
 
@@ -78,7 +84,7 @@ export class ChatbotService {
     );
 
     if (placeMatch?.score && placeMatch.score >= 4) {
-      return await this.buildPlaceResponse(placeMatch.item, places);
+      return await this.buildPlaceResponse(placeMatch.item, places, sources);
     }
 
     const itineraryMatch = this.bestMatch(
@@ -93,7 +99,7 @@ export class ChatbotService {
     );
 
     if (itineraryMatch?.score && itineraryMatch.score >= 3) {
-      return this.buildItineraryResponse(itineraryMatch.item, places);
+      return this.buildItineraryResponse(itineraryMatch.item, places, sources);
     }
 
     const storyMatch = this.bestMatch(
@@ -107,7 +113,7 @@ export class ChatbotService {
     );
 
     if (storyMatch?.score && storyMatch.score >= 3) {
-      return this.buildStoryResponse(storyMatch.item, places);
+      return this.buildStoryResponse(storyMatch.item, places, sources);
     }
 
     const knowledgeMatch = this.bestMatch(
@@ -117,21 +123,25 @@ export class ChatbotService {
     );
 
     if (knowledgeMatch?.score && knowledgeMatch.score >= 2) {
-      return this.buildKnowledgeResponse(knowledgeMatch.item, places);
+      return this.buildKnowledgeResponse(knowledgeMatch.item, places, sources);
     }
 
     if (this.isItineraryRecommendationQuestion(normalizedQuestion)) {
-      return this.buildItineraryOverview(itineraries, places);
+      return this.buildItineraryOverview(itineraries, places, sources);
     }
 
     if (this.isGeneralVisitQuestion(normalizedQuestion)) {
-      return this.buildVisitRecommendation(itineraries, places);
+      return this.buildVisitRecommendation(itineraries, places, sources);
     }
 
     return { text: this.language.t('chatbot.fallback') };
   }
 
-  private async buildPlaceResponse(place: Place, places: Place[]): Promise<ChatbotResponse> {
+  private async buildPlaceResponse(
+    place: Place,
+    places: Place[],
+    sources: Source[],
+  ): Promise<ChatbotResponse> {
     const name = this.language.localize(place.name);
     const description =
       (await this.getPlaceSheetDescription(place)) || this.language.localize(place.description);
@@ -174,6 +184,7 @@ export class ChatbotService {
       text,
       relatedPlaceId: place.id,
       relatedPlaces: this.getRelatedPlaces(place.relatedPlaceIds, places),
+      citations: this.getCitations([place.id], sources),
     };
   }
 
@@ -198,7 +209,11 @@ export class ChatbotService {
     return match?.[1]?.replace(/\s+/g, ' ').trim() ?? '';
   }
 
-  private buildItineraryResponse(itinerary: Itinerary, places: Place[]): ChatbotResponse {
+  private buildItineraryResponse(
+    itinerary: Itinerary,
+    places: Place[],
+    sources: Source[],
+  ): ChatbotResponse {
     const title = this.language.localize(itinerary.title);
     const description = this.language.localize(itinerary.description);
     const stops = itinerary.placeIds
@@ -216,10 +231,11 @@ export class ChatbotService {
       text,
       relatedPlaceId: itinerary.placeIds[0],
       relatedPlaces: this.getRelatedPlaces(itinerary.placeIds, places),
+      citations: this.getCitations(itinerary.placeIds, sources),
     };
   }
 
-  private buildStoryResponse(story: Story, places: Place[]): ChatbotResponse {
+  private buildStoryResponse(story: Story, places: Place[], sources: Source[]): ChatbotResponse {
     const title = this.language.localize(story.title);
     const excerpt = this.language.localize(story.excerpt);
     const relatedPlace = places.find((place) => story.relatedPlaceIds.includes(place.id));
@@ -234,10 +250,15 @@ export class ChatbotService {
       text,
       relatedPlaceId: relatedPlace?.id,
       relatedPlaces: relatedPlace ? this.getRelatedPlaces([relatedPlace.id], places) : [],
+      citations: this.getCitations(story.relatedPlaceIds, sources),
     };
   }
 
-  private buildKnowledgeResponse(entry: ChatbotKnowledgeEntry, places: Place[]): ChatbotResponse {
+  private buildKnowledgeResponse(
+    entry: ChatbotKnowledgeEntry,
+    places: Place[],
+    sources: Source[],
+  ): ChatbotResponse {
     const answer = this.language.localize(entry.answer);
     const text = this.isItalian()
       ? `${answer} Se vuoi, posso anche indicarti un luogo sulla mappa o suggerirti un itinerario breve.`
@@ -251,10 +272,17 @@ export class ChatbotService {
       relatedPlaces: entry.relatedPlaceId
         ? this.getRelatedPlaces([entry.relatedPlaceId], places)
         : [],
+      citations: entry.relatedPlaceId
+        ? this.getCitations([entry.relatedPlaceId], sources)
+        : [],
     };
   }
 
-  private buildItineraryOverview(itineraries: Itinerary[], places: Place[]): ChatbotResponse {
+  private buildItineraryOverview(
+    itineraries: Itinerary[],
+    places: Place[],
+    sources: Source[],
+  ): ChatbotResponse {
     const recommended = itineraries.find((itinerary) => itinerary.id === 'cuore-del-borgo');
     if (!recommended) {
       return { text: this.language.t('chatbot.fallback') };
@@ -278,13 +306,18 @@ export class ChatbotService {
     return {
       text,
       relatedPlaces: this.getRelatedPlaces(recommended.placeIds, places),
+      citations: this.getCitations(recommended.placeIds, sources),
     };
   }
 
-  private buildVisitRecommendation(itineraries: Itinerary[], places: Place[]): ChatbotResponse {
+  private buildVisitRecommendation(
+    itineraries: Itinerary[],
+    places: Place[],
+    sources: Source[],
+  ): ChatbotResponse {
     const itinerary = itineraries.find((candidate) => candidate.id === 'cuore-del-borgo');
     if (!itinerary) {
-      return this.buildItineraryOverview(itineraries, places);
+      return this.buildItineraryOverview(itineraries, places, sources);
     }
 
     const stops = this.getRelatedPlaces(itinerary.placeIds, places);
@@ -295,12 +328,17 @@ export class ChatbotService {
         ? `Pour commencer, je visiterais le centre historique : ${stopNames.join(', ')}. Le parcours « ${this.language.localize(itinerary.title)} » est estimé à ${this.language.localize(itinerary.duration)} dans la fiche ; vérifie sur place le temps, les pentes et l’accessibilité.`
         : `To get started, explore the historic centre: ${stopNames.join(', ')}. The “${this.language.localize(itinerary.title)}” route is estimated at ${this.language.localize(itinerary.duration)} in the guide; check actual timing, slopes and accessibility on site.`;
 
-    return { text, relatedPlaces: stops };
+    return {
+      text,
+      relatedPlaces: stops,
+      citations: this.getCitations(itinerary.placeIds, sources),
+    };
   }
 
   private buildPracticalInformationResponse(
     places: Place[],
     mentionedPlaceId?: string,
+    sources: Source[] = [],
   ): ChatbotResponse {
     const text = this.isItalian()
       ? 'Le schede disponibili non riportano informazioni aggiornate su orari, parcheggi, trasporti, ristoranti o servizi. Per evitare indicazioni inesatte, verifica queste informazioni con il Comune o con le strutture locali prima della visita. Posso invece aiutarti a esplorare i luoghi e i percorsi presenti nella guida.'
@@ -311,6 +349,7 @@ export class ChatbotService {
     return {
       text,
       relatedPlaces: this.getRelatedPlaces([mentionedPlaceId ?? 'centro-storico'], places),
+      citations: this.getCitations([mentionedPlaceId ?? 'centro-storico'], sources),
     };
   }
 
@@ -329,6 +368,34 @@ export class ChatbotService {
       .map((placeId) => places.find((place) => place.id === placeId))
       .filter((place): place is Place => Boolean(place))
       .map((place) => ({ id: place.id, name: this.language.localize(place.name) }));
+  }
+
+  private getCitations(placeIds: string[], sources: Source[]): ChatbotCitation[] {
+    const requestedPlaceIds = new Set(placeIds);
+    return sources.flatMap((source) => {
+      const claims = [
+        ...new Set(
+          source.supports
+            .filter((support) => requestedPlaceIds.has(support.placeId))
+            .flatMap((support) => support.claims)
+            .filter((claim) => claim.trim().length > 0),
+        ),
+      ];
+
+      return claims.length
+        ? [
+            {
+              id: source.id,
+              title: source.title,
+              creator: source.creator,
+              citation: source.citation,
+              url: source.url,
+              consultedAt: source.consultedAt,
+              claims,
+            },
+          ]
+        : [];
+    });
   }
 
   private bestMatch<T>(

@@ -215,6 +215,8 @@
     "fallback": "I can’t find that information in this guide. Ask me what to see in the centre, about a place, or for an itinerary. For opening hours, services and current conditions, check with local sources.",
     "openRelatedPlace": "Open linked place on the map",
     "openPlace": "Open on map",
+    "citations": "Related sources",
+    "consultedAt": "consulted on",
     "newConversation": "New chat",
     "suggestions": "Suggested questions",
     "quickPrompts": [

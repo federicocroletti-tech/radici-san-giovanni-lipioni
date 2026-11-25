@@ -7,6 +7,7 @@ vi.mock('./language.service', () => ({ LanguageService: class LanguageService {}
 vi.mock('./itineraries.service', () => ({ ItinerariesService: class ItinerariesService {} }));
 vi.mock('./places.service', () => ({ PlacesService: class PlacesService {} }));
 vi.mock('./stories.service', () => ({ StoriesService: class StoriesService {} }));
+vi.mock('./sources.service', () => ({ SourcesService: class SourcesService {} }));
 
 import { HttpClient } from '@angular/common/http';
 import { Injector, runInInjectionContext } from '@angular/core';
@@ -14,10 +15,12 @@ import { of } from 'rxjs';
 import { ChatbotKnowledgeBase } from '../models/chatbot.model';
 import { Itinerary } from '../models/itinerary.model';
 import { Place } from '../models/place.model';
+import { Source } from '../models/source.model';
 import { LanguageService } from './language.service';
 import { ItinerariesService } from './itineraries.service';
 import { PlacesService } from './places.service';
 import { StoriesService } from './stories.service';
+import { SourcesService } from './sources.service';
 import { ChatbotService } from './chatbot.service';
 
 const places: Place[] = [
@@ -81,6 +84,31 @@ const itineraries: Itinerary[] = [
   },
 ];
 
+const sources: Source[] = [
+  {
+    id: 'source-centro',
+    title: 'Fonte documentale sul centro',
+    creator: 'Archivio locale',
+    publisher: null,
+    citation: 'Scheda relativa al centro storico.',
+    url: 'https://example.test/centro',
+    consultedAt: '2026-11-25',
+    supports: [
+      { placeId: 'centro-storico', claims: ['Il centro occupa il crinale del borgo.'] },
+    ],
+  },
+  {
+    id: 'source-fountain',
+    title: 'Fonte sulla fontana',
+    creator: 'Archivio locale',
+    publisher: null,
+    citation: 'Scheda relativa alla fontana.',
+    url: 'https://example.test/fontana',
+    consultedAt: '2026-11-25',
+    supports: [{ placeId: 'fontana-vecchia', claims: ['La fontana è un luogo storico.'] }],
+  },
+];
+
 describe('ChatbotService', () => {
   let service: ChatbotService;
 
@@ -104,6 +132,7 @@ describe('ChatbotService', () => {
         { provide: PlacesService, useValue: { getPlaces: () => of(places) } },
         { provide: ItinerariesService, useValue: { getItineraries: () => of(itineraries) } },
         { provide: StoriesService, useValue: { getStories: () => of([]) } },
+        { provide: SourcesService, useValue: { getSources: () => of(sources) } },
       ],
     });
     service = runInInjectionContext(injector, () => new ChatbotService());
@@ -127,6 +156,18 @@ describe('ChatbotService', () => {
       id: 'centro-storico',
       name: 'Centro storico',
     });
+  });
+
+  it('returns only registered source claims supporting the matched place', async () => {
+    const response = await service.ask('Parlami del centro storico');
+
+    expect(response.citations).toEqual([
+      expect.objectContaining({
+        id: 'source-centro',
+        title: 'Fonte documentale sul centro',
+        claims: ['Il centro occupa il crinale del borgo.'],
+      }),
+    ]);
   });
 
   it('does not invent practical details such as opening hours', async () => {
