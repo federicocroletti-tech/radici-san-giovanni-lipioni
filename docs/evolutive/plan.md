@@ -2,7 +2,7 @@
 
 **Data:** 2026-11-26  
 **Specifica:** richieste raccolte in chat il 2026-11-26  
-**Stato:** Fase 1 completata; Fase 2 richiede una decisione sullo stack editoriale
+**Stato:** Fase 1 completata; fasi backend/CMS e RAG differite per scelta utente; offline/export in corso
 
 ## Sintesi
 
@@ -52,9 +52,11 @@ Estendere la guida Angular/Capacitor con ascolto di racconti, itinerari e luoghi
 - [x] T004 [US1] [Plan:1.3,1.4] Aggiungere il pulsante Audio-guida alla scheda luogo e fermare l'audio al cambio pagina in `src/app/shared/components/place-detail-drawer/place-detail-drawer.component.ts` e `src/app/pages/`
 - [x] T005 [US1] [Plan:1.5] Verificare lint, test, build e flussi browser dei controlli audio
 
-### Fase 2 — Backend, CMS e contenuti [P1]
+### Fase 2 — Backend, CMS e contenuti [differita]
 
 **Requisiti:** REQ-005, REQ-006.
+
+**Decisione utente (2026-11-27):** mantenere il progetto statico e proseguire con audio, offline ed esportazioni. Non introdurre ora API, database, CMS, account amministrativi o storage remoto. Riesaminare questa fase solo su richiesta esplicita.
 
 2.1 Decidere CMS, hosting API/database e storage media, con costi, backup, ruoli e requisiti privacy espliciti.  
 2.2 Definire API pubblica e modello per luoghi, itinerari, racconti, cronologia, fonti, traduzioni e media.  
@@ -63,8 +65,8 @@ Estendere la guida Angular/Capacitor con ascolto di racconti, itinerari e luoghi
 
 **Criteri di completamento:** un editor può creare e revisionare contenuti; bozze non accessibili pubblicamente/offline; rollback disponibile; verifica editoriale distinta dalla verifica sul campo.
 
-**Task**
-- [ ] T006 [US2] [Plan:2.1] Selezionare CMS, API, database e object storage documentando costi e privacy prima di introdurre dipendenze infrastrutturali
+**Task differiti**
+- [ ] T006 [US2] [Plan:2.1] Selezionare CMS, API, database e object storage solo dopo riapertura della fase
 - [ ] T007 [US2] [Plan:2.2] Definire schema e API versionata per contenuti, fonti, localizzazioni e asset
 - [ ] T008 [US2] [Plan:2.3] Implementare ruoli, stato bozza/revisione/pubblicato, audit e rollback
 - [ ] T009 [US2] [Plan:2.4] Migrare gradualmente i JSON e collegare il frontend all'API pubblica
@@ -89,9 +91,11 @@ Estendere la guida Angular/Capacitor con ascolto di racconti, itinerari e luoghi
 - [ ] T014 [US3] [Plan:3.4] Aggiungere esportazione PNG di schede e itinerari
 - [ ] T015 [US3] [Plan:3.5] Testare aggiornamento offline e download/esportazioni su viewport mobile e desktop
 
-### Fase 4 — Chatbot basato su fonti approvate [P2]
+### Fase 4 — Chatbot basato su fonti approvate [differita]
 
 **Requisiti:** REQ-008, REQ-009, REQ-010, REQ-011.
+
+**Dipendenza:** la scelta utente di mantenere il progetto statico rinvia anche RAG, moderazione lato server e registrazione domande. Il supporto vocale del chatbot resta fuori dall'attuale tranche.
 
 4.1 Indicizzare solo fonti e contenuti approvati, rispettando lingua, licenza e versioni.  
 4.2 Generare risposte con citazioni verificabili; dichiarare l'assenza di evidenza sufficiente.  
@@ -102,7 +106,7 @@ Estendere la guida Angular/Capacitor con ascolto di racconti, itinerari e luoghi
 
 **Criteri di completamento:** le risposte hanno fonti consultabili; contenuti in bozza o non approvati non sono recuperabili; risposte senza evidenza sufficiente si astengono; policy e test privacy documentati.
 
-**Task**
+**Task differiti**
 - [ ] T016 [US4] [Plan:4.1] Costruire pipeline d'indicizzazione limitata a contenuti approvati e versionati
 - [ ] T017 [US4] [Plan:4.2,4.3] Integrare RAG con citazioni verificabili, criteri di astensione e valutazione della confidenza
 - [ ] T018 [US4] [Plan:4.4] Aggiungere moderazione e policy di logging/retention dopo valutazione privacy
@@ -147,7 +151,7 @@ backend/                                                 # tecnologia da sceglie
 
 ## Decisioni rimandate
 
-- CMS, framework backend, hosting e database: da confrontare nella Fase 2; nessuna infrastruttura viene scelta implicitamente.
+- CMS, framework backend, hosting e database: differiti per decisione utente del 2026-11-27.
 - Voce audio definitiva: per la Fase 1 si usa la voce del dispositivo; registrazioni/TTS revisionato e download audio saranno scelti insieme alla gestione media.
 - Mappe offline: escluse finché non sono verificati fornitore, licenza e limiti di caching.
-- Logging chatbot: nessuna conversazione viene registrata prima di una valutazione privacy e di una policy approvata.
+- RAG, moderazione e logging chatbot: differiti; nessuna conversazione viene registrata.
