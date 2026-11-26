@@ -10,6 +10,14 @@
   "language": {
     "label": "Lingua"
   },
+  "audio": {
+    "listen": "Ascolta",
+    "listenGuide": "Ascolta audio-guida",
+    "stop": "Interrompi audio",
+    "unavailable": "La lettura audio non è supportata da questo browser o dispositivo.",
+    "failed": "Non è stato possibile avviare o completare la lettura audio.",
+    "empty": "Non ci sono contenuti disponibili da leggere."
+  },
   "sourceStatus": {
     "verified": "Fonti verificate",
     "to-verify": "Informazione da verificare",

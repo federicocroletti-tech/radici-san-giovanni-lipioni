@@ -10,6 +10,14 @@
   "language": {
     "label": "Language"
   },
+  "audio": {
+    "listen": "Listen",
+    "listenGuide": "Listen to audio guide",
+    "stop": "Stop audio",
+    "unavailable": "Audio playback is not supported by this browser or device.",
+    "failed": "Audio playback could not be started or completed.",
+    "empty": "There is no content available to read."
+  },
   "sourceStatus": {
     "verified": "Verified sources",
     "to-verify": "Information to verify",

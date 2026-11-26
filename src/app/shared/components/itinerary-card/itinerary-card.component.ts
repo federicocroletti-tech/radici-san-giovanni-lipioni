@@ -1,6 +1,7 @@
 import { Component, EventEmitter, Input, Output, inject } from '@angular/core';
 import { getItineraryProgress, Itinerary } from '../../../core/models/itinerary.model';
 import { Place } from '../../../core/models/place.model';
+import { AudioGuideService } from '../../../core/services/audio-guide.service';
 import { LanguageService } from '../../../core/services/language.service';
 import { VisitorPlacesService } from '../../../core/services/visitor-places.service';
 
@@ -90,6 +91,18 @@ import { VisitorPlacesService } from '../../../core/services/visitor-places.serv
         }
       </ul>
       <div class="actions-row">
+        <button
+          type="button"
+          class="button secondary"
+          [attr.aria-pressed]="audioGuide.activeContentId() === audioContentId"
+          (click)="toggleAudio()"
+        >
+          {{
+            i18n.t(
+              audioGuide.activeContentId() === audioContentId ? 'audio.stop' : 'audio.listen'
+            )
+          }}
+        </button>
         <button type="button" class="button" (click)="openMap.emit(itinerary)">
           {{ i18n.t('itineraries.openMap') }}
         </button>
@@ -97,16 +110,35 @@ import { VisitorPlacesService } from '../../../core/services/visitor-places.serv
           {{ i18n.t('itineraries.ask') }}
         </button>
       </div>
+      @if (audioGuide.errorContentId() === audioContentId && audioGuide.error()) {
+        <p class="muted" role="status">{{ i18n.t('audio.' + audioGuide.error()) }}</p>
+      }
     </article>
   `,
 })
 export class ItineraryCardComponent {
   readonly i18n = inject(LanguageService);
+  readonly audioGuide = inject(AudioGuideService);
   readonly visitorPlaces = inject(VisitorPlacesService);
   @Input({ required: true }) itinerary!: Itinerary;
   @Input() places: Place[] = [];
   @Output() openMap = new EventEmitter<Itinerary>();
   @Output() ask = new EventEmitter<Itinerary>();
+
+  get audioContentId(): string {
+    return `itinerary:${this.itinerary.id}`;
+  }
+
+  toggleAudio(): void {
+    const text = [
+      this.i18n.localize(this.itinerary.title),
+      this.i18n.localize(this.itinerary.description),
+      ...this.itineraryPlaces.map((place) => this.i18n.localize(place.name)),
+    ]
+      .filter(Boolean)
+      .join('. ');
+    this.audioGuide.toggle(this.audioContentId, text, this.i18n.currentLanguage());
+  }
 
   get itineraryPlaces(): Place[] {
     return this.itinerary.placeIds

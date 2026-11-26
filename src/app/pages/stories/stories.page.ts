@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { Place } from '../../core/models/place.model';
 import { Story } from '../../core/models/story.model';
+import { AudioGuideService } from '../../core/services/audio-guide.service';
 import { LanguageService } from '../../core/services/language.service';
 import { PlacesService } from '../../core/services/places.service';
 import { SeoService } from '../../core/services/seo.service';
@@ -57,6 +58,7 @@ export class StoriesPage {
   private readonly placesService = inject(PlacesService);
   private readonly router = inject(Router);
   private readonly destroyRef = inject(DestroyRef);
+  private readonly audioGuide = inject(AudioGuideService);
 
   readonly themes = computed(() => Array.from(new Set(this.stories().map((story) => story.theme))));
   readonly filteredStories = computed(() => {
@@ -67,6 +69,7 @@ export class StoriesPage {
   });
 
   constructor() {
+    this.destroyRef.onDestroy(() => this.audioGuide.stop());
     inject(SeoService).usePage('stories');
     this.loadData();
   }

@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { Itinerary } from '../../core/models/itinerary.model';
 import { Place } from '../../core/models/place.model';
+import { AudioGuideService } from '../../core/services/audio-guide.service';
 import { ChatbotUiService } from '../../core/services/chatbot-ui.service';
 import { ItinerariesService } from '../../core/services/itineraries.service';
 import { LanguageService } from '../../core/services/language.service';
@@ -56,8 +57,10 @@ export class ItinerariesPage {
   private readonly router = inject(Router);
   private readonly chatbotUi = inject(ChatbotUiService);
   private readonly destroyRef = inject(DestroyRef);
+  private readonly audioGuide = inject(AudioGuideService);
 
   constructor() {
+    this.destroyRef.onDestroy(() => this.audioGuide.stop());
     inject(SeoService).usePage('itineraries');
     this.loadData();
   }

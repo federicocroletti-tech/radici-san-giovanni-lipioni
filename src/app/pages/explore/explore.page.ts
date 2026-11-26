@@ -2,6 +2,7 @@ import { Component, DestroyRef, computed, inject, signal } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { Place, PlaceCategory } from '../../core/models/place.model';
+import { AudioGuideService } from '../../core/services/audio-guide.service';
 import { LanguageService } from '../../core/services/language.service';
 import { PlacesService } from '../../core/services/places.service';
 import { SeoService } from '../../core/services/seo.service';
@@ -184,6 +185,7 @@ export class ExplorePage {
   private readonly router = inject(Router);
   private readonly route = inject(ActivatedRoute);
   private readonly destroyRef = inject(DestroyRef);
+  private readonly audioGuide = inject(AudioGuideService);
 
   readonly filteredPlaces = computed(() => {
     const query = this.normalize(this.search());
@@ -227,6 +229,7 @@ export class ExplorePage {
   });
 
   constructor() {
+    this.destroyRef.onDestroy(() => this.audioGuide.stop());
     inject(SeoService).usePage('explore');
     this.loadData();
     this.route.queryParamMap.pipe(takeUntilDestroyed(this.destroyRef)).subscribe((params) => {
@@ -252,6 +255,10 @@ export class ExplorePage {
   }
 
   selectPlace(place: Place): void {
+    const activeAudioId = this.audioGuide.activeContentId();
+    if (activeAudioId?.startsWith('place:') && activeAudioId !== `place:${place.id}`) {
+      this.audioGuide.stop();
+    }
     this.selectedPlaceId.set(place.id);
     this.mobileView.set('map');
     this.syncUrl(false);

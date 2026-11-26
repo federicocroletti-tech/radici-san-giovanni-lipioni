@@ -1,5 +1,6 @@
 import { DOCUMENT } from '@angular/common';
 import { Component, EventEmitter, Input, Output, inject, signal } from '@angular/core';
+import { AudioGuideService } from '../../../core/services/audio-guide.service';
 import { ChatbotUiService } from '../../../core/services/chatbot-ui.service';
 import { hasPlaceCoordinates, Place } from '../../../core/models/place.model';
 import { LanguageService } from '../../../core/services/language.service';
@@ -142,10 +143,27 @@ import { VisitorPlacesService } from '../../../core/services/visitor-places.serv
           <button type="button" class="button secondary" (click)="share(place)">
             {{ i18n.t('actions.share') }}
           </button>
+          <button
+            type="button"
+            class="button secondary"
+            [attr.aria-pressed]="audioGuide.activeContentId() === audioContentId"
+            (click)="toggleAudioGuide(place)"
+          >
+            {{
+              i18n.t(
+                audioGuide.activeContentId() === audioContentId
+                  ? 'audio.stop'
+                  : 'audio.listenGuide'
+              )
+            }}
+          </button>
           <button type="button" class="button secondary" (click)="askAbout(place.id)">
             {{ i18n.t('explore.askAboutPlace') }}
           </button>
         </div>
+        @if (audioGuide.errorContentId() === audioContentId && audioGuide.error()) {
+          <p class="muted" role="status">{{ i18n.t('audio.' + audioGuide.error()) }}</p>
+        }
         @if (shareStatus()) {
           <p class="muted" role="status">{{ i18n.t(shareStatus()) }}</p>
         }
@@ -161,6 +179,7 @@ import { VisitorPlacesService } from '../../../core/services/visitor-places.serv
 })
 export class PlaceDetailDrawerComponent {
   readonly i18n = inject(LanguageService);
+  readonly audioGuide = inject(AudioGuideService);
   readonly visitorPlaces = inject(VisitorPlacesService);
   private readonly chatbotUi = inject(ChatbotUiService);
   private readonly document = inject(DOCUMENT);
@@ -169,6 +188,17 @@ export class PlaceDetailDrawerComponent {
   @Input() relatedPlaces: Place[] = [];
   @Output() closed = new EventEmitter<void>();
   @Output() placeSelected = new EventEmitter<Place>();
+
+  get audioContentId(): string {
+    return this.place ? `place:${this.place.id}` : '';
+  }
+
+  toggleAudioGuide(place: Place): void {
+    const text = [this.i18n.localize(place.name), this.i18n.localize(place.description)]
+      .filter(Boolean)
+      .join('. ');
+    this.audioGuide.toggle(`place:${place.id}`, text, this.i18n.currentLanguage());
+  }
 
   mapsUrl(place: Place): string | null {
     if (!hasPlaceCoordinates(place)) {

@@ -1,0 +1,151 @@
+metadata:
+  generated: "2026-11-26"
+  source_spec: "Richieste utente in chat del 2026-11-26"
+  target_plan: "docs/evolutive/plan.md"
+
+summary:
+  total_requirements: 11
+  covered_requirements: 11
+  missing_requirements: 0
+  coverage_percentage: 100.0
+
+requirements:
+  - req_id: "REQ-001"
+    req_description: "Ascolto di storie e itinerari"
+    priority: "P1"
+    plan_mapping:
+      phase: "Phase-1"
+      phase_name: "Ascolto MVP"
+      items:
+        - item_id: "1.1"
+          description: "Servizio di sintesi vocale condiviso"
+        - item_id: "1.2"
+          description: "Controlli audio per storie e itinerari"
+    notes: "La prima iterazione usa la Web Speech API del dispositivo."
+  - req_id: "REQ-002"
+    req_description: "Pulsante audio-guida per luogo selezionato sulla mappa"
+    priority: "P1"
+    plan_mapping:
+      phase: "Phase-1"
+      phase_name: "Ascolto MVP"
+      items:
+        - item_id: "1.1"
+          description: "Servizio di sintesi vocale condiviso"
+        - item_id: "1.3"
+          description: "Controllo audio-guida nella scheda luogo"
+    notes: ""
+  - req_id: "REQ-003"
+    req_description: "Download offline di testi e immagini"
+    priority: "P2"
+    plan_mapping:
+      phase: "Phase-3"
+      phase_name: "Offline e esportazione"
+      items:
+        - item_id: "3.1"
+          description: "Pacchetti per itinerario o tema"
+        - item_id: "3.2"
+          description: "Gestione versioni e spazio"
+    notes: "Tile cartografiche escluse fino alla verifica della licenza."
+  - req_id: "REQ-004"
+    req_description: "Esportazione in PDF e PNG"
+    priority: "P2"
+    plan_mapping:
+      phase: "Phase-3"
+      phase_name: "Offline e esportazione"
+      items:
+        - item_id: "3.3"
+          description: "PDF accessibili con fonti e crediti"
+        - item_id: "3.4"
+          description: "PNG di schede e itinerari"
+    notes: ""
+  - req_id: "REQ-005"
+    req_description: "Backend per aggiornamenti amministrativi"
+    priority: "P1"
+    plan_mapping:
+      phase: "Phase-2"
+      phase_name: "Backend, CMS e contenuti"
+      items:
+        - item_id: "2.1"
+          description: "Decisione hosting e componenti"
+        - item_id: "2.2"
+          description: "API e modello dei contenuti"
+        - item_id: "2.3"
+          description: "Area amministrativa e workflow"
+    notes: "Stack da decidere prima di implementare l'infrastruttura."
+  - req_id: "REQ-006"
+    req_description: "CMS per luoghi, immagini, racconti e cronologia; separazione contenuti/media"
+    priority: "P1"
+    plan_mapping:
+      phase: "Phase-2"
+      phase_name: "Backend, CMS e contenuti"
+      items:
+        - item_id: "2.1"
+          description: "Decisione CMS e storage"
+        - item_id: "2.2"
+          description: "Modello e API"
+        - item_id: "2.4"
+          description: "Migrazione e disaccoppiamento media"
+    notes: ""
+  - req_id: "REQ-007"
+    req_description: "Workflow di approvazione e stato di pubblicazione/verifica"
+    priority: "P1"
+    plan_mapping:
+      phase: "Phase-2"
+      phase_name: "Backend, CMS e contenuti"
+      items:
+        - item_id: "2.2"
+          description: "Modello stati e localizzazioni"
+        - item_id: "2.3"
+          description: "Ruoli, revisione, audit e rollback"
+    notes: "Stato editoriale distinto dalla verifica sul campo."
+  - req_id: "REQ-008"
+    req_description: "RAG su fonti approvate e citazioni più ricche"
+    priority: "P2"
+    plan_mapping:
+      phase: "Phase-4"
+      phase_name: "Chatbot basato su fonti approvate"
+      items:
+        - item_id: "4.1"
+          description: "Indicizzazione approvata e versionata"
+        - item_id: "4.2"
+          description: "Risposte con citazioni verificabili"
+    notes: ""
+  - req_id: "REQ-009"
+    req_description: "Valutazione della confidenza del chatbot"
+    priority: "P2"
+    plan_mapping:
+      phase: "Phase-4"
+      phase_name: "Chatbot basato su fonti approvate"
+      items:
+        - item_id: "4.3"
+          description: "Confidenza e astensione"
+    notes: "Il punteggio guida le decisioni interne e non viene presentato come garanzia."
+  - req_id: "REQ-010"
+    req_description: "Moderazione e registrazione delle domande"
+    priority: "P2"
+    plan_mapping:
+      phase: "Phase-4"
+      phase_name: "Chatbot basato su fonti approvate"
+      items:
+        - item_id: "4.4"
+          description: "Moderazione, minimizzazione e retention"
+    notes: "La registrazione è subordinata alla valutazione privacy."
+  - req_id: "REQ-011"
+    req_description: "Supporto vocale del chatbot"
+    priority: "P2"
+    plan_mapping:
+      phase: "Phase-4"
+      phase_name: "Chatbot basato su fonti approvate"
+      items:
+        - item_id: "4.5"
+          description: "Input e output vocali con consenso"
+    notes: ""
+
+missing_requirements: []
+orphan_plan_items: []
+
+validation:
+  passed: true
+  errors: []
+  warnings:
+    - "Le scelte di backend/CMS, hosting e database restano un gate della Fase 2."
