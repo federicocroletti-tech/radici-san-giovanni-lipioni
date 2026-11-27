@@ -28,6 +28,10 @@
     "failed": "Download non riuscito. Controlla la connessione e lo spazio disponibile.",
     "invalid": "Questo contenuto include un'immagine non scaricabile."
   },
+  "exports": {
+    "pdf": "Esporta PDF",
+    "failed": "Non è stato possibile creare il file. Riprova."
+  },
   "sourceStatus": {
     "verified": "Fonti verificate",
     "to-verify": "Informazione da verificare",

@@ -78,7 +78,7 @@ Estendere la guida Angular/Capacitor con ascolto di racconti, itinerari e luoghi
 
 3.1 Aggiungere pacchetti scaricabili per itinerario o tema: testi, immagini e, quando presenti, audio autorizzati.  
 3.2 Versionare i pacchetti, mostrare spazio richiesto, lingua e data di aggiornamento; consentire aggiornamento e rimozione.  
-3.3 Generare PDF stampabili e accessibili di racconti/itinerari, con fonti e crediti.  
+3.3 Generare PDF testuali e stampabili di racconti, itinerari e luoghi, con fonti e crediti.
 3.4 Esportare PNG di schede/itinerari senza tagliare contenuti o omettere attribuzioni.  
 3.5 Verificare uso offline, gestione spazio e rendering delle esportazioni sui dispositivi supportati.
 
@@ -87,7 +87,7 @@ Estendere la guida Angular/Capacitor con ascolto di racconti, itinerari e luoghi
 **Task**
 - [x] T011 [US3] [Plan:3.1,3.2] Definire manifesto versionato e servizio di download/rimozione dei pacchetti offline
 - [x] T012 [US3] [Plan:3.1,3.2] Aggiungere UI di selezione, progresso, errori e spazio dei pacchetti
-- [ ] T013 [US3] [Plan:3.3] Aggiungere esportazione PDF accessibile di itinerari e racconti
+- [x] T013 [US3] [Plan:3.3] Aggiungere esportazione PDF testuale di racconti, itinerari e luoghi
 - [ ] T014 [US3] [Plan:3.4] Aggiungere esportazione PNG di schede e itinerari
 - [ ] T015 [US3] [Plan:3.5] Testare aggiornamento offline e download/esportazioni su viewport mobile e desktop
 

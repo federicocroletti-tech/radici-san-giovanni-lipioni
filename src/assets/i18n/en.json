@@ -28,6 +28,10 @@
     "failed": "Download failed. Check your connection and available storage.",
     "invalid": "This content includes an image that cannot be downloaded."
   },
+  "exports": {
+    "pdf": "Export PDF",
+    "failed": "The file could not be created. Please try again."
+  },
   "sourceStatus": {
     "verified": "Verified sources",
     "to-verify": "Information to verify",

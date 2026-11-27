@@ -1,7 +1,11 @@
-import { Component, EventEmitter, Input, Output, inject } from '@angular/core';
+import { Component, EventEmitter, Input, Output, inject, signal } from '@angular/core';
 import { getItineraryProgress, Itinerary } from '../../../core/models/itinerary.model';
 import { Place } from '../../../core/models/place.model';
 import { AudioGuideService } from '../../../core/services/audio-guide.service';
+import {
+  ContentExportService,
+  type PdfExportSection,
+} from '../../../core/services/content-export.service';
 import { LanguageService } from '../../../core/services/language.service';
 import {
   formatOfflinePackageDate,
@@ -66,14 +70,14 @@ import { VisitorPlacesService } from '../../../core/services/visitor-places.serv
           </div>
         }
       </dl>
-      <p class="itinerary-progress" aria-live="polite">{{ progressLabel }}</p>
+      <p class="itinerary-progress export-ignore" aria-live="polite">{{ progressLabel }}</p>
       <ul class="itinerary-stops">
         @for (place of itineraryPlaces; track place.id) {
           <li>
             <span>{{ i18n.localize(place.name) }}</span>
             <button
               type="button"
-              class="text-button"
+              class="text-button export-ignore"
               [attr.aria-pressed]="visitorPlaces.isVisited(place.id)"
               [attr.aria-label]="
                 i18n.t(
@@ -95,7 +99,7 @@ import { VisitorPlacesService } from '../../../core/services/visitor-places.serv
           </li>
         }
       </ul>
-      <div class="actions-row">
+      <div class="actions-row export-ignore">
         <button
           type="button"
           class="button secondary"
@@ -113,6 +117,9 @@ import { VisitorPlacesService } from '../../../core/services/visitor-places.serv
         </button>
         <button type="button" class="button secondary" (click)="ask.emit(itinerary)">
           {{ i18n.t('itineraries.ask') }}
+        </button>
+        <button type="button" class="button secondary" (click)="exportPdf()">
+          {{ i18n.t('exports.pdf') }}
         </button>
         <button
           type="button"
@@ -138,7 +145,7 @@ import { VisitorPlacesService } from '../../../core/services/visitor-places.serv
         }
       </div>
       @if (savedOfflinePackage; as offlinePackage) {
-        <p class="muted" role="status">
+        <p class="muted export-ignore" role="status">
           {{
             i18n
               .t('offline.savedInfo')
@@ -148,13 +155,16 @@ import { VisitorPlacesService } from '../../../core/services/visitor-places.serv
         </p>
       }
       @if (offlineContent.activePackageId() === offlinePackageId) {
-        <p class="muted" role="status">{{ offlineContent.progress() }}%</p>
+        <p class="muted export-ignore" role="status">{{ offlineContent.progress() }}%</p>
       }
       @if (offlineContent.errorPackageId() === offlinePackageId && offlineContent.error()) {
-        <p class="muted" role="status">{{ i18n.t('offline.' + offlineContent.error()) }}</p>
+        <p class="muted export-ignore" role="status">{{ i18n.t('offline.' + offlineContent.error()) }}</p>
       }
       @if (audioGuide.errorContentId() === audioContentId && audioGuide.error()) {
-        <p class="muted" role="status">{{ i18n.t('audio.' + audioGuide.error()) }}</p>
+        <p class="muted export-ignore" role="status">{{ i18n.t('audio.' + audioGuide.error()) }}</p>
+      }
+      @if (exportError()) {
+        <p class="muted export-ignore" role="status">{{ i18n.t('exports.failed') }}</p>
       }
     </article>
   `,
@@ -163,6 +173,8 @@ export class ItineraryCardComponent {
   readonly i18n = inject(LanguageService);
   readonly audioGuide = inject(AudioGuideService);
   readonly offlineContent = inject(OfflineContentService);
+  readonly exportError = signal(false);
+  private readonly contentExport = inject(ContentExportService);
   readonly visitorPlaces = inject(VisitorPlacesService);
   @Input({ required: true }) itinerary!: Itinerary;
   @Input() places: Place[] = [];
@@ -198,6 +210,73 @@ export class ItineraryCardComponent {
 
   async removeOfflinePackage(): Promise<void> {
     await this.offlineContent.remove(this.offlinePackageId);
+  }
+
+  exportPdf(): void {
+    try {
+      const sections: PdfExportSection[] = [
+        {
+          text: this.i18n.t(
+            this.itinerary.verificationStatus === 'field-verified'
+              ? 'itineraries.fieldVerified'
+              : 'itineraries.unverified',
+          ),
+        },
+        { text: this.i18n.localize(this.itinerary.shortDescription) },
+        { text: this.i18n.localize(this.itinerary.description) },
+        {
+          heading: this.i18n.t('itineraries.duration'),
+          text: this.itinerary.fieldVerification
+            ? `${this.itinerary.fieldVerification.durationMinutes} ${this.i18n.t('itineraries.minutes')}`
+            : this.i18n.localize(this.itinerary.duration),
+        },
+        {
+          heading: this.i18n.t('itineraries.difficulty'),
+          text: this.i18n.localize(
+            this.itinerary.fieldVerification?.difficulty ?? this.itinerary.difficulty,
+          ),
+        },
+        {
+          heading: this.i18n.t('itineraries.places'),
+          text: this.itineraryPlaces
+            .map((place) => {
+              const details = [
+                this.i18n.localize(place.name),
+                this.i18n.localize(place.description),
+                this.i18n.localize(place.sourceNotes),
+                this.i18n.localize(place.imageCredit),
+              ].filter(Boolean);
+              return details.join('\n');
+            })
+            .join('\n\n'),
+        },
+      ];
+
+      if (this.itinerary.fieldVerification) {
+        sections.push(
+          {
+            heading: this.i18n.t('itineraries.distance'),
+            text: `${this.itinerary.fieldVerification.distanceMeters} ${this.i18n.t('itineraries.meters')}`,
+          },
+          {
+            heading: this.i18n.t('itineraries.accessibility'),
+            text: this.i18n.localize(this.itinerary.fieldVerification.accessibility),
+          },
+          {
+            heading: this.i18n.t('itineraries.fieldVerificationSource'),
+            text: this.itinerary.fieldVerification.source,
+          },
+        );
+      }
+
+      this.contentExport.exportPdf(
+        { title: this.i18n.localize(this.itinerary.title), sections },
+        this.itinerary.id,
+      );
+      this.exportError.set(false);
+    } catch {
+      this.exportError.set(true);
+    }
   }
 
   get audioContentId(): string {

@@ -1,7 +1,8 @@
-import { Component, EventEmitter, Input, Output, inject } from '@angular/core';
+import { Component, EventEmitter, Input, Output, inject, signal } from '@angular/core';
 import { Place } from '../../../core/models/place.model';
 import { Story } from '../../../core/models/story.model';
 import { AudioGuideService } from '../../../core/services/audio-guide.service';
+import { ContentExportService } from '../../../core/services/content-export.service';
 import { LanguageService } from '../../../core/services/language.service';
 import {
   formatOfflinePackageDate,
@@ -17,7 +18,7 @@ import {
       <h2>{{ i18n.localize(story.title) }}</h2>
       <p>{{ i18n.localize(story.excerpt) }}</p>
       <p class="muted">{{ i18n.localize(story.consentRequiredNotice) }}</p>
-      <div class="actions-row">
+      <div class="actions-row export-ignore">
         <button
           type="button"
           class="button secondary"
@@ -29,6 +30,9 @@ import {
               audioGuide.activeContentId() === audioContentId ? 'audio.stop' : 'audio.listen'
             )
           }}
+        </button>
+        <button type="button" class="button secondary" (click)="exportPdf()">
+          {{ i18n.t('exports.pdf') }}
         </button>
       </div>
       @if (audioGuide.errorContentId() === audioContentId && audioGuide.error()) {
@@ -69,10 +73,23 @@ import {
         }
       </div>
       @if (offlineContent.activePackageId() === offlinePackageId) {
-        <p class="muted" role="status">{{ offlineContent.progress() }}%</p>
+        <p class="muted export-ignore" role="status">{{ offlineContent.progress() }}%</p>
       }
       @if (offlineContent.errorPackageId() === offlinePackageId && offlineContent.error()) {
-        <p class="muted" role="status">{{ i18n.t('offline.' + offlineContent.error()) }}</p>
+        <p class="muted export-ignore" role="status">{{ i18n.t('offline.' + offlineContent.error()) }}</p>
+      }
+      @if (exportError()) {
+        <p class="muted export-ignore" role="status">{{ i18n.t('exports.failed') }}</p>
+      }
+      @if (savedOfflinePackage; as offlinePackage) {
+        <p class="muted" role="status">
+          {{
+            i18n
+              .t('offline.savedInfo')
+              .replace('{size}', formatSize(offlinePackage.sizeBytes))
+              .replace('{date}', formatDate(offlinePackage.createdAt))
+          }}
+        </p>
       }
       <div class="chips" aria-label="Linked places">
         @for (place of linkedPlaces; track place.id) {
@@ -88,6 +105,8 @@ export class StoryCardComponent {
   readonly i18n = inject(LanguageService);
   readonly audioGuide = inject(AudioGuideService);
   readonly offlineContent = inject(OfflineContentService);
+  readonly exportError = signal(false);
+  private readonly contentExport = inject(ContentExportService);
   @Input({ required: true }) story!: Story;
   @Input() places: Place[] = [];
   @Output() openPlace = new EventEmitter<string>();
@@ -125,6 +144,31 @@ export class StoryCardComponent {
 
   async removeOfflinePackage(): Promise<void> {
     await this.offlineContent.remove(this.offlinePackageId);
+  }
+
+  exportPdf(): void {
+    try {
+      const title = this.i18n.localize(this.story.title);
+      this.contentExport.exportPdf(
+        {
+          title,
+          sections: [
+            { text: this.i18n.t('stories.mockNotice') },
+            { text: this.i18n.localize(this.story.excerpt) },
+            { text: this.i18n.localize(this.story.content) },
+            {
+              heading: this.i18n.t('stories.linkedPlaces'),
+              text: this.linkedPlaces.map((place) => this.i18n.localize(place.name)).join(', '),
+            },
+            { heading: this.i18n.t('stories.consentNotice'), text: this.i18n.localize(this.story.consentRequiredNotice) },
+          ],
+        },
+        this.story.id,
+      );
+      this.exportError.set(false);
+    } catch {
+      this.exportError.set(true);
+    }
   }
 
   toggleAudio(): void {

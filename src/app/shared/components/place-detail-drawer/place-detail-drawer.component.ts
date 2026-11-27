@@ -11,6 +11,10 @@ import {
 } from '@angular/core';
 import { AudioGuideService } from '../../../core/services/audio-guide.service';
 import { ChatbotUiService } from '../../../core/services/chatbot-ui.service';
+import {
+  ContentExportService,
+  type PdfExportSection,
+} from '../../../core/services/content-export.service';
 import { hasPlaceCoordinates, Place } from '../../../core/models/place.model';
 import { LanguageService } from '../../../core/services/language.service';
 import {
@@ -120,7 +124,7 @@ import { VisitorPlacesService } from '../../../core/services/visitor-places.serv
           }
         </div>
 
-        <div class="actions-row">
+        <div class="actions-row export-ignore">
           @if (mapsUrl(place); as mapUrl) {
             <a class="button" [href]="mapUrl" target="_blank" rel="noopener">
               {{ i18n.t('actions.openExternalMap') }}
@@ -198,12 +202,15 @@ import { VisitorPlacesService } from '../../../core/services/visitor-places.serv
               )
             }}
           </button>
+          <button type="button" class="button secondary" (click)="exportPdf(place)">
+            {{ i18n.t('exports.pdf') }}
+          </button>
           <button type="button" class="button secondary" (click)="askAbout(place.id)">
             {{ i18n.t('explore.askAboutPlace') }}
           </button>
         </div>
         @if (savedOfflinePackage; as offlinePackage) {
-          <p class="muted" role="status">
+          <p class="muted export-ignore" role="status">
             {{
               i18n
                 .t('offline.savedInfo')
@@ -213,16 +220,19 @@ import { VisitorPlacesService } from '../../../core/services/visitor-places.serv
           </p>
         }
         @if (offlineContent.activePackageId() === offlinePackageId) {
-          <p class="muted" role="status">{{ offlineContent.progress() }}%</p>
+          <p class="muted export-ignore" role="status">{{ offlineContent.progress() }}%</p>
         }
         @if (offlineContent.errorPackageId() === offlinePackageId && offlineContent.error()) {
-          <p class="muted" role="status">{{ i18n.t('offline.' + offlineContent.error()) }}</p>
+          <p class="muted export-ignore" role="status">{{ i18n.t('offline.' + offlineContent.error()) }}</p>
         }
         @if (audioGuide.errorContentId() === audioContentId && audioGuide.error()) {
-          <p class="muted" role="status">{{ i18n.t('audio.' + audioGuide.error()) }}</p>
+          <p class="muted export-ignore" role="status">{{ i18n.t('audio.' + audioGuide.error()) }}</p>
+        }
+        @if (exportError()) {
+          <p class="muted export-ignore" role="status">{{ i18n.t('exports.failed') }}</p>
         }
         @if (shareStatus()) {
-          <p class="muted" role="status">{{ i18n.t(shareStatus()) }}</p>
+          <p class="muted export-ignore" role="status">{{ i18n.t(shareStatus()) }}</p>
         }
       </aside>
     } @else {
@@ -238,8 +248,10 @@ export class PlaceDetailDrawerComponent implements OnChanges, OnDestroy {
   readonly i18n = inject(LanguageService);
   readonly audioGuide = inject(AudioGuideService);
   readonly offlineContent = inject(OfflineContentService);
+  readonly exportError = signal(false);
   readonly visitorPlaces = inject(VisitorPlacesService);
   private readonly chatbotUi = inject(ChatbotUiService);
+  private readonly contentExport = inject(ContentExportService);
   private readonly document = inject(DOCUMENT);
   readonly shareStatus = signal('');
   readonly offlineImageSrc = signal('');
@@ -300,6 +312,58 @@ export class PlaceDetailDrawerComponent implements OnChanges, OnDestroy {
 
   async removeOfflinePackage(): Promise<void> {
     await this.offlineContent.remove(this.offlinePackageId);
+  }
+
+  exportPdf(place: Place): void {
+    try {
+      const sections: PdfExportSection[] = [
+        {
+          text: this.i18n.t(`sourceStatus.${place.sourceStatus ?? 'to-verify'}`),
+        },
+        { text: this.i18n.localize(place.description) },
+        {
+          heading: this.i18n.t('explore.coordinates'),
+          text: this.coordinates(place),
+        },
+      ];
+      if (hasPlaceCoordinates(place)) {
+        sections.push({
+          heading: this.i18n.t('explore.coordinateVerification'),
+          text: `${this.coordinateSourceLabel(place)}; ${this.coordinateVerificationLabel(place)}`,
+        });
+      }
+
+      for (const [headingKey, value] of [
+        ['explore.historicalInterest', place.historicalInterest],
+        ['explore.architecturalInterest', place.architecturalInterest],
+        ['explore.landscapeInterest', place.landscapeInterest],
+        ['explore.curiosity', place.curiosity],
+        ['explore.sourceNotes', place.sourceNotes],
+      ] as const) {
+        const text = this.i18n.localize(value);
+        if (text) sections.push({ heading: this.i18n.t(headingKey), text });
+      }
+
+      const imageCredits = [
+        this.i18n.localize(place.imageCredit),
+        place.imageSourceUrl,
+        place.imageLicenseUrl,
+      ].filter(Boolean);
+      if (imageCredits.length) {
+        sections.push({
+          heading: this.i18n.t('explore.imageSource'),
+          text: imageCredits.join('\n'),
+        });
+      }
+
+      this.contentExport.exportPdf(
+        { title: this.i18n.localize(place.name), sections },
+        place.id,
+      );
+      this.exportError.set(false);
+    } catch {
+      this.exportError.set(true);
+    }
   }
 
   get audioContentId(): string {

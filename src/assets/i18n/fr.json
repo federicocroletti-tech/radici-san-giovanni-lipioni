@@ -28,6 +28,10 @@
     "failed": "Échec du téléchargement. Vérifiez la connexion et l’espace disponible.",
     "invalid": "Ce contenu comprend une image qui ne peut pas être téléchargée."
   },
+  "exports": {
+    "pdf": "Exporter en PDF",
+    "failed": "Le fichier n’a pas pu être créé. Veuillez réessayer."
+  },
   "sourceStatus": {
     "verified": "Sources vérifiées",
     "to-verify": "Information à vérifier",

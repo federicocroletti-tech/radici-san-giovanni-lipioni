@@ -111,6 +111,10 @@ La regressione responsive verifica anche che i controlli di Esplora non si sovra
 
 In produzione il service worker rende disponibili offline l'applicazione, i dati JSON e le traduzioni. Dalle schede di luoghi, racconti e itinerari e possibile scaricare un pacchetto localizzato con il testo e le immagini collegate; i pacchetti sono conservati nel Cache Storage del browser, aggiornabili e rimovibili. Il browser deve supportare Cache Storage e avere spazio disponibile. Le tile della mappa sono fornite da OpenStreetMap e restano online: non vengono precacheate o memorizzate, quindi la mappa cartografica richiede una connessione anche quando i contenuti scaricati restano consultabili.
 
+## Esportazione
+
+Le schede di racconti, itinerari e luoghi consentono di scaricare un PDF localizzato con testo impaginato, informazioni di verifica e crediti disponibili. Il testo del PDF e selezionabile; l'esportazione non genera PDF/UA con tagging specifico per tecnologie assistive. L'esportazione PNG delle schede e ancora in lavorazione.
+
 ## Validazione dei dati dei luoghi
 
 Prima di pubblicare modifiche alle schede, esegui:
