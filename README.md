@@ -48,6 +48,7 @@ Il progetto usa file JSON locali e testi UI da file i18n. I marker principali so
 - Cookie banner granulare con analytics/marketing disattivati di default
 - `AnalyticsService` mock senza script terzi caricati
 - PWA con shell, dati, traduzioni e immagini gia consultate disponibili offline
+- Pacchetti offline scaricabili per singolo luogo, racconto o itinerario, con aggiornamento, rimozione e indicazione di dimensione/data
 - Le tile OpenStreetMap restano online e non vengono memorizzate offline
 
 ## Struttura dati
@@ -108,7 +109,7 @@ La regressione responsive verifica anche che i controlli di Esplora non si sovra
 
 ## Uso offline
 
-In produzione il service worker rende disponibili offline l'applicazione, i dati JSON e le traduzioni; le immagini vengono memorizzate dopo il primo accesso. Le tile della mappa sono fornite da OpenStreetMap e restano online: non vengono precacheate o memorizzate, quindi la mappa cartografica richiede una connessione.
+In produzione il service worker rende disponibili offline l'applicazione, i dati JSON e le traduzioni. Dalle schede di luoghi, racconti e itinerari e possibile scaricare un pacchetto localizzato con il testo e le immagini collegate; i pacchetti sono conservati nel Cache Storage del browser, aggiornabili e rimovibili. Il browser deve supportare Cache Storage e avere spazio disponibile. Le tile della mappa sono fornite da OpenStreetMap e restano online: non vengono precacheate o memorizzate, quindi la mappa cartografica richiede una connessione anche quando i contenuti scaricati restano consultabili.
 
 ## Validazione dei dati dei luoghi
 

@@ -18,6 +18,16 @@
     "failed": "La lecture audio n’a pas pu démarrer ou se terminer.",
     "empty": "Aucun contenu n’est disponible pour la lecture."
   },
+  "offline": {
+    "download": "Télécharger pour une utilisation hors ligne",
+    "update": "Mettre à jour le téléchargement hors ligne",
+    "remove": "Supprimer le téléchargement hors ligne",
+    "downloading": "Téléchargement en cours…",
+    "savedInfo": "Disponible hors ligne · {size} · mis à jour le {date}",
+    "unavailable": "Les téléchargements hors ligne ne sont pas pris en charge par ce navigateur.",
+    "failed": "Échec du téléchargement. Vérifiez la connexion et l’espace disponible.",
+    "invalid": "Ce contenu comprend une image qui ne peut pas être téléchargée."
+  },
   "sourceStatus": {
     "verified": "Sources vérifiées",
     "to-verify": "Information à vérifier",

@@ -18,6 +18,16 @@
     "failed": "Audio playback could not be started or completed.",
     "empty": "There is no content available to read."
   },
+  "offline": {
+    "download": "Download for offline",
+    "update": "Update offline download",
+    "remove": "Remove offline download",
+    "downloading": "Downloading…",
+    "savedInfo": "Available offline · {size} · updated {date}",
+    "unavailable": "Offline downloads are not supported by this browser.",
+    "failed": "Download failed. Check your connection and available storage.",
+    "invalid": "This content includes an image that cannot be downloaded."
+  },
   "sourceStatus": {
     "verified": "Verified sources",
     "to-verify": "Information to verify",

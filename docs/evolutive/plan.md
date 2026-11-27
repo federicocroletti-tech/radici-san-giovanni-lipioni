@@ -86,7 +86,7 @@ Estendere la guida Angular/Capacitor con ascolto di racconti, itinerari e luoghi
 
 **Task**
 - [x] T011 [US3] [Plan:3.1,3.2] Definire manifesto versionato e servizio di download/rimozione dei pacchetti offline
-- [ ] T012 [US3] [Plan:3.1,3.2] Aggiungere UI di selezione, progresso, errori e spazio dei pacchetti
+- [x] T012 [US3] [Plan:3.1,3.2] Aggiungere UI di selezione, progresso, errori e spazio dei pacchetti
 - [ ] T013 [US3] [Plan:3.3] Aggiungere esportazione PDF accessibile di itinerari e racconti
 - [ ] T014 [US3] [Plan:3.4] Aggiungere esportazione PNG di schede e itinerari
 - [ ] T015 [US3] [Plan:3.5] Testare aggiornamento offline e download/esportazioni su viewport mobile e desktop

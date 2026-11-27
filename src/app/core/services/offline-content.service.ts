@@ -1,5 +1,6 @@
 import { DOCUMENT, isPlatformBrowser } from '@angular/common';
 import { Injectable, inject, PLATFORM_ID, signal } from '@angular/core';
+import { LanguageCode } from '../models/localized-text.model';
 
 export type OfflineContentError = 'unavailable' | 'failed' | 'invalid';
 export type OfflineContentType = 'itinerary' | 'story' | 'place';
@@ -26,6 +27,22 @@ export interface OfflineContentPackage {
 const CACHE_NAME = 'radici-offline-content-v1';
 const STORAGE_KEY = 'radici-offline-packages-v1';
 const PACKAGE_PATH = '/__offline-content__/';
+const DATE_LOCALES: Record<LanguageCode, string> = {
+  it: 'it-IT',
+  en: 'en-US',
+  fr: 'fr-FR',
+};
+
+export function formatOfflinePackageSize(sizeBytes: number): string {
+  if (sizeBytes < 1024) return `${sizeBytes} B`;
+  return `${(sizeBytes / 1024).toFixed(1)} KB`;
+}
+
+export function formatOfflinePackageDate(createdAt: string, language: LanguageCode): string {
+  return new Intl.DateTimeFormat(DATE_LOCALES[language], { dateStyle: 'medium' }).format(
+    new Date(createdAt),
+  );
+}
 
 @Injectable({ providedIn: 'root' })
 export class OfflineContentService {
@@ -46,10 +63,18 @@ export class OfflineContentService {
     return this.packages().some((offlinePackage) => offlinePackage.id === id);
   }
 
-  async save(bundle: OfflineContentBundle): Promise<void> {
+  getPackage(id: string): OfflineContentPackage | null {
+    return this.packages().find((offlinePackage) => offlinePackage.id === id) ?? null;
+  }
+
+  async save(bundle: OfflineContentBundle, refresh = false): Promise<void> {
     const view = this.browserWindow();
     if (!view?.caches || !view.fetch || !view.localStorage) {
       this.setError(bundle.id, 'unavailable');
+      return;
+    }
+    if (refresh && !view.navigator.onLine) {
+      this.setError(bundle.id, 'failed');
       return;
     }
 
@@ -71,10 +96,14 @@ export class OfflineContentService {
     this.errorPackageId.set(null);
     this.progress.set(0);
     const newlyCachedImages: string[] = [];
+    const previousImages = new Map<string, Response>();
     let cache: Cache | null = null;
+    let previousPackageResponse: Response | undefined;
 
     try {
       cache = await view.caches.open(CACHE_NAME);
+      const packageUrl = this.packageUrl(bundle.id, view);
+      previousPackageResponse = await cache.match(packageUrl);
       const serializedContent = JSON.stringify(bundle.content);
       if (serializedContent === undefined) {
         this.setError(bundle.id, 'invalid');
@@ -84,13 +113,20 @@ export class OfflineContentService {
       let sizeBytes = new TextEncoder().encode(serializedContent).byteLength;
       for (const [index, imageUrl] of imageUrls.entries()) {
         let response = await cache.match(imageUrl);
-        if (!response) {
-          response = await view.fetch(imageUrl);
-          if (!response.ok) {
-            throw new Error(`Image download failed with status ${response.status}`);
+        if (refresh && response) previousImages.set(imageUrl, response.clone());
+        if (!response || refresh) {
+          const downloadedImage = await view.fetch(
+            imageUrl,
+            refresh ? { cache: 'reload' } : undefined,
+          );
+          if (!downloadedImage.ok) {
+            throw new Error(`Image download failed with status ${downloadedImage.status}`);
           }
-          await cache.put(imageUrl, response.clone());
-          newlyCachedImages.push(imageUrl);
+          response = downloadedImage;
+          await cache.put(imageUrl, downloadedImage.clone());
+          if (!previousImages.has(imageUrl) && !newlyCachedImages.includes(imageUrl)) {
+            newlyCachedImages.push(imageUrl);
+          }
         }
         sizeBytes += (await response.clone().arrayBuffer()).byteLength;
         this.progress.set(Math.round(((index + 1) / Math.max(imageUrls.length, 1)) * 100));
@@ -120,7 +156,14 @@ export class OfflineContentService {
       this.progress.set(100);
     } catch {
       if (cache) {
-        await cache.delete(this.packageUrl(bundle.id, view));
+        if (previousPackageResponse) {
+          await cache.put(this.packageUrl(bundle.id, view), previousPackageResponse);
+        } else {
+          await cache.delete(this.packageUrl(bundle.id, view));
+        }
+        for (const [imageUrl, response] of previousImages) {
+          await cache.put(imageUrl, response);
+        }
         await this.deleteUnreferencedImages(newlyCachedImages, this.packages(), cache);
       }
       this.setError(bundle.id, 'failed');
@@ -141,11 +184,11 @@ export class OfflineContentService {
 
     try {
       const cache = await view.caches.open(CACHE_NAME);
-      await cache.delete(this.packageUrl(id, view));
       const nextPackages = this.packages().filter((savedPackage) => savedPackage.id !== id);
       view.localStorage.setItem(STORAGE_KEY, JSON.stringify(nextPackages));
-      await this.deleteUnreferencedImages(removedPackage.imageUrls, nextPackages, cache);
       this.packages.set(nextPackages);
+      await cache.delete(this.packageUrl(id, view));
+      await this.deleteUnreferencedImages(removedPackage.imageUrls, nextPackages, cache);
       this.error.set(null);
       this.errorPackageId.set(null);
     } catch {

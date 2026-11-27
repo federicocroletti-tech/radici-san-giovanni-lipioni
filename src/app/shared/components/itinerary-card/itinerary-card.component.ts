@@ -3,6 +3,11 @@ import { getItineraryProgress, Itinerary } from '../../../core/models/itinerary.
 import { Place } from '../../../core/models/place.model';
 import { AudioGuideService } from '../../../core/services/audio-guide.service';
 import { LanguageService } from '../../../core/services/language.service';
+import {
+  formatOfflinePackageDate,
+  formatOfflinePackageSize,
+  OfflineContentService,
+} from '../../../core/services/offline-content.service';
 import { VisitorPlacesService } from '../../../core/services/visitor-places.service';
 
 @Component({
@@ -109,7 +114,45 @@ import { VisitorPlacesService } from '../../../core/services/visitor-places.serv
         <button type="button" class="button secondary" (click)="ask.emit(itinerary)">
           {{ i18n.t('itineraries.ask') }}
         </button>
+        <button
+          type="button"
+          class="button secondary"
+          [disabled]="offlineContent.activePackageId() !== null && offlineContent.activePackageId() !== offlinePackageId"
+          [attr.aria-pressed]="offlineContent.isDownloaded(offlinePackageId)"
+          (click)="saveOfflinePackage(offlineContent.isDownloaded(offlinePackageId))"
+        >
+          {{
+            i18n.t(
+              offlineContent.activePackageId() === offlinePackageId
+                ? 'offline.downloading'
+                : offlineContent.isDownloaded(offlinePackageId)
+                  ? 'offline.update'
+                  : 'offline.download'
+            )
+          }}
+        </button>
+        @if (offlineContent.isDownloaded(offlinePackageId)) {
+          <button type="button" class="button secondary" (click)="removeOfflinePackage()">
+            {{ i18n.t('offline.remove') }}
+          </button>
+        }
       </div>
+      @if (savedOfflinePackage; as offlinePackage) {
+        <p class="muted" role="status">
+          {{
+            i18n
+              .t('offline.savedInfo')
+              .replace('{size}', formatSize(offlinePackage.sizeBytes))
+              .replace('{date}', formatDate(offlinePackage.createdAt))
+          }}
+        </p>
+      }
+      @if (offlineContent.activePackageId() === offlinePackageId) {
+        <p class="muted" role="status">{{ offlineContent.progress() }}%</p>
+      }
+      @if (offlineContent.errorPackageId() === offlinePackageId && offlineContent.error()) {
+        <p class="muted" role="status">{{ i18n.t('offline.' + offlineContent.error()) }}</p>
+      }
       @if (audioGuide.errorContentId() === audioContentId && audioGuide.error()) {
         <p class="muted" role="status">{{ i18n.t('audio.' + audioGuide.error()) }}</p>
       }
@@ -119,11 +162,43 @@ import { VisitorPlacesService } from '../../../core/services/visitor-places.serv
 export class ItineraryCardComponent {
   readonly i18n = inject(LanguageService);
   readonly audioGuide = inject(AudioGuideService);
+  readonly offlineContent = inject(OfflineContentService);
   readonly visitorPlaces = inject(VisitorPlacesService);
   @Input({ required: true }) itinerary!: Itinerary;
   @Input() places: Place[] = [];
   @Output() openMap = new EventEmitter<Itinerary>();
   @Output() ask = new EventEmitter<Itinerary>();
+
+  get offlinePackageId(): string {
+    return `itinerary:${this.itinerary.id}:${this.i18n.currentLanguage()}`;
+  }
+
+  get savedOfflinePackage() {
+    return this.offlineContent.getPackage(this.offlinePackageId);
+  }
+
+  formatSize(sizeBytes: number): string {
+    return formatOfflinePackageSize(sizeBytes);
+  }
+
+  formatDate(createdAt: string): string {
+    return formatOfflinePackageDate(createdAt, this.i18n.currentLanguage());
+  }
+
+  async saveOfflinePackage(refresh = false): Promise<void> {
+    await this.offlineContent.save({
+      id: this.offlinePackageId,
+      type: 'itinerary',
+      title: this.i18n.localize(this.itinerary.title),
+      language: this.i18n.currentLanguage(),
+      content: { itinerary: this.itinerary, places: this.itineraryPlaces },
+      imagePaths: this.itineraryPlaces.map((place) => place.image),
+    }, refresh);
+  }
+
+  async removeOfflinePackage(): Promise<void> {
+    await this.offlineContent.remove(this.offlinePackageId);
+  }
 
   get audioContentId(): string {
     return `itinerary:${this.itinerary.id}`;

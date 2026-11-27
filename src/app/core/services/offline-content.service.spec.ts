@@ -105,6 +105,33 @@ describe('OfflineContentService', () => {
     expect(service.packages()).toEqual([]);
   });
 
+  it('keeps the previous offline package when an update fails', async () => {
+    const { service, entries, cache, view } = createService();
+    const bundle = {
+      id: 'place:centre:it',
+      type: 'place' as const,
+      title: 'Centre',
+      language: 'it',
+      content: { description: 'Existing offline text' },
+      imagePaths: ['assets/images/fontana.svg'],
+    };
+    await service.save(bundle);
+    const imageUrl = [...entries.keys()].find((key) => key.includes('/assets/images/'));
+    expect(imageUrl).toBeDefined();
+
+    vi.spyOn(view, 'fetch').mockResolvedValue(new Response('', { status: 503 }));
+    await service.save({ ...bundle, content: { description: 'New text' } }, true);
+
+    expect(service.isDownloaded(bundle.id)).toBe(true);
+    expect(service.error()).toBe('failed');
+    const packageKey = [...entries.keys()].find((key) => key.includes('__offline-content__'));
+    expect(packageKey).toBeDefined();
+    expect((await entries.get(packageKey!)?.clone().text()) ?? '').toContain(
+      'Existing offline text',
+    );
+    expect(cache.put).toHaveBeenCalled();
+  });
+
   it('rejects images outside the local guide asset directory', async () => {
     const { service, view } = createService();
 

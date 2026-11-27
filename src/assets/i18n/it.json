@@ -18,6 +18,16 @@
     "failed": "Non è stato possibile avviare o completare la lettura audio.",
     "empty": "Non ci sono contenuti disponibili da leggere."
   },
+  "offline": {
+    "download": "Scarica per offline",
+    "update": "Aggiorna download offline",
+    "remove": "Rimuovi download offline",
+    "downloading": "Download in corso…",
+    "savedInfo": "Disponibile offline · {size} · aggiornato il {date}",
+    "unavailable": "Il download offline non è supportato da questo browser.",
+    "failed": "Download non riuscito. Controlla la connessione e lo spazio disponibile.",
+    "invalid": "Questo contenuto include un'immagine non scaricabile."
+  },
   "sourceStatus": {
     "verified": "Fonti verificate",
     "to-verify": "Informazione da verificare",
