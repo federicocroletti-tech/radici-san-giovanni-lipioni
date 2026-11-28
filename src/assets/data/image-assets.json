@@ -108,5 +108,105 @@
     "license": "CC BY 4.0",
     "attribution": "Benghazi69, CC BY 4.0, https://commons.wikimedia.org/wiki/File:SGiovLipioni_pano.jpg",
     "notes": "Veduta di San Giovanni Lipioni da Via Fontana, scattata l'11 marzo 2020. Non assegnata a una singola scheda; non sostituisce fotografie documentarie dei monumenti."
+  },
+  {
+    "path": "public/branding/logo-radici.jpg",
+    "type": "project-branding",
+    "status": "rights-unverified",
+    "author": null,
+    "source": null,
+    "license": null,
+    "attribution": null,
+    "notes": "Logo del progetto pubblicato sul sito; README ne dichiara la derivazione da un asset social. Autore, provenienza e diritti documentali da registrare."
+  },
+  {
+    "path": "public/favicon.ico",
+    "type": "project-branding",
+    "status": "rights-unverified",
+    "author": null,
+    "source": null,
+    "license": null,
+    "attribution": null,
+    "notes": "Favicon pubblicata con il sito; documentare la provenienza dell'immagine originale e i diritti."
+  },
+  {
+    "path": "public/icons/icon-72x72.png",
+    "type": "project-branding",
+    "status": "rights-unverified",
+    "author": null,
+    "source": null,
+    "license": null,
+    "attribution": null,
+    "notes": "Icona PWA pubblicata; documentare la provenienza dell'immagine originale e i diritti."
+  },
+  {
+    "path": "public/icons/icon-96x96.png",
+    "type": "project-branding",
+    "status": "rights-unverified",
+    "author": null,
+    "source": null,
+    "license": null,
+    "attribution": null,
+    "notes": "Icona PWA pubblicata; documentare la provenienza dell'immagine originale e i diritti."
+  },
+  {
+    "path": "public/icons/icon-128x128.png",
+    "type": "project-branding",
+    "status": "rights-unverified",
+    "author": null,
+    "source": null,
+    "license": null,
+    "attribution": null,
+    "notes": "Icona PWA pubblicata; documentare la provenienza dell'immagine originale e i diritti."
+  },
+  {
+    "path": "public/icons/icon-144x144.png",
+    "type": "project-branding",
+    "status": "rights-unverified",
+    "author": null,
+    "source": null,
+    "license": null,
+    "attribution": null,
+    "notes": "Icona PWA pubblicata; documentare la provenienza dell'immagine originale e i diritti."
+  },
+  {
+    "path": "public/icons/icon-152x152.png",
+    "type": "project-branding",
+    "status": "rights-unverified",
+    "author": null,
+    "source": null,
+    "license": null,
+    "attribution": null,
+    "notes": "Icona PWA pubblicata; documentare la provenienza dell'immagine originale e i diritti."
+  },
+  {
+    "path": "public/icons/icon-192x192.png",
+    "type": "project-branding",
+    "status": "rights-unverified",
+    "author": null,
+    "source": null,
+    "license": null,
+    "attribution": null,
+    "notes": "Icona PWA pubblicata; documentare la provenienza dell'immagine originale e i diritti."
+  },
+  {
+    "path": "public/icons/icon-384x384.png",
+    "type": "project-branding",
+    "status": "rights-unverified",
+    "author": null,
+    "source": null,
+    "license": null,
+    "attribution": null,
+    "notes": "Icona PWA pubblicata; documentare la provenienza dell'immagine originale e i diritti."
+  },
+  {
+    "path": "public/icons/icon-512x512.png",
+    "type": "project-branding",
+    "status": "rights-unverified",
+    "author": null,
+    "source": null,
+    "license": null,
+    "attribution": null,
+    "notes": "Icona PWA pubblicata; documentare la provenienza dell'immagine originale e i diritti."
   }
 ]

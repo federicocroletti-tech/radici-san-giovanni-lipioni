@@ -5,7 +5,7 @@ import { dirname, isAbsolute, relative, resolve, sep } from 'node:path';
 const locales = ['it', 'en', 'fr'];
 const sourceStatuses = new Set(['verified', 'to-verify', 'research']);
 const editorialStatuses = new Set(['draft', 'review', 'approved', 'published']);
-const imageTypes = new Set(['placeholder-illustration', 'photograph']);
+const imageTypes = new Set(['placeholder-illustration', 'photograph', 'project-branding']);
 const imageStatuses = new Set([
   'rights-unverified',
   'user-declared-authorized-details-unrecorded',
@@ -30,13 +30,19 @@ export function validateLocalizedText(value, label, errors) {
 }
 
 function validateAssetReference(assetPath, label, sourceDirectory, errors) {
-  if (!isNonEmptyString(assetPath) || !assetPath.startsWith('assets/')) {
-    errors.push(`${label}: path must be a non-empty local assets/ path.`);
+  if (
+    !isNonEmptyString(assetPath) ||
+    (!assetPath.startsWith('assets/') && !assetPath.startsWith('public/'))
+  ) {
+    errors.push(`${label}: path must be a non-empty local assets/ or public/ path.`);
     return;
   }
 
-  const resolvedPath = resolve(sourceDirectory, assetPath);
-  const relativePath = relative(sourceDirectory, resolvedPath);
+  const isSourceAsset = assetPath.startsWith('assets/');
+  const assetRoot = isSourceAsset ? sourceDirectory : resolve(sourceDirectory, '../public');
+  const relativeAssetPath = isSourceAsset ? assetPath : assetPath.slice('public/'.length);
+  const resolvedPath = resolve(assetRoot, relativeAssetPath);
+  const relativePath = relative(assetRoot, resolvedPath);
 
   if (relativePath === '..' || relativePath.startsWith(`..${sep}`) || isAbsolute(relativePath)) {
     errors.push(`${label}: path must remain inside the source directory.`);
@@ -97,7 +103,7 @@ export function validatePlaceData(places, categories, imageAssets, sources, sour
     }
 
     if (!imageTypes.has(asset.type)) {
-      errors.push(`${label}: type must be placeholder-illustration or photograph.`);
+      errors.push(`${label}: type must be placeholder-illustration, photograph, or project-branding.`);
     }
 
     if (!imageStatuses.has(asset.status)) {

@@ -67,7 +67,7 @@ src/assets/i18n/
   en.json
 ```
 
-Le immagini in `src/assets/images` sono asset dimostrativi sostituibili con foto reali autorizzate.
+`src/assets/images` contiene illustrazioni segnaposto e fotografie; il manifesto `image-assets.json` ne registra stato, provenienza e diritti. Un'immagine puo essere distribuita solo quando i diritti sono documentati. Anche logo, favicon e icone PWA in `public` devono avere una catena dei diritti registrata.
 
 Il marchio nell'intestazione, la favicon e le icone PWA derivano dal logo Instagram gia presente in `social/instagram/primo-carosello/source/assets/logo-radici-instagram.png`. Per rigenerare gli asset web ottimizzati senza modificare l'originale, esegui `powershell -ExecutionPolicy Bypass -File scripts/generate-brand-assets.ps1` su Windows. Le icone PWA includono un margine per il ritaglio maskable e sono disponibili anche offline.
 
@@ -128,6 +128,19 @@ I controlli verificano coordinate plausibili senza duplicati o placeholder `0,0`
 
 `sources.json` e il registro delle fonti editoriali. Ogni voce deve riportare ID, titolo, citazione, creatore o ente editore, URL quando disponibile, data di consultazione e una o piu affermazioni collegate agli ID dei luoghi supportati. Una scheda puo essere marcata `verified` solo se almeno una voce del registro supporta esplicitamente quel luogo. Le schede `to-verify` e `research` restano ammesse; il registro iniziale e vuoto finche non vengono raccolti riferimenti verificabili. I controlli non certificano da soli accuratezza storica, geografica o giuridica.
 
+## Gate di pubblicazione
+
+Prima di distribuire il sito, esegui:
+
+```bash
+npm run validate:publication-ready
+npm run test:publication-readiness
+```
+
+Il gate rifiuta luoghi privi di fonti e verifica sul posto, itinerari non rilevati, affermazioni storiche/culturali non verificate, racconti mock o testimonianze senza evidenza di consenso, immagini non inventariate o senza autore, fonte, licenza e attribuzione. Scansiona sia `src/assets/images` sia le immagini statiche in `public`. Render esegue il gate prima di creare il sito distribuibile; finche il controllo fallisce, il deploy e bloccato. `npm run build` resta disponibile per verifica tecnica locale e non costituisce approvazione alla pubblicazione.
+
+Le categorie `verified`, `to-verify` e `research` descrivono stati distinti: non promuovere automaticamente un contenuto. Consultare la [tabella di verifica e il piano editoriale](./docs/audit-pubblicazione.md); i dati storici esistenti non vengono corretti senza verifica e approvazione umana.
+
 ## App mobile
 
 Il progetto usa Capacitor per mantenere un'unica codebase: ogni modifica a componenti, servizi, stili o contenuti Angular viene inclusa sia nel sito sia nell'app mobile dopo build e sync.
@@ -169,9 +182,9 @@ npm run mobile:ios
 
 Vedi `DEPLOYMENT.md`.
 
-Configurazione consigliata:
+Configurazione consigliata (include il gate che blocca la pubblicazione finche i contenuti non sono documentati):
 
-- Build command: `npm ci && npm run validate:places && npm run test:place-validation && npm test && npm run build`
+- Build command: `npm ci && npm run validate:places && npm run validate:publication-ready && npm run test:place-validation && npm test && npm run build`
 - Publish directory: `dist/radici-san-giovanni-lipioni/browser`
 - Rewrite SPA: `/* -> /index.html` tramite `public/_redirects`
 

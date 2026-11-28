@@ -6,7 +6,7 @@ Questa app e una Angular static site senza backend.
 
 - **Service type:** Static Site
 - **Root directory:** lascia vuoto se il repository contiene solo questo progetto; altrimenti usa `radici-san-giovanni-lipioni`
-- **Build command:** `npm ci && npm run validate:places && npm run test:place-validation && npm test && npm run build`
+- **Build command:** `npm ci && npm run validate:places && npm run validate:publication-ready && npm run test:place-validation && npm test && npm run build`
 - **Publish directory:** `dist/radici-san-giovanni-lipioni/browser`
 - **Branch:** `main`
 
@@ -31,6 +31,7 @@ La prima versione non richiede segreti o API key. Usa `.env.example` solo come p
 ```bash
 npm ci
 npm run validate:places
+npm run validate:publication-ready
 npm run test:place-validation
 npm test
 npm run lint
@@ -40,6 +41,8 @@ npx playwright install chromium
 npm run test:e2e
 npm run test:production
 ```
+
+`validate:publication-ready` e un blocco obbligatorio, non un controllo da saltare per far riuscire il deploy. Al 28 novembre 2026 il gate fallisce per coordinate e schede non verificate, itinerari non rilevati, racconti dimostrativi e immagini senza documentazione completa dei diritti. La build locale puo essere usata per QA, ma non autorizza la pubblicazione. Vedi [l'audit editoriale e la checklist di approvazione](./docs/audit-pubblicazione.md).
 
 Il sito Render usa solo i file statici. Per l'avvio opzionale del server Node (`npm run serve:ssr:radici-san-giovanni-lipioni`), gli host locali sono consentiti. Su un dominio pubblico, configurare `NG_ALLOWED_HOSTS` con l'elenco dei soli nomi host autorizzati separati da virgole, senza schema o porta; non usare un wildcard.
 

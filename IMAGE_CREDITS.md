@@ -118,3 +118,9 @@ Attribuzioni pronte per il sito:
 - «San Giovanni Lipioni visto da Via Fontana» di Benghazi69, [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/), via Wikimedia Commons.
 
 La prima fotografia è assegnata al record `centro-storico` come veduta generale documentata del borgo. Non è stata assegnata alle schede dei singoli monumenti perché l’inventario disponibile non ne verifica l’inquadratura specifica.
+
+## Controllo di pubblicazione – 28 novembre 2026
+
+L'inventario macchina comprende ora tutti i 21 file immagine presenti in `src/assets/images` e nelle directory statiche `public` (logo, favicon e icone PWA inclusi). Due fotografie Wikimedia hanno provenienza e licenza registrate; gli altri 19 file non hanno ancora la documentazione completa dei diritti. In particolare, la dichiarazione d'uso autorizzato delle due fotografie locali non sostituisce autore, fonte, licenza specifica e attribuzione.
+
+`npm run validate:publication-ready` controlla che nessuna immagine non inventariata o priva di autore, fonte, licenza e attribuzione superi il gate di deploy. Consulta [l'audit editoriale](./docs/audit-pubblicazione.md) per l'elenco completo e le azioni richieste. Questo aggiornamento non certifica i diritti e non modifica o rimuove i file.

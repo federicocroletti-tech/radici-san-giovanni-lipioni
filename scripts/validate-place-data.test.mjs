@@ -129,6 +129,21 @@ test('rejects asset paths that escape the source directory', () => {
   ]);
 });
 
+test('rejects public asset paths that escape the public directory', () => {
+  const result = validatePlaceData(
+    updateFirstPlace({ image: 'public/../src/assets/images/borgo-stone.svg' }),
+    categories,
+    imageAssets,
+    sources,
+    sourceDirectory,
+  );
+
+  assert.deepEqual(result.errors, [
+    'centro-storico: image must reference an entry in the image asset inventory.',
+    'centro-storico image: path must remain inside the source directory.',
+  ]);
+});
+
 test('rejects invalid image credit URLs and verification dates', () => {
   const result = validatePlaceData(
     updateFirstPlace({
