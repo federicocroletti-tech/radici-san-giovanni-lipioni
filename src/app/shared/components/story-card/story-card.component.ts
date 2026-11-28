@@ -81,16 +81,6 @@ import {
       @if (exportError()) {
         <p class="muted export-ignore" role="status">{{ i18n.t('exports.failed') }}</p>
       }
-      @if (savedOfflinePackage; as offlinePackage) {
-        <p class="muted" role="status">
-          {{
-            i18n
-              .t('offline.savedInfo')
-              .replace('{size}', formatSize(offlinePackage.sizeBytes))
-              .replace('{date}', formatDate(offlinePackage.createdAt))
-          }}
-        </p>
-      }
       <div class="chips" aria-label="Linked places">
         @for (place of linkedPlaces; track place.id) {
           <button type="button" class="chip" (click)="openPlace.emit(place.id)">

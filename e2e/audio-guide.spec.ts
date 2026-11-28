@@ -30,7 +30,7 @@ test('story, itinerary and map cards expose localized audio controls', async ({ 
 
   await page.goto('/racconti');
   const story = page.locator('.story-card').first();
-  const storyAudio = story.locator('.actions-row button');
+  const storyAudio = story.getByRole('button', { name: 'Ascolta' });
   await expect(storyAudio).toBeVisible();
   await expect(storyAudio).toHaveAttribute('aria-pressed', 'false');
   await storyAudio.click();
